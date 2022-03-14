@@ -1,0 +1,44 @@
+#
+# Feb 2018, Carlos Mazieri, an attempt of unify LDAP defines
+#
+# Note:  openLdap 2.3 does not honor LDAP_OPT_TIMEOUT, use 2.4.?
+
+
+LDAP_LIBS =
+
+##  Use openldap 2.4.44 compiled and embedded in  maskdesigner
+##  create work area from SVN http://cad.freescale.net:1080/svn/mds/libraries/openldap
+ifneq ($(SOLARIS),)
+  LDAP_BASE =  <work-area-maskdesigner>/libraries/openldap
+  LDAP_INCLUDE := -I$(LDAP_BASE)/include
+  LDAP_LIBS    := $(LDAP_BASE)/lib/liblunicode.a  $(LDAP_BASE)/lib/libldap.a  $(LDAP_BASE)/lib/liblber.a
+endif
+
+
+## Linux
+ifeq ($(SOLARIS),)
+
+  ifeq ($(USE_OS_LDAP),)
+      ## prefer .a archives
+      LDAP_BASE   := /run/pkg/TWW-openldap-/2.4.26
+  endif
+
+  ifneq ($(SERVER),)
+      ifneq ("$(wildcard $(LDAP_BASE)/lib/libldap.so)","")
+          LDAP_INCLUDE :=  -I$(LDAP_BASE)/include
+          LDAP_LIBS    := -Wl,-rpath,$(LDAP_BASE)/lib -L$(LDAP_BASE)/lib -lldap -llber
+      endif
+  endif
+
+  ifeq ($(LDAP_LIBS),)
+     ifneq ("$(wildcard $(LDAP_BASE)/lib/libldap.a)","")
+          LDAP_INCLUDE :=  -I$(LDAP_BASE)/include
+          LDAP_LIBS    :=  $(LDAP_BASE)/lib/libldap.a $(LDAP_BASE)/lib/liblber.a -lsasl2
+     else
+          ## include is not necessary leave to the default /usr/include
+          LDAP_LIBS    := -lldap -llber
+     endif
+  endif
+endif
+
+$(info libopenldap.def LDAP_INCLUDE=$(LDAP_INCLUDE) LDAP_LIBS=$(LDAP_LIBS))

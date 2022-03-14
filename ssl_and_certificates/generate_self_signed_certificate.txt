@@ -1,0 +1,61 @@
+## January 2020, Carlos Mazieri
+##
+##  Use this file as a script such as:
+##
+##      sh generate_certificate.txt
+##
+##  Change the SSH variable to point to a suitable openssl binary from a openssl library
+
+
+SSH=/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
+#SSH=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
+
+TMPFILES="server.pass.key server.key server.csr server.crt  nopassword.key"
+
+
+rm -f $TMPFILES server.pem
+
+## password is the password used in Transcend and other servers, try to use it
+PASSWORD=password
+
+$SSH genrsa -aes256 -passout pass:$PASSWORD -out server.pass.key 4096
+
+$SSH rsa -passin pass:$PASSWORD -in server.pass.key -out server.key
+
+#rm -f server.pass.key
+
+$SSH  req -new -nodes -key server.key -out server.csr -subj "/C=US/ST=Arizona/L=Chandler/O=NXP Semiconductors/OU=DE/CN=intercom.freescale.com/emailAddress=transbug@nxp.com"
+
+
+##  Country Name (2 letter code) [AU]:US
+##  State or Province Name (full name) [Some-State]:AZ
+##  Locality Name (eg, city) []:Phoenix
+##  Organization Name (eg, company) [Internet Widgits Pty Ltd]:NXP Seminconductors Inc.
+##  Organizational Unit Name (eg, section) []:Phoenix
+##  Common Name (e.g. server FQDN or YOUR name) []:nww.transcend.nxp.com
+##  Email Address []:carlos.mazieri@nxp.com
+
+##  Please enter the following 'extra' attributes
+##  to be sent with your certificate request
+##  A challenge password []:
+##  An optional company name []:
+
+
+### -- This is a self signed certificate
+#--------------------------------------
+$SSH  x509 -req -sha512 -days 1024 -in server.csr -signkey server.key -out server.crt
+
+## test ------
+$SSH x509 -in server.crt -noout -text
+
+## generate a valid PEM file
+
+$SSH rsa -in server.key -out nopassword.key
+cat nopassword.key > server.pem
+cat server.crt    >> server.pem
+
+rm -f $TMPFILES
+
+echo
+echo "certificate server.pem has been generated"
+echo

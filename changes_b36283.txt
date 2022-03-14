@@ -1,0 +1,86 @@
+################################## BUILD PROCESS #################################
+
+First of all, remmeber:
+    $make (will show you a list of target available)
+    $ make clean (clean up the last build you did, please prefer it)
+    $ make clean-all (clean up the whole build process and internal libs)
+We prefer BASH as shell and the GNU Toolchain.
+
+The build can be configured using the script at scripts/configure.sh where an
+option receive YES or NO according with what you need. After edit that, please
+source to populate the enviromment.
+
+There are 4 products (and 10 executables):
+    1) Transcend
+        1 Client and 1 Server
+    2) Intercom
+        1 External Client, 1 Internal Client
+        1 Internal Server, 1 External Server, 1 Intermediate
+    3) TransFTP
+        1 Server
+    4) TransWeb
+        1 Internal Server
+        1 Internal Client
+
+Each build process starts with "build-" suffix, for example:
+    $ make build-transcend-server
+    $ make build-intercom-internal-client
+    $ make build-intercom-intermediate
+    $ make build-transftp
+
+I did all the changes I could to make sure we have clients statically linked
+and servers dynamically linked. We now depends on TWW for the dynamic part.
+
+Please note libraries are built as part of the (dependency of) server respective
+build. But they can be built separately (starting with . suffix). The common
+libraries are:
+    1) reglib
+    2) serverlib
+    3) translib
+Depends of the product, each target will produce a different archive. Pay attention
+to the build process and its output!
+
+Also, please note the name of each internal makefiles (*.mk) is made of 2 parts:
+    - The original target name as Renee used to call it
+    - the name of the product or each dependency libraries
+So for example:
+    ssl64transmake_translib.mk
+        Where "ssl64transmake" is the name of the script to build Transcend as
+        Renee used to call "translib", means translib :P
+    ssl64icommake_client.mk
+        Where "ssl64icommake" is the name of the script to build Intercom
+        external "client", means Intercom Extenal Client
+
+For any other question, look at the Makefile in the root or each *.mk!
+
+################################### MISC #########################################
+
+/reg_lib/add_site_entry.c
+    - Overall formating
+    - functions:
+        ‘add_site_entry’: warning: control reaches end of non-void function
+        ‘add_server_site_entry’: warning: control reaches end of non-void function
+        * FIXED
+          they need to return a value, since they are non-void functions
+
+/reg_lib/
+    - files to be removed
+        * ssl64icommake
+
+/server_lib/
+    - files to be removed
+        * ssl64icommake
+
+/trans_lib/
+    - files to be removed 
+        * ssl64icommake
+
+/intercom/
+    - files to be removed
+        *ssl64icommake
+
+/client/
+    - files to be removed
+        * ssl64icommake
+
+##################################################################################

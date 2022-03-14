@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Run this build on angel
+
+DEBUG=""
+
+if [ "$1" = "-d" ]
+then
+    DEBUG="-g -DDEBUG -Dexit=FAKE_exit -Dfork=FAKE_fork"
+fi
+
+if [ "$1" = "-D" ]
+then
+   DEBUG="-g -DENABLE_LOGS"
+fi
+
+
+export DEBUG
+make -f solaris.makefile MACHINE=SOLARIS SSL_OPTION=NO_ENCRYPTION SWAP_OPTION=NOSWAP PROGRAM=M2 COMPANY=FREESCALE m2server_lib.a
+exit $?

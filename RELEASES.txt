@@ -1,0 +1,84 @@
+# By Carlos Jose Mazieri
+#
+# This shows releases made related to their SVN revision
+
+  SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+   Revision | Product          | Description
+   =====================================================================
+   1289     | transFTP  server | version that sends first a small file to test if SFTP is supported by the server.
+   1301     | transFTP  server | with read buffer of 4MB (libcurl 7.59.0 had to be recompiled to support this buffer size),
+            |                  |    first "icom" internal/external delivery on dropbox8.
+   1325     | transFTP  server | finale script fixed to remove sftp_probe.txt before joining destination file,
+            |                  |    if 'sftp_disable.config' exists the preferred will be FTP instead of SFTP.
+   1331     | transFTP  sever  | fixed connection to 'repository' database; it was bug inserted when re-factoring mysql connections.
+   1360     | Intercom  server | small changes required for Transweb client, as this client will use this server.
+   1365     | transFTP  server | improved variables handling inside 'finale' scripts on parallel transfers as required by Global Foundries.
+   1373     | Intercom.so      | and Perl interface for external Transweb client, external Transweb client was modified to use Intercom server,
+            |                  |   so 'External Transweb server' on dropbox is no longer necessary and it has been retired.
+   1377     | transFTP  server | reverted a change made by mistake that the server was not generating logs.
+   1385     | Intercom  server | new feature to bypass user authentication due to LDAP problem.
+   1398     | Intercom  server | server now using eldap.nxp.com
+   1399     | transcend client | for internal transweb; fixed 'trans -web -gz' which must be SERIAL and not print messages on screen.
+            |                  |   it also retires the Internal Transweb servers,
+   1400     | Intercom  server | fixed LDAP getting wrong user ID using new LDAP external
+   1407     | transFTP  server | sftp probe file is sent just once and it is removed after testing if the protocol is supported.
+   1432     | ALL servers      | Because of the fix for 'secure keyword', and that Transcend server also saves 'secure keyword' in database
+   1435     | transFTP  server | changed the "finale" script to "bash" due to GF has disabled "tcsh",
+                               | Serial transfer can be forced on the fly by creating the file "db_admin/parallel_ftp_sftp_disabled.config".
+   1440     | Transcend sever  | Fixed a bug when sending 'Secure Keyword', the set of a 'description' was causing a crash.
+   1449     | Intercom server  | Changed emails FROM field to be always @nxp.com,  transbug@nxp.com is used when it is not,
+            |                  |   it was necessary after haning remotesmtp on dropbox 8.
+   1466     |    ALL           | Clients: 'trans' and internal 'icom';
+            |                  | Servers: 'Transcend', 'Intercom' and 'TransFTP' were released,
+            |                  |   this finalizes the 'Move to Phoenix' and sets the new structure for Servers.
+   1470     | transFTP         | Allowed CURLE_QUOTE_ERROR when sending sftp.probe.txt; some sites fail on QUOTE commands i.e, Dalsa.
+   1485     | all Servers      | Emails or URLs with http://transweb.freescale.net replaced by https://nwww.transweb.nxp.com.
+   1489     | all clients      | there was a problem on revision 1466 regarding big gzipped files. In fact cause was not investigated as
+            |                  |  current revision worked, meanwhile clients had SSL and other changes.
+   1490     | all servers      | It was wrong https://nwww.transweb.nxp.com, 'n' plus three 'w', it must be two 'w'.
+   1543     | all servers      | Server Fixes and Improvements:
+            | clients updated  |   1. Put-delete (-P) fixed for big files, there was a bug when deciding for PARALLEL transfers.
+            |                  |   2. List of files (-b and -B) used the leave the process hanging waiting for an answer from the client.
+            |                  |   3. LARGE PARALLEL transfer disabled, most of the times, servers stopped saying "Error -509:  File sent to Transcend repository was not the correct size".
+            |                  |   Clients changes not released yet:  1. Get-Delete (-G) was fixed; 2. Get parallel was never used, it has been fixed.
+   1565     | all clients      | Clients improvements:
+            |                  |   1. Get Delete -G fixed it used to NOT work (perhaps it had never worked).
+            |                  |   2. Get in Parallel it used to NOT work (perhaps it had never worked).
+            |                  |   2. Parallel transfers on Windows now work, it had never worked.
+   1566     | all servers      | LARGE PARALLEL mode instead of SIMPLE PARALLEL mode has turned back as default PARALLEL mode, however both modes work.
+   1585     | transFTP server  | GDS checkout and other errors are saving Error status on the transfer.
+   1607     | transFTP server  | Attempt to avoid minor error Curl error CURLE_REMOTE_ACCESS_DENIED, it may happen when creating directories.
+   1610     | transFTP server  | Previous released did not work, changed approach, MySQL DB was also wrong.
+   1616     | MDD server       | First release of Maskdesigner server (mdd).
+   1617     | transFTP server  | send2foundry: ds_checkout() changed to handle GDS type 'gds_out' which can have .'gpg' in the name.
+   1618     | transFTP server  | send2foundry: ds_checkout() improved, using more file name possibilities.
+   1619     | transFTP server  | send2foundry: 1. adding '.gz' and '.gpg' to remote file name only if the original file name does not have
+                                               2. using 'gpg' in ftp_parallel.c::is_file_encrypted() command agains the original file to check if the file is already encrypted.
+   1621     |  MDD server      | MDD (Maskdesigner server) putting a default 'user name' when maskdesigner user left the company.
+   1624     | transFTP server  | forcing 'Global Foundries (NTAS flow)' to use serial transfer.
+   1628     | all servers      | 'secure key' emails are no longer sent when the destination email does not exist in LDAP, a properly message is printed to warn the user.
+   1636     | transFTP         | FIXED a bug that did not allow sending different files with same name, even sending them separated without the disk cleanup have removed the first file.
+   1649     | all clients      | transcend 9.3.5 and icom 7.6 (see RELESE_NOTES.txt for details).
+   1677     | all servers      | 1. changed the algorihtm of choosing the Server (default server) which is near to user.
+            |                  | 2. local files info moved to MySQL database: 'db_admin/ssl.company_table', "db_admin/subnet_table" and "db_admin/company_extension".
+   1685     | transFTP server  | Handle the error LibCurl error 'CURLE_REMOTE_FILE_NOT_FOUND' generated when it is not possible to create directories on the server side.
+                               | Synopys (icom -p -sys) has blocked creating directories on their SFTP server.
+   1715     | all clients      | clients: fixed preserve links when using '-p' and the input is relative path to a directory.
+                               |          OBS: external icom 7.7 client was sent by email to external users before this fix.
+   1727     | transFTP server  | 1. ready for sending OASIS file (changes mainly for downloading from design sync)
+            |                  | 2. Build changed to use libraries from OS (no TR nor TWW), but version of libCURL is local as it needs to be >= 7.62.0.
+   1732     | transFTP server  | Fixed SFTP authentication for GlobalFoundries (they should have changed some option on /etc/sshd_config)
+   1734     | transFTP server  | After fixing the authentication with GlobalFoundries, big files transfers were failing with CURL Error (79) "SSL Layer Error".
+            |                  | As in RH6 we had reverted to use OS libraries (openssl-1.0.1e-57) it was necessary to set again new OpenSSL again 1.0.2u.
+            |                  | And as for RH7 OS libraries work, a special RH6 build was prepared with OSS-openssl-1.0.2u_with_DES, OSS-libssh2-1.9.0 and OSS-curl-7.68.0.
+   1746     | transFTP server  | Fixed probing SFTP when server does not allow create directories, it happened again with Synopys perhaps because the SFTP has became the default,
+            |                  |    when the default was FTP, the probing was performed against FTP but the transfer with SFTP.
+   1752     | Intercom servers | Fixed problem with Global File when the users is not present in LDAP.
+   1754     | all servers      | 1. Fixed message about Trabnsweb link reaplced 'php' by 'cgi'.
+            |                  | 2. Added '-f sender@domain' to /usr/lib/sendmail command calls.
+   1758     | transFTP server  | introduced the SFTP authentication using SSH_PUBLIC_KEYFILE ~/.ssh/id_rsa.pub
+   1762     | all clients      | Servers migration to RH7, clients changes to aliases instead of using real server hostnames.
+   1768     | transFTP server  | Changed to get GDS from Data Pool as Design Sync will be deactivated. 
+   1784     | transFTP server  | Fix bug with check_disk_usage() which prevented receiving files due to an incorrect lack of space     error reporting 'No space available'.
+   0db50531 | transFTP server  | Modified build scripts for transftp-server in order to allow custom builds of different CURL, libssh2 and openssl versions for RH7.

@@ -1,0 +1,51 @@
+#
+# Jan 2018, Carlos Mazieri, an attempt of unify MySQL make defines
+#
+
+# this library seems to have problems, it asks for dependencies
+#SQL_BASE = /run/pkg/OSS-mysql-/5.6.10
+
+
+SQL_LIB64_DIR = /usr/lib64/mysql
+SQL_HDR       = /usr/include/mysql
+SQL_LIB       =
+
+ifneq ("$(wildcard /usr/lib64/libmysqlclient.so)","")
+      SQL_LIB64_DIR := /usr/lib64
+endif
+
+ifeq ($(USE_OS_MYSQL),)
+    SQL_BASE      = /run/pkg/TWW-mysql-/5.0.81
+endif
+
+ifneq ($(SERVER),)
+     ifneq ("$(wildcard $(SQL_BASE)/lib/libmysqlclient.so)","")
+          SQL_LIB := -Wl,-rpath,$(SQL_BASE)/lib -L$(SQL_BASE)/lib -lmysqlclient
+          SQL_HDR := $(SQL_BASE)/include
+     else
+          ifneq ("$(wildcard $(SQL_LIB64_DIR)/libmysqlclient.so)","")
+               SQL_LIB := -Wl,-rpath,$(SQL_LIB64_DIR) -L$(SQL_LIB64_DIR) -lmysqlclient
+          endif
+     endif
+endif
+
+ifeq ($(SQL_LIB),)
+     ifneq ("$(wildcard $(SQL_BASE)/lib/libmysqlclient.a)","")
+          SQL_LIB := $(SQL_BASE)/lib/libmysqlclient.a
+          SQL_HDR := $(SQL_BASE)/include
+     else
+          ifneq ("$(wildcard $(SQL_LIB64_DIR)/libmysqlclient.a)","")
+               SQL_LIB := $(SQL_LIB64_DIR)/libmysqlclient.a
+          else
+               SQL_LIB := -lmysqlclient
+          endif
+     endif
+endif
+
+
+SQL_INCLUDE = -I$(SQL_HDR)
+
+### Test purposes, uncomment, do: make -f libmysql.def
+#all:
+#	echo $(SQL_LIB)
+#	echo $(SQL_HDR)

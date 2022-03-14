@@ -1,0 +1,137 @@
+#
+# Feb 2018, Carlos Mazieri, an attempt of unify OPENSSL defines
+# May 2021, Benjamin Alvarez
+#
+
+# for clients default is to link static
+LINK_SHARED  := 0
+SSL_INCLUDE  :=
+SSL_LIBS     :=
+
+# for servers default is to link shared
+ifneq ($(SERVER),)
+    LINK_SHARED := 1
+endif
+
+SSL_MINIMAL_VERSION := 1.0.2
+
+RUN_OSS_SSL := /run/pkg/OSS-openssl-/1.0.2u
+OSS_SSL_KEEP_DES_OPTION = 
+
+ifeq ("$(BUILD_MODULE)", "build-transftp-server")
+   ifeq ("$(OS)", "RH6")
+      LINK_SHARED  := 0
+      # SSL 1.0.2u_with_DES
+      RUN_OSS_SSL := /run/pkg/OSS-openssl-/$(LIBSSLV)
+      OSS_SSL_KEEP_DES_OPTION := keep-des
+   else
+      ifeq ("$(OS)", "RH7")
+         LINK_SHARED  := 0
+         RUN_OSS_SSL := /run/pkg/OSS-openssl-/$(LIBSSLV)
+         OSS_SSL_KEEP_DES_OPTION := keep-des
+      else
+        # Default
+        USE_OS_SSL := 1
+      endif
+   endif
+endif
+
+$(info libopenssl.def BUILD_MODULE=$(BUILD_MODULE) OS=$(OS) USE_OS_SSL=$(USE_OS_SSL))
+
+## - handle SSL
+$(info libopenssl.def 01 SSL_MINIMAL_VERSION=$(SSL_MINIMAL_VERSION) SSL_BASE=$(SSL_BASE))
+
+ifeq ($(USE_OS_SSL),)
+    ## Handle  which SSL library to use
+    ##--------------------------------
+    ifeq ("$(OS)", "Darwin")
+      ## MacOS  install openssl with the command: brew install glib-openssl
+      SSL_BASE := /usr/local/opt/openssl
+      SSL_MINIMAL_VERSION := 0
+    else
+      ## Linux Solaris Cygwin
+      ## prefer archive library for Clients and Shared object for Servers
+      SSL_BASE := $(RUN_OSS_SSL)
+    endif
+    ifeq ("$(wildcard $(SSL_BASE)/lib/libssl.a)","")
+        $(info 02 libopenssl.def $(SSL_BASE)/lib/libssl.a does not exist [1])
+        ifeq ("$(SSL_MINIMAL_VERSION)","1.0.2")
+              SSL_WITHOUT_WEAKER_CIPHERS := $(RUN_OSS_SSL)
+              # new version compiled without DES
+              ifneq ("$(wildcard $(SSL_WITHOUT_WEAKER_CIPHERS)/lib/libssl.a)","")
+                  SSL_BASE := $(SSL_WITHOUT_WEAKER_CIPHERS)
+                  $(info 03 libopenssl.def $(SSL_BASE)/lib/libssl.a exists [2]], using it)
+              else
+                  ## Local Build
+                  ## install with something like:  make install INSTALL_PREFIX=<trans-source>/lib/Linux
+                  ##   change Linux to other platforms such as  CYGWIN/SOLARIS/RH4/RH5/RH6/RH7/Darwin
+                  curdir = $(shell pwd)
+                  SSL_WITHOUT_WEAKER_CIPHERS := $(curdir)/lib/$(OS)$(SSL_WITHOUT_WEAKER_CIPHERS)
+                  $(info libopenssl.def 04 using local build [3] SSL_WITHOUT_WEAKER_CIPHERS = $(SSL_WITHOUT_WEAKER_CIPHERS) OSS_SSL_KEEP_DES_OPTION=$(OSS_SSL_KEEP_DES_OPTION))
+                  ifeq ("$(wildcard $(SSL_WITHOUT_WEAKER_CIPHERS)/lib/libssl.a)","")
+                        $(info libopenssl.def 05 Creating SSL Library, it may take a while ...)
+                        $(shell echo "Creating SSL Library, it may take a while ..." > `tty`)
+                        nothing := $(shell $(curdir)/create_ssl_library_for_os.sh $(SSL_WITHOUT_WEAKER_CIPHERS) $(OSS_SSL_KEEP_DES_OPTION))
+                  endif
+                  ifneq ("$(wildcard $(SSL_WITHOUT_WEAKER_CIPHERS)/lib/libssl.a)","")
+                        SSL_BASE := $(SSL_WITHOUT_WEAKER_CIPHERS)
+                        ##
+                        ## clear SERVER to force static linking SSL library
+                        ##
+                        LINK_SHARED   := 0
+                  endif
+              endif
+        endif
+    endif
+endif
+
+
+$(info libopenssl.def 10  LINK_SHARED=$(LINK_SHARED) SSL_MINIMAL_VERSION=$(SSL_MINIMAL_VERSION) SSL_BASE=$(SSL_BASE))
+
+
+## special USE_OS_SSL, force from OS and shared
+ifneq ($(USE_OS_SSL),)
+    # use OS libs
+    SSL_INCLUDE  :=
+    SSL_LIBS     := -lssl -lcrypto
+else
+    # use custom libs
+    ifeq ($(LINK_SHARED),0)
+          ifneq ("$(wildcard $(SSL_BASE)/lib/libssl.a)","")
+                    SSL_INCLUDE := -I$(SSL_BASE)/include
+                    SSL_LIBS    := $(SSL_BASE)/lib/libssl.a $(SSL_BASE)/lib/libcrypto.a
+          endif
+    else
+          ifneq ("$(wildcard $(SSL_BASE)/lib/libssl.so)","")
+              SSL_INCLUDE := -I$(SSL_BASE)/include
+              SSL_LIBS    := -Wl,-rpath,$(SSL_BASE)/lib -L$(SSL_BASE)/lib -lssl -lcrypto
+          endif
+    endif
+
+    # -- not set yet
+    ifeq ($(SSL_LIBS),)
+      ## use standard include from OS
+      SSL_INCLUDE  :=
+      ifeq ($(LINK_SHARED),0)
+            ifneq ("$(wildcard /usr/lib/x86_64-linux-gnu/libssl.a)","")
+                  SSL_LIBS    :=  /usr/lib/x86_64-linux-gnu/libssl.a /usr/lib/x86_64-linux-gnu/libcrypto.a -lnsl -lkeyutils
+            else
+                ifneq ("$(wildcard /lib/x86_64-linux-gnu/libssl.a)","")
+                    SSL_LIBS    :=  /lib/x86_64-linux-gnu/libssl.a /lib/x86_64-linux-gnu/libcrypto.a -lnsl -lkeyutils
+                endif
+            endif
+           # ask again for both CLIENT and SERVER
+           ifeq ($(SSL_LIBS),)
+               SSL_LIBS    := -lssl -lcrypto
+           endif
+      endif
+    endif
+endif
+
+
+
+ifeq ("$(OS)", "SOLARIS")
+   SSL_LIBS += -lsocket
+endif
+
+$(info libopenssl.def 30 SSL_INCLUDE=$(SSL_INCLUDE) SSL_LIBS=$(SSL_LIBS))

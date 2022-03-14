@@ -1,0 +1,180 @@
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>What is Transcend?</h2>
+
+        <p align='justify'>
+            <b>Transcend (Transfer/Send Data)</b> is the NXP's
+            <a href="https://en.wikipedia.org/wiki/Managed_file_transfer">Managed File Transfer</a>
+            solution. It is widely used by R&amp;D, Applications Engineering and Marketing teams 
+            to exchange information.  While primarily focused on the Linux environment, clients 
+            are also available for Windows, Solaris and the Web. In production for many years, 
+            users tend to find transcend more convenient than ftp, scp, or rsync solutions for
+            data exchange and around 20,000 transfers per month are performed using the tool.
+            Secure data repositories are distributed world-wide to optimize data posting and 
+            retrieval. 
+        </p>
+
+        <p align='justify'>
+            When the user transcends data, the data is securely posted to the
+            repository. A nine character keyword is generated for data retrieval.
+            Two forms of transfer are supported:  general transfer where anyone
+            who has the keyword is able to retrieve the data and secure transfer
+            where the keyword is locked to the sender and targeted recipient email
+            addresses.
+        </p>
+
+        <p align='justify'>
+            Transcend offers a higher level of security and control. Transcend uses secure socket connection
+            (<a href="https://www.openssl.org">OpenSSL</a>) to perform serial and parallel file transfer 
+            offering end-to-end encryption. Others features include notification of successful file transfers, 
+            auditability, and worldwide visibility.
+        </p>
+
+        <p align=' justify'>
+            Transcend tool have been widely used for data transfer between the worldwide sites, and is 
+            now available for whole NXP company. Transcend was first released for production 
+            use in July of 1994, and have been under continuos development from 22 years, currently being 
+            used by around 5000 users.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>Release Notes</h2>
+        <p align=' justify'>
+            We are pleased to announce the production release of Transcend 
+            version <code>9.3.1</code> and TransWeb version <code>3.5.3</code>.
+        </p>
+
+        <p align=' justify'>
+            The purpose of this maintenance release is enable Transcend and
+            TransWeb to officially support the New NXP. Specific changes
+            for this release include:
+        </p>
+
+        <ul>
+            <li>Adoption of the New NXP Active Directory for transcend authentication</li>
+            <li>Addition of two new repositories:</li>
+            <li style="list-style-type:none">
+                <ul>
+                    <li> Eindhoven: <code>trans -p -eind <file></code></li>
+                    <li> Bangalore: <code>trans -p -blr <file></code></li>
+                </ul>
+            </li>
+            <li>Overall TransWeb UI face-lift</li>
+            <li>
+                TransWeb login works with FSL CoreID (OneIT), NXP WBI ID or NXP e-mail.
+                The login/authentication is using the NXP Active Directory with
+                fall-back to the FSL LDAP in case of unsynchronized passwords
+            </li>
+            <li>New Person Lookup from TransWeb also using the NXP Central Directory</li>
+            <li>Transfer as customer@freescale.com was deprecated.</li>
+        </ul>
+
+        <p align=' justify'>
+            The Transcend release has been uploaded to the Tools Repository with 
+            package <code>fs-transcend-/9.3.1</code>. The Transcend software can
+            also be downloaded from the <a href="http://transcend.freescale.net">web site</a>
+            where packages for RHEL 4, 5, 6, Solaris, Ubuntu, Fedora and Windows are available. 
+            It is also available on xFSL datacenter as <code>/usr/fsl/bin/trans</code> and on 
+            oNXP datacenters as <code>/nxdi_env/bin/trans</code>.
+        </p>
+
+        <p align='justify'>
+            <span class="bg-danger"><b>IMPORTANT NOTE</b></span> direct data transfers between
+            Noida and Bangalore are currently blocked for legal reasons. Data transfers must 
+            be relayed through a repository outside of India.
+        </p>
+
+        <p align='justify'>
+            For assistance, please report your issue at
+            <a href='servicedesk.freescale.com'>servicedesk.freescale.com</a> using:<br>
+            Group: <code>APPS_DATA_TRANSPORT/ARCHIVE</code><br>
+            Category: <code>APPS_MFG_DMO</code><br>
+            Sub-Category: <code>DAR_DATA_DELIVERY/TRANSCEND</code>
+        </p>
+
+        <a href="javascript:location.href='release_archive.html';">Previous Release</a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-12">
+        <h2>Obtaining/Downloading version 9.3.1 of Transcend</h2>
+
+        <p> Transcend command line tool is available for the following platforms: Solaris, Linux, and Windows.</p>
+        <table class='table'>
+            <thead>
+                <tr>
+                    <th><b>Transcend for Solaris</b></th>
+                    <th><b>Transcend for RedHat Linux</b></th>
+                    <th><b>Transcend for Windows</b></th>
+                    <th><b>Transcend for Others Linux flavors</b></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <A href="/download/transcend-931-solaris.tar.bz2">transcend for Solaris</A><br>
+                    </td>
+                    <td>
+                        <A HREF="/download/transcend-931-rhel4.tar.bz2">transcend for RHEL4</A><br>
+                        <A HREF="/download/transcend-931-rhel5.tar.bz2">transcend for RHEL5</A><br>
+                        <A HREF="/download/transcend-931-rhel6.tar.bz2">transcend for RHEL6</A><br>
+                    </td>
+                    <td>
+                        <A HREF="/download/transcend-931-windows.tar.bz2">transcend for Windows</A>
+                    </td>
+                    <td>
+                        <A HREF="/download/transcend-931-fedora.tar.bz2">transcend for Fedora</A><br>
+                        <A HREF="/download/transcend-931-ubuntu.tar.bz2">transcend for Ubuntu</A>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <h3 class="panel-title">Unpack in Windows</h3>
+            </div>
+            <div class="panel-body">
+                If you are facing issue to unpack the last realease in Windows, please install
+                <a href='http://www.7-zip.org/'>7-Zip</a> the open-source file archiver.
+                7-Zip is an application used primarily to compress/decompress files.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <h2>Documentation</h2>
+    <div class="col-md-3">
+        <p>
+            <i class="fa fa-caret-square-o-right fa-5x pull-left"></i>
+            A nice <a href="tutorial.html">Hands on Transcend</a>
+            tutorial on how to use <code>trans</code> command line
+            client, covering several advanced commands and examples of flow.</p>
+    </div>
+    <div class="col-md-3">
+        <p>
+            <i class="fa fa-question-circle fa-5x pull-left"></i>
+            A html version of the <a href="trans.html">Transcend Manpage</a>
+            covering <code>trans</code> commnad line client, main commands, 
+            all the options and features available.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p>
+            <i class="fa fa-file-text fa-5x pull-left"></i>
+            A html version of the <a href="transrc.html">.transrc Manpage</a>
+            covering the <code>.transrc</code> configuration file, all the the
+            preloaded options and features.
+        </p>
+    </div>
+    <div class="col-md-3">
+        <p>
+            <i class="fa fa-list fa-5x pull-left"></i>
+            The <a href="faq.html">FAQ (frequently asked questions)</a>,
+            please read it before send your question.
+        </p>
+    </div>
+</div>
+

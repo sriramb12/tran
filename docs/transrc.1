@@ -1,0 +1,42 @@
+
+.TH TRANSRC 1 "Date: 2016/08/04 15:37:21 " NXP  "Internal Use Only"
+
+.SH NAME
+transrc \- Transcend .transrc file
+
+
+.SH SYNOPSIS
+.PD 0
+PrintByTime: 30 # Legal values 10-120 seconds
+.LP
+PrintBySize: 16 Mb # 1 K - 16 Mb
+.LP
+LogDirectory: . # . | ~ | None
+.LP
+Parallel zip size: 10000000
+.PD
+.LP
+
+.SH DESCRIPTION
+This is how to create a .transrc file. This file must
+be placed in the user's home directory. Default values
+used by Transcend are set in this file.
+
+.SH BASIC OPTIONS
+With the settings given below, Transcend prints out the 
+amount of data transferred every 30 seconds or after the
+transfer of 16 Mb of data, depending on which event occurs 
+first.
+
+.B PrintByTime: 30 # Legal values 10-120 seconds
+
+.B PrintBySize: 16 Mb # 1 K - 16 Mb
+
+The user can set his log directory to the current working 
+directory, his home directory, or no directory.
+
+.B LogDirectory: . # . | ~ | None
+
+Amount of data to be transcended in parallel and compressed 
+
+.B Parallel zip size: 10000000

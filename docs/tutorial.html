@@ -1,0 +1,259 @@
+
+<br>
+<h1>Hands-on Transcend tool</h1>
+<br>
+
+<p align='justify'>
+<b>Transcend</b> is NXP’s <a href="https://en.wikipedia.org/wiki/Managed_file_transfer">Managed File Transfer</a>.
+    It is widely used by R&amp;D, Applications Engineering and Marketing teams to exchange information.
+    While primarily focused on the Linux environment, clients are also
+    available for Windows, Solaris and the Web.  In production for many years,
+    users tend to find <b>Transcend</b> more convenient than ftp, scp, or rsync
+    solutions for data exchange and around 20,000 transfers per month are
+    performed using the tool.  Secure data repositories are distributed
+    world-wide to optimize data posting and retrieval. 
+</p>
+
+<p align='justify'>
+    When the user <em>transcends</em> data, the data is securely posted to the repository.
+    A nine character keyword is generated for data retrieval.  Two forms of
+    transfer are supported:  general transfer where anyone who has the keyword is
+    able to retrieve the data and secure transfer where the keyword is locked to
+    the sender and targeted recipient email addresses.
+</p>
+
+<p align='justify'>
+    A <b>Transcend</b> repository is available in each NXP site as distributed in the
+    following table.  Regional repositories are used improve <b>Transcend</b> user
+    responsiveness.  The 9th character of the keyword indicates the Repository
+    where <b>Transcend</b> data is stored. 
+</p>
+
+<table class="table table-striped table-condensed table-bordered">
+    <thead>
+        <tr>
+            <th>
+                Data Repository
+            </th>
+            <th>
+                Keyword Extension
+            </th>
+            <th>
+                Example
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Austin</td>
+            <td>a</td>
+            <td>abcd1234<b>a</b></td>
+        </tr>
+        <tr>
+            <td>Eindhoven</td>
+            <td>i</td>
+            <td>abcd1234<b>i</b></td>
+        </tr>
+        <tr>
+            <td>Munich</td>
+            <td>m</td>
+            <td>abcd1234<b>m</b></td>
+        </tr>
+        <tr>
+            <td>Noida</td>
+            <td>n</td>
+            <td>abcd1234<b>n</b></td>
+        </tr>
+        <tr>
+            <td>Bangalore</td>
+            <td>b</td>
+            <td>abcd1234<b>b</b></td>
+        </tr>
+        <tr>
+            <td>External</td>
+            <td>e</td>
+            <td>abcd1234<b>e</b></td>
+        </tr>
+    </tbody>
+</table>
+
+<p align='justify'>
+    By default, each transfer is available during 3 days. After this 3 days a
+    ‘get’ attempt using the keyword will return an error indicating that the data
+    is no longer available. A special <b>Transcend</b> option allows to extend a
+    keyword’s lifetime for up to 3 additional days.
+</p>
+
+<p align='justify'>
+    The <b>Transcend</b> family of tools are under Freescale active 
+    development since 1994, helping in the engineering flow. 
+    Now <b>Transcend</b> is part of the NXP portfolio of tools. 
+    <b>Transcend</b> is available on Linux, Solaris, Windows and 
+    others platforms using TransWeb.
+</p>
+
+<p align='justify'>
+    Traditionally, <b>Transcend</b> is the command line tool called
+    <code>trans</code> available worldwide on the xFSL and NXDI data centers. 
+    A typical example of <b>Transcend</b> usage is a team with members living 
+    on different regions of the globe transferring files and using keywords to retrieve. 
+    The command line version has the best performance and availability. The tool
+    is self-documented, we recommend it as preferable way of use and integrate
+    <b>Transcend</b> in your projects.
+</p>
+
+<p align='justify'>
+    Here on this hands-on guide is presented a short list of commands which exemplifying 
+    the typical workflow to integrate <b>Transcend</b> in your daily job.
+</p>
+
+<h2>Simply put data</h2>
+
+<p align='justify'>
+    You can use <code>-p</code> for put.
+</p>
+
+<pre>
+$ trans –p random_file.txt
+</pre>
+
+<p align='justify'>
+    The <code>-p</code> option for put will works for directories too.
+</p>
+
+<pre>
+$ trans –p random_dir
+</pre>
+
+<p align='justify'>
+    You also can use <code>-p</code> for put, notify a person’ email
+    (Secure Keyword).
+</p>
+
+<pre>
+$ trans –p random_file.txt john.doe@nxp.com
+</pre>
+
+
+<h2>Retrieving (get) data</h2>
+
+<p align='justify'>
+    To retrieve a given keyword, use <code>-g</code> for get
+</p>
+
+<pre>
+$ trans –g xqap6925a
+</pre>
+    
+
+<h2>Retrieving keyword information</h2>
+
+<p align='justify'>
+    You can use <code>-i</code> for general information, 
+    useful to know file expiration.
+</b></p>
+
+<pre>
+$ trans –i xqap6925a
+</pre>
+
+
+<h2>Retrieving keyword history</h2>
+
+<p align='justify'>
+    Use <code>-h</code> for history information, useful to know who retrieved the
+    data and when.
+</p>
+
+<pre>
+$ trans –h xqap6925a
+</pre>
+
+<p align='justify'>
+    Please note this command will save a file called xqap6925a.history in the
+    relative PATH you are.
+</p>
+
+
+<h2>Avoid the keyword expiration by extending it</h2>
+
+<p align='justify'>
+    To avoid keyword expiration, call with option <code>-e</code> 
+    passing a number between 1-3 to extend file expiration from
+    1-3 extra days.
+</b></p>
+
+<pre>
+$ trans -e xqap6925a 3
+</pre>
+
+<h2>Lock/Unlock keywords</h2>
+
+<p align='justify'>
+    <b>Transcend</b> allow Lock/unlock data to prevent/allow data retrieval.
+    The lock is done per file keyword, and can be performed soon after the
+    upload toa repository.
+</p>
+
+<p align='justify'>
+    To lock a given keyword, run:
+</p>
+
+<pre>
+$ trans -L xqap6925a
+</pre>
+
+<p align='justify'>
+    then to unlock the data and allow data retrieval, run:
+</p>
+
+<pre>
+trans -U xqap6925a
+</pre>
+
+<h2>Get help about an option available</h2>
+
+<p align='justify'>
+    If you need to get help about an especific option, use
+    <code>-H</code> follow by the option you are looking for.
+</b></p>
+
+<pre>
+$ trans –H -e
+</pre>
+
+
+<h2>Others tools</h2>
+
+<p align='justify'>
+    If you are looking for an option beyond the UNIX terminal and want to use 
+    from Windows for example, we recommend <b>TransWeb</b>: the <b>Transcend</b> 
+    based web application used to transfer files within NXP and between NXP and
+    external groups. TransWeb offers the ability to send and receive files based on 
+    keywords but using a convenient web interface.
+</p>
+
+<p align='justify'>
+    Visit <a href='http://transweb.freescale.net/'>http://transweb.freescale.net</a>.
+</p>
+
+
+<h2>Getting assistance</h2>
+
+<p align='justify'>
+    <b>Transcend</b> and <b>TransWeb</b> are supported through normal IT 
+    <a href='http://servicedesk.freescale.com/'>Service Now</a> ticket
+    system. If you have a problem, create a ticket and report the problem you
+    are facing. Create the ticket at Service Now using: 
+</p>
+
+<p align='justify'>
+    Category: <code>APPS_MFG_DMO</code><br>
+    Sub Category: <code>DAR_DATA_DELIVERY/ARCHIVE</code><br>
+    Assignment Group: <code>APPS_DATA_TRANSPORT/ARCHIVE</code><br>
+</p>
+
+<p align='justify'>
+    To ask a generic question, feel free to contact
+    <a href="mailto:transbug@nxp.com?subject=Hands-on help">The Transcend Team</a>. 
+</p>

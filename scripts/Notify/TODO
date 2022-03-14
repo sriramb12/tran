@@ -1,0 +1,4 @@
+
+- fazer com que o gerador do db_final ignore emails externos se flag no CLI como parametro
+- incluir modo text no enviador do email (checagem de formatacao) que envia s'o pra mim
+- incluir flag que alterna query ao montar DB temporario (Transcend, Intercom, etc)

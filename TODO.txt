@@ -1,0 +1,228 @@
+* [DONE] Both transcend and intercom servers do NOT respect security keywords,  anyone can retrieve
+  [DONE]  revision 1425.
+
+* [NOT reproduced] 'trans -p -aus <file>' is different from 'trans -p  <file>'  the first one does not compress files
+  [WORKED] Investigated and it worked: (tested with transcend only)
+                * dev clients against production servers
+                * dev clients against dev servers
+
+* [DONE ]Check routes for keywords (get)  -> trans -f with 'E' and 'e' should reach Intercom server not Transcend server.
+
+* [DONE] Check route for put  and differences from get
+
+* [DONE] test clients parallel transfers on both Linux and Solaris (transcend and icom)
+   - client and servers on production work: parallel put, serial get
+   - dev client against production :        parallel put, serial get
+   - dev client against dev servers:        parallel put, serial get
+
+   - simulating a server redirection:       parallel put, (get not performed)
+        scenario:
+             * Redirect Transcend server listeing on port 6928
+                 nxa13339 14327     1  0 10:00 pts/3    00:00:00 /proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/RELEASE_DIR/ssl.transcend -8
+             * Primary server listening on 6923 with ssl.company_table redirecting "idc Noida" to Redirect Transcend server:
+                 such as:  "Noida;idc;awv120831.nxdi.us-cdc01.nxp.com;10.232.5.13;6928;Transcend;0;no;no;yes"  (ip not changed)
+                 nxa13339 14258     1  0 10:00 pts/3    00:00:00 /proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/RELEASE_DIR/ssl.transcend.debug -3
+
+
+* [DONE] one of these generatd secure keywords does not have data in the database even trans -i works
+  [DONE] revision 1425.
+         Only Intercom used to save data_transfer.dt_keyword_mapping, now all servers do.
+         db_admin/keyword_file is still used
+
+      Transcend server:
+                   trans.localhost.debug -web twg02362 -p README.txt ryan.huang@nxp.com twg02362
+
+                   trans.localhost.debug -web twg02362 -p README.txt sileno.rocco@nxp.com  twg02362
+
+* [NOT reproduced using SVN revision 1452] investigate why global_data/keyword saves different "Site":
+     zoeh8359t:Site:        Mazieri
+     zqeo6725t:Site:        s-cdc01.nxp.com
+     umgj2352t:Site:        Mazieri
+     uslb3856e:Site:        External
+     vdyt7175e:Site:        Externa
+
+     Perhaps it was not an issue, just observed in a test environment.
+
+
+* [DONE] sending a file to specific person using core/wbi id at domain example: "trans -p <file> nxa13339@nxp.com" does not convert to real user/email.
+
+* [DONE] new server just released from SVN revision 1432 do not work "trans -q"
+   received the message: Warning -545:  No file keywords found for 'carlos.mazieri@nxp.com' in the freescale.net repository.
+   [DONE] revision 1453.
+
+* [DONE] 'trans -g' or 'trans -i' fails for external keywords 'E' or 'e'
+  The WRONG_SERVER implementation solves that.
+
+* [DONE] sending a secure keyword to coreid i.e, 'b35201' does work when getting with wbi id i.e,'nxa13339'
+         [DONE] revision 1451.
+         coreid@anything is handled by the server at the moment it comes from the client.
+         email is saved instead of coreid in the table dt_keyword_mapping
+
+* [DONE]  when listing  repositories include the abbreviation like aus, dtms, etc
+
+* [DONE] Test auto register (two cases in two months where it fails)
+         On revision 1504 it has been improved.
+
+* [DONE] investigate and fix duplicated 'secure keyword'
+         [DONE] on revision 1506
+               Error -737:    Received error code 1062 from mySql query:
+
+               'insert into dt_keyword_mapping     (secure_keyword, file_keyword, description, from_email, to_email,  upload_date, download_date) values("pina6925E", "ttqt0250e", "Data transfer on Thu Sep  6 08:04:55 2018", "mark.hawkins@nxp.com", "cad-us@compugraphics.com", "18/09/06 08:04:55", "")'
+
+               Error string returned is:
+
+               'Duplicate entry 'pina6925E' for key 'secure_keyword'
+
+* [DONE] It looks like an external customer can send data to another external customer
+       RELEASE_DIR/icom.ext -p -rtc TODO.txt (it works)  -> perhaps it should not (check for EXTERNAL and -destination like -rtc)
+
+       [DONE] data is sent but no email is sent to people from other companies, it behaves like no company was specified.
+
+* [DONE] Get Delete "-G" does not delete the file.
+    [DONE] on revisions, 1511 1537 and 1538.
+
+
+* [DONE] Get parallel does not work => put on parallel transfers (due by size) should get as parallel.
+    [DONE] released on revision 1543.
+
+
+* avoid "shared memory" when doing parallel transfer,  change approach to use "multi-thread" instead of "multi-process".
+   [DONE] 'shared mmemory' has been replaced by a file solution on 'clients' only [revisions 1554  1555  1558].
+
+
+* [DONE] Automated Tests improvements:
+    * "Automated Tests" add check for Put rows in dt_tranfertimes.
+    * "Automated Tests" add check for clients return code first
+    * "Automated Tests" add possibilty of a test be expected to fail
+    * "Automated Tests" add possibilty of a test have others way of check pass/fail
+
+
+* [DONE] external icom needs a feature to generate '.icomrc'  -> -icomrc -> generates '.icomrc' in the home directory
+    [DONE] on revision 1638.
+
+
+* [DONE] trans -x and icom -x uses hard coded list, change to get from the sever.
+    [DONE] on revision 1642.
+
+
+* [PARTIALLY DONE]
+  --Unify configuration files "db_admin/ssl.company_table",  "db_admin/ssl.transcend_company_extension", "db_admin/company_extension"  and "db_admin/ftp_mapping" to use the table 'dt_destinations'
+      [PARTIALLY] db_admin/ftp_mapping not removed, others were removed.
+  --[TODO] Unify the terms 'repository' and 'site' from boh servers and clients to 'destination'
+  --[TODO] The structure TRANS_COMPANY in 'trans_include/company.h' should be used and the TRANS_REPOSITORY can be removed or an alias to TRANS_COMPANY.
+  --[DONE] In the server the 'main daemon' can read this table every 5 minutes before forking new instances to avoid many MySQL access. Like this:
+
+        time_t last_destination_update = (time_t)0;
+        ....
+         time_t time_before_fork = time(NULL);
+         if ( (time_before_fork - last_destination_update) >= 300) // 5 minutes
+         {
+              load_destination_table() // into a global variable, other instances can use it
+              last_destination_update = time_before_fork;
+         }
+         fork();
+
+
+----------------------------------------------------------
+  incident: INC0967771
+  
+    *  trans -P <file> works only for a single receiver, more than one receiver it does not get deleted.
+
+
+* trans -gz  MUST perform parallel transfer [new reported by Bill Johnson]
+
+* trans -T (does not work) -t -> follow links and delete after first download.
+
+* Avoid sending emails for secure keywords.
+
+* secure keyword with email and without @nxp does not work, user cannot access the secure keyword:
+    $ trans -p <file> carlos.mazieri   (not carlos.mazieri@nxp.com)
+
+* Study the possibility of removing shared memory on servers as well as it has done by clients.
+
+* trans -d deletes any keyword from any user -> check owner
+
+* Unify  client code => 'trans' universal client => 'icom' only external.
+
+* Unify servers      => 'Transcend'  'Intercom'  'TransFTP'    => perhaps:   'Intercom' + 'Send2Foundry'.
+
+* Dismiss not used code all client and servers
+
+* trans -B fails to list the entire content  if there is a file name of directory name containing spaces
+
+
+* Implement 'trans-auto-update' to 'update server' versions and 'configuration files'
+     - Servers needs to have a crontab running, that script from crontab checks it is available on that server a keyword for 'db_admin' user using 'trans -web <user> -q <site>'
+     - Updates can activated by sending the new file (binary or configuration file) to that specific site/user with auto-delete.
+       Example:   echo 'new relase of ssl.transcend revision 1467"  | trans -P -phx <file> db_admin@phx-trans.nxdi.nxp.com"
+                  1. The script on Phoenix will detect this the secure keyword above
+                  2. The script reads the description and matches with file name, then kills transcend, retrieve the keyword, copy it and starts new trancend version.
+
+* trans -web can be interactive, it opens the prompt to inform parameters: (hide string -web and perhaps power users to the client)
+      trans -web -p file size
+      > user
+
+       When putting files, the content of file can be inputed by stdin, which would be used for both transweb internal and external turning Intercom.so obsolete
+
+      trans -web -g keyword (still see the keyword in ps which is good)
+      > user
+
+
+* Investigate the ERROR:
+     Error -350:    Unable to open for read database file:
+
+               'releases/releases'
+
+     --  Message generated by Transcend server on inv0803.nxdi.us-cdc01.nxp.com
+
+
+* Investigate the ERROR: file was not present in repository, looks like there si an entry in database, but no data was found:
+    Error -509:    File sent to Transcend repository was not the correcct size.
+
+                   File name:  sn2_n23x_000000_full.gds.gz
+                   File keyword:  gqgi7399p
+                   Expected size:  7236424087 bytes
+                   Actual size:    6432379287 bytes
+
+    -- Message generated by Transcend server on inv0803.nxdi.us-cdc01.nxp.com
+
+    [1]  [ more investigations are necessary ]
+
+
+* trans -C -xio files => active Cron-Delete for Internal Intercom server seems to not worked
+
+
+* Check if a external customer is able to get a 'file keyword'  (of course use external icom client)
+
+
+* Investigate the message:
+     Could not log message 'mkqz9384t' in file 'user_keys/'
+
+* Investigate the possibility of removing the "RMT_SERVER_TABLE" and its variables: rmt_trans, rmt_transaction_type
+
+    carlos@vbCarlosMazieriMint /opt/transcend/NXP $ sh fi.sh RMT_SERVER_TABLE
+    ./m2include/mask_server_paths.h:98:#define RMT_SERVER_TABLE "db_admin/rmt_servers"
+    ./global_include/db_paths.h:106:#define RMT_SERVER_TABLE "db_data/rmt_servers"
+    ./reg_include/reg_globals.h:39:#define RMT_SERVER_TABLE "db_admin/rmt_servers"
+    ./reg_include/reg_globals.h:42:#define RMT_SERVER_TABLE "db_data/rmt_servers"
+    ./reg_include/reg_globals.h:45:#define RMT_SERVER_TABLE "db_admin/rmt_transweb_servers"
+    ./reg_include/reg_globals.h:48:#define RMT_SERVER_TABLE "db_admin/ssl.rmt_servers"
+    ./reg_include/reg_globals.h:50:#define RMT_SERVER_TABLE "db_admin/rmt_servers"
+    carlos@vbCarlosMazieriMint /opt/transcend/NXP $
+    carlos@vbCarlosMazieriMint /opt/transcend/NXP $ sh ff.sh rmt_trans
+    ./trans_lib/trans_server_globals.c:67:RMT_SERVERS rmt_trans;
+    ./reg_lib/rmt_server.c:36:    extern RMT_SERVERS rmt_trans;
+    ./reg_lib/rmt_server.c:49:    rmt_trans.server_num = 0;
+    ./reg_lib/rmt_server.c:55:          sscanf(line, "%s %s %s %d", rmt_trans.site[rmt_trans.server_num], rmt_trans.mach[rmt_trans.server_num], rmt_trans.addr[rmt_trans.server_num], &rmt_trans.sock[rmt_trans.server_num]);
+    ./reg_lib/rmt_server.c:57:          ++rmt_trans.server_num;
+    ./m2server/m2server_globals.c:50:RMT_SERVERS rmt_trans;
+    ./m2server/m2server_globals.c:99:char rmt_transaction_type;
+    ./internal_intercom/intercom_server_globals.c:47:RMT_SERVERS rmt_trans;
+    ./internal_intercom/intercom_server_globals.c:80:RMT_SERVERS rmt_trans;
+
+* Investigate the possiblity of saving keywords encypted (transFTP does not need, the keyword can be deleted after encrypting with 'gpg').
+
+  incident:   INC1122175
+                Wrong time zone notation for CEST
+
+

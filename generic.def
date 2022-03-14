@@ -1,0 +1,46 @@
+OPTIMIZATION := -O3
+
+ifeq "$(TRANS_DEBUG)" "YES"
+  OPTIMIZATION := -g -O0 -DDEBUG
+endif
+
+ifeq ("$(OS)", "Darwin")
+  CC := cc $(OPTIMIZATION) -arch x86_64 -Wall -Wextra -fno-stack-protector
+  LINK := cc -arch x86_64
+else
+  CC := gcc $(OPTIMIZATION) -Wall -Wextra -fno-stack-protector
+  LINK := gcc
+endif
+
+CURRENT_MAKEFILE := $(firstword $(MAKEFILE_LIST))
+#CURRENT_MAKEFILE := $(MAKEFILE_LIST)
+#CFLAGS := $(CFLAGS) -DCURRENT_MAKEFILE=\"$(CURRENT_MAKEFILE)\"
+
+TRANSAPI_VERSION_NUMBER = 9.3.7
+CURRENT_ICOM_VERSION_NUMBER = 7.8
+
+TRANSAPI_VERSION       = TRANSAPI_VERSION=\"$(TRANSAPI_VERSION_NUMBER)\"
+CURRENT_TRANS_VERSION  = CURRENT_TRANS_VERSION=\"$(TRANSAPI_VERSION_NUMBER)\"
+CURRENT_ICOM_VERSION   = CURRENT_ICOM_VERSION=\"$(CURRENT_ICOM_VERSION_NUMBER)\"
+CFLAGS := $(CFLAGS) -D$(TRANSAPI_VERSION) -D$(CURRENT_TRANS_VERSION) -D$(CURRENT_ICOM_VERSION)
+
+ifeq ($(GIT_SHA),)
+	GIT_SHA := $(shell ./git_build_info.sh)
+endif
+CFLAGS := $(CFLAGS) -DGIT_SHA=\"$(GIT_SHA)\"
+
+BUILD_DATE := $(shell date +"%Y%m%d")
+CFLAGS := $(CFLAGS) -DBUILD_DATE=\"$(BUILD_DATE)\"
+
+CFLAGS := $(CFLAGS) -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN
+
+
+#CFLAGS := $(CFLAGS) -DNXP
+
+
+
+# Mazieri's global debug
+OBJECT += ./global_code/global_debug.o
+
+
+

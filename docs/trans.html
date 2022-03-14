@@ -1,0 +1,1453 @@
+<!-- Creator     : groff version 1.18.1.1 -->
+<!-- CreationDate: Tue Aug  9 14:29:05 2016 -->
+<html>
+<head>
+<meta name="generator" content="groff -Thtml, see www.gnu.org">
+<meta name="Content-Style" content="text/css">
+<title>TRANSCEND</title>
+</head>
+<body>
+
+<h1 align=center>TRANSCEND</h1>
+<a href="#NAME">NAME</a><br>
+<a href="#SYNOPSIS">SYNOPSIS</a><br>
+<a href="#DESCRIPTION">DESCRIPTION</a><br>
+<a href="#BASIC COMMAND OPTIONS">BASIC COMMAND OPTIONS</a><br>
+<a href="#ADVANCED COMMAND OPTIONS">ADVANCED COMMAND OPTIONS</a><br>
+<a href="#PARALLEL DATA TRANSFER">PARALLEL DATA TRANSFER</a><br>
+<a href="#DATA ENCRYPTION">DATA ENCRYPTION</a><br>
+<a href="#REGISTRATION">REGISTRATION</a><br>
+<a href="#TRANSCEND CONFIGURATION FILE">TRANSCEND CONFIGURATION FILE</a><br>
+<a href="#INSTALLATION">INSTALLATION</a><br>
+<a href="#CONTACTS">CONTACTS</a><br>
+
+<hr>
+<a name="NAME"></a>
+<h2>NAME</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Transcend &minus; NXP&rsquo;s Managed File Transfer
+tool</p>
+</td>
+</table>
+<a name="SYNOPSIS"></a>
+<h2>SYNOPSIS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>trans -a | -A | -v | -V | -x<br>
+trans -f | -F [-site] file... | directory<br>
+trans -p | -P | -t | -T [-site] file | directory
+[e-mail...]<br>
+trans -k | -K [-site] directory file...<br>
+trans -n | -N [-site] file [e-mail...]<br>
+trans -z | -Z [-site] directory file [e-mail...]<br>
+trans -b | -B | -D | -e | -E | -g | -G | -h | -l | -L | -U
+keyword<br>
+trans -c | -s [-site] all | keyword<br>
+trans -d | -i all | keyword<br>
+trans -m keyword e-mail...<br>
+trans -r [file]<br>
+trans -R WBI User ID [Active Directory Password]<br>
+trans -1 | -u [-site] WBI User ID</p>
+</td>
+</table>
+<a name="DESCRIPTION"></a>
+<h2>DESCRIPTION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Transcend (Transfer/Send Data) is the NXP&rsquo;s Managed
+File Transfer solution. It is widely used by R&amp;D,
+Applications Engineering and Marketing teams to exchange
+information. While primarily focused on the Linux
+environment, clients are also available for Windows, Solaris
+and the Web. In production for many years, users tend to
+find transcend more convenient than ftp, scp, or rsync
+solutions for data exchange and around 20,000 transfers per
+month are performed using the tool. Secure data repositories
+are distributed world-wide to optimize data posting and
+retrieval.</p>
+<!-- INDENTATION -->
+<p>To handle the increasing number of Transcend transactions
+and to provide faster data transfer throughout the world,
+multiple Transcend repositories are present. Repositories
+are present in Austin, Munich, Noida, and DTMS. During data
+transfer, the default repository is set to the server
+nearest to the user&rsquo;s site. The user can specify an
+alternate repository in the .transrc file or with an option
+on the command line.</p>
+<!-- INDENTATION -->
+<p>Two types of Transcend commands are provided - basic
+commands and advanced commands. The basic commands allow
+users to put, get, delete, and view information about
+specified files. The advanced commands provide additional
+features requested by users.</p>
+</td>
+</table>
+<a name="BASIC COMMAND OPTIONS"></a>
+<h2>BASIC COMMAND OPTIONS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Calling with no arguments prints a help screen.</p></td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="2%">
+
+<p><b>&minus;a</b></p>
+</td>
+<td width="13%"></td>
+<td width="61%">
+
+<p>Print a help screen for advanced commands.</p>
+</td>
+<td width="10%">
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="2%">
+
+<p><b>&minus;A</b></p>
+</td>
+<td width="13%"></td>
+<td width="61%">
+
+<p>Display advanced put/get options.</p>
+</td>
+<td width="10%">
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;d keyword | all</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Delete file or directory associated with the specified
+keyword. This command is executed after all users have
+retrieved a copy of the data. If one of the users with the
+file keyword does not delete the data, it is automatically
+deleted three working days after it was transcended thus
+keeping the disk free for the transfer of other large files.
+If the customer types &rsquo;trans -d all&rsquo;, data for
+all keywords the user has transferred to the Transcend
+repository is deleted.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;g keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Retrieve the file or directory from Transcend associated
+with the specified keyword. Data retrieved is placed in the
+user&rsquo;s current working directory. If the data is
+already present, the user is asked if he wants to overwrite
+the existing data.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;h keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Retrieve history for file or directory associated with
+the specified keyword. A summary of all commands performed
+on the data is shown. History can be retrieved for up to two
+weeks after the expiration date of a file or directory.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;i all | keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Retrieve information about a file or directory associated
+with the specified keyword. Information retrieved includes
+file name, size, creator, date transcended, expiration date,
+data type, platform, and site. If the customer types
+&rsquo;trans -i all&rsquo;, a list of keywords for data the
+customer has transferred to the Transcend repository is
+shown.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;p [-site] file | directory
+[e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Put a file or directory in the Transcend repository.
+Transcend repositories are present in Austin, Munich, Noida,
+and DTMS. During data transfer, the default site is set to
+the server nearest to the customer&rsquo;s site. To specify
+a specific Transcend site, use the abbreviations
+&minus;aus&rsquo;, &rsquo;-mun&rsquo;, &rsquo;-idc&rsquo;,
+and &rsquo;-dtms&rsquo; for the Austin, Munich, Noida, and
+DTMS sites respectively.</p>
+<!-- INDENTATION -->
+<p>Files, directories, and groups of files of any size may
+be transferred. Files are compressed during data transfer
+and uncompressed during data retrieval. Directories are
+tarred and compressed during data transfer and uncompressed
+and untarred during data retrieval.</p>
+<!-- INDENTATION -->
+<p>After data transfer, the user is given a randomly
+generated 9 character file keyword he can give to any
+user[s] wishing to retrieve the data. If one or more e-mail
+addresses are specified, a personal secure keyword is sent
+to the specified e-mail addresses. Personal secure keywords
+are valid only for the users who receive them via e-mail.
+Both file and secure keywords contain 4 lower case
+alphabetic characters (a-z), followed by four numeric
+characters (0-9), and terminated with an alphabetic
+character. The ninth character for file keywords is a lower
+case letter and an upper case letter for secure
+keywords.</p>
+<!-- INDENTATION -->
+<p>During directory transfer, gtar or gnutar is used to
+bundle/unbundle the data if it is present on the
+user&rsquo;s machine. Otherwise, tar is used.
+Incompatibilities are sometimes present if the sender of the
+data has gtar installed on their machine, and the receiver
+does not. The receiver can avoid incompatibilities by
+installing gtar on his machine. Customers may also force the
+use of tar instead of gtar by using the &rsquo;-pt&rsquo;
+and &rsquo;-gt&rsquo; options when putting and getting data
+respectively.</p>
+</td>
+</table>
+<a name="ADVANCED COMMAND OPTIONS"></a>
+<h2>ADVANCED COMMAND OPTIONS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;1 [-site] WBI User ID</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display information about NXP customers with an entry in
+the LDAP directory. Data displayed includes name, phone,
+department, etc. This command is identical to the
+&rsquo;User command&rsquo; with the exception that
+registered Transcend sites are not displayed. This command
+runs faster than the &rsquo;User command&rsquo; because time
+to look up the user in the Transcend registry is
+eliminated.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;b keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Retrieve list of files in directory associated with
+specified keyword.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;B keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display list of files in directory associated with
+specified keyword.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;c [-site] all | keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Cancel previously set e-mail notification. If a keyword
+is given, e-mail notification is cancelled only for the file
+or directory associated with the keyword. If the word
+&rsquo;all&rsquo; is used, e-mail notification is cancelled
+for all files the user has placed in Transcend except those
+for which e-mail notification has been explicitly set using
+the file keyword.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;C WBI User ID</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display e-mail address and name for specified WBI User
+ID.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;D keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Set delete lock for file or directory associated with the
+specified keyword. Only the user who transcended the data,
+referred to as the owner, can use this option. When the
+delete lock is set, no one except the owner can delete the
+data. This option is useful when a user is distributing data
+to more than one customer and wants to prevent the customers
+from deleting the data before all of the customers have
+retrieved the data. However, even with the delete lock set,
+the data is still deleted by the Transcend audits when the
+expiration date is reached.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;e keyword [days]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Extend the expiration date on a file or directory
+associated with the specified keyword one to three
+additional working days. If the user does not enter a value
+for days on the command line, he is prompted for a
+value.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;E keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Cancel delete lock for the file or directory associated
+with the specified keyword. Only the user who transcended
+the data, referred to as the owner, can cancel the delete
+lock. This option is used when the owner no longer needs to
+protect data from being deleted by other users.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;f [-site] file... | directory...</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Put files or directories listed on the command line into
+the Transcend repository. The files and directories are
+tarred and compressed during data transfer and untarred and
+uncompressed during data retrieval. The data is put in the
+receiving user&rsquo;s current working directory as separate
+files and directories. Wild cards can be used to specify the
+file and directory names.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;F [-site] file... | directory...</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Put multiple files or directories in the Transcend
+repository and delete after the first successful retrieval.
+The files are tarred and compressed during data transfer and
+untarred and uncompressed during data retrieval. The files
+and directories are put in the receiving user&rsquo;s
+current working directory as separate files and directories.
+Wild cards can be used to specify the file and directory
+names.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;G keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Get the file or directory from Transcend associated with
+the specified keyword and delete from Transcend after the
+current retrieval.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;H -command</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display detailed help for specified command i.e.
+&rsquo;trans -H -p&rsquo;</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="5" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="2%">
+
+<p><b>&minus;I</b></p>
+</td>
+<td width="13%"></td>
+<td width="54%">
+
+<p>Display defined iCAP classifications.</p>
+</td>
+<td width="17%">
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;j e-mail justification</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Just request approval for an external customer. The
+customer&rsquo;s e-mail address and the justification for
+the approval are passed on the command line. The request is
+submitted to the EDC system and can be approved by the
+user&rsquo;s manager.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;J keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Retrieve file or directory name for the specified
+keyword.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;k [-site] directory file...</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Package files listed on the command line into a directory
+and put the directory in the Transcend repository. This
+option is like the -f option except the files are bundled
+together in a directory during data transfer and are
+retrieved in the directory during data retrieval. The
+directory the files are placed in is a symbolic directory
+and does not need to be present on the user&rsquo;s disk.
+Wild cards can be used to specify the file names. Only files
+can be placed in the directory. Other directories cannot be
+included.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;K [-site] directory file...</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Package files in specified directory, transcend the
+directory, and delete after the first successful retrieval.
+This option is like the -F option except the files are
+bundled together in a directory during data transfer and are
+retrieved in the directory during data retrieval. The
+directory the files are placed in is a symbolic directory
+and does not need to be present on the user&rsquo;s disk.
+Wild cards can be used to specify the file names. Only files
+can be placed in the directory. Other directories cannot be
+included.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;l keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display original, compressed, and stored file length of
+file or directory associated with the keyword. This option
+provides a method for the user to verify data in the
+Transcend repository is the correct size. If the compressed
+and stored data size are 0, the data was not successfully
+transferred.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;L keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Lock data to prevent retrieval. This command is useful
+when the user has placed a file/directory in Transcend and
+wants to wait for a period of time before allowing other
+users to retrieve the data.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;m keyword e-mail...</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Mail multiple users a 9 character personal secure keyword
+for the file or directory associated with the specified
+keyword. Each user is specified by his friendly NXP e-mail
+address i.e. transbug@nxp.com. The personal secure
+keywords sent to users may only be used by the user who
+receives the keyword. Secure keywords may be used to perform
+all transactions file keywords are used for. Secure keywords
+can be sent using the -N, -P, -T, -Z, -n, -p, -t, and -z
+options.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="13%"></td>
+<td width="2%">
+
+<p><b>&minus;M</b></p>
+</td>
+<td width="5%"></td>
+<td width="77%">
+
+<p>Release shared memory blocks no longer being used. This
+command is executed to clean up shared memory not properly
+released when parallel data transfers are aborted or
+interrupted.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;n [-site] file [e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Transcend files listed in the named file. This option is
+like the -f option except the file names are listed in a
+file rather than on the command line. Names within the file
+must be put on separate lines. Blank lines cannot be present
+in the file. Wild cards cannot be used within the file, and
+directory names cannot be included. Secure keywords may be
+sent to multiple users (see the -m option).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;N [-site] file [e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Transfer files listed in the named file and delete after
+the first successful retrieval. This option is like the -F
+option except the file names are listed in a file rather
+than on the command line. Names within the file must be put
+on separate lines. Blank lines cannot be present in the
+file. Wild cards cannot be used within the file, and
+directory names cannot be included. Secure keywords may be
+sent to multiple users (see the -m option).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;o [-site]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Obtain user&rsquo;s registration status. This option is
+useful when the user wants to see if he is registered
+without performing registration.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;O [-company] file | directory
+[e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Transfer duplicate files to the mask shop. Checks are in
+place to prevent duplicate files from being sent to the mask
+shop. Using this option overrides the checks in place and
+allows duplicate files to be transferred.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;P [-site] file | directory
+[e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Put a file or directory in Transcend and delete after the
+first successful retrieval. This option is used when a file
+will be retrieved by only one user.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;q | -ql [-site] | [all]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display list of file keywords for data user has uploaded
+to the Transcend repository. If a site is not specified,
+keywords for the closest site are shown. If the site is set
+to &rsquo;all&rsquo;, keywords for all sites are displayed.
+The list of keywords is shown in reverse chronological
+order, and the symbol &rsquo;+&rsquo; or &rsquo;-&rsquo;
+indicates if the file data is still present in the
+repository. If the -ql option is used, a long list of file
+keywords for data the user has uploaded is displayed. This
+list includes a history of transactions performed for each
+keyword. If the user has write permission in his current
+working directory, the list of key- words is saved in a file
+called &rsquo;file_keywords&rsquo;.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;Q | -Ql [-site] | [all]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>display list of personal secure keywords received from
+other users. If a site is not specified, keywords for the
+closest site are shown. If the site is set to
+&rsquo;all&rsquo;, keywords for all sites are displayed. The
+list of keywords is shown in reverse chronological order,
+and the symbol &rsquo;+&rsquo; or &rsquo;-&rsquo; indicates
+if the file data is still present in the repository. If the
+-Ql option is used, the list of secure keywords includes a
+history of transactions performed for each keyword . If the
+user has write permission in his current working directory,
+the list of keywords is saved in a file called
+&rsquo;secure_keywords&rsquo;. Only secure keywords for the
+user&rsquo;s registered e-mail address are shown. Secure
+keywords sent to other users are not displayed. This feature
+is useful when the user has lost or has not received e- mail
+messages with secure keywords from other users.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;r [[release] | [documentation]]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display list of commands used to retrieve Transcend
+releases and documents. Transcend is available on the
+following platforms: Solaris, Linux, MacOS X, and
+Windows.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;R [-site] WBI User ID [Directory
+Password]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Perform Transcend registration. This option is useful
+when a user wants to register without executing another
+Transcend command. If the user does not enter his Active
+directory Password on the command line, he is prompted for
+the password, and the password is not echoed to the
+screen.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;s [-site] all | keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Set e-mail notification for one or more files. When
+e-mail notification is set, the user receives e-mail each
+time one of his files is retrieved from Transcend. If a
+keyword is used, e-mail notification is set only for the
+associated data. If the word &rsquo;all&rsquo; is used,
+e-mail notification is set for all of the user&rsquo;s data.
+The user may set Email notification only for data he has
+transcended.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="2%">
+
+<p><b>&minus;S</b></p>
+</td>
+<td width="7%"></td>
+<td width="77%">
+
+<p>View status of Transcend/InterCom servers. This command
+is used by the GUI to verify supported servers are
+active.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;t [-site] file | directory
+[e-mail]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Tar a directory tree following symbolic links and
+transfer to the Transcend repository. This option is
+different from the &rsquo;-p&rsquo; option because symbolic
+links are not followed with the &rsquo;-P&rsquo; option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;T [-site] directory [e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Tar a directory tree following symbolic links, transfer
+to the Transcend repository, and delete after the first
+successful retrieval. This option is different from the -P
+option because symbolic links are not followed with the -P
+option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;u [-site] WBI User ID</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display information about user retrieved from LDAP
+directory. The user&rsquo;s name, e-mail address, telephone
+number, department, location code, and mail drop are
+displayed. Registered Transcend sites are also shown. If the
+user is not present in the LDAP directory, no information is
+returned even if the user is a registered Transcend
+user.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;U keyword</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Unlock data to allow data retrieval. This option is used
+to unlock data previously locked for retrieval with the
+&rsquo;-L&rsquo; option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;v [-site]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Display program version, default server machine, local
+machine, Transcend log directory, etc. If a site is
+specified, information about the site is shown.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;V [site]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>View list of personal secure keywords received. If a site
+is specified, keywords are shown for that site. Otherwise,
+keywords are displayed for the site closest to the user. If
+the user has write permission in his current working
+directory, the list of keywords is saved in a file called
+&rsquo;secure_keywords&rsquo;. Only secure keywords
+associated with the user&rsquo;s registered e-mail address
+are shown. Secure keywords sent to other users are not
+shown. This feature is useful when the user has lost or has
+not received e-mail messages with secure keywords from other
+users. This option is identical to the -Q option.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;w [-site]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Ping dropbox machine to verify it is alive.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;W [-site]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Silent ping to dropbox machine. Historically, this option
+was used to keep VPN tunnels alive. Since VPN tunnels are no
+longer used, this command is rarely used.</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="4%">
+
+<p><b>&minus;x</b></p>
+</td>
+<td width="5%"></td>
+<td width="77%">
+
+<p>Display Transcend sites and external companies. The
+company name and site abbreviation are shown.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="4%">
+
+<p><b>&minus;X</b></p>
+</td>
+<td width="5%"></td>
+<td width="77%">
+
+<p>Display defined Transcend/InterCom server repositories.
+Currently defined server repositories include Austin,
+Munich, Noida, DTMS, External TransWeb Customer,
+Send2foundry, and ITAR.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="4%">
+
+<p><b>&minus;x</b></p>
+</td>
+<td width="5%"></td>
+<td width="77%">
+
+<p>Display defined Transcend sites&quot;</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>The site name and site abbreviation are shown. Currently
+defined sites include: Austin, Munich, Noida, DTMS, External
+TransWeb Customer, Send2Foundry, and ITAR.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;y customer-e-mail</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Approve external customer to retrieve data from NXP.</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;z [-site] directory file
+[e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Zip/package files listed in the named file into a
+directory and transfer to the Transcend repository. This
+option is like the -k option except the file names are
+listed in a file instead of on the command line. Names
+within the file must be put on separate lines. Blank lines
+cannot be present in the file. Wild cards cannot be used
+within the file, and directory names cannot be included.
+Like the -k option, the files are bundled together in a
+directory during data transfer and retrieved in the
+directory during data retrieval. Secure keywords may be sent
+to multiple users (see the -m option).</p>
+</td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p><b>&minus;Z [-site] directory file
+[e-mail...]</b></p></td>
+</table>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="21%"></td>
+<td width="77%">
+<p>Zip/package listed files into the specified directory,
+transcend the directory, and delete after the first
+successful retrieval. This option is like the -K option
+except the file names are listed in a file rather than on
+the command line. Names within the file must be put on
+separate lines. Blank lines cannot be present in the file.
+Wild cards cannot be used within the file, and directory
+names cannot be included. Secure keywords can be sent to
+multiple users (see the -m option).</p>
+</td>
+</table>
+<a name="PARALLEL DATA TRANSFER"></a>
+<h2>PARALLEL DATA TRANSFER</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Parallel upload/download of zipped files was added in
+version 7.0 of Transcend. Parallel transfer is automaticly
+done for files greater than 100 Mb in size. Parallel
+transfer provides a 1-6X increase in transfer speeds. The
+increase in transfer speed is dependent on the machine the
+Transcend client is running on, the repository data is being
+transferred to, the band width of the data line, and the
+network load.</p>
+<!-- INDENTATION -->
+<p>Customers can force uploads of files and directories to
+be done with parallel or serial transfer using the -pl and
+-ps options respectively. Parallel upload is not done for
+files less than 5 Mb in size even if specified on the
+command line. The size for performing parallel upload can
+also be set in the .transrc file. A sample .transrc file
+which sets the size to 10 Mb can be retrieved with Transcend
+by typing &rsquo;trans -r .transrc&rsquo;.</p>
+<!-- INDENTATION -->
+<p>During parallel upload, 10 client processes
+simultaneously read from the file being transferred and send
+the data to the server. On the server 10 processes
+simultaneously read the data and write it to the file being
+uploaded. The reverse process is performed when data is
+retrieved. To verify data integrity, byte checksums are
+calculated by the client and server as the data is
+transferred. If the checksum or file size is not correct,
+the file transferred is deleted, and an error message is
+displayed to the user.</p>
+<!-- INDENTATION -->
+<p>Shared memory is used when parallel transfers are
+performed. The shared memory is released when transfer
+completes. Sometimes shared memory is not properly released
+for some error conditions. To view the shared memory in use,
+type &rsquo;ipcs&rsquo;. To release any shared memory in
+use, type &rsquo;trans -M&rsquo;.</p>
+</td>
+</table>
+<a name="DATA ENCRYPTION"></a>
+<h2>DATA ENCRYPTION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Data encryption with SSL was added in version 8.0 of
+Transcend. All data transferred using version 8.0 or later
+versions of Transcend is automaticly encrypted as it travels
+across the network. Data stored in the Transcend data
+repositories is not encrypted, and the data is not encrypted
+after it is retrieved and written to the user&rsquo;s disk.
+Data encryption was added to provide increased security and
+meet Export control regulations. The Austin and DTMS
+Transcend servers are Export Control compliant.</p>
+</td>
+</table>
+<a name="REGISTRATION"></a>
+<h2>REGISTRATION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>In order to use Transcend, the user must be a registered
+Transcend user. The first time a user runs Transcend, auto
+registration is attempted. The user is prompted for his user
+ID (WBI User ID) and his Active Directory Password (web
+password). If the user enters a correct User ID and Active
+directory Password in the NXP LDAP directory, the user is
+registered. If registration is not successful, the user must
+obtain a WBI User ID and Central Directory Password.</p>
+<!-- INDENTATION -->
+<p>To prevent users from entering identification each time
+they use Transcend, users are registered by their site -
+their login name and the first three octets of their IP node
+address. The user&rsquo;s site uniquely identifies him, and
+the Transcend client knows the user&rsquo;s site without
+user input. If a user runs Transcend on a different network
+or using a different login, he must register to use
+Transcend at the new site.</p>
+</td>
+</table>
+<a name="TRANSCEND CONFIGURATION FILE"></a>
+<h2>TRANSCEND CONFIGURATION FILE</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>Users can configure some Transcend options using a
+configuration file stored in their home directory The
+configuration file is optional, and default settings are
+used if it is not present. named .transrc. Options which can
+be configured include:</p>
+</td>
+</table>
+<!-- TABS -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="4" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>-</p>
+</td>
+<td width="8%"></td>
+<td width="77%">
+
+<p>Default Transcend site.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>-</p>
+</td>
+<td width="8%"></td>
+<td width="77%">
+
+<p>Directory the trans.log file is placed in.</p>
+</td>
+<tr valign="top" align="left">
+<td width="11%"></td>
+<td width="1%">
+
+<p>-</p>
+</td>
+<td width="8%"></td>
+<td width="77%">
+
+<p>Type of feedback to the user during data transfer, via
+size or time.</p>
+</td>
+</table>
+<a name="INSTALLATION"></a>
+<h2>INSTALLATION</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>The Transcend client (trans) resides on the user&rsquo;s
+disk or computer ring. For Unix platforms, the software is
+present in /usr/fsl/bin and in the MTR. The current package
+name is fs-transcend-/9.1. Releases can also be retrieved
+from our web site - http://transcend.freescale.net For the
+Windows GUI, the executable is simply placed on the
+user&rsquo;s machine. No other installation is needed. For
+the Windows command line three DLL files are needed with the
+Transcend executable file. These files should be placed in a
+system directory or in a directory in the user&rsquo;s
+path.</p>
+</td>
+</table>
+<a name="CONTACTS"></a>
+<h2>CONTACTS</h2>
+<!-- INDENTATION -->
+<table width="100%" border=0 rules="none" frame="void"
+       cols="2" cellspacing="0" cellpadding="0">
+<tr valign="top" align="left">
+<td width="10%"></td>
+<td width="89%">
+<p>To obtain a copy of Transcend, obtain help with Transcend
+registration, or for technical questions, please contact
+Transcend team (transbug@nxp.com). You can also retrieve
+copies of Transcend and Transcend documentation at web site
+http://transcend.freescale.net</p>
+</td>
+</table>
+<hr>
+</body>
+</html>

@@ -1,0 +1,54 @@
+use a command like
+---------------------------------------------
+
+ openssl x509  -noout -text  -in  trans.ssl.pem                                            
+
+
+
+Output
+------------------------------------------------------------
+
+Certificate:                                                                                                                                                         
+    Data:                                                                                                                                                            
+        Version: 3 (0x2)                                                                                                                                             
+        Serial Number: 0 (0x0)                                                                                                                                       
+    Signature Algorithm: md5WithRSAEncryption                                                                                                                        
+        Issuer: C=US, ST=Texas, L=Austin, O=Freescale Semiconductor Inc., OU=Freescale, CN=transcend.freescale.net/emailAddress=renee.carter@freescale.com           
+        Validity                                                                                                                                                     
+            Not Before: Aug  2 19:03:25 2010 GMT                                                                                                                     
+            Not After : Nov 14 19:03:25 2013 GMT                                                                                                                     
+        Subject: C=US, ST=Texas, L=Austin, O=Freescale Semiconductor Inc., OU=Freescale, CN=transcend.freescale.net/emailAddress=renee.carter@freescale.com          
+        Subject Public Key Info:                                                                                                                                     
+            Public Key Algorithm: rsaEncryption
+                Public-Key: (1024 bit)
+                Modulus:
+                    00:e3:9d:7b:84:8a:18:c7:d1:5c:ad:ba:35:a1:c8:
+                    a1:35:45:fc:41:78:88:0d:15:e9:c7:96:83:f7:6d:
+                    ec:11:c9:7d:b8:7a:63:11:5f:65:59:1c:a0:79:5c:
+                    a2:9f:e7:8f:cf:c5:b6:37:0a:fb:aa:92:67:96:9d:
+                    0a:d9:57:b7:58:2e:11:40:fc:a7:0d:2e:95:60:fe:
+                    2b:41:e6:e1:bb:05:44:b5:0c:05:7b:82:ae:48:5e:
+                    bb:12:4b:62:2b:5a:3c:96:d9:27:7d:77:d5:f1:b2:
+                    56:df:8a:8f:86:3b:a5:2d:de:55:0c:90:4e:63:da:
+                    58:b6:21:6f:02:62:e0:3d:55
+                Exponent: 65537 (0x10001)
+        X509v3 extensions:
+            X509v3 Subject Key Identifier:
+                7F:03:39:34:73:81:44:CC:24:E1:88:EB:77:83:43:FA:2D:BE:5D:F1
+            X509v3 Authority Key Identifier:
+                keyid:7F:03:39:34:73:81:44:CC:24:E1:88:EB:77:83:43:FA:2D:BE:5D:F1
+                DirName:/C=US/ST=Texas/L=Austin/O=Freescale Semiconductor Inc./OU=Freescale/CN=transcend.freescale.net/emailAddress=renee.carter@freescale.com
+                serial:00
+
+            X509v3 Basic Constraints:
+                CA:TRUE
+    Signature Algorithm: md5WithRSAEncryption
+         62:e6:f1:f8:26:49:22:b1:b5:1e:e3:ab:81:85:62:e9:1f:72:
+         2d:e0:48:f8:1c:2f:00:74:fa:98:99:23:a0:79:89:72:fd:3f:
+         1f:16:06:c3:60:ea:20:41:f0:8f:b2:b2:28:1d:d9:7c:ed:38:
+         bb:87:54:f2:e7:3c:3e:fc:69:9f:1c:7f:5e:cb:ca:a4:18:1e:
+         51:47:69:d4:d6:a0:a3:83:03:6c:85:83:01:60:5f:93:c5:b4:
+         60:00:8c:6d:7c:0d:bb:1f:39:1d:5d:04:9d:eb:7f:30:79:ff:
+         b2:6e:db:8d:f6:93:25:b8:17:fa:eb:62:5e:13:20:d3:e0:98:
+         8c:6f
+

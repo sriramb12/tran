@@ -1,0 +1,113 @@
+#
+# March 2018, Carlos Mazieri, an attempt of unify all third party libraries used in Makefiles
+# May 2021, Benjamin Alvarez
+#
+
+MACHINE =  LINUX
+
+OS = $(shell uname)
+
+ifeq ("$(OS)", "SunOS")
+     SOLARIS  := 1
+     OS       := SOLARIS
+endif
+
+ifneq ($(SOLARIS),)
+  MACHINE := SOLARIS
+else
+  ifneq (,$(findstring CYGWIN,$(OS)))
+      # pipe does not work on Windows for a cygwin application, inside Cygwin environment it does
+      TAR_OPTION := tar_problem
+      EXTERNAL_TRANSCEND_ENV_CFLAGS += -DCGWIN_BUILD
+      OS := CYGWIN
+  endif
+endif
+
+ifeq ("$(OS)", "Darwin")
+  ## Solaris here means Unix Standard, so we can use it
+  MACHINE := SOLARIS
+  $(shell touch global_include/malloc.h)
+endif
+
+RED_HAT_4 =
+RED_HAT_5 =
+RED_HAT_6 =
+RED_HAT_7 =
+RED_HAT_8 =
+
+## try to specify which Linux if it is Any RedHat Linux
+ifeq ("$(OS)", "Linux")
+    ifneq ("$(wildcard /etc/redhat-release)","")
+        RED_HAT_4       := $(shell grep 'release 4'  /etc/redhat-release)
+        RED_HAT_5       := $(shell grep 'release 5'  /etc/redhat-release)
+        RED_HAT_6       := $(shell grep 'release 6'  /etc/redhat-release)
+        RED_HAT_7       := $(shell grep 'release 7'  /etc/redhat-release)
+        RED_HAT_8       := $(shell grep 'release 8'  /etc/redhat-release)
+        ifneq ($(RED_HAT_4),)
+    # there is no SSL TWW in the Red-Hat 4 server, so forcing to use from OS
+            USE_OS_SSL := 1
+            OS := RH4
+        endif
+        ifneq ($(RED_HAT_5),)
+            OS := RH5
+        endif
+        ifneq ($(RED_HAT_6),)
+            OS := RH6
+        endif
+        ifneq ($(RED_HAT_7),)
+            OS := RH7
+        endif
+        ifneq ($(RED_HAT_8),)
+            OS := RH8
+        endif
+    endif
+endif
+
+$(info libraries.def [almost done] variable = $(OS) SERVER=$(SERVER) USE_OS_SSL=$(USE_OS_SSL) )
+
+ifneq ($(SERVER),)
+    ifeq ("$(OS)", "RH7")
+        USE_OS_SSL   := 1 
+        USE_OS_LDAP  := 1 
+        USE_OS_MYSQL := 1
+    endif
+    ifeq ("$(OS)", "RH8")
+        USE_OS_SSL   := 1 
+        USE_OS_LDAP  := 1 
+        USE_OS_MYSQL := 1
+    endif
+endif
+
+# Define versions for custom builds of transftp-server
+ifeq ("$(BUILD_MODULE)", "build-transftp-server")
+  ifeq ("$(OS)", "RH6")
+      LIBSSLV := 1.0.2u_with_DES
+      LIBSSH2V := 1.9.0
+      LIBCURLV := 7.68.0
+  else
+    ifeq ("$(OS)", "RH7")
+        # RH7
+        #----------------------------------
+        # Jan/2021 RH7, reverted to use CURL library from OS, custom Curl Library caused a
+        # crash on ldap_simple_bind_s when doing many connections (only send_file)
+        #----------------------------------
+        # May/2021, A custom CURL version is generated to increment CURL_MAX_WRITE_SIZE
+        # using custom libcurl 7.29.0, libssh2 1.9.0
+        #----------------------------------
+        # USE_OS_CURL := 1
+        # LIBSSH2 := /usr/lib64/libssh2.so.1
+        # LIBSSLV := 1.0.2u_with_DES
+        USE_OS_SSL   := 1
+        LIBSSH2V := 1.9.0
+        LIBCURLV := 7.29.0
+    else
+       USE_OS_CURL := 1
+    endif
+  endif
+endif
+
+$(info libraries.def final OS variable = $(OS) SERVER=$(SERVER) USE_OS_SSL=$(USE_OS_SSL) USE_OS_LDAP=$(USE_OS_LDAP) USE_OS_MYSQL=$(USE_OS_MYSQL))
+
+include libmysql.def
+include libopenldap.def
+include libopenssl.def

@@ -1,0 +1,841 @@
+RELEASE NOTES
+=============
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   June  2021
+====
+
+
+1. Main Purpose:  Fix very slow design data transfer with DTMS to TSMC
+                  This was related with a fix applied in SVN revision 1299 (commit 180f08f7),
+                  so a custom libcurl version compatible with RH7 was generated to fix the issue.
+
+
+2. Changes:
+   SVN repository has been migrated to Git
+   Commits can be checked at https://gitlab.rnd.nxp.com/rd-di-nxp-de-tr/datatransport/transcend/-/commits
+
+  Commit       |  Description
+  =================================================================================================================================================================
+     0db50531  |  Modified build scripts for transftp-server in order to allow custom builds of different CURL, libssh2 and openssl versions for RH7.
+
+
+
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   February  2021
+====
+
+
+1. Main Purpose:  Fix bug with check_disk_usage() which prevented receiveing files due to an incorrect lack of space error reporting "No space available".
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number. 
+
+  Revision     |  Description
+  =================================================================================================================================================================
+     1784      | Added get_random_index() function to replace check_disk_usage(), since previous implementations of the transcend system used diferent disk partitions on a physical server and has since migrated to a single partition disk space rendering this function unnecessary.  
+    
+
+
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   January  2021
+====
+
+
+1. Main Purpose:  transFTP/Send2Foundry must get GDS from 'Data Pool' as 'Design Sync' will be deactivated.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+     1764      | Implemented gettging GDS from Data Pool, the script copies the GDS from data pool replacing the design sync script.
+     1765      | reverted libcurl to be used from OS, ujsing the customized version, LDAP crashes in bind() after a couple of connections (no idea why).
+    
+
+
+
+    
+    
+
+VERSION:  (it does not change)
+=======
+
+DATE:   November  2020
+====
+
+
+1. Main Purpose:  Clients should use alias hostnames, it would be easy to migrate server machines.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+    1759       | Clients hostname changed to use aliases, IP address was not changed as it seems to not make any difference.
+    
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   October  2020
+====
+
+
+1. Main Purpose:  TransFTP be able to use RSA key file for authentication.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+    1756       | Send2Foundry: introduced the SFTP authentication using SSH_PUBLIC_KEYFILE ~/.ssh/id_rsa.pub
+    
+
+
+
+
+
+
+
+VERSION:  transcend 9.3.7 and icom 7.8
+=======
+
+DATE:   August  2020
+====
+
+
+1. Main Purpose:  Fix email rejecting from Synopsys on Intercom server.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+    1755       | Intercom points to intecom.nxp.com
+    
+
+
+    
+VERSION:  (it does not change)
+=======
+
+DATE:   August  2020
+====
+
+
+1. Main Purpose:  Fix email rejecting from Synopsys on Intercom server.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+    1754       | added '-f sender@domain' to /usr/lib/sendmail command calls.
+    
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   July  2020
+====
+
+
+1. Main Purpose: A intercom fails fails on a specific scenario:  
+                 The file is compressed (gzipped) and its size is about 230 MB and its put is perrfomed by a use that is not a LDAP such as 'dtms'. 
+                 When retrieving the file is decompressed and it is not expected.
+                 If the size is greater than 500 MB it works because this size actiuvates parallel transfer.
+                 The issue:
+                 ---------
+                   The problem is as the user is not present a LDAP, the 'own_id' is empty and it creates a wrong information file in global data (the header line):
+                   Wrong file put performed by 'dtms'              Good file put performed by carlos_mazieri_nxp_com
+                   -----------------------------------             ------------------------------------------------
+                   e 9 1596076702  2 0 2 u 33056 2 0 0             e 9 1595614365 carlos.mazieri@nxp.com 2 0 2 u 33206 2 0 0
+                   File:        t0733521C4A.gds2.gz                File:        t0733521C4A.gds2.gz
+                   User size:   23560388 bytes                     User size:   23560388 bytes
+                   Compressed:  23560388 bytes                     Compressed:  23560388 bytes
+                   Keyword:     husg8431e                          Keyword:     pqdq2375t
+                   Creator:     dtms dtms                          Creator:     Carlos Mazieri
+                   
+                  So the 'own_id' is missing on the header lines causing the other fields have wrong content, then the "compression" which is the latest '2' meaning NON-COMPRESSION is not read.
+                  
+                  For some reason this problem did not happen on 'transcend' server, but the bug was correct anyway.
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+    1751       | Automated Tests: Added test case for user 'dtms' (not in LDAP) using compressed file smaller than 100 MB (not parallel transfer).
+    1752       | Fixed the information file generatinon in "global_data" directory, it is a work around since this piece of code is intended to be unified between transcend and intercom servers.
+     
+             
+
+             
+             
+             
+
+VERSION:  (it does not change)
+=======
+
+DATE:   July  2020
+====
+
+
+1. Main Purpose: Put in place new Intercom server (intercom.nxp.com) and migrate from current intercom.freescale.com
+                 The main idea is to perform a smooth  migration, that means: service will be not stopped and the user will not notice any change. 
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+     1748      | Intercom servers will keep their curent port when sending WRONG_SERVER message to the client, it will help on Intercom migration.
+     1750      | Clients changed to intercom.nxp.com
+             
+
+             
+             
+VERSION:  (it does not change)
+=======
+
+DATE:   May  2020
+====
+
+
+Main Purpose: transFTP fails for Synopsys on probing for SFTP, fix that using work around already oin place for CURL error CURLE_REMOTE_FILE_NOT_FOUND.
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+     1745      | transFTP: fixed probing SFTP when server does not allow create directories
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   May  2020
+====
+
+
+Main Purpose: 1. change "transFTP server" build for RH6 as it needs special library versions:
+                       OSS-openssl-1.0.2u_with_DES, OSS-libssh2-1.9.0 and OSS-curl-7.68.0.
+
+                       * [customized]       lib/RH7/run/pkg/OSS-curl-/7.68.0/lib/libcurl.a
+                       * [customized]       lib/RH6/run/pkg/OSS-libssh2/1.9.0/lib/libssh2.a
+                       * [customized]       lib/RH6//run/pkg/OSS-openssl-/1.0.2u_with_DES/lib/libssl.a
+                       * [customized]       lib/RH6//run/pkg/OSS-openssl-/1.0.2u_with_DES/lib/libcrypto.a
+
+                       Libraries used in the command line for RH6:
+
+                        lib/RH6//run/pkg/OSS-curl-/7.68.0/lib/libcurl.a
+                        lib/RH6/run/pkg/OSS-libssh2/1.9.0/lib/libssh2.a -lgcrypt  -lpthread -lrt \
+                        lib/RH6//run/pkg/OSS-openssl-/1.0.2u_with_DES/lib/libssl.a
+                        lib/RH6//run/pkg/OSS-openssl-/1.0.2u_with_DES/lib/libcrypto.a \
+                        -Wl,-rpath,/usr/lib64/mysql -L/usr/lib64/mysql -lmysqlclient -lldap -llber zlib/libz.a
+                        -lm -ldl -o ./ssl.tftpd
+
+
+                 in RH7 it works using:
+                   * [customized]       lib/RH7/run/pkg/OSS-curl-/7.68.0/lib/libcurl.a
+                   * [system]           openldap-devel-2.4.44
+                   * [system]           openssl-libs-1.0.2k
+                   * [system]           libssh2-1.4.3
+
+                    Libraries used in the command line for RH7:
+
+                        lib/RH7//run/pkg/OSS-curl-/7.68.0/lib/libcurl.a \
+                        /usr/lib64/libssh2.so.1 -lpthread -lrt \
+                        -Wl,-rpath,/usr/lib64/mysql -L/usr/lib64/mysql -lmysqlclient  -lldap -llber  zlib/libz.a \
+                        -lssl -lcrypto \
+                        -lm -ldl -o ./ssl.tftpd
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+      1735     | transFTP build: only RH6 uses customized SSL libraries; RH7 already uses version 1.0.2.
+      1736     | transFTP build: build for custom libraries creation: libssh2, libopenssl and llibcurl for Rh6 if they exist
+      1737     | transFTP build: build for custom libraries creation: libssh2 and libcurl for RH6 when they do not exist
+      1742     | Servers build on RH7 and RH8: all servers using OS libraries BUT libcurl.
+
+
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   April  2020
+====
+
+
+Main Purpose: 1. Fix the SFTP authentication problem on GlobalFoundries.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision     |  Description
+  =================================================================================================================================================================
+   1732        | Improved SFTP authentication method:
+                 They should have changed some option on /etc/sshd_config that is making this to fail, for other foundries SFTP authentication works.
+                 It was already forcing PASSWORD authentication, but the server was using "PUBLIC KEY" authentication. So the line:
+
+                    curl_easy_setopt(curl, CURLOPT_SSH_AUTH_TYPES, CURLSSH_AUTH_PASSWORD);
+
+                 has been changed to:
+
+                    curl_easy_setopt(curl, CURLOPT_SSH_AUTH_TYPES, CURLSSH_AUTH_PASSWORD | CURLSSH_AUTH_KEYBOARD);
+
+
+
+
+
+
+VERSION:  (it does not change)
+=======
+
+DATE:   Feb  2020
+====
+
+
+Main Purpose: 1. Fix the build of transFTP that conflicts current CURL library and the customized OpenSSL library version 1.0.2:
+                   transFTP can use all libraries from the system on RH6 and RH7 but not libCURL as it has a very small buffer reading,
+                   so this version changes transFTP to use a new customized libCURL and all others from the system, including SSL.
+              2. Make transFTP ready to download and send OASIS format file besides GDS.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+  Revision                   |  Description
+  =================================================================================================================================================================
+   1722                      | Build: created variables:  USE_OS_SSL,  USE_OS_LDAP and USE_OS_MYSQL to use Libaries from the system
+   1724                      | Build: removed FTP files from Transcend and Intercom servers, they are necessary on transFTP server.
+   1726                      | 1. transFTP ready to download and send OASIS format file besides GDS
+                             | 2. added CURLOPT_UPLOAD_BUFFERSIZE to maxmize reading, only for libCURL >= 7.62.0
+
+
+
+
+VERSION:  transcend 9.3.6 and icom 7.7
+=======
+
+DATE:   Feb  2020
+====
+
+
+Main Purpose:  Upgrade both clients and servers to OpenSSL library version 1.0.2
+               As IT reported vulnerabilities on itercom.freescale.com:443 this uprade is necessary.
+               All servers will disable SSLv_2 and SSLv_3 protocols.
+               External Intercom at itercom.freescale.com:443 will also disable TLSv_1 and TLSv_1.1 protocols.
+               The new OpenSSL library is version 1.0.2u and weak ciphers are disabled on a local build with the following switches:
+                     ./config no-des -no-seed -no-rc4 -no-idea no-camellia
+
+               The following clients table describe if is necessary to create new version or not:
+
+               RH5    RH6    RH7    Windows-Cygwin        macOS/Darwin          Solaris       Ubuntu
+               ---    ---    ---    ------------------    ----------------      ---------     ------
+               yes    yes    yes       yes                NO, already 1.0.2p     yes            yes
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1687                      | Servers: SSL protocol: added code to disable SSLv2 and SSLv3 methods.
+  1695                      | Created a script to generate all certificates that servers need, just change SUBJ variable.
+  1698                      | Build: turning libopenssl 1.0.2u as default for both servers and clients.
+                            | The library is built internally if the does not exist at /run/pkg/OSS-openssl-/1.0.2u, and then linked statically.
+  1699                      | Build: Only 'External Intercom' disables TLSv_1 and TLS_v2, all 'icom external' clients MUST be upraded.
+  1705                      | set Version number transcend 9.3.6 and icom 7.7.
+  1706                      | Packaging: added scripts/packaging/generate_package.sh to generate packages automatically.
+  1712                      | clients: fixed preserve links when using '-p' and the input is relative path to a directory.
+
+
+
+
+VERSION:  (it does not change)  -> Servers enhancements
+=======
+
+DATE:   Jan  2020
+====
+
+Main Purpose:   Handle the error LibCurl error 'CURLE_REMOTE_FILE_NOT_FOUND' generated when it is not possible to create directories on the server side.
+
+                Synopys (icom -p -sys) has blocked creating directories on their SFTP server, all transfers are receiving 'CURLE_REMOTE_FILE_NOT_FOUND' error.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1685                      |  Move direcories from 'remote_dir' to 'remote_file' separated by underscores.
+                            |  Extra directories is the first parameter from 'echo' command, and, it is stored in the 'remote_dir' variable.
+                            |  Example of trans command to Synopsys:
+                            |   echo "cmos090lctfs/n74w/16463_ESDDetector/" "test for Mask n74w, GDB ID 5006 File 1BAD_PATHS.gds , 985404, 5404" | -t -sys GDB.gds.gz b35201
+
+
+
+
+VERSION:  (it does not change)  -> Servers enhancements
+=======
+
+DATE:   Jan  2020
+====
+
+Main Purpose: 1. change the algorithm of choosing the Server which is near to user:
+                 it is based on the old xFSL subnets mapping, will use a table in Mysql based on network domain.
+              2. improve the informational saved on Mysql by servers:
+                 * IP address is replaced my the hostname which contains the domain
+                 * site is no longer based on subnet IP, now the information from LDAP is used.
+              3. Simplify 'registry', the site no longer matters, having at least one row as 'active' enables the user to use 'Transport Tools'.
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1650                      | IP address is replaced my the hostname which contains the domain.
+                            | site is no longer based on subnet IP, now the information from LDAP is used.
+  1651 1652                 | simplified registry query, having at least one row as 'active' enables the user to transfer files on sql_dt_registry_lookup()
+                            | removed function sql_dt_transweb_lookup(), using sql_dt_registry_lookup()
+  1654                      | servers:  SQL improvements: 1. created sql_search_domain() to search the default server by network domain
+                                                          2. created sql_generic_columm_retrieve_into_structure_array() as generic query retrieve into structure
+  1655                      | servers:  SQL table dt_destinations will replace file 'db_admin/ssl.company_table',
+                            |           populate_destinations_on_server() function will be called every 15 minutes on the server daemon
+  1656                      | servers:  default server based on region improved, the function server_set() now it uses the SQL table 'dt_server_by_domain'
+                            |           removed functions: regin_find(), blacklist_find() and extension_lookup()
+  1657                      | servers: the 'socket' field from the structure TRANS_COMPANY is changed from 'int' to 'char' to use directly in queries, some other sizes changed
+  1659                      | servers: removed reference from some local files no longer necessary
+  1660                      | servers: make company.c unique, removed other duplicates
+  1662                      | servers: fixed trans/icom -x; field 'site' from dt_destinations in fact is 'server_type', so 'site' can be removed.
+  1663                      | servers: clearing spaces from site name before sending to client,
+                            |          as the 'site' field was removed from database dt_destinations table, the name cannot contain spaces.
+  1668                      | clients: removed unnecessary SQL file on clients.
+  1669                      | servers: added 'data_transfer.' on queries for data_transfer tables
+  1670                      | servers: added 'data_transfer.' or 'edc.' on queries; using global dt_sql MYSQL
+  1673                      | servers: parallel transfers: avoiding checking for 'Registering' in BLOCK transfers (GET or PUT), only the main process performs 'Registering'.
+  1674                      | Intercom server: added handling for 'default site routing' request, it makes easy testing using 'trans' as client.
+
+
+
+
+
+
+
+
+VERSION:  transcend 9.3.5 and icom 7.6
+=======
+
+DATE:   Dec 2019
+====
+
+Main Purpose: improve clients
+============
+    1. Fix the bug: when 'trans' client requires authorization it does save the current user as the one entered by the user.
+       It causes parallel transfers to fail because it generates many client processes and they will use wrong user.
+    2. Create an option on "external icom" client to generate '.icomrc' if that authenticates.
+    3. 'trans -x' uses hard coded list, 'icom -x' gets the list from the server, change 'trans -x' to get it from the sever as well.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1637                      | transcend client: when it requires 'user' and 'password', if authenticated the entered 'user' MUST be copied into  'user.login' global variable.
+  1638                      | clients: added -rc option to create '.icomrc' or '.transrc'.
+  1639                      | clients: identifies Transweb using '-web' and having the environment variable 'REMOTE_ADDR', save correct information in the MySQL.
+  1640                      | clients: removed unsed include files identified when doing:  added -rc option to create '.icomrc'.
+  1641                      | Automated tests: added 'production servers' x 'dev clients' on Generic Switches Test.
+  1642                      | clients: 'trans -x' request to server the company list , no longer users the hard coded list even it still exists.
+  1645                      | clients: changed transcend version to '9.3.4' and icom to '7.6'.
+  1646                      | clients: removed hard coded list of sites.
+  1648                      | Copyright changed to '1994-2018'.
+
+
+
+
+
+
+
+VERSION:  it does not change
+=======
+
+DATE:   Sep 2019
+====
+
+1. Avoid undesired return emails received by the owner o 'db_admin' account when a server sends emails to the users who do not exist.
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1628                      | 'secure key' emails are no longer sent when the destination email does not exist in LDAP, a properly message is printed to warn the user.
+                            | The compiler directive 'DO_NOT_SEND_EMAIL' was created 'server_lib/email_send.c' to save the email as a text file instead of sending it out,
+                            |    emails are saved as 'transcend_email_test_<nn>.txt' where the server runs.
+
+
+
+
+VERSION:  it does not change
+=======
+
+DATE:   July 2019
+====
+
+1. Main Purpose minor fixes on MDD (Maskdesigner server)
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1621                      | putting a default "user name" when maskdesigner user left the company.
+
+
+
+
+
+
+VERSION:  it does not change
+=======
+
+DATE:   June 2019
+====
+
+1. Main Purpose change transFTP/Send2foundry to download GDBs from design sync with '.gpg' in the name
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =================================================================================================================================================================
+  1617                      | send2foundry: ds_checkout() changed to handle GDS type 'gds_out' which can have .'gpg' in the name
+  1618                      | send2foundry: ds_checkout() improved, using more file name possibilities.
+  1619                      | send2foundry: 1. adding '.gz' and '.gpg' to remote file name only if the original file name does not have
+                                            2. using 'gpg' in ftp_parallel.c::is_file_encrypted() command against the original file to check if the file is already encrypted.
+
+
+
+
+VERSION: Attempt of make MDD (Maskdesigner server) worked
+=======
+         transcend does not change:   TRANSCEND/API version 9.3.4 and Icom version 7.5
+
+
+DATE:   May 2019
+====
+
+1. Main Purpose Make Maskdesigner Database (mdd) server work, the code does not match the current binary
+
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                   |  Description
+ =====================================================================================================================================================================
+   1594                     |  Added MDS (mdd) server source code
+   1596 1597 1598 1586 1599 |  Improved mdd build, m2server/mdd8make does build everything.
+   1601 1602                |  Fixed a bug (it was a typo 'version_list') in pc_approve_version_check() which prevent PC Libraries being downloaded.
+   1604                     |  Fixed a bug in pc_send(), PC Libraries did not send masks files
+   1611                     |  m2server:  disabled code that calls external applications 'ret_build1' and 'ret_build2' as nobody knows what they do.
+   1613                     |  m2server:  mdd prints SVN revision and Build Date.
+
+
+
+
+
+VERSION: TRANSCEND/API version 9.3.4 and Icom version 7.5
+=======
+
+DATE:   May 2019
+====
+
+1. Main Purpose (Improvement)
+    1. Improve Curl errors detection
+    2. Improve transFTP to always generate "Error" status on transfer when it happens, such as:
+        $ trans -i plbz9384t
+                File:        GDB.gds.gz
+                User size:   0 bytes
+                Compressed:  0 bytes
+                Keyword:     plbz9384t
+                Creator:     CARLOS MAZIERI
+                Created:     Fri May  3 06:19:23 2019 MST
+                             Fri May  3 13:19:23 2019 GMT
+                Expires:     Wed May  8 06:19:23 2019 MST
+                             Wed May  8 13:19:23 2019 GMT
+                Data type:   file
+                Platform:    Linux
+                Sender:      NXP Semiconductor
+                Receiver:    Global Foundries (MaskPrep)
+                Classified:  NXP Confidential Proprietary
+                Error:       GDS check out from repository failed
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                  |  Description
+ =====================================================================================================================================================================
+   1585                    |  GDS checkout and other errors are saving Error status on the transfer.
+   1605                    |  Attempt to avoid minor error Curl error CURLE_REMOTE_ACCESS_DENIED, it may happen when creating directories.
+   1610                    |  change on revision 1605 did not work, changed approach, MySQL DB was wrong was also wrong.
+
+
+
+
+VERSION: TRANSCEND/API version 9.3.4 and Icom version 7.5
+=======
+
+DATE:   Oct 2018
+====
+
+1. Main Purpose
+    1. Make Parallel transfers on Windows work as it has never worked.
+    2. Disable LARGE_PARALLEL on clients (it has been already disabled on servers).
+    3. Turn transfers of big files stable (a case of 18GB receiving error -112 at the end of the transfer).
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                  |  Description
+ =====================================================================================================================================================================
+ 1554  1555  1558          | Replaced 'shared memory' on Windows (cgwin) by a Mapped File solution
+                           |    Parallel transfers have never worked on Windows (building CGWIN) because shared memory does not work
+ 1556  1557                | Clients: disabled LARGE_PARALLEL transfers and SEPARATED transfers
+ 1559                      | upgraded both TRANSAPI_VERSION and ICOM version
+ 1563                      | Client on both PARALLEL or LARGE_PARALLEL tansfers opens an new connection and sends DPUT_ACK, before only LARGE_PARALLEL used to do that,
+                           |   but on slow networks the connection gets a Timeout, then opening a new connection is necessary.
+ 1564                      | Reverted revision 1526 on servers: Servers do work on both 'LARGE and simple PARALLEL' modes, but LARGE PARALLEL is the default.
+ 1565                      | Reverted revision 1556 on clients: now LARGE PARALLEL is the default parallel transfer mode.
+ 1566                      | Added missing DBPUTDLT_PARALLEL on Put request handling.
+
+
+VERSION: minor bug fixes for TRANS API version 9.3.3 and Icom version 7.4 (version does not change)
+=======
+
+DATE:   Sep 2018
+====
+
+1. Main Purpose
+    1. Fix small bugs to turn "Transport Tools" quite stable.
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+ Revision                  |  Description
+ =====================================================================================================================================================================
+  1503                     | Fixed put with -P for big files: the request DBPUTDLT_LARGE_PARALLEL was missing for both 'Transcend' and 'Intercom' servers
+  1504                     | Fixed Auto-register to return password failed when user enters wrong password
+  1506                     | Fixed duplicated 'secure keyword', the new file server_lib/create_secure_keyword.c
+                           |   has a new high level function create_secure_keyword() to handle new secure keywords.
+                           | The function keyword_create() in 'trans_lib/keyword.c has a new compiler directive FORCE_SECURE_KEYWORD
+                           |   where a already existent keyword can specified to generate duplicates.
+                           | The file 'trans_lib/send_secure_keyword.c' no longer saves the secure keyword in KEYWORD_FILE 'db_admin/keyword_file'
+  1521                     | Created more REQUESTS to allow more combinations such as: DBGETDLT_SERIAL_ZIPPED,
+                           |    to allow transfer SERIAL keep ZIPPED and delete after retrieval.
+  1529                     | Fixed servers: They used to hang  when using 'trans/icom -B' or 'trans/icom -b' and if the keyword was a single file,
+                           |    the client used to receive the content but the server instance was not finished.
+  1534                     | Automated Tests reached a good shape, the Test Plan "generic_switches.csv" aims to give a good regression tests for
+                           | 'transcend' and 'internal intercom' servers and clients.
+                           | As result of this, it was possible to notice the 'transcend' server does not work for Maskshop destinations,
+                           |    the error is "Error -321:    Invalid request type:  '79'"
+  1537                     | Transcend server, making put-delete according the comment: only if more than one email receives the secure key.
+  1538                     | Put-Delete detection changed to use macro IS_REQUEST_PUT_DELETE() which is safer.
+
+
+VERSION: TRANS API version 9.3.4 and Icom version 7.4
+=======
+
+DATE:   Aug 2018
+====
+
+1. Main Purpose
+    1. Fix a parallel transfer issue noticed for big files, some parallel transfers work, but for files about 5GB it fails.
+       ALL clients and servers were delivered at revision 1466.
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+
+   Revision                  |  Description
+   =====================================================================================================================================================================
+   1487 1488 1489            | There was a problem on revision 1466 regarding big gzipped files. In fact cause was not investigated due to
+                             |   current revision worked, meanwhile clients had SSL and other changes.
+   1490                      | Fixed transweb URL with an extra 'w'.
+
+
+
+VERSION: Move servers from Austin to Phoenix
+=======
+
+DATE:    July 2018
+====
+
+1. Main Purpose
+   1. Clients have to be changed because they talk mainly to trans01-atx.am.freescale.net which will moved to Phoenix.
+   2. Define a better option:
+      Put: every put talks to the main server, then the main server says which other server to use that will store the file.
+      Get: clients decide where to get the the file based on the last letter from the the keyword, they use a hard coded table.
+      Solution:
+       1. Changed servers configuration: Current servers already can save the hostname (where) a keyword was placed, set db_admin/global_params
+       2. Changed keyword_find() to look in the database in case a keyword is NOT stored on itself, then sends "WRONG_SERVER" to clients.
+       3. Improved clients "WRONG_SERVER" message handling, (even current clients do work).
+
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+   Revision                  |  Description
+   =====================================================================================================================================================================
+   1425                      | Secure Keyword: unified code to search and to check if a user can access a 'secure keyword'
+                             |       1. modified keyword_find(), keyword_lookup() and created keyword_database_lookup()
+                             |       2. Transcend now also creates entry for 'secure keyword' in dt_keyword_mapping table
+                             |       3. Files: created server_lib/sql_keyword_mapping.c to isolate SQL for  dt_keyword_mapping table
+                             |       4. Files: reg_include/customer_table.h merged into trans_include/customer_table.h
+                             |                 reg_include/customer_table.h removed
+                             |       5. Created a new configuration file db_admin/power_accounts to keep users like: dtms, dtmsdb, transweb, etc.
+   1446                      | Created file to keep "dt_destinations" table queries
+   1448                      | Implemented good "WRONG_SERVER" message using MySQL database, any server is able to answer
+                             |    where a keyword is stored, in keyword_find() this message is sent to clients.
+   1451                      | Fixed sending 'secure keyword' to coreid@anything (which it is wrong),
+                             |    now it is handled by the server at the moment it comes from the client.
+   1453                      | Unified code to access the file "user_key/<user-list-of-keywords>", this "user-list-of-keywords" was confusing,
+                             |  in some parts of the code it was "coreid", others "email", unified to be email but replacing '@'by '.'.
+                             |  A new function format_user_keys_file_name(char *filename /*OUT*/) in trans_lib/keyword_read.c.
+   1454                      | Changed Server/Site definitions to set 'Phoenix' as default site.
+   1457                      | Fixed destination host finding when the keyword does not exist.
+   1459                      | Fixed destination host finding when the keyword has been deleted.
+   1462                      | Repositories table in Clients redefined to match Phoenix moving from Austin.
+   1464                      | Special handling for Amsterdam repository '-adam' which was copied from Eindhoven.
+   1466                      | Removed extra dependency in libraries (done to release everything)
+
+
+
+VERSION: TRANS API version 9.3.2 and Icom version 7.3
+=======
+
+DATE:    June 2018
+====
+
+1. Main Purpose
+   1. Recompile current code and release all clients and servers to make the sure the current is working.
+   2. Prepare a development environment that allows testing clients and servers in the same machine developers work.
+   3. SFTP implementation in Send2Foundy (transFTP) required by Samsung.
+   4. Support for NXP emails in 'extern icom' and 'extern transweb':
+      - Tests of 'icom' NXP email support started in revision 1257,
+      - There is a simple test plan template at https://nxp1-my.sharepoint.com/:x:/g/personal/carlos_mazieri_nxp_com/ESGtU4-3AplNt7yBNGH7G0gBFWO1oeK753NxUgw50YL6SQ?e=rV8e5Y
+
+2. Changes:
+   SVN revisions can be checked at http://cad.freescale.net:1080/trac/transcend/changeset/<nnnn>  where nnnn is the revision number.
+
+   Revision                  |  Description
+   =====================================================================================================================================================================
+   1189 1190 1204 1235 1241  | Makefiles improvements:
+                             |     1. created  the EXTERNAL_TRANSCEND_ENV_CFLAGS variable which defaults to empty, it allows passing new compiler directives without changing makefiles.
+                             |        It can be set in the environment like:   export EXTERNAL_TRANSCEND_ENV_CFLAGS='-DLOCAL_TEST -DLOCAL_TEST_PORT=6923 -Dfork=FAKE_fork'
+                             |     2. Isolated some definitions such as Mysql and binary names setting.
+   1103 1194 1197 1199 1200  | Servers prepared to work using a unique process (no daemon) to make it easy to use the debugger:
+                             |     compile with -DDEVEL_USING_SINGLE_PROCESS and -Dfork=FAKE_fork
+   1192                      | Clients can be forced to connect to any host any port by the following compiler directives:
+                             |   -DLOCAL_TEST                 -> forces clients to connect to localhost using default port (port is not changed)
+                             |   -LOCAL_TEST_SERVER=\"host\"  -> forces clients to connect against host (IP can be used)
+                             |   -DLOCAL_TEST_SERVER=port     -> forces clients to prefer port for connections against servers
+   1191 1198 1202            | FIXES that made 'transFTP' server work.
+   1201                      | FIX that made "external icom" server work, perhaps revisions 1191 and 1198 also made difference here.
+                             |   the change to accept NXP email in transweb pages was already in place.
+   1207                      | SFTP implementation as preferred protocol to use, if SFTP is not supported uses normal FTP.
+   1218                      | An important fix in the clients that were truncating the file size informed to the server using 32 bits 'size' variable.
+   1219                      | Fixed transFTP serial transfer, it performs just one block
+   1227 1253                 | LDAP refactory: replaced LDAP access from many files to functions from ldapfsl.c and ldapfsl_trans.c, 6 files removed, 2 updated, 1 added.
+   1228 1239                 | LDAP refactory: Makefiles: 6 files removed, 2 updated, 1 added.
+   1229 1238                 | LDAP refactory: changed to use common functions from 'ldapfsl.c' and 'ldapfsl_trans.c'
+   1231 1237                 | LDAP refactory: unified mail functions from the server
+   1240 1245 1248 1249 1294  | LDAP refactory: removed email cutting/appending @ freescale.com/nxp.com
+   1242 1243 1251            | LDAP refactory: improved LDAP functions; added some logging
+   1244                      | LDAP refactory: reverted logic to identify 'intercom' client external/internal
+   1250                      | Server logic:   added functions to get the destination email from a company which data is being sent to,
+                                               Intenal Icom server used to receive the company such as '-rtc' but did not find for the destination emails.
+   1251                      | LDAP refactory: force searching for manager in LDAP when the manager is set as 'unknown' in a previous 'pending request' in sql_manager_rtv()
+   1255                      | Changed 'Server Lib' from 'extern icom server'  to be compiled as EXTERNAL
+   1257                      | At this point 'icom server' internal/external are ready to start testing
+   1260                      | Ubuntu flavor build: clients and servers do build on Ubuntu
+   1271                      | created a simple script 'scripts/auto_tests_from_csv.bash' to perform automated tests base on a test plan from a CSV file
+   1275                      | Authentication bypassed for old icom clients using .icomrc as requests when using .icomrc  do not bring passwords.
+   1276                      | Better password handling for clients, it should be tested with other clients than 'icom'
+   1285                      | Fixed query to save requests/records in edc.requests table
+   1287                      | Fixed create dir funcion to create all necessary subdirs
+   1290                      | Unified struct TRANS_COMPANY which caused client crash for emails greater than 14 characteres.
+   1297                      | Fixed MEBEs files transfer history, it saves a file in <server>/masks/<mask>/files_sent.
+                             |   a MEBEs file can be transferred just once.
+   1302                      | Sitched to FSL LDAP server because it is all information and it stable, new NXP extranet LDAP server will change its schema.
+   1309                      | Improved Mysql database handling, using  mysql_free_results() as recommended in https://dev.mysql.com/doc/refman/5.7/en/commands-out-of-sync.html
+                             |   it was an attempt to fix getting pending status problem when only either of email or domain approval exists.
+   1312                      | Unified Mysql database connection, every connection is now made by sql_connect() function from server_lib/global_sql_lib.c.
+   1320                      | created compiler directive SAVE_PROTOCOL_DATA to save traffic between client and server.
+   1325                      | Added possibility of setting FTP as preferred protocol instead if SFTP, if FTP is not supported it uses SFTP, just create
+                             |   the file 'sftp_disable.config' transFTP runs.
+   1384                      | Transweb client: normal 'trans' client receives new parameter '-web [userid]' to act as old transweb client that is going to be retired.
+   1397                      | LDAP: extranet switched to eldap.nxp.com; changes were required since it is necessary to search for 3 fields
+   1420                      | set versions of binaries and unified TRANSAPI_VERSION in Makefiles.
+
+
+
+

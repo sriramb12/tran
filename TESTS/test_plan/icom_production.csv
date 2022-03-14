@@ -1,0 +1,12 @@
+Status,Comment,ssh user@host,Operation,Server,Client,Build: dev/prod,Command Line,Main Test,Extra Test
+,,,,,,,,,
+,,,,,,,,,
+1,send as external  get from internal,,,,,,,,
+ ,icom.ext is a wrapper already prepared with icom external,,Put,production,icom.ext,dev, echo TestOnly | <client> -icomrc <icomrcpath> -p <file> <email>,,
+ ,and icom.int is a wrapper to internal icom ,,Get,production,icom.int,prod,<client> -G <keyword>,,
+,,,Other,production,icom.ext,dev,echo m00n | <client> -icomrc <icomrcpath>  -i <file_keyword>,RET_CODE_NOT_ZERO,KEYWORD_DONT_EXIST_IN_SERVER
+ ,,,,,,,,,
+2,send from internal  get as external,,,,,,,,
+ ,,,Put ,production,icom.int,prod,echo m00n | <client> -p -xio   <file> <extern_email>,,
+ ,,,Get,production,icom.ext,dev,<client>  -icomrc <icomrcpath> -G <keyword>  ,,
+,,,Other,production,icom.int,prod,echo m00n | <client>  -i <file_keyword> ,RET_CODE_NOT_ZERO,KEYWORD_DONT_EXIST_IN_SERVER

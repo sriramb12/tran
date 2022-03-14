@@ -1,0 +1,15 @@
+# Fev 2018, Carlos Mazieri, for clients idenfity USAGE_SCOPE that can be either "int" or "ext"
+ifneq ($(USAGE_SCOPE),)
+   OUTPUT := $(OUTPUT).$(USAGE_SCOPE)
+endif
+
+
+# Jan 2018, Carlos Mazieri, for clients it appends .localhost when
+#  -DLOCAL_TEST is present in the environment variable EXTERNAL_TRANSCEND_ENV_CFLAGS
+#
+#   if so clients are supposed to connect to servers running in the same machine (localhost)
+#
+#   It is for Test purpoes.
+ifneq (,$(findstring -DLOCAL_TEST, $(EXTERNAL_TRANSCEND_ENV_CFLAGS)))
+    OUTPUT := $(OUTPUT).localhost
+endif

@@ -1,0 +1,37 @@
+Status;Comment;ssh user@host;Operation;Server;Client;Build: dev/prod;Command Line;Main Test;Extra Test
+ ;;;;;;;;;
+ ;;;;;;;echo m00n | <client> from column F;RET_CODE_ZERO;
+ ;;;;;;;<file>   from command line -f;RET_CODE_NOT_ZERO;
+ ;;;;;;;<email>  from command line;RET_CODE_EQUAL value;
+ ;;;;;;;<server_path> the path from server runs DEV;COMPARE_FILES file1 file2;
+ ;;;;;;;<keyword> last keyword printed (last PUT);COMPARE_STRINGS str1 str2;
+ ;;;;;;;"<file_keyword> the ""File Keyword"" from last PUT operation";FILE_EXISTS file;
+ ;;;;;;;<file_size> from command line -f;FILE_DOES_NOT_EXIST file;
+ ;;;;;;;;KEYWORD_EXISTS_IN_SERVER;
+ ;;;;;;;;KEYWORD_DONT_EXIST_IN_SERVER;
+ ;;;;;;;;TRANSFER_IS_SERIAL;
+ ;Generic Swicthes;;;;;;;TRANSFER_IS_PARALLEL;
+ ;;;Put;production;icom.int;dev;echo m00n | <client> -ps <company> <file>;;TRANSFER_IS_SERIAL
+ ; ;;Get;production;icom.int;dev;echo m00n | <client> -g <keyword>;;
+ ;;;Get;production;icom.int;dev;<client> -web -g <keyword> > trans_1.txt && mv trans_1.txt  <file>;;TRANSFER_IS_SERIAL
+ ;trans -B ;;Other;production;icom.int;dev;rm -f trans_dirlist.txt trans_1.txt trans_2.txt && echo <file> <file_size>  > trans_1.txt &&  echo m00n | <client> -B <keyword> | tail -1 > trans_2.txt;COMPARE_FILES trans_1.txt trans_2.txt;
+ ;trans -b  ;;Other;production;icom.int;dev;rm -f trans_dirlist.txt trans_1.txt trans_2.txt && echo <file> <file_size>  > trans_1.txt &&  echo m00n | <client> -b <keyword> && tail -1 trans_dirlist.txt > trans_2.txt;COMPARE_FILES trans_1.txt trans_2.txt;
+ ;keyword not found;;Other;production;icom.int;dev;echo m00n | <client> -i zzzz0000Z;RET_CODE_NOT_ZERO;
+ ;Test -i ;;Other;production;icom.int;dev;echo m00n | <client> -i <keyword>;RET_CODE_ZERO;
+ ;Test -i ;;Other;production;icom.int;dev;echo m00n | <client> -i <file_keyword>;RET_CODE_ZERO;KEYWORD_EXISTS_IN_SERVER
+ ;delete keyword;;Other;production;icom.int;dev;echo m00n | <client> -d <file_keyword>;RET_CODE_ZERO;
+ ;;;Other;production;icom.int;dev;echo m00n | <client> -i <file_keyword>;RET_CODE_NOT_ZERO;KEYWORD_DONT_EXIST_IN_SERVER
+ ;;;; ; ;;;;
+ ;delete first get;;Put;production;icom.int;dev;echo m00n | <client> -P <company>  <file>;;
+ ;;;Get;production;icom.int;dev;echo m00n | <client> -gs <keyword>;;TRANSFER_IS_SERIAL
+ ;;;Other;production;icom.int;dev;echo m00n | <client> -i <file_keyword>;RET_CODE_NOT_ZERO;KEYWORD_DONT_EXIST_IN_SERVER
+ ;;;; ; ;;;;
+ ;delete after get;;; ; ;;;;
+ ;;;Put;production;icom.int;dev;echo m00n | <client> -p <company>  <file>;;
+ ;;;Get;production;icom.int;dev;echo m00n | <client> -G <keyword>;;
+ ;;;Other;production;icom.int;dev;echo m00n | <client> -i <file_keyword>;RET_CODE_NOT_ZERO;KEYWORD_DONT_EXIST_IN_SERVER
+ ;;;;;;;;;
+ ;user not in LDAP; ;;;;;;;
+ ;Used to fail on Intercom; ; ;;;;;;
+ ;;;Put;production;icom.int;dev;echo m00n | <client> -web dtms -p <company>  <file>;;
+ ;;;Get;production;icom.int;dev;echo m00n | <client> -G <keyword>;;

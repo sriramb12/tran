@@ -1,0 +1,19 @@
+# This is a sample .transrc file.  This file must be placed# in the user's home directory.  Default values used by Transcend are set in this file.
+#
+# With the settings given below, Transcend prints out the 
+# amount of data transferred every 30 seconds or after the
+# transfer of 16 Mb of data, depending on which event occurs 
+# first.
+PrintByTime:	30			# Legal values 10-120 seconds
+PrintBySize: 16 Mb # 1 K - 16 Mb
+# The user can set his log directory to the current working 
+# directory, his home directory, or no directory.
+LogDirectory: . 		# . | ~ | None
+# Transcend server site locations are listed below.
+Site1: Austin aus austin-trans.am.freescale.net 10.81.199.101 6923
+Site2: Noida idc india-trans.am.freescale.net 10.232.5.13 6923
+Site3: DTMS dtms dtms-trans.am.freescale.net 10.81.198.29 6923
+Site4: Munich mun europe-trans.ea.freescale.net 10.170.79.7 6923
+Site5: Israel isrl israel-trans.am.freescale.net 223.76.95.11 6923
+Site6: Brazil brzl brazil-trans.am.freescale.net 10.29.241.77 6923
+Parallel zip size: 10000000

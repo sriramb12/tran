@@ -1,0 +1,6 @@
+# Holds configuration used by machine_check
+# Next line contains machine, from_email, to_email, max processes, disk_usage, and directory name
+Test critical.problem@nxp.com transbug@nxp.com 550 90 .
+transcend -9
+ssl.transcend -3
+transweb.server -7

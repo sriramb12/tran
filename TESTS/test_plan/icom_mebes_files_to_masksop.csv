@@ -1,0 +1,9 @@
+status;Comment;ssh user@host;Operation;server;Client;build: RH5/dev;command line;scenario:   requer approval; ;.icomrc: yes/no;Client output
+;;;;;;;;;;;
+;icom.int and icom.ext are shell scripts already prepared;;;;;;;;;;
+;;;;;;;;;;;
+ ;;;;;;;;;;;
+2;send as internal get as external;;;;;;;;;;
+;production ; ;Put ;production;icom;RH5;echo m00n | <client> -k -rtc  dir`date +%s` mebes/*;;;;
+ok;development; ;Put ;ssl.icomd;icom.int;dev;echo m00n | <client> -k -rtc  dir`date +%s` mebes/*;;;;
+ok;;b35201@lvd7005.am.freescale.net;Get;free.icomd;icom.ext;RH5;<client> -g <keyword>  < ~/carlos.mazieri.txt;;;;

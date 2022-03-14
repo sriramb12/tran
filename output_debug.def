@@ -1,0 +1,5 @@
+# Jan 2018, Carlos Mazieri, just appends .debug in the name when DEBUG is active
+
+ifeq "$(TRANS_DEBUG)" "YES"
+  OUTPUT := $(OUTPUT).debug
+endif

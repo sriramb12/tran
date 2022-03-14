@@ -1,0 +1,27 @@
+status;Comment;ssh user@host;Operation;server;Client;build: RH5/dev;command line;scenario:   requer approval; ;.icomrc: yes/no;Client output
+;;;;;;;;;;;
+;icom.int and icom.ext are shell scripts already prepared;;;;;;;;;;
+;;;;;;;;;;;
+1;send as external get from internal ;;;;;;;;;;
+;;;;;;;;;;;
+  ;icom.ext is a wrapper already prepared with icom external;b35201@lvd7005.am.freescale.net;Put;ssl.icomd;icom.ext;RH5;<client> -p <file> carlos.mazieri@nxp.com < ~/carlos.mazieri.txt;;no;;
+  ;localhost  using default icom ;b35201@lvd7005.am.freescale.net;Get;ssl.icomd;icom;RH5;<client> -g <keyword>;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;free.icomd;icom.ext;RH5;<client> -g <keyword> ;;no;;
+  ;;;;;;;;;;;
+  ;send from internal get as external before put see edc database;;;;;;;;;;
+  ;Select *  from edc.requests where value = 'carlos.mazieri@gmail.com';;;;;;;;;;
+  ;delete any record from query above to see if it writes right;b35201@lvd7005.am.freescale.net;Put ;free.icomd;icom.int;RH5;echo m00n | <client> -p -rtc <file>;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;free.icomd;icom.ext;RH5;<client> -g <keyword>  < ~/carlos.mazieri.txt;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;ssl.icomd;icom.ext;RH5;<client> -g <keyword>  < ~/carlos.mazieri.txt;;no;;
+  ;;;;;;;;;;;
+  ;;;;;;;;;;;
+  ;;;;;;;;;;;
+  ;;b35201@lvd7005.am.freescale.net;Put;free.icomd;icom.ext;RH5;<client> -p <file> carlos.mazieri@nxp.com < ~/carlos.mazieri.txt;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;ssl.icomd;icom;RH5;<client> -g <keyword>;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;free.icomd;icom.ext;RH5;<client> -g <keyword> ;;no;;
+  ;;;;;;;;;;;
+  ;;;;;;;;;;;
+  ;;;;;;;;;;;
+  ;;b35201@lvd7005.am.freescale.net;Put ;ssl.icomd;icom.int;RH5;echo m00n | <client> -p -rtc <file>;;no;;
+;;b35201@lvd7005.am.freescale.net;Get;free.icomd;icom.ext;RH5;<client> -g <keyword>  < ~/carlos.mazieri.txt;;no;;
+  ;;b35201@lvd7005.am.freescale.net;Get;ssl.icomd;icom.ext;RH5;<client> -g <keyword>  < ~/carlos.mazieri.txt;;no;;

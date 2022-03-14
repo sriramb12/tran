@@ -1,0 +1,102 @@
+Feb 2020
+
+Carlos Mazieri <carlos.mazieri@nxp.com>
+
+This is a study about how to encrypt data in order to store keywords encrypted on the disk.
+-----------------------------------------------------------------------------------------
+
+The idea is to use the LibOpenSSL algorythms to encrypt data, from the list below, the "Cipher Types" ended with 'cfb' are supposed to encrypt data generating the same amount of bytes:
+                
+            original buffer   -> encrypted buffer
+            -----------------    ----------------
+            input buffer size  = output buffer size
+
+            /run/pkg/OSS-openssl-/1.0.2u/bin/openssl enc --help
+
+            Cipher Types: 
+            -aes-128-cbc               -aes-128-ccm               -aes-128-cfb              
+            -aes-128-cfb1              -aes-128-cfb8              -aes-128-ctr              
+            -aes-128-ecb               -aes-128-ofb               -aes-192-cbc              
+            -aes-192-ccm               -aes-192-cfb               -aes-192-cfb1             
+            -aes-192-cfb8              -aes-192-ctr               -aes-192-ecb              
+            -aes-192-ofb               -aes-256-cbc               -aes-256-ccm              
+            -aes-256-cfb               -aes-256-cfb1              -aes-256-cfb8             
+            -aes-256-ctr               -aes-256-ecb               -aes-256-ofb              
+            -aes128                    -aes192                    -aes256                   
+            -bf                        -bf-cbc                    -bf-cfb                   
+            -bf-ecb                    -bf-ofb                    -blowfish                 
+            -cast                      -cast-cbc                  -cast5-cbc                
+            -cast5-cfb                 -cast5-ecb                 -cast5-ofb                
+            -id-aes128-CCM             -id-aes128-wrap            -id-aes192-CCM            
+            -id-aes192-wrap            -id-aes256-CCM             -id-aes256-wrap           
+            -rc2                       -rc2-40-cbc                -rc2-64-cbc               
+            -rc2-cbc                   -rc2-cfb                   -rc2-ecb                  
+            -rc2-ofb                   
+
+
+These Ciphers algorythms require both a KEY and a "Initialization vector (IV)", 
+It is recomended do not repeat the pair (KEY, IV)  -> https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation#Initialization_vector_(IV)
+-----------------------------------------------------------------------------
+1. test encrypting/decrypting using the same KEY and different IVs.
+    [ANSWER] it does not work, the same pair (KEY,iv) must be used for encrypting and decrypting.
+2  test encrypting/decrypting using same 'cfb' ciphers such as: aes-256-cfb, cast5-cfb, aes-192-cfb, rc2-cfb, bf-cfb
+    [ANSWER] It looks like the time for encrypting and decrypting increases as the same pair (KEY,iv) is used for a process:
+    
+            Mixing 2 KEYS and 2 IVs                                      generating KEY for pair(KEY,iv)                                    distinct pair(KEY,IV)
+        ------------------------------                                   -------------------------------                                    ---------------------
+        $ grep -n duration test_out.txt                                  $ grep -n duration test_out.txt                                    $ grep -n duration test_out.txt
+        10:aes-192-cfb duration=14 start=1582045243 end=1582045257       10:aes-192-cfb duration=14 start=1582048665 end=1582048679         10:aes-192-cfb duration=13 start=1582052550 end=1582052563
+                 
+        17:aes-192-cfb duration=11 start=1582045262 end=1582045273       17:aes-192-cfb duration=12 start=1582048684 end=1582048696                
+        24:aes-192-cfb duration=10 start=1582045279 end=1582045289
+        31:aes-192-cfb duration=14 start=1582045294 end=1582045308
+        40:aes-256-cfb duration=19 start=1582045316 end=1582045335       26:aes-256-cfb duration=12 start=1582048701 end=1582048713         19:aes-256-cfb duration=15 start=1582052571 end=1582052586             
+        47:aes-256-cfb duration=23 start=1582045342 end=1582045365       33:aes-256-cfb duration=23 start=1582048719 end=1582048742                
+        54:aes-256-cfb duration=23 start=1582045371 end=1582045394
+        61:aes-256-cfb duration=23 start=1582045401 end=1582045424
+        70:bf-cfb duration=35 start=1582045430 end=1582045465            42:bf-cfb duration=27 start=1582048748 end=1582048775              28:bf-cfb duration=24 start=1582052593 end=1582052617   
+        77:bf-cfb duration=34 start=1582045471 end=1582045505            49:bf-cfb duration=28 start=1582048782 end=1582048810                
+        84:bf-cfb duration=34 start=1582045514 end=1582045548
+        91:bf-cfb duration=37 start=1582045554 end=1582045591
+        100:aes-128-cfb duration=25 start=1582045597 end=1582045622      58:aes-128-cfb duration=17 start=1582048817 end=1582048834         37:aes-128-cfb duration=13 start=1582052625 end=1582052638            
+        107:aes-128-cfb duration=23 start=1582045631 end=1582045654      65:aes-128-cfb duration=22 start=1582048841 end=1582048863                
+        114:aes-128-cfb duration=28 start=1582045662 end=1582045690
+        121:aes-128-cfb duration=26 start=1582045699 end=1582045725
+        130:cast5-cfb duration=41 start=1582045733 end=1582045774        74:cast5-cfb duration=28 start=1582048870 end=1582048898           46:cast5-cfb duration=26 start=1582052646 end=1582052672           
+        137:cast5-cfb duration=44 start=1582045780 end=1582045824        81:cast5-cfb duration=34 start=1582048904 end=1582048938                
+        144:cast5-cfb duration=40 start=1582045832 end=1582045872
+        151:cast5-cfb duration=39 start=1582045880 end=1582045919
+        160:rc2-cfb duration=61 start=1582045927 end=1582045988          90:rc2-cfb duration=50 start=1582048945 end=1582048995             55:rc2-cfb duration=44 start=1582052680 end=1582052724
+       
+        167:rc2-cfb duration=57 start=1582045998 end=1582046055          97:rc2-cfb duration=55 start=1582049002 end=1582049057                
+        174:rc2-cfb duration=60 start=1582046063 end=1582046123
+        181:rc2-cfb duration=61 start=1582046132 end=1582046193
+
+        
+3. for a single "keyword" the KEY could be 'string1 keyword string2' where the 'string1'and 'string2' could be anything but are fixed variables, it would create a unique key.
+   The "Initialization vector (IV)" can be the timestamp of the keyword creation, cat global_data/<keyword>
+   
+   BEST:  each content = each keyword will have disctinct pair(KEY,IV).
+
+
+Implementation
+--------------
+
+The first thing to do is to create a flag in the global_data/keyword saying if the that keyword is encrypted or not, so 'trans -i' could have the 'encrypted' field such as:
+
+            File:        timing_regress.csv
+            User size:   12837 bytes
+            Compressed:  1315 bytes
+            Keyword:     bgvz8759p
+            Creator:     Sandesh Gaikwad
+            Created:     Mon Feb 17 17:34:48 2020 CST
+                         Tue Feb 18 00:34:48 2020 GMT
+            Expires:     Thu Feb 20 17:34:48 2020 CST
+                         Fri Feb 21 00:34:48 2020 GMT
+            Data type:   file
+            Platform:    Linux
+            Site:        Phoenix
+            Classified:  confidential Proprietary
+            encrypted:   no/yes
+
+This flag defaults to "no" => 0 and if encrypted by "Put" operation it becomes "yes" => 1, any 'Get' operation looks at the flag and then perfoms decrypting when it is encrypted.

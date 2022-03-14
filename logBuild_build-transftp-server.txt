@@ -1,0 +1,1692 @@
+cd ./zlib; make -f Makefile; cd ..
+make[1]: Entering directory `/home/nxf84310/orig/transcend/zlib'
+gcc -O   -c -o adler32.o adler32.c
+gcc -O   -c -o compress.o compress.c
+gcc -O   -c -o crc32.o crc32.c
+gcc -O   -c -o gzio.o gzio.c
+gcc -O   -c -o uncompr.o uncompr.c
+gcc -O   -c -o deflate.o deflate.c
+gcc -O   -c -o trees.o trees.c
+gcc -O   -c -o zutil.o zutil.c
+gcc -O   -c -o inflate.o inflate.c
+gcc -O   -c -o infback.o infback.c
+gcc -O   -c -o inftrees.o inftrees.c
+gcc -O   -c -o inffast.o inffast.c
+ar rc libz.a adler32.o compress.o crc32.o gzio.o uncompr.o deflate.o trees.o zutil.o inflate.o infback.o inftrees.o inffast.o 
+make[1]: Leaving directory `/home/nxf84310/orig/transcend/zlib'
+make: Entering directory `/home/nxf84310/orig/transcend'
+cd ./zlib; make -f Makefile; cd ..
+make[1]: Entering directory `/home/nxf84310/orig/transcend/zlib'
+make[1]: Nothing to be done for `lib'.
+make[1]: Leaving directory `/home/nxf84310/orig/transcend/zlib'
+make -f ssl64transftpmake_reglib.mk    SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1 
+libraries.def [almost done] variable = RH7 SERVER=1 USE_OS_SSL= 
+libraries.def final OS variable = RH7 SERVER=1 USE_OS_SSL=1 USE_OS_LDAP=1 USE_OS_MYSQL=1
+libopenldap.def LDAP_INCLUDE= LDAP_LIBS=-lldap -llber
+libopenssl.def BUILD_MODULE=build-transftp-server OS=RH7 USE_OS_SSL=1
+libopenssl.def 01 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 10  LINK_SHARED=0 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 30 SSL_INCLUDE= SSL_LIBS=-lssl -lcrypto
+BEGIN
+reg_lib/search_registry.o reg_lib/add_email_entry.o reg_lib/add_file_entry.o reg_lib/add_file_line.o reg_lib/add_site_entry.o reg_lib/alarm.o reg_lib/compare_names.o reg_lib/compare_sites.o reg_lib/core_id_crypt.o reg_lib/dlt_file_entry.o reg_lib/dlt_file_line.o reg_lib/dlt_site_entry.o reg_lib/find_email.o reg_lib/edc_reg.o reg_lib/init_rmt_socket.o reg_lib/init_ssl_socket.o reg_lib/reg_lookup.o reg_lib/rmt_server.o reg_lib/rmt_lib.o reg_lib/resend_reg.o reg_lib/ssl_rmt_lib.o reg_lib/sql_reg.o reg_lib/strcmp1err.o reg_lib/strdlt_quotes.o reg_lib/strip_email_trailors.o reg_lib/user_autoreg.o reg_lib/x500.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+END
+make[1]: Entering directory `/home/nxf84310/orig/transcend'
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/search_registry.o reg_lib/search_registry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/add_email_entry.o reg_lib/add_email_entry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/add_file_entry.o reg_lib/add_file_entry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/add_file_line.o reg_lib/add_file_line.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/add_site_entry.o reg_lib/add_site_entry.c
+reg_lib/add_site_entry.c: In function 'add_site_entry':
+reg_lib/add_site_entry.c:154:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* End add_site_entry */
+ ^
+reg_lib/add_site_entry.c: In function 'add_server_site_entry':
+reg_lib/add_site_entry.c:302:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* End add_server_site_entry */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/alarm.o reg_lib/alarm.c
+reg_lib/alarm.c: In function 'timeout':
+reg_lib/alarm.c:41:19: warning: unused parameter 'rcv_signal' [-Wunused-parameter]
+ void timeout( int rcv_signal )
+                   ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/compare_names.o reg_lib/compare_names.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/compare_sites.o reg_lib/compare_sites.c
+reg_lib/compare_sites.c: In function 'compare_sites':
+reg_lib/compare_sites.c:105:10: warning: 'reg_ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     len1 = strcpy_substr(login, site, '.', strlen(site));
+          ^
+reg_lib/compare_sites.c:34:11: note: 'reg_ptr' was declared here
+     char *reg_ptr;
+           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/core_id_crypt.o reg_lib/core_id_crypt.c
+reg_lib/core_id_crypt.c: In function 'core_id_crypt':
+reg_lib/core_id_crypt.c:54:5: warning: pointer targets in passing argument 3 of 'BF_set_key' differ in signedness [-Wpointer-sign]
+     BF_set_key(&bf_key, 8, key);
+     ^
+In file included from reg_lib/core_id_crypt.c:5:0:
+/usr/include/openssl/blowfish.h:109:6: note: expected 'const unsigned char *' but argument is of type 'char *'
+ void BF_set_key(BF_KEY *key, int len, const unsigned char *data);
+      ^
+reg_lib/core_id_crypt.c:76:9: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+         sprintf(str_in,"%c%010llu %s",(char)(seed_time%120),seed_time,core_id ); 
+         ^
+In file included from reg_lib/core_id_crypt.c:2:0:
+/usr/include/stdio.h:364:12: note: expected 'char * __restrict__' but argument is of type 'unsigned char *'
+ extern int sprintf (char *__restrict __s,
+            ^
+reg_lib/core_id_crypt.c:108:9: warning: pointer targets in passing argument 1 of 'sscanf' differ in signedness [-Wpointer-sign]
+         sscanf(str_out, "%c%llu", &ch, &pass_time );
+         ^
+In file included from /usr/include/features.h:375:0,
+                 from /usr/include/time.h:27,
+                 from reg_lib/core_id_crypt.c:1:
+/usr/include/stdio.h:448:12: note: expected 'const char * __restrict__' but argument is of type 'unsigned char *'
+ extern int __REDIRECT_NTH (sscanf, (const char *__restrict __s,
+            ^
+reg_lib/core_id_crypt.c:114:9: warning: pointer targets in passing argument 2 of 'strcpy' differ in signedness [-Wpointer-sign]
+         strcpy(core_id,  str_out+12) ;
+         ^
+In file included from reg_lib/core_id_crypt.c:4:0:
+/usr/include/string.h:125:14: note: expected 'const char * __restrict__' but argument is of type 'unsigned char *'
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+reg_lib/core_id_crypt.c:32:15: warning: unused variable 'k' [-Wunused-variable]
+     int   i,j,k, len, tmp;
+               ^
+reg_lib/core_id_crypt.c:117:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* end core_id_crypt */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/dlt_file_entry.o reg_lib/dlt_file_entry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/dlt_file_line.o reg_lib/dlt_file_line.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/dlt_site_entry.o reg_lib/dlt_site_entry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/find_email.o reg_lib/find_email.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/edc_reg.o reg_lib/edc_reg.c
+In file included from reg_lib/edc_reg.c:24:0:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/init_rmt_socket.o reg_lib/init_rmt_socket.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/init_ssl_socket.o reg_lib/init_ssl_socket.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/reg_lookup.o reg_lib/reg_lookup.c
+reg_lib/reg_lookup.c: In function 'reg_lookup':
+reg_lib/reg_lookup.c:29:11: warning: unused variable 'ptr' [-Wunused-variable]
+     char *ptr;
+           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/rmt_server.o reg_lib/rmt_server.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/rmt_lib.o reg_lib/rmt_lib.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/resend_reg.o reg_lib/resend_reg.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/ssl_rmt_lib.o reg_lib/ssl_rmt_lib.c
+In file included from ./global_include/bytes.h:23:0,
+                 from reg_lib/ssl_rmt_lib.c:16:
+./global_include/bits.h:25:0: warning: "__bswap_constant_16" redefined [enabled by default]
+ #define __bswap_constant_16(x) \
+ ^
+In file included from /usr/include/endian.h:60:0,
+                 from /usr/include/bits/string2.h:51,
+                 from /usr/include/string.h:633,
+                 from reg_lib/ssl_rmt_lib.c:12:
+/usr/include/bits/byteswap.h:31:0: note: this is the location of the previous definition
+ #define __bswap_constant_16(x) \
+ ^
+In file included from ./global_include/bytes.h:23:0,
+                 from reg_lib/ssl_rmt_lib.c:16:
+./global_include/bits.h:29:0: warning: "__bswap_16" redefined [enabled by default]
+ # define __bswap_16(x) \
+ ^
+In file included from /usr/include/bits/byteswap.h:35:0,
+                 from /usr/include/endian.h:60,
+                 from /usr/include/bits/string2.h:51,
+                 from /usr/include/string.h:633,
+                 from reg_lib/ssl_rmt_lib.c:12:
+/usr/include/bits/byteswap-16.h:25:0: note: this is the location of the previous definition
+ #  define __bswap_16(x) \
+ ^
+In file included from ./global_include/bytes.h:23:0,
+                 from reg_lib/ssl_rmt_lib.c:16:
+./global_include/bits.h:87:0: warning: "__bswap_constant_64" redefined [enabled by default]
+ #define __bswap_constant_64(x) \
+ ^
+In file included from /usr/include/endian.h:60:0,
+                 from /usr/include/bits/string2.h:51,
+                 from /usr/include/string.h:633,
+                 from reg_lib/ssl_rmt_lib.c:12:
+/usr/include/bits/byteswap.h:97:0: note: this is the location of the previous definition
+ # define __bswap_constant_64(x) \
+ ^
+reg_lib/ssl_rmt_lib.c: In function 'get_ssl_short':
+reg_lib/ssl_rmt_lib.c:109:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     return(htons(*(short *)buffer));
+     ^
+reg_lib/ssl_rmt_lib.c:109:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:109:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:109:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c: In function 'get_timed_ssl_short':
+reg_lib/ssl_rmt_lib.c:143:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     return(htons(*(short *)buffer));
+     ^
+reg_lib/ssl_rmt_lib.c:143:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:143:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:143:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c: In function 'put_ssl_long':
+reg_lib/ssl_rmt_lib.c:209:10: warning: variable 'wr_data' set but not used [-Wunused-but-set-variable]
+     long wr_data;
+          ^
+reg_lib/ssl_rmt_lib.c: In function 'get_ssl_long':
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     return(ntohl(*(long *)buffer));
+     ^
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c:334:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+reg_lib/ssl_rmt_lib.c: In function 'get_ssl_string':
+reg_lib/ssl_rmt_lib.c:54:15: warning: 'ret' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      shut_down(rtn.msg, ret);
+               ^
+In file included from ./global_include/bytes.h:23:0,
+                 from reg_lib/ssl_rmt_lib.c:16:
+reg_lib/ssl_rmt_lib.c: In function 'put_ssl_longlong':
+./global_include/bits.h:65:13: warning: '__w.__l[1]' is used uninitialized in this function [-Wuninitialized]
+      : "0" ((unsigned int) (x))        \
+             ^
+./global_include/bits.h:100:32: note: '__w.__l[1]' was declared here
+    unsigned long int __l[2]; } __w, __r;         \
+                                ^
+./global_include/bytes.h:36:22: note: in expansion of macro '__bswap_64'
+ # define bswap_64(x) __bswap_64 (x)
+                      ^
+reg_lib/ssl_rmt_lib.c:230:12: note: in expansion of macro 'bswap_64'
+     data = bswap_64(data);
+            ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/sql_reg.o reg_lib/sql_reg.c
+reg_lib/sql_reg.c: In function 'perform_auto_register':
+reg_lib/sql_reg.c:51:5: warning: implicit declaration of function 'sql_autoreg_user' [-Wimplicit-function-declaration]
+     return(sql_autoreg_user());
+     ^
+reg_lib/sql_reg.c: In function 'sql_dt_registry_lookup':
+reg_lib/sql_reg.c:89:47: warning: unused parameter 'site' [-Wunused-parameter]
+ int sql_dt_registry_lookup(char *login, char *site)
+                                               ^
+reg_lib/sql_reg.c: In function 'sql_autoreg_user':
+reg_lib/sql_reg.c:186:2: warning: implicit declaration of function 'put_short' [-Wimplicit-function-declaration]
+  put_short(DBEMAIL);
+  ^
+reg_lib/sql_reg.c:187:2: warning: implicit declaration of function 'get_string' [-Wimplicit-function-declaration]
+  get_string(tmp_email);
+  ^
+reg_lib/sql_reg.c:198:5: warning: implicit declaration of function 'dt_reg_user' [-Wimplicit-function-declaration]
+     if (( ret = dt_reg_user(user.login, tr.user_site, gu.email1, gu.email2, user_name1, user_name2, user_name3, user_pwd)) >= 0)
+     ^
+reg_lib/sql_reg.c: In function 'dt_reg_user':
+reg_lib/sql_reg.c:252:9: warning: implicit declaration of function 'ldapfsl_authenticate_user_id' [-Wimplicit-function-declaration]
+         LDAP_RETURN_DATA * ldap_ret = ldapfsl_authenticate_user_id(login, user_pwd);
+         ^
+reg_lib/sql_reg.c:252:39: warning: initialization makes pointer from integer without a cast [enabled by default]
+         LDAP_RETURN_DATA * ldap_ret = ldapfsl_authenticate_user_id(login, user_pwd);
+                                       ^
+reg_lib/sql_reg.c:256:22: warning: assignment makes pointer from integer without a cast [enabled by default]
+             ldap_ret = ldapfsl_authenticate_user_id(local_email1, user_pwd);
+                      ^
+reg_lib/sql_reg.c:262:16: warning: implicit declaration of function 'ldapfsl_copy_info_to_global_user_structure' [-Wimplicit-function-declaration]
+                ldapfsl_copy_info_to_global_user_structure(ldap_ret);
+                ^
+reg_lib/sql_reg.c:217:11: warning: unused variable 'ptr' [-Wunused-variable]
+     char *ptr;
+           ^
+reg_lib/sql_reg.c:215:9: warning: unused variable 'x500ret' [-Wunused-variable]
+     int x500ret = 0;
+         ^
+reg_lib/sql_reg.c:214:9: warning: variable 'use_secondary_email' set but not used [-Wunused-but-set-variable]
+     int use_secondary_email;
+         ^
+reg_lib/sql_reg.c:206:11: warning: unused parameter 'site' [-Wunused-parameter]
+     char *site,
+           ^
+reg_lib/sql_reg.c:209:11: warning: unused parameter 'user_name1' [-Wunused-parameter]
+     char *user_name1,
+           ^
+reg_lib/sql_reg.c:210:11: warning: unused parameter 'user_name2' [-Wunused-parameter]
+     char *user_name2,
+           ^
+reg_lib/sql_reg.c:211:11: warning: unused parameter 'user_name3' [-Wunused-parameter]
+     char *user_name3,
+           ^
+reg_lib/sql_reg.c: In function 'site_check':
+reg_lib/sql_reg.c:286:5: warning: implicit declaration of function 'request_log' [-Wimplicit-function-declaration]
+     request_log();
+     ^
+reg_lib/sql_reg.c:297:5: warning: implicit declaration of function 'close_down1f' [-Wimplicit-function-declaration]
+     else close_down1f(reg_verify_err, user.login, REG_VERIFY_ERR);
+     ^
+reg_lib/sql_reg.c: In function 'sql_registry_extract':
+reg_lib/sql_reg.c:320:5: warning: implicit declaration of function 'dir_create' [-Wimplicit-function-declaration]
+     dir_create(new_dir);
+     ^
+reg_lib/sql_reg.c:324:5: warning: implicit declaration of function 'close_down1m' [-Wimplicit-function-declaration]
+     if ((fp = fopen(file_name, "w")) == NULL) close_down1m(wr_open_err, file_name, WR_OPEN_ERR);
+     ^
+reg_lib/sql_reg.c:348:10: warning: implicit declaration of function 'str_is_valid_filename' [-Wimplicit-function-declaration]
+          if (str_is_valid_filename(file_name+22) == -1)
+          ^
+reg_lib/sql_reg.c:350:14: warning: implicit declaration of function 'data_log2' [-Wimplicit-function-declaration]
+              data_log2(tr.log_file, "invalid file:  ", file_name);
+              ^
+reg_lib/sql_reg.c:368:5: warning: implicit declaration of function 'dir_remove' [-Wimplicit-function-declaration]
+     if (access(old_dir, 0) == 0) dir_remove(old_dir);
+     ^
+reg_lib/sql_reg.c:370:5: warning: implicit declaration of function 'dir_rename' [-Wimplicit-function-declaration]
+     dir_rename(current_dir, old_dir);
+     ^
+In file included from reg_lib/sql_reg.c:18:0:
+reg_lib/sql_reg.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+In file included from reg_lib/sql_reg.c:28:0:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+reg_lib/sql_reg.c: In function 'sql_autoreg_user':
+reg_lib/sql_reg.c:202:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* End sql_autoreg_user */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/strcmp1err.o reg_lib/strcmp1err.c
+In file included from reg_lib/strcmp1err.c:19:0:
+./reg_include/common_names.h:3:13: warning: 'common_names' defined but not used [-Wunused-variable]
+ static char common_names[TOTAL_NAMES][6] =
+             ^
+./reg_include/common_names.h:57:13: warning: 'formal_names' defined but not used [-Wunused-variable]
+ static char formal_names[TOTAL_NAMES][10] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/strdlt_quotes.o reg_lib/strdlt_quotes.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/strip_email_trailors.o reg_lib/strip_email_trailors.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/user_autoreg.o reg_lib/user_autoreg.c
+reg_lib/user_autoreg.c: In function 'user_autoreg':
+reg_lib/user_autoreg.c:45:5: warning: implicit declaration of function 'dt_reg_user' [-Wimplicit-function-declaration]
+     fnd = dt_reg_user(user.login, tr.user_site, gu.email1, gu.email2, user_name1, user_name2, user_name3, gu.par2);
+     ^
+reg_lib/user_autoreg.c:46:5: warning: implicit declaration of function 'put_short' [-Wimplicit-function-declaration]
+     put_short(SUCCESS);
+     ^
+reg_lib/user_autoreg.c:52:6: warning: implicit declaration of function 'put_success_msg' [-Wimplicit-function-declaration]
+      put_success_msg(NONE);
+      ^
+reg_lib/user_autoreg.c:59:5: warning: implicit declaration of function 'shut_down' [-Wimplicit-function-declaration]
+     else if (rtn.len > 0) shut_down(rtn.msg, -1);
+     ^
+reg_lib/user_autoreg.c:62:5: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+     exit(0);
+     ^
+reg_lib/user_autoreg.c:62:5: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o reg_lib/x500.o reg_lib/x500.c
+reg_lib/x500.c: In function 'x500lookup':
+reg_lib/x500.c:53:5: warning: implicit declaration of function 'ldapfsl_user_lookup_and_copy_global_structures' [-Wimplicit-function-declaration]
+     ret = ldapfsl_user_lookup_and_copy_global_structures(user_id);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o global_code/global_debug.o global_code/global_debug.c
+global_code/global_debug.c: In function 'FAKE_exit':
+global_code/global_debug.c:72:20: warning: unused parameter '_exit_code' [-Wunused-parameter]
+ void FAKE_exit(int _exit_code)
+                    ^
+global_code/global_debug.c: In function 'print_build_information':
+global_code/global_debug.c:173:34: warning: unused parameter 'argc' [-Wunused-parameter]
+ void print_build_information(int argc, char *argv[])
+                                  ^
+global_code/global_debug.c:173:46: warning: unused parameter 'argv' [-Wunused-parameter]
+ void print_build_information(int argc, char *argv[])
+                                              ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o src/ldapfsl.o src/ldapfsl.c
+src/ldapfsl.c:468:15: warning: 'strlower' defined but not used [-Wunused-function]
+ static char * strlower(char *str)
+               ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNO_DMZ -DINTERNAL -DTRANS_FTP -DNXP -DLINUX  -I./global_include -I./trans_include -I./reg_include  -I/usr/include/mysql -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o src/ldapfsl_trans.o src/ldapfsl_trans.c
+src/ldapfsl_trans.c: In function 'ldapfsl_user_authenticate_and_copy_global_structures':
+src/ldapfsl_trans.c:112:9: warning: implicit declaration of function 'ldapfsl_copy_info_to_global_trans_structure' [-Wimplicit-function-declaration]
+         ldapfsl_copy_info_to_global_trans_structure(ldap_ret);
+         ^
+src/ldapfsl_trans.c:113:9: warning: implicit declaration of function 'ldapfsl_copy_info_to_global_user_structure' [-Wimplicit-function-declaration]
+         ldapfsl_copy_info_to_global_user_structure(ldap_ret);
+         ^
+src/ldapfsl_trans.c: At top level:
+src/ldapfsl_trans.c:149:7: warning: conflicting types for 'ldapfsl_copy_info_to_global_trans_structure' [enabled by default]
+ void  ldapfsl_copy_info_to_global_trans_structure(LDAP_RETURN_DATA * ldap_ret)
+       ^
+src/ldapfsl_trans.c:112:9: note: previous implicit declaration of 'ldapfsl_copy_info_to_global_trans_structure' was here
+         ldapfsl_copy_info_to_global_trans_structure(ldap_ret);
+         ^
+src/ldapfsl_trans.c:246:6: warning: conflicting types for 'ldapfsl_copy_info_to_global_user_structure' [enabled by default]
+ void ldapfsl_copy_info_to_global_user_structure(LDAP_RETURN_DATA * ldap_ret)
+      ^
+src/ldapfsl_trans.c:113:9: note: previous implicit declaration of 'ldapfsl_copy_info_to_global_user_structure' was here
+         ldapfsl_copy_info_to_global_user_structure(ldap_ret);
+         ^
+
+:: ssl64transftpmake_reglib.mk --target='free_reg_lib.a' --output='free_reg_lib.a' (TransFTP)
+
+ar r ./free_reg_lib.a reg_lib/search_registry.o reg_lib/add_email_entry.o reg_lib/add_file_entry.o reg_lib/add_file_line.o reg_lib/add_site_entry.o reg_lib/alarm.o reg_lib/compare_names.o reg_lib/compare_sites.o reg_lib/core_id_crypt.o reg_lib/dlt_file_entry.o reg_lib/dlt_file_line.o reg_lib/dlt_site_entry.o reg_lib/find_email.o reg_lib/edc_reg.o reg_lib/init_rmt_socket.o reg_lib/init_ssl_socket.o reg_lib/reg_lookup.o reg_lib/rmt_server.o reg_lib/rmt_lib.o reg_lib/resend_reg.o reg_lib/ssl_rmt_lib.o reg_lib/sql_reg.o reg_lib/strcmp1err.o reg_lib/strdlt_quotes.o reg_lib/strip_email_trailors.o reg_lib/user_autoreg.o reg_lib/x500.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+ar: creating ./free_reg_lib.a
+ranlib ./free_reg_lib.a
+make[1]: Leaving directory `/home/nxf84310/orig/transcend'
+make -f ssl64transftpmake_serverlib.mk SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1
+libraries.def [almost done] variable = RH7 SERVER=1 USE_OS_SSL= 
+libraries.def final OS variable = RH7 SERVER=1 USE_OS_SSL=1 USE_OS_LDAP=1 USE_OS_MYSQL=1
+libopenldap.def LDAP_INCLUDE= LDAP_LIBS=-lldap -llber
+libopenssl.def BUILD_MODULE=build-transftp-server OS=RH7 USE_OS_SSL=1
+libopenssl.def 01 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 10  LINK_SHARED=0 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 30 SSL_INCLUDE= SSL_LIBS=-lssl -lcrypto
+BEGIN
+server_lib/entry.o server_lib/add_line.o server_lib/close_down.o server_lib/check_owner.o server_lib/big_disk_usage.o server_lib/file.o server_lib/files.o server_lib/dbsend_file.o server_lib/dbsend_files.o server_lib/disk_usage.o server_lib/files_get.o server_lib/files_put.o server_lib/dir.o server_lib/email_send.o server_lib/list.o server_lib/lock_file.o server_lib/file_append.o server_lib/file_copy.o server_lib/file_rename.o server_lib/files_copy.o server_lib/files_dlt.o server_lib/file_rcv.o server_lib/files_list.o server_lib/files_rcv.o server_lib/get_random.o server_lib/get_site.o server_lib/line_get.o server_lib/mask_msg_server_send.o server_lib/init_socket.o server_lib/ip_addr.o server_lib/server_lib.o server_lib/log.o server_lib/names_build.o server_lib/password_crypt.o server_lib/password_encrypt.o server_lib/report_gen.o server_lib/remote_email_send.o server_lib/send_files.o server_lib/sort.o server_lib/global_sql_lib.o server_lib/strcpy.o server_lib/time_stamp.o server_lib/ssl_common.o server_lib/ssl_server_lib.o server_lib/ssl_utils.o server_lib/sql_keyword_mapping.o server_lib/sql_destinations_mapping.o server_lib/create_secure_keyword.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+END
+make[1]: Entering directory `/home/nxf84310/orig/transcend'
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/entry.o server_lib/entry.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/add_line.o server_lib/add_line.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/close_down.o server_lib/close_down.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/check_owner.o server_lib/check_owner.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/big_disk_usage.o server_lib/big_disk_usage.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/file.o server_lib/file.c
+server_lib/file.c: In function 'gds_file_get':
+server_lib/file.c:340:5: warning: implicit declaration of function 'root_find' [-Wimplicit-function-declaration]
+     root_ptr = root_find(gds_file, ':');
+     ^
+server_lib/file.c:340:14: warning: assignment makes pointer from integer without a cast [enabled by default]
+     root_ptr = root_find(gds_file, ':');
+              ^
+server_lib/file.c: In function 'tmp_files_sort':
+server_lib/file.c:749:25: warning: assignment makes integer from pointer without a cast [enabled by default]
+      ptr = tmp_files[i] = files[position];
+                         ^
+server_lib/file.c:749:10: warning: assignment makes pointer from integer without a cast [enabled by default]
+      ptr = tmp_files[i] = files[position];
+          ^
+server_lib/file.c:760:20: warning: assignment makes pointer from integer without a cast [enabled by default]
+         files[cnt] = tmp_files[cnt];
+                    ^
+server_lib/file.c:749:32: warning: 'position' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      ptr = tmp_files[i] = files[position];
+                                ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files.o server_lib/files.c
+server_lib/files.c: In function 'temp_files_sort':
+server_lib/files.c:106:6: warning: implicit declaration of function 'add_node' [-Wimplicit-function-declaration]
+      add_node(&tree_top,files[cnt],&balance);
+      ^
+server_lib/files.c:112:5: warning: implicit declaration of function 'free_bin_tree' [-Wimplicit-function-declaration]
+     free_bin_tree(&tree_top, files, &cnt);
+     ^
+server_lib/files.c: In function 'files_convert_from_string':
+server_lib/files.c:91:10: warning: 'cnt' is used uninitialized in this function [-Wuninitialized]
+     files[cnt] = NULL;
+          ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/dbsend_file.o server_lib/dbsend_file.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/dbsend_files.o server_lib/dbsend_files.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/disk_usage.o server_lib/disk_usage.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_get.o server_lib/files_get.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_put.o server_lib/files_put.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/dir.o server_lib/dir.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/email_send.o server_lib/email_send.c
+server_lib/email_send.c: In function 'email_send':
+server_lib/email_send.c:60:10: warning: implicit declaration of function 'ldapfsl_exists_account_by_email' [-Wimplicit-function-declaration]
+          if (ldapfsl_exists_account_by_email(recipients) == DBNO && ldapfsl_exists_account_by_coreid(recipients) == DBNO)
+          ^
+server_lib/email_send.c:60:10: warning: implicit declaration of function 'ldapfsl_exists_account_by_coreid' [-Wimplicit-function-declaration]
+server_lib/email_send.c:85:5: warning: implicit declaration of function 'strcasestr' [-Wimplicit-function-declaration]
+     if (replyto[0] && strcasestr(replyto, EMAIL_SUFFIX) == NULL)
+     ^
+server_lib/email_send.c:85:57: warning: comparison between pointer and integer [enabled by default]
+     if (replyto[0] && strcasestr(replyto, EMAIL_SUFFIX) == NULL)
+                                                         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/list.o server_lib/list.c
+server_lib/list.c: In function 'string2list2convert':
+server_lib/list.c:401:58: warning: unused parameter 'c' [-Wunused-parameter]
+ int string2list2convert(char *string, char *list[], char c)
+                                                          ^
+server_lib/list.c: In function 'list_extensions_rtv':
+server_lib/list.c:568:5: warning: implicit declaration of function 'put_success_msg' [-Wimplicit-function-declaration]
+     put_success_msg(NONE);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/lock_file.o server_lib/lock_file.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/file_append.o server_lib/file_append.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/file_copy.o server_lib/file_copy.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/file_rename.o server_lib/file_rename.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_copy.o server_lib/files_copy.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_dlt.o server_lib/files_dlt.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/file_rcv.o server_lib/file_rcv.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_list.o server_lib/files_list.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/files_rcv.o server_lib/files_rcv.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/get_random.o server_lib/get_random.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/get_site.o server_lib/get_site.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/line_get.o server_lib/line_get.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/mask_msg_server_send.o server_lib/mask_msg_server_send.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/init_socket.o server_lib/init_socket.c
+server_lib/init_socket.c: In function 'startup_daemon':
+server_lib/init_socket.c:192:5: warning: implicit declaration of function 'umask' [-Wimplicit-function-declaration]
+     umask(0);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/ip_addr.o server_lib/ip_addr.c
+server_lib/ip_addr.c: In function 'ip_addr_copy':
+server_lib/ip_addr.c:53:9: warning: unused variable 'cnt' [-Wunused-variable]
+     int cnt;
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/server_lib.o server_lib/server_lib.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/log.o server_lib/log.c
+server_lib/log.c:32:5: warning: conflicting types for built-in function 'log' [enabled by default]
+ int log(char *log_file, char *string)
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/names_build.o server_lib/names_build.c
+server_lib/names_build.c: In function 'names_build':
+server_lib/names_build.c:42:9: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+         sprintf(rtn.msg, month_err, d1.month, d2.month);
+         ^
+server_lib/names_build.c:42:9: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+server_lib/names_build.c: In function 'date_calc':
+server_lib/names_build.c:112:9: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+         sprintf(rtn.msg, month_range_err, month);
+         ^
+server_lib/names_build.c:112:9: warning: format '%d' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+server_lib/names_build.c:122:9: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+         sprintf(rtn.msg, day_range_err, day);
+         ^
+server_lib/names_build.c:122:9: warning: format '%d' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+server_lib/names_build.c:133:9: warning: '0' flag ignored with precision and '%d' gnu_printf format [-Wformat=]
+         sprintf(rtn.msg, year_range_err, year);
+         ^
+server_lib/names_build.c:133:9: warning: format '%d' expects argument of type 'int', but argument 3 has type 'char *' [-Wformat=]
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/password_crypt.o server_lib/password_crypt.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/password_encrypt.o server_lib/password_encrypt.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/report_gen.o server_lib/report_gen.c
+server_lib/report_gen.c: In function 'report_usage':
+server_lib/report_gen.c:276:5: warning: implicit declaration of function 'report_header_build' [-Wimplicit-function-declaration]
+     report_header_build(header, fields);
+     ^
+server_lib/report_gen.c:289:2: warning: implicit declaration of function 'string2list2convert' [-Wimplicit-function-declaration]
+  string2list2convert(filter_string, list_array);
+  ^
+server_lib/report_gen.c:311:2: warning: implicit declaration of function 'report_input_scan' [-Wimplicit-function-declaration]
+  if ((ret =   report_input_scan(line, rep)) != REPORT_SCAN_SIZE)  
+  ^
+server_lib/report_gen.c:323:10: warning: implicit declaration of function 'report_fields_pad' [-Wimplicit-function-declaration]
+          report_fields_pad(rep);
+          ^
+server_lib/report_gen.c:350:6: warning: implicit declaration of function 'report_field_convert' [-Wimplicit-function-declaration]
+      report_field_convert( ptr->fields[cnt], fields[cnt]);
+      ^
+server_lib/report_gen.c: In function 'record_add':
+server_lib/report_gen.c:119:14: warning: 'ret' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      else if (ret < 0)
+              ^
+server_lib/report_gen.c: In function 'report_usage':
+server_lib/report_gen.c:119:14: warning: 'ret' may be used uninitialized in this function [-Wmaybe-uninitialized]
+server_lib/report_gen.c:96:9: note: 'ret' was declared here
+     int ret;
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/remote_email_send.o server_lib/remote_email_send.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/send_files.o server_lib/send_files.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/sort.o server_lib/sort.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/global_sql_lib.o server_lib/global_sql_lib.c
+server_lib/global_sql_lib.c: In function 'result_get':
+server_lib/global_sql_lib.c:29:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+server_lib/global_sql_lib.c: In function 'result1get':
+server_lib/global_sql_lib.c:67:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+server_lib/global_sql_lib.c: In function 'connected_result_get':
+server_lib/global_sql_lib.c:105:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+server_lib/global_sql_lib.c: In function 'insert_data':
+server_lib/global_sql_lib.c:138:5: warning: implicit declaration of function 'data_log2' [-Wimplicit-function-declaration]
+     data_log2("query", db, query);
+     ^
+server_lib/global_sql_lib.c:153:6: warning: passing argument 2 of 'data_log' discards 'const' qualifier from pointer target type [enabled by default]
+      else data_log(tr.log_file, err_ptr);
+      ^
+In file included from server_lib/global_sql_lib.c:9:0:
+./global_include/global_server_prototypes.h:28:5: note: expected 'char *' but argument is of type 'const char *'
+ int data_log(
+     ^
+server_lib/global_sql_lib.c: In function 'sql_connect':
+server_lib/global_sql_lib.c:190:23: warning: format '%d' expects argument of type 'int', but argument 6 has type 'char *' [-Wformat=]
+                       host, mysql_errno(sql), err_ptr, __FILE__, __LINE__);
+                       ^
+server_lib/global_sql_lib.c:193:13: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+             exit(1);
+             ^
+server_lib/global_sql_lib.c:193:13: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+server_lib/global_sql_lib.c: In function 'sql_mask_projects_rtv':
+server_lib/global_sql_lib.c:307:33: warning: unused parameter 'mask' [-Wunused-parameter]
+ int sql_mask_projects_rtv(char *mask, char *projects[])
+                                 ^
+server_lib/global_sql_lib.c: In function 'sql_query':
+server_lib/global_sql_lib.c:217:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* end sql_query */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/strcpy.o server_lib/strcpy.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/time_stamp.o server_lib/time_stamp.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/ssl_common.o server_lib/ssl_common.c
+server_lib/ssl_common.c: In function 'password_cb':
+server_lib/ssl_common.c:40:11: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if(num<strlen(pass)+1)
+           ^
+server_lib/ssl_common.c:37:7: warning: unused parameter 'rwflag' [-Wunused-parameter]
+   int rwflag,void *userdata)
+       ^
+server_lib/ssl_common.c:37:20: warning: unused parameter 'userdata' [-Wunused-parameter]
+   int rwflag,void *userdata)
+                    ^
+server_lib/ssl_common.c: In function 'sigpipe_handle':
+server_lib/ssl_common.c:47:32: warning: unused parameter 'x' [-Wunused-parameter]
+ static void sigpipe_handle(int x){
+                                ^
+server_lib/ssl_common.c: In function 'initialize_ctx':
+server_lib/ssl_common.c:75:10: warning: assignment discards 'const' qualifier from pointer target type [enabled by default]
+     meth = SSLv23_method();
+          ^
+server_lib/ssl_common.c:88:10: warning: variable 'mask_method' set but not used [-Wunused-but-set-variable]
+     long mask_method  = 0;
+          ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/ssl_server_lib.o server_lib/ssl_server_lib.c
+server_lib/ssl_server_lib.c: In function 'show_ssl_error':
+server_lib/ssl_server_lib.c:57:9: warning: unused variable 'ssl_error' [-Wunused-variable]
+     int ssl_error = SSL_get_error(ssl, ret);
+         ^
+server_lib/ssl_server_lib.c: In function 'get_short':
+server_lib/ssl_server_lib.c:145:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     ret = htons(*(short *)buffer);
+     ^
+server_lib/ssl_server_lib.c: In function 'get_long':
+server_lib/ssl_server_lib.c:371:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     return(ntohl(*(long *)buffer));
+     ^
+server_lib/ssl_server_lib.c: In function 'get_longlong':
+server_lib/ssl_server_lib.c:411:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing]
+     return(*(long long *)buffer1);
+     ^
+server_lib/ssl_server_lib.c: In function 'put_longlong':
+server_lib/ssl_server_lib.c:276:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* End put_longlong */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/ssl_utils.o server_lib/ssl_utils.c
+server_lib/ssl_utils.c: In function 'tcp_listen':
+server_lib/ssl_utils.c:31:9: warning: implicit declaration of function 'berr_exit' [-Wimplicit-function-declaration]
+         berr_exit("Unable to bind");
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/sql_keyword_mapping.o server_lib/sql_keyword_mapping.c
+server_lib/sql_keyword_mapping.c: In function 'keyword_mapping_lookup':
+server_lib/sql_keyword_mapping.c:27:5: warning: implicit declaration of function 'sql2column_rtv' [-Wimplicit-function-declaration]
+     return(sql2column_rtv(query, file_key, reg_email));
+     ^
+server_lib/sql_keyword_mapping.c: In function 'sql_keyword_mapping_insert':
+server_lib/sql_keyword_mapping.c:42:5: warning: implicit declaration of function 'sql_time_convert' [-Wimplicit-function-declaration]
+     sql_time_convert(starttime_string, tr.upd_time, NULL);
+     ^
+server_lib/sql_keyword_mapping.c:51:5: warning: implicit declaration of function 'sql_insert_data' [-Wimplicit-function-declaration]
+     if (sql_insert_data(query, err_msg) != SUCCESS)
+     ^
+server_lib/sql_keyword_mapping.c:53:9: warning: implicit declaration of function 'data_log' [-Wimplicit-function-declaration]
+         data_log("dt_keyword_mapping", query);
+         ^
+server_lib/sql_keyword_mapping.c:34:59: warning: unused parameter 'upload_time' [-Wunused-parameter]
+ char *from_email, char *to_email, char *description, long upload_time)
+                                                           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/sql_destinations_mapping.o server_lib/sql_destinations_mapping.c
+server_lib/sql_destinations_mapping.c: In function 'populate_destinations_on_server':
+server_lib/sql_destinations_mapping.c:49:5: warning: implicit declaration of function 'sql_generic_columm_retrieve_into_structure_array' [-Wimplicit-function-declaration]
+     ret = sql_generic_columm_retrieve_into_structure_array(query, &fields_info,
+     ^
+server_lib/sql_destinations_mapping.c:75:5: warning: 'return' with a value, in function returning void [enabled by default]
+     return ret;
+     ^
+server_lib/sql_destinations_mapping.c: In function 'host_mapping_lookup':
+server_lib/sql_destinations_mapping.c:110:5: warning: implicit declaration of function 'sql4column_rtv' [-Wimplicit-function-declaration]
+     ret = sql4column_rtv(query, destination_site, destination_host, destination_addr, destination_port);
+     ^
+server_lib/sql_destinations_mapping.c: At top level:
+server_lib/sql_destinations_mapping.c:19:20: warning: 'MYSQL_DATE_INTERVAL_45_DAYS' defined but not used [-Wunused-variable]
+ static const char *MYSQL_DATE_INTERVAL_45_DAYS =  "DATE_SUB(CURDATE(), INTERVAL 45 DAY) <= timestamp";
+                    ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DSSL_ENCRYPTION -DLINUX -DBYTESWAP -DINTERCOM -DNXP  -I./trans_include -I./reg_include -I./global_include -I/usr/include/mysql  -I./src/ -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o server_lib/create_secure_keyword.o server_lib/create_secure_keyword.c
+In file included from server_lib/create_secure_keyword.c:16:0:
+./trans_include/ftp_info.h:79:73: warning: backslash and newline separated by space [enabled by default]
+         echo \"Date after calculating cksum: $end_date\" >>$email_file\n\      
+ ^
+In file included from server_lib/create_secure_keyword.c:26:0:
+./trans_include/trans_server_paths.h:45:0: warning: "COMPANY_FILE" redefined [enabled by default]
+ #define COMPANY_FILE            "db_admin/ssl.company_file"
+ ^
+In file included from server_lib/create_secure_keyword.c:16:0:
+./trans_include/ftp_info.h:257:0: note: this is the location of the previous definition
+ #define COMPANY_FILE "db_admin/company_file"
+ ^
+In file included from server_lib/create_secure_keyword.c:9:0:
+./trans_include/customer_table.h:73:17: warning: 'customer_table' defined but not used [-Wunused-variable]
+    static short customer_table[13][12] =
+                 ^
+
+:: ssl64transftpmake_serverlib.mk --target='free_server_lib.a' --output='free_server_lib.a' (TransFTP)
+
+ar r ./free_server_lib.a server_lib/entry.o server_lib/add_line.o server_lib/close_down.o server_lib/check_owner.o server_lib/big_disk_usage.o server_lib/file.o server_lib/files.o server_lib/dbsend_file.o server_lib/dbsend_files.o server_lib/disk_usage.o server_lib/files_get.o server_lib/files_put.o server_lib/dir.o server_lib/email_send.o server_lib/list.o server_lib/lock_file.o server_lib/file_append.o server_lib/file_copy.o server_lib/file_rename.o server_lib/files_copy.o server_lib/files_dlt.o server_lib/file_rcv.o server_lib/files_list.o server_lib/files_rcv.o server_lib/get_random.o server_lib/get_site.o server_lib/line_get.o server_lib/mask_msg_server_send.o server_lib/init_socket.o server_lib/ip_addr.o server_lib/server_lib.o server_lib/log.o server_lib/names_build.o server_lib/password_crypt.o server_lib/password_encrypt.o server_lib/report_gen.o server_lib/remote_email_send.o server_lib/send_files.o server_lib/sort.o server_lib/global_sql_lib.o server_lib/strcpy.o server_lib/time_stamp.o server_lib/ssl_common.o server_lib/ssl_server_lib.o server_lib/ssl_utils.o server_lib/sql_keyword_mapping.o server_lib/sql_destinations_mapping.o server_lib/create_secure_keyword.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+ar: creating ./free_server_lib.a
+ranlib ./free_server_lib.a
+make[1]: Leaving directory `/home/nxf84310/orig/transcend'
+make -f ssl64transftpmake_translib.mk  SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1 
+libraries.def [almost done] variable = RH7 SERVER=1 USE_OS_SSL= 
+libraries.def final OS variable = RH7 SERVER=1 USE_OS_SSL=1 USE_OS_LDAP=1 USE_OS_MYSQL=1
+libopenldap.def LDAP_INCLUDE= LDAP_LIBS=-lldap -llber
+libopenssl.def BUILD_MODULE=build-transftp-server OS=RH7 USE_OS_SSL=1
+libopenssl.def 01 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 10  LINK_SHARED=0 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 30 SSL_INCLUDE= SSL_LIBS=-lssl -lcrypto
+BEGIN
+trans_lib/get_random_index.o trans_lib/check_disk_space.o trans_lib/company.o trans_lib/cron_dlt_files.o trans_lib/dlt_empty_global_files.o trans_lib/dlt_history_files.o trans_lib/dlt_time_calc.o trans_lib/disk_usage_check.o trans_lib/dlt_big_file.o trans_lib/dlt_keyword_entries.o trans_lib/dlt_old_sites.o trans_lib/extend_big_file.o trans_lib/file_type_get.o trans_lib/files_dlt_transient.o trans_lib/files.o trans_lib/get_release_file.o trans_lib/get_release.o trans_lib/keyword.o trans_lib/keyword_send.o trans_lib/keyword_read.o trans_lib/log.o trans_lib/lookup_keyword.o trans_lib/mod_lock_cnt.o trans_lib/get_parallel_data.o trans_lib/block_get.o trans_lib/block_put.o trans_lib/put_parallel_data.o trans_lib/shared_memory.o trans_lib/history_big_file.o trans_lib/mod_big_file.o trans_lib/owner_dlt.o trans_lib/put_msg.o trans_lib/put_success_msg.o trans_lib/request.o trans_lib/reg.o trans_lib/read_global_params.o trans_lib/report_gen.o trans_lib/report_log.o trans_lib/rmv_dups.o trans_lib/rcv_file.o trans_lib/server.o trans_lib/ssl_server.o trans_lib/status_big_file.o trans_lib/search_email_file.o trans_lib/shut_down.o trans_lib/size_check_big_file.o trans_lib/ssl_rmt_lib.o trans_lib/ssl_init.o trans_lib/support.o trans_lib/send_secure_keyword.o trans_lib/set_trans_disk_usage.o trans_lib/trans_server_globals.o trans_lib/trans1step_upload.o trans_lib/trans1step_download.o trans_lib/trans_sql_lib.o trans_lib/time_calc.o trans_lib/transweb.o trans_lib/transweb_keyword.o trans_lib/transdirlist.o trans_lib/transweb_reg.o trans_lib/query_user.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+END
+make[1]: Entering directory `/home/nxf84310/orig/transcend'
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/get_random_index.o trans_lib/get_random_index.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/check_disk_space.o trans_lib/check_disk_space.c
+trans_lib/check_disk_space.c: In function 'check_disk_space':
+trans_lib/check_disk_space.c:26:9: warning: unused parameter 'disk_index' [-Wunused-parameter]
+     int disk_index,
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/company.o trans_lib/company.c
+trans_lib/company.c: In function 'company_table_rtv':
+trans_lib/company.c:82:5: warning: implicit declaration of function 'convert_destinations_into_csv_values_in_memory' [-Wimplicit-function-declaration]
+     convert_destinations_into_csv_values_in_memory();
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/cron_dlt_files.o trans_lib/cron_dlt_files.c
+trans_lib/cron_dlt_files.c: In function 'cron_dlt_all':
+trans_lib/cron_dlt_files.c:161:5: warning: implicit declaration of function 'sql_dt_disk_insert' [-Wimplicit-function-declaration]
+     sql_dt_disk_insert(percent);
+     ^
+trans_lib/cron_dlt_files.c: In function 'data_unlink':
+trans_lib/cron_dlt_files.c:180:9: warning: implicit declaration of function 'dir_recursive_dlt' [-Wimplicit-function-declaration]
+         dir_recursive_dlt(data_file);
+         ^
+trans_lib/cron_dlt_files.c: In function 'cron_dlt_files':
+trans_lib/cron_dlt_files.c:197:11: warning: variable 'history_ptr' set but not used [-Wunused-but-set-variable]
+     char *history_ptr;
+           ^
+trans_lib/cron_dlt_files.c:186:43: warning: unused parameter 'list' [-Wunused-parameter]
+ int cron_dlt_files(char *file_path, char *list[])
+                                           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_empty_global_files.o trans_lib/dlt_empty_global_files.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_history_files.o trans_lib/dlt_history_files.c
+trans_lib/dlt_history_files.c: In function 'user_keys_delete':
+trans_lib/dlt_history_files.c:170:10: warning: implicit declaration of function 'file_rename' [-Wimplicit-function-declaration]
+          if (change == DBYES) file_rename(tmp_file, file_name);
+          ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_time_calc.o trans_lib/dlt_time_calc.c
+trans_lib/dlt_time_calc.c: In function 'trans_dlt_time_calc':
+trans_lib/dlt_time_calc.c:24:11: warning: variable 'time_ptr' set but not used [-Wunused-but-set-variable]
+     char *time_ptr;
+           ^
+trans_lib/dlt_time_calc.c: In function 'no_expiration_calc':
+trans_lib/dlt_time_calc.c:83:11: warning: variable 'time_ptr' set but not used [-Wunused-but-set-variable]
+     char *time_ptr;
+           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/disk_usage_check.o trans_lib/disk_usage_check.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_big_file.o trans_lib/dlt_big_file.c
+trans_lib/dlt_big_file.c: In function 'dlt_big_file':
+trans_lib/dlt_big_file.c:66:5: warning: implicit declaration of function 'dir_recursive_dlt' [-Wimplicit-function-declaration]
+     if (strcmp(server.site, DTMS) == 0) ret = dir_recursive_dlt(bf.file_name);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_keyword_entries.o trans_lib/dlt_keyword_entries.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/dlt_old_sites.o trans_lib/dlt_old_sites.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/extend_big_file.o trans_lib/extend_big_file.c
+trans_lib/extend_big_file.c: In function 'history_timestamp_update':
+trans_lib/extend_big_file.c:61:5: warning: implicit declaration of function 'line_get' [-Wimplicit-function-declaration]
+     line_get(fi, line);
+     ^
+trans_lib/extend_big_file.c:73:5: warning: implicit declaration of function 'file_rename' [-Wimplicit-function-declaration]
+     file_rename(new_history_file, history_file);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/file_type_get.o trans_lib/file_type_get.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/files_dlt_transient.o trans_lib/files_dlt_transient.c
+trans_lib/files_dlt_transient.c: In function 'files_dlt_transient':
+trans_lib/files_dlt_transient.c:68:23: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (buf.st_mtime < dlt_time) 
+                       ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/files.o trans_lib/files.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/get_release_file.o trans_lib/get_release_file.c
+trans_lib/get_release_file.c: In function 'get_release_file':
+trans_lib/get_release_file.c:60:6: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+      exit(0);
+      ^
+trans_lib/get_release_file.c:60:6: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/get_release.o trans_lib/get_release.c
+trans_lib/get_release.c: In function 'release_info_rtv':
+trans_lib/get_release.c:86:5: warning: implicit declaration of function 'put_short' [-Wimplicit-function-declaration]
+     put_short(SUCCESS);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/keyword.o trans_lib/keyword.c
+trans_lib/keyword.c: In function 'keyword_create':
+trans_lib/keyword.c:73:9: warning: variable 'j' set but not used [-Wunused-but-set-variable]
+     int j;
+         ^
+trans_lib/keyword.c: In function 'keyword_find':
+trans_lib/keyword.c:143:5: warning: implicit declaration of function 'isupper' [-Wimplicit-function-declaration]
+     if (isupper(secure_key[8]))
+     ^
+trans_lib/keyword.c:146:9: warning: implicit declaration of function 'keyword_database_lookup' [-Wimplicit-function-declaration]
+         look_in_database = keyword_database_lookup(secure_key, file_key);
+         ^
+trans_lib/keyword.c:131:17: warning: unused variable 'secure_keyword_extension' [-Wunused-variable]
+     extern char secure_keyword_extension[];
+                 ^
+trans_lib/keyword.c: In function 'send2owner':
+trans_lib/keyword.c:198:5: warning: implicit declaration of function 'host_mapping_lookup' [-Wimplicit-function-declaration]
+     if (host_mapping_lookup(keyword, site, host, address, port) == SUCCESS)
+     ^
+trans_lib/keyword.c:201:9: warning: implicit declaration of function 'replace_blank_character' [-Wimplicit-function-declaration]
+         replace_blank_character(site);
+         ^
+trans_lib/keyword.c:191:16: warning: unused variable 'gl_socket' [-Wunused-variable]
+     extern int gl_socket;
+                ^
+In file included from trans_lib/keyword.c:24:0:
+trans_lib/keyword.c: At top level:
+./trans_include/keyword.h:6:12: warning: 'extension_array' defined but not used [-Wunused-variable]
+ static int extension_array[26] =
+            ^
+trans_lib/keyword.c: In function 'history_lookup':
+trans_lib/keyword.c:286:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* end history_lookup */
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/keyword_send.o trans_lib/keyword_send.c
+trans_lib/keyword_send.c: In function 'keyword_send':
+trans_lib/keyword_send.c:71:5: warning: passing argument 9 of 'send_secure_keyword' from incompatible pointer type [enabled by default]
+     send_secure_keyword(gu.key1, email_addr, fs.real_name, lines[2]+13, fs.file_type, fs.dlt_time, lines[8]+13, lines[9]+13, description);
+     ^
+In file included from trans_lib/keyword_send.c:24:0:
+./trans_include/trans_server_prototypes.h:171:6: note: expected 'char **' but argument is of type 'char *'
+ void send_secure_keyword(
+      ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/keyword_read.o trans_lib/keyword_read.c
+trans_lib/keyword_read.c: In function 'email_replace_at_character_by_dot':
+trans_lib/keyword_read.c:79:9: warning: unused variable 'len' [-Wunused-variable]
+     int len = strlen(email_addr);
+         ^
+trans_lib/keyword_read.c: In function 'trans_keywords_send':
+trans_lib/keyword_read.c:442:21: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+     if (ack == DBNO);
+                     ^
+In file included from trans_lib/keyword_read.c:29:0:
+trans_lib/keyword_read.c: At top level:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+trans_lib/keyword_read.c: In function 'email_replace_at_character_by_dot':
+trans_lib/keyword_read.c:85:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/log.o trans_lib/log.c
+trans_lib/log.c: In function 'log_history_file':
+trans_lib/log.c:80:5: warning: implicit declaration of function 'num_gmb_calc' [-Wimplicit-function-declaration]
+     num_gmb_calc(file_size_string, fs.original_size);
+     ^
+trans_lib/log.c: In function 'log_request':
+trans_lib/log.c:122:23: warning: unused parameter 'file_name' [-Wunused-parameter]
+ int log_request(char *file_name)
+                       ^
+In file included from trans_lib/log.c:24:0:
+trans_lib/log.c: At top level:
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/lookup_keyword.o trans_lib/lookup_keyword.c
+trans_lib/lookup_keyword.c: In function 'is_user_allowed_to_look_secure_keyword':
+trans_lib/lookup_keyword.c:60:9: warning: implicit declaration of function 'service_account_check' [-Wimplicit-function-declaration]
+         ||  service_account_check()          == SUCCESS)
+         ^
+trans_lib/lookup_keyword.c: In function 'keyword_database_lookup':
+trans_lib/lookup_keyword.c:135:9: warning: implicit declaration of function 'keyword_mapping_lookup' [-Wimplicit-function-declaration]
+         ret = keyword_mapping_lookup(secure_key, tmp_key, reg_email);
+         ^
+In file included from trans_lib/lookup_keyword.c:33:0:
+trans_lib/lookup_keyword.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/mod_lock_cnt.o trans_lib/mod_lock_cnt.c
+trans_lib/mod_lock_cnt.c: In function 'mod_lock_cnt':
+trans_lib/mod_lock_cnt.c:36:22: warning: unused parameter 'increment' [-Wunused-parameter]
+ int mod_lock_cnt(int increment)
+                      ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/get_parallel_data.o trans_lib/get_parallel_data.c
+trans_lib/get_parallel_data.c: In function 'file_string_build':
+trans_lib/get_parallel_data.c:76:11: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+     if (fs.compressed_size < 0)
+           ^
+trans_lib/get_parallel_data.c:80:11: warning: comparison of unsigned expression < 0 is always false [-Wtype-limits]
+     if (fs.original_size < 0)
+           ^
+trans_lib/get_parallel_data.c:93:6: warning: passing argument 2 of 'size_get' from incompatible pointer type [enabled by default]
+      fs.original_size = size_get(single_file, &secondary_file_type);
+      ^
+In file included from trans_lib/get_parallel_data.c:24:0:
+./trans_include/trans_lib_prototypes.h:196:11: note: expected 'char *' but argument is of type 'int *'
+ long long size_get(char *file_name, char *secondary_file_type);
+           ^
+trans_lib/get_parallel_data.c:102:5: warning: implicit declaration of function 'is_windows' [-Wimplicit-function-declaration]
+     if ((fs.file_type == FILES) && (is_windows() == DBYES))
+     ^
+trans_lib/get_parallel_data.c: In function 'size_get':
+trans_lib/get_parallel_data.c:175:6: warning: implicit declaration of function 'big_disk_usage' [-Wimplicit-function-declaration]
+      return(big_disk_usage(file_name));
+      ^
+trans_lib/get_parallel_data.c: In function 'client_size_verify':
+trans_lib/get_parallel_data.c:181:44: warning: unused parameter 'server_size' [-Wunused-parameter]
+ void client_size_verify(unsigned long long server_size, unsigned long long checksum)
+                                            ^
+trans_lib/get_parallel_data.c: In function 'get_parallel':
+trans_lib/get_parallel_data.c:211:12: warning: type defaults to 'int' in declaration of 'large_parallel_transfer_size' [-Wimplicit-int]
+     extern large_parallel_transfer_size;
+            ^
+trans_lib/get_parallel_data.c:260:5: warning: implicit declaration of function 'data_log' [-Wimplicit-function-declaration]
+     data_log(tr.log_file, rtn.msg);
+     ^
+trans_lib/get_parallel_data.c:292:6: warning: format '%d' expects argument of type 'int', but argument 3 has type 'long long unsigned int' [-Wformat=]
+      sprintf(buffer, "%d %llu %d", num_blocks, offset, mem_key);
+      ^
+trans_lib/get_parallel_data.c:312:6: warning: pointer targets in passing argument 1 of 'shared_memory_read' differ in signedness [-Wpointer-sign]
+      finished = shared_memory_read(&server_size, &checksum);
+      ^
+In file included from trans_lib/get_parallel_data.c:32:0:
+./trans_include/trans_server_prototypes.h:309:5: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ int shared_memory_read( long long *size, unsigned long long *checksum);
+     ^
+trans_lib/get_parallel_data.c:211:12: warning: unused variable 'large_parallel_transfer_size' [-Wunused-variable]
+     extern large_parallel_transfer_size;
+            ^
+trans_lib/get_parallel_data.c: In function 'get_separate':
+trans_lib/get_parallel_data.c:362:5: warning: implicit declaration of function 'shared_memory1init' [-Wimplicit-function-declaration]
+     shared_memory1init();
+     ^
+trans_lib/get_parallel_data.c:375:6: warning: implicit declaration of function 'shared_memory1read' [-Wimplicit-function-declaration]
+      finished = shared_memory1read(&server_size, &checksum);
+      ^
+trans_lib/get_parallel_data.c:376:19: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+      if (finished >= block_cnt) break;
+                   ^
+trans_lib/get_parallel_data.c: In function 'get_ack':
+trans_lib/get_parallel_data.c:409:2: warning: pointer targets in passing argument 1 of 'shared_memory_read' differ in signedness [-Wpointer-sign]
+  finished = shared_memory_read(&server_size, &checksum);
+  ^
+In file included from trans_lib/get_parallel_data.c:32:0:
+./trans_include/trans_server_prototypes.h:309:5: note: expected 'long long int *' but argument is of type 'long long unsigned int *'
+ int shared_memory_read( long long *size, unsigned long long *checksum);
+     ^
+trans_lib/get_parallel_data.c:426:5: warning: implicit declaration of function 'get_big_file_ack' [-Wimplicit-function-declaration]
+     get_big_file_ack(file_keyword);
+     ^
+trans_lib/get_parallel_data.c:396:9: warning: variable 'finished' set but not used [-Wunused-but-set-variable]
+     int finished;
+         ^
+trans_lib/get_parallel_data.c:427:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* end rtv_get_ack */
+ ^
+trans_lib/get_parallel_data.c: In function 'file_string_build':
+trans_lib/get_parallel_data.c:98:12: warning: 'real_file_ptr' may be used uninitialized in this function [-Wmaybe-uninitialized]
+      strcpy(real_file_ptr, single_file);
+            ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/block_get.o trans_lib/block_get.c
+trans_lib/block_get.c: In function 'block_get':
+trans_lib/block_get.c:82:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (lseek(fd, offset, SEEK_SET) != gu.original_size)
+                                     ^
+trans_lib/block_get.c: In function 'separate_block_get':
+trans_lib/block_get.c:157:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (lseek(fd, offset, SEEK_SET) != gu.original_size)
+                                     ^
+trans_lib/block_get.c:164:5: warning: implicit declaration of function 'shared_memory1allocate' [-Wimplicit-function-declaration]
+     shared_memory1allocate(key, mem_key);
+     ^
+trans_lib/block_get.c:184:9: warning: implicit declaration of function 'shared_memory_update' [-Wimplicit-function-declaration]
+         shared_memory_update(total_len, checksum);
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/block_put.o trans_lib/block_put.c
+trans_lib/block_put.c: In function 'offset_write':
+trans_lib/block_put.c:35:23: warning: unused parameter 'block_num' [-Wunused-parameter]
+ void offset_write(int block_num, long long offset)
+                       ^
+trans_lib/block_put.c:35:44: warning: unused parameter 'offset' [-Wunused-parameter]
+ void offset_write(int block_num, long long offset)
+                                            ^
+trans_lib/block_put.c: In function 'block_put':
+trans_lib/block_put.c:100:37: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (lseek(fd, offset, SEEK_SET) != offset)
+                                     ^
+trans_lib/block_put.c: In function 'separate_block_put':
+trans_lib/block_put.c:220:5: warning: implicit declaration of function 'shared_memory1allocate' [-Wimplicit-function-declaration]
+     shared_memory1allocate(key, mem_key, 1);
+     ^
+trans_lib/block_put.c:247:9: warning: implicit declaration of function 'shared_memory_update' [-Wimplicit-function-declaration]
+         shared_memory_update(total_len, checksum);
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/put_parallel_data.o trans_lib/put_parallel_data.c
+In file included from trans_lib/put_parallel_data.c:25:0:
+./trans_include/ftp_info.h:79:73: warning: backslash and newline separated by space [enabled by default]
+         echo \"Date after calculating cksum: $end_date\" >>$email_file\n\      
+ ^
+In file included from trans_lib/put_parallel_data.c:32:0:
+./trans_include/trans_server_paths.h:45:0: warning: "COMPANY_FILE" redefined [enabled by default]
+ #define COMPANY_FILE            "db_admin/ssl.company_file"
+ ^
+In file included from trans_lib/put_parallel_data.c:25:0:
+./trans_include/ftp_info.h:257:0: note: this is the location of the previous definition
+ #define COMPANY_FILE "db_admin/company_file"
+ ^
+trans_lib/put_parallel_data.c: In function 'transfer_type_set':
+trans_lib/put_parallel_data.c:65:27: warning: unused variable 'large_parallel_transfer_size' [-Wunused-variable]
+ extern unsigned long long large_parallel_transfer_size;
+                           ^
+trans_lib/put_parallel_data.c: In function 'metadata_init':
+trans_lib/put_parallel_data.c:173:5: warning: implicit declaration of function 'company_file_read' [-Wimplicit-function-declaration]
+     company_file_read();
+     ^
+trans_lib/put_parallel_data.c: In function 'delete_file_and_exit':
+trans_lib/put_parallel_data.c:207:5: warning: implicit declaration of function 'shared_memory_release' [-Wimplicit-function-declaration]
+     shared_memory_release();
+     ^
+trans_lib/put_parallel_data.c:197:65: warning: unused parameter 'msg' [-Wunused-parameter]
+ void delete_file_and_exit(char *keyword, char *file_name, char *msg, int err_code)
+                                                                 ^
+trans_lib/put_parallel_data.c: In function 'rcv_parallel':
+trans_lib/put_parallel_data.c:249:5: warning: implicit declaration of function 'shared_memory_create' [-Wimplicit-function-declaration]
+     mem_key = shared_memory_create(fs.key, 10);
+     ^
+trans_lib/put_parallel_data.c:269:9: warning: implicit declaration of function 'stop_server_quietly' [-Wimplicit-function-declaration]
+         stop_server_quietly();
+         ^
+trans_lib/put_parallel_data.c:231:24: warning: unused variable 'server_size' [-Wunused-variable]
+     unsigned long long server_size;
+                        ^
+trans_lib/put_parallel_data.c:230:24: warning: unused variable 'client_checksum' [-Wunused-variable]
+     unsigned long long client_checksum;
+                        ^
+trans_lib/put_parallel_data.c:229:24: warning: unused variable 'checksum' [-Wunused-variable]
+     unsigned long long checksum = 0;
+                        ^
+trans_lib/put_parallel_data.c:227:9: warning: unused variable 'finished' [-Wunused-variable]
+     int finished;
+         ^
+trans_lib/put_parallel_data.c:225:17: warning: unused variable 'buf' [-Wunused-variable]
+     struct stat buf;
+                 ^
+trans_lib/put_parallel_data.c:221:25: warning: unused variable 'cp' [-Wunused-variable]
+     extern COMPANY_DATA cp;
+                         ^
+trans_lib/put_parallel_data.c:218:16: warning: unused parameter 'final_size' [-Wunused-parameter]
+     long long *final_size)
+                ^
+trans_lib/put_parallel_data.c: In function 'rcv_separate':
+trans_lib/put_parallel_data.c:316:5: warning: implicit declaration of function 'shared_memory1init' [-Wimplicit-function-declaration]
+     shared_memory1init();
+     ^
+trans_lib/put_parallel_data.c:320:5: warning: implicit declaration of function 'block_size_buffer_build' [-Wimplicit-function-declaration]
+     block_cnt = block_size_buffer_build(buffer, mem_key, gu.original_size, gu.par3);
+     ^
+trans_lib/put_parallel_data.c:335:9: warning: implicit declaration of function 'shared_memory1read' [-Wimplicit-function-declaration]
+         finished = shared_memory1read(&server_size, &checksum);
+         ^
+trans_lib/put_parallel_data.c:336:22: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+         if (finished >= block_cnt)
+                      ^
+trans_lib/put_parallel_data.c:362:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (buf.st_size != compressed_size)
+                     ^
+trans_lib/put_parallel_data.c:365:9: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 7 has type '__off_t' [-Wformat=]
+         sprintf(rtn.msg, bad_size, PROGRAM, real_name, file_keyword, compressed_size, buf.st_size);
+         ^
+trans_lib/put_parallel_data.c:368:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (server_size != *final_size)
+                     ^
+trans_lib/put_parallel_data.c: In function 'put_ack':
+trans_lib/put_parallel_data.c:418:5: warning: implicit declaration of function 'shared_memory_allocate' [-Wimplicit-function-declaration]
+     shared_memory_allocate(file_keyword, mem_key, 10);
+     ^
+trans_lib/put_parallel_data.c:422:2: warning: implicit declaration of function 'shared_memory_read' [-Wimplicit-function-declaration]
+  finished = shared_memory_read(&server_size, &checksum);
+  ^
+trans_lib/put_parallel_data.c:459:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (buf.st_size > fs.compressed_size)
+                     ^
+trans_lib/put_parallel_data.c:463:26: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     else if (buf.st_size < fs.compressed_size)
+                          ^
+trans_lib/put_parallel_data.c:465:9: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 7 has type '__off_t' [-Wformat=]
+         sprintf(rtn.msg, bad_size, PROGRAM, fs.real_name, fs.key, fs.compressed_size, buf.st_size);
+         ^
+trans_lib/put_parallel_data.c:469:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (server_size != final_size)
+                     ^
+trans_lib/put_parallel_data.c:398:9: warning: variable 'finished' set but not used [-Wunused-but-set-variable]
+     int finished;
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/shared_memory.o trans_lib/shared_memory.c
+trans_lib/shared_memory.c: In function 'shared_memory_create':
+trans_lib/shared_memory.c:65:73: warning: ordered comparison of pointer with integer zero [-Wextra]
+     if ((mem_ptr = (struct trans_process_info *)shmat(shm_id, NULL, 0)) < 0)
+                                                                         ^
+trans_lib/shared_memory.c: In function 'shared_memory_allocate':
+trans_lib/shared_memory.c:89:73: warning: ordered comparison of pointer with integer zero [-Wextra]
+     if ((mem_ptr = (struct trans_process_info *)shmat(shm_id, NULL, 0)) < 0)
+                                                                         ^
+trans_lib/shared_memory.c:76:34: warning: unused parameter 'keyword' [-Wunused-parameter]
+ int shared_memory_allocate(char *keyword, int mem_key, int block_cnt)
+                                  ^
+trans_lib/shared_memory.c: In function 'shared_memory1allocate':
+trans_lib/shared_memory.c:113:73: warning: ordered comparison of pointer with integer zero [-Wextra]
+     if ((mem_ptr = (struct trans_process_info *)shmat(shm_id, NULL, 0)) < 0)
+                                                                         ^
+trans_lib/shared_memory.c:101:34: warning: unused parameter 'keyword' [-Wunused-parameter]
+ int shared_memory1allocate(char *keyword, int mem_key)
+                                  ^
+trans_lib/shared_memory.c: In function 'shared_memory_cleanup':
+trans_lib/shared_memory.c:253:5: warning: implicit declaration of function 'line_get' [-Wimplicit-function-declaration]
+     while (line_get(po, line)  > 0)
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/history_big_file.o trans_lib/history_big_file.c
+trans_lib/history_big_file.c: In function 'history_big_file':
+trans_lib/history_big_file.c:79:9: warning: variable 'is_secure_key' set but not used [-Wunused-but-set-variable]
+     int is_secure_key;
+         ^
+trans_lib/history_big_file.c:120:9: warning: 'cnt' may be used uninitialized in this function [-Wmaybe-uninitialized]
+  sprintf(rtn.msg+rtn.len,
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/mod_big_file.o trans_lib/mod_big_file.c
+trans_lib/mod_big_file.c: In function 'mod_email_big_file':
+trans_lib/mod_big_file.c:35:11: warning: unused variable 'ptr' [-Wunused-variable]
+     char *ptr;
+           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/owner_dlt.o trans_lib/owner_dlt.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/put_msg.o trans_lib/put_msg.c
+trans_lib/put_msg.c: In function 'put_msg':
+trans_lib/put_msg.c:78:5: warning: implicit declaration of function 'format_user_keys_file_name' [-Wimplicit-function-declaration]
+     format_user_keys_file_name(file_name);
+     ^
+In file included from trans_lib/put_msg.c:25:0:
+trans_lib/put_msg.c: At top level:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/put_success_msg.o trans_lib/put_success_msg.c
+trans_lib/put_success_msg.c: In function 'return_success':
+trans_lib/put_success_msg.c:119:36: warning: unused parameter 'log' [-Wunused-parameter]
+ void return_success(char *msg, int log)
+                                    ^
+trans_lib/put_success_msg.c: At top level:
+trans_lib/put_success_msg.c:128:1: warning: return type defaults to 'int' [-Wreturn-type]
+ stop_server_quietly()
+ ^
+trans_lib/put_success_msg.c: In function 'stop_server_quietly':
+trans_lib/put_success_msg.c:133:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/request.o trans_lib/request.c
+trans_lib/request.c: In function 'icap_class_rtv':
+trans_lib/request.c:92:64: warning: unused parameter 'from_company' [-Wunused-parameter]
+ void icap_class_rtv(char *icap_class, char *icap_string, char *from_company)
+                                                                ^
+trans_lib/request.c: In function 'request_read':
+trans_lib/request.c:139:9: warning: format '%[^;' expects argument of type 'char *', but argument 10 has type 'time_t *' [-Wformat=]
+         );
+         ^
+trans_lib/request.c:139:9: warning: format '%ld' expects argument of type 'long int *', but argument 11 has type 'long long unsigned int *' [-Wformat=]
+trans_lib/request.c:139:9: warning: format '%lld' expects argument of type 'long long int *', but argument 13 has type 'long int *' [-Wformat=]
+trans_lib/request.c:139:9: warning: format '%ld' expects argument of type 'long int *', but argument 14 has type 'char *' [-Wformat=]
+trans_lib/request.c:139:9: warning: format '%[^;' expects a matching 'char *' argument [-Wformat=]
+trans_lib/request.c: In function 'request_log':
+trans_lib/request.c:186:5: warning: format '%u' expects argument of type 'unsigned int', but argument 20 has type 'long int' [-Wformat=]
+     gu.par1, gu.par2, gu.par3, gu.par4, gu.par5, gu.par6, gu.icap_class);
+     ^
+trans_lib/request.c: In function 'save_last_request':
+trans_lib/request.c:209:5: warning: implicit declaration of function 'time_convert' [-Wimplicit-function-declaration]
+     time_convert(current_time);
+     ^
+In file included from trans_lib/request.c:21:0:
+trans_lib/request.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/reg.o trans_lib/reg.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/read_global_params.o trans_lib/read_global_params.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/report_gen.o trans_lib/report_gen.c
+In file included from trans_lib/report_gen.c:36:0:
+./global_include/user_params.h:16:0: warning: "USER_ID" redefined [enabled by default]
+ #define USER_ID 7
+ ^
+In file included from trans_lib/report_gen.c:31:0:
+./trans_include/maskshop.h:5:0: note: this is the location of the previous definition
+ #define USER_ID 1
+ ^
+trans_lib/report_gen.c: In function 'report_list':
+trans_lib/report_gen.c:148:9: warning: implicit declaration of function 'file_get' [-Wimplicit-function-declaration]
+         file_get("/tmp", tmp_file+5);
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/report_log.o trans_lib/report_log.c
+In file included from trans_lib/report_log.c:30:0:
+./global_include/user_params.h:16:0: warning: "USER_ID" redefined [enabled by default]
+ #define USER_ID 7
+ ^
+In file included from trans_lib/report_log.c:20:0:
+./trans_include/maskshop.h:5:0: note: this is the location of the previous definition
+ #define USER_ID 1
+ ^
+trans_lib/report_log.c: In function 'transaction_log':
+trans_lib/report_log.c:130:9: warning: unused variable 'bytes' [-Wunused-variable]
+     int bytes  = fprintf(fp, "%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%s;%lld;%lld;%ld;%ld;%ld;%s;%s;%s\n",
+         ^
+trans_lib/report_log.c: In function 'report_log':
+trans_lib/report_log.c:161:5: warning: implicit declaration of function 'fss_report_log' [-Wimplicit-function-declaration]
+     fss_report_log(NONE, file_name, mask);
+     ^
+trans_lib/report_log.c: In function 'mask_status_find':
+trans_lib/report_log.c:258:39: warning: suggest parentheses around '&&' within '||' [-Wparentheses]
+     || (gu.req_type != DBPUTDLT_DATA) && ( gu.req_type != DBPUTDLT_TAR_FILE))
+                                       ^
+In file included from trans_lib/report_log.c:25:0:
+trans_lib/report_log.c: At top level:
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/rmv_dups.o trans_lib/rmv_dups.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/rcv_file.o trans_lib/rcv_file.c
+trans_lib/rcv_file.c: In function 'rcv_file':
+trans_lib/rcv_file.c:79:21: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (buf.st_size != compressed_size)
+                     ^
+trans_lib/rcv_file.c:81:9: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 7 has type '__off_t' [-Wformat=]
+         sprintf(rtn.msg, bad_size, PROGRAM, fs.real_name, fs.key, compressed_size, buf.st_size);
+         ^
+trans_lib/rcv_file.c:82:9: warning: implicit declaration of function 'email_send' [-Wimplicit-function-declaration]
+         email_send("", admin.err_email, "Incorrect size", rtn.msg);
+         ^
+trans_lib/rcv_file.c:90:9: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 7 has type '__off_t' [-Wformat=]
+         sprintf(rtn.msg, bad_size, PROGRAM, fs.real_name, fs.key, compressed_size, buf.st_size);
+         ^
+trans_lib/rcv_file.c:37:9: warning: unused parameter 'dtms' [-Wunused-parameter]
+     int dtms,
+         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/server.o trans_lib/server.c
+trans_lib/server.c: In function 'server_set':
+trans_lib/server.c:281:5: warning: missing braces around initializer [-Wmissing-braces]
+     TRANS_COMPANY  site = {0};
+     ^
+trans_lib/server.c:281:5: warning: (near initialization for 'site.name') [-Wmissing-braces]
+trans_lib/server.c:281:5: warning: missing initializer for field 'abbreviation' of 'TRANS_COMPANY' [-Wmissing-field-initializers]
+In file included from trans_lib/server.c:18:0:
+./trans_include/company.h:52:10: note: 'abbreviation' declared here
+     char abbreviation[8];         // Abbreviation
+          ^
+trans_lib/server.c:285:5: warning: implicit declaration of function 'inet_network' [-Wimplicit-function-declaration]
+     if (user.mach[0] && inet_network(user.mach) == -1 && (pt_domain = strchr(user.mach, '.'))!= NULL)
+     ^
+trans_lib/server.c:288:8: warning: implicit declaration of function 'sql_search_domain' [-Wimplicit-function-declaration]
+        char *abbreviation = sql_search_domain(pt_domain+1);
+        ^
+trans_lib/server.c:288:29: warning: initialization makes pointer from integer without a cast [enabled by default]
+        char *abbreviation = sql_search_domain(pt_domain+1);
+                             ^
+trans_lib/server.c:292:12: warning: implicit declaration of function 'get_company_info' [-Wimplicit-function-declaration]
+            TRANS_COMPANY * company = get_company_info(abbreviation);
+            ^
+trans_lib/server.c:292:38: warning: initialization makes pointer from integer without a cast [enabled by default]
+            TRANS_COMPANY * company = get_company_info(abbreviation);
+                                      ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/ssl_server.o trans_lib/ssl_server.c
+trans_lib/ssl_server.c: In function 'database_initializations':
+trans_lib/ssl_server.c:30:9: warning: implicit declaration of function 'populate_destinations_on_server' [-Wimplicit-function-declaration]
+         populate_destinations_on_server();
+         ^
+trans_lib/ssl_server.c: In function 'main':
+trans_lib/ssl_server.c:80:5: warning: implicit declaration of function 'initialize_ctx' [-Wimplicit-function-declaration]
+     ctx = initialize_ctx(key_file,PASSWORD);
+     ^
+trans_lib/ssl_server.c:80:9: warning: assignment makes pointer from integer without a cast [enabled by default]
+     ctx = initialize_ctx(key_file,PASSWORD);
+         ^
+trans_lib/ssl_server.c:87:9: warning: implicit declaration of function 'accept' [-Wimplicit-function-declaration]
+         if ((s = accept(sock,0,0)) < 0)
+         ^
+trans_lib/ssl_server.c:127:5: warning: implicit declaration of function 'destroy_ctx' [-Wimplicit-function-declaration]
+     destroy_ctx(ctx);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/status_big_file.o trans_lib/status_big_file.c
+trans_lib/status_big_file.c: In function 'is_owner':
+trans_lib/status_big_file.c:57:5: warning: implicit declaration of function 'keyword_auth_check' [-Wimplicit-function-declaration]
+     return(keyword_auth_check(own_id));
+     ^
+trans_lib/status_big_file.c:51:11: warning: unused variable 'ptr' [-Wunused-variable]
+     char *ptr;
+           ^
+trans_lib/status_big_file.c: In function 'status_big_file':
+trans_lib/status_big_file.c:85:5: warning: implicit declaration of function 'search_email_file' [-Wimplicit-function-declaration]
+     list[GLOBAL_EMAIL_SET][0] =   search_email_file(fs.own_id, GLOBAL_EMAIL_FILE)+48;
+     ^
+trans_lib/status_big_file.c: In function 'lock_status_check':
+trans_lib/status_big_file.c:161:2: warning: implicit declaration of function 'transfer_status_big_file' [-Wimplicit-function-declaration]
+  transfer_status_big_file(fs.key, msg, total_size);
+  ^
+trans_lib/status_big_file.c:166:5: warning: implicit declaration of function 'close_down1f' [-Wimplicit-function-declaration]
+     close_down1f(zip_lock_err, fs.real_name, ZIP_LOCK_ERR);
+     ^
+trans_lib/status_big_file.c: At top level:
+trans_lib/status_big_file.c:176:6: warning: conflicting types for 'transfer_status_big_file' [enabled by default]
+ void transfer_status_big_file(char *key, char *msg, unsigned long long total_size)
+      ^
+trans_lib/status_big_file.c:161:2: note: previous implicit declaration of 'transfer_status_big_file' was here
+  transfer_status_big_file(fs.key, msg, total_size);
+  ^
+trans_lib/status_big_file.c: In function 'transfer_status_big_file':
+trans_lib/status_big_file.c:195:2: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 3 has type '__off_t' [-Wformat=]
+  buf.st_size);
+  ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/search_email_file.o trans_lib/search_email_file.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/shut_down.o trans_lib/shut_down.c
+trans_lib/shut_down.c: In function 'shut_down':
+trans_lib/shut_down.c:74:5: warning: implicit declaration of function 'sql_dt_transaction_insert' [-Wimplicit-function-declaration]
+     sql_dt_transaction_insert ( rtn_code, msg);
+     ^
+trans_lib/shut_down.c:76:5: warning: implicit declaration of function 'sql_reg_timestamp_update' [-Wimplicit-function-declaration]
+     sql_reg_timestamp_update();
+     ^
+trans_lib/shut_down.c:82:5: warning: implicit declaration of function 'exit' [-Wimplicit-function-declaration]
+     exit(1);
+     ^
+trans_lib/shut_down.c:82:5: warning: incompatible implicit declaration of built-in function 'exit' [enabled by default]
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/size_check_big_file.o trans_lib/size_check_big_file.c
+trans_lib/size_check_big_file.c: In function 'size_check_big_file':
+trans_lib/size_check_big_file.c:51:5: warning: format '%llu' expects argument of type 'long long unsigned int', but argument 3 has type '__off_t' [-Wformat=]
+     sprintf(file_size_string, "%llu bytes\n", buf.st_size);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/ssl_rmt_lib.o trans_lib/ssl_rmt_lib.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/ssl_init.o trans_lib/ssl_init.c
+trans_lib/ssl_init.c:21:0: warning: "HELP_MSG" redefined [enabled by default]
+ #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\
+ ^
+In file included from ./global_include/rtn.h:4:0,
+                 from trans_lib/ssl_init.c:12:
+./global_include/global_defines.h:131:0: note: this is the location of the previous definition
+ #define HELP_MSG "For assistance, contact TransFTP administrator:\n\n\
+ ^
+trans_lib/ssl_init.c: In function 'ssl_init':
+trans_lib/ssl_init.c:80:5: warning: implicit declaration of function 'tcp_connect' [-Wimplicit-function-declaration]
+     trans_sock=tcp_connect(machine,address, socket);
+     ^
+trans_lib/ssl_init.c: In function 'tcp_connect':
+trans_lib/ssl_init.c:128:5: warning: implicit declaration of function 'ip_addr_copy' [-Wimplicit-function-declaration]
+     ip_addr_copy((char *)&addr.sin_addr, address);
+     ^
+trans_lib/ssl_init.c:118:23: warning: unused parameter 'host' [-Wunused-parameter]
+ int tcp_connect(char *host, char *address, int port)
+                       ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/support.o trans_lib/support.c
+trans_lib/support.c: In function 'maillist_auth_check':
+trans_lib/support.c:176:35: warning: suggest braces around empty body in an 'if' statement [-Wempty-body]
+         DBG("will return FAILURE");
+                                   ^
+In file included from trans_lib/support.c:18:0:
+trans_lib/support.c: At top level:
+./trans_include/keyword.h:6:12: warning: 'extension_array' defined but not used [-Wunused-variable]
+ static int extension_array[26] =
+            ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/send_secure_keyword.o trans_lib/send_secure_keyword.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/set_trans_disk_usage.o trans_lib/set_trans_disk_usage.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/trans_server_globals.o trans_lib/trans_server_globals.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/trans1step_upload.o trans_lib/trans1step_upload.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/trans1step_download.o trans_lib/trans1step_download.c
+trans_lib/trans1step_download.c: In function 'trans1step_download':
+trans_lib/trans1step_download.c:74:5: warning: implicit declaration of function 'lock_status_check' [-Wimplicit-function-declaration]
+     lock_status_check();
+     ^
+trans_lib/trans1step_download.c:80:9: warning: assignment makes integer from pointer without a cast [enabled by default]
+     ret = getcwd(cwd, PATH_SIZE);
+         ^
+trans_lib/trans1step_download.c:62:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable]
+     int ret;
+         ^
+trans_lib/trans1step_download.c: In function 'trans1step_download_complete':
+trans_lib/trans1step_download.c:106:5: warning: implicit declaration of function 'get_big_file_ack' [-Wimplicit-function-declaration]
+     get_big_file_ack(keyword);
+     ^
+In file included from trans_lib/trans1step_download.c:32:0:
+trans_lib/trans1step_download.c: At top level:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/trans_sql_lib.o trans_lib/trans_sql_lib.c
+trans_lib/trans_sql_lib.c: In function 'sql_insert_data':
+trans_lib/trans_sql_lib.c:95:11: warning: unused variable 'sql1' [-Wunused-variable]
+     MYSQL sql1;
+           ^
+trans_lib/trans_sql_lib.c: In function 'sql_result_get':
+trans_lib/trans_sql_lib.c:124:11: warning: unused variable 'sql1' [-Wunused-variable]
+     MYSQL sql1;
+           ^
+trans_lib/trans_sql_lib.c:123:11: warning: unused variable 'sql' [-Wunused-variable]
+     MYSQL sql;
+           ^
+trans_lib/trans_sql_lib.c: In function 'sql_dt_transaction_insert':
+trans_lib/trans_sql_lib.c:257:5: warning: implicit declaration of function 'sql_time_convert' [-Wimplicit-function-declaration]
+     sql_time_convert(starttime_string, tr.upd_time, NULL);
+     ^
+trans_lib/trans_sql_lib.c:304:20: warning: comparison between signed and unsigned integer expressions [-Wsign-compare]
+     if (length_deb >= sizeof(query))
+                    ^
+trans_lib/trans_sql_lib.c: In function 'sql_edc_insert_data':
+trans_lib/trans_sql_lib.c:385:11: warning: unused variable 'sql1' [-Wunused-variable]
+     MYSQL sql1;
+           ^
+trans_lib/trans_sql_lib.c: In function 'sql_edc_result_get':
+trans_lib/trans_sql_lib.c:443:17: warning: unused variable 'rows' [-Wunused-variable]
+             int rows =  mysql_num_rows(result);
+                 ^
+trans_lib/trans_sql_lib.c:413:11: warning: unused variable 'sql1' [-Wunused-variable]
+     MYSQL sql1;
+           ^
+trans_lib/trans_sql_lib.c:412:11: warning: unused variable 'sql' [-Wunused-variable]
+     MYSQL sql;
+           ^
+trans_lib/trans_sql_lib.c: In function 'sql_commandline_approve':
+trans_lib/trans_sql_lib.c:595:5: warning: implicit declaration of function 'put_short' [-Wimplicit-function-declaration]
+     put_short(SUCCESS);
+     ^
+In file included from trans_lib/trans_sql_lib.c:9:0:
+trans_lib/trans_sql_lib.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+In file included from trans_lib/trans_sql_lib.c:19:0:
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/time_calc.o trans_lib/time_calc.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/transweb.o trans_lib/transweb.c
+trans_lib/transweb.c: In function 'secure_keys_read':
+trans_lib/transweb.c:81:2: warning: implicit declaration of function 'company_email_strip' [-Wimplicit-function-declaration]
+  company_email_strip(gu.email1);
+  ^
+trans_lib/transweb.c: In function 'user_keys_rtv':
+trans_lib/transweb.c:204:5: warning: implicit declaration of function 'format_user_keys_file_name' [-Wimplicit-function-declaration]
+     format_user_keys_file_name(file_name);
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/transweb_keyword.o trans_lib/transweb_keyword.c
+trans_lib/transweb_keyword.c: In function 'user_keywords_delete':
+trans_lib/transweb_keyword.c:61:5: warning: implicit declaration of function 'format_user_keys_file_name' [-Wimplicit-function-declaration]
+     format_user_keys_file_name(file_name);
+     ^
+In file included from trans_lib/transweb_keyword.c:30:0:
+trans_lib/transweb_keyword.c: At top level:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/transdirlist.o trans_lib/transdirlist.c
+trans_lib/transdirlist.c: In function 'trans_dynamic_dirlist_rtv':
+trans_lib/transdirlist.c:78:9: warning: implicit declaration of function 'data_log' [-Wimplicit-function-declaration]
+         data_log(tr.log_file, get_err);
+         ^
+trans_lib/transdirlist.c: In function 'transdirlist_rtv':
+trans_lib/transdirlist.c:122:13: warning: implicit declaration of function 'line_get' [-Wimplicit-function-declaration]
+             line_get(fp, bf.buffer);
+             ^
+trans_lib/transdirlist.c: In function 'transdirlist_build':
+trans_lib/transdirlist.c:204:5: warning: implicit declaration of function 'file_append' [-Wimplicit-function-declaration]
+     file_append(transdirlist, tmp_file);
+     ^
+trans_lib/transdirlist.c:205:5: warning: implicit declaration of function 'file_rename' [-Wimplicit-function-declaration]
+     file_rename(tmp_file, transdirlist);
+     ^
+trans_lib/transdirlist.c: In function 'transdir_list':
+trans_lib/transdirlist.c:243:2: warning: format '%lld' expects argument of type 'long long int', but argument 4 has type '__off_t' [-Wformat=]
+  sprintf(string, "%s %lld", file_name+25, buf.st_size);
+  ^
+trans_lib/transdirlist.c: In function 'trans_dynamic_dirlist_rtv':
+trans_lib/transdirlist.c:89:1: warning: control reaches end of non-void function [-Wreturn-type]
+ } /* end trans_dynamic_dirlist_rtv */
+ ^
+trans_lib/transdirlist.c: In function 'transdirlist_rtv':
+trans_lib/transdirlist.c:135:26: warning: 'total_len' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         fs.original_size = total_len;
+                          ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/transweb_reg.o trans_lib/transweb_reg.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DBYTESWAP -DSSL_ENCRYPTION -DNXP -DTRANS_FTP -DLINUX -DNO_DMZ  -I./global_include  -I./trans_include -I./reg_include -I./src/ -I/usr/include/mysql -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o trans_lib/query_user.o trans_lib/query_user.c
+trans_lib/query_user.c: In function 'query_user':
+trans_lib/query_user.c:87:10: warning: implicit declaration of function 'sql_dt_registry_sites_lookup' [-Wimplicit-function-declaration]
+          sql_dt_registry_sites_lookup(user_id);
+          ^
+trans_lib/query_user.c: In function 'trans_site_read':
+trans_lib/query_user.c:187:8: warning: 'site_cnt' may be used uninitialized in this function [-Wmaybe-uninitialized]
+     if (site_cnt <= 0)
+        ^
+
+:: ssl64transftpmake_translib.mk --target='shared_intd_lib.a' --output='shared_intd_lib.a' (TransFTP)
+
+ar r ./shared_intd_lib.a trans_lib/get_random_index.o trans_lib/check_disk_space.o trans_lib/company.o trans_lib/cron_dlt_files.o trans_lib/dlt_empty_global_files.o trans_lib/dlt_history_files.o trans_lib/dlt_time_calc.o trans_lib/disk_usage_check.o trans_lib/dlt_big_file.o trans_lib/dlt_keyword_entries.o trans_lib/dlt_old_sites.o trans_lib/extend_big_file.o trans_lib/file_type_get.o trans_lib/files_dlt_transient.o trans_lib/files.o trans_lib/get_release_file.o trans_lib/get_release.o trans_lib/keyword.o trans_lib/keyword_send.o trans_lib/keyword_read.o trans_lib/log.o trans_lib/lookup_keyword.o trans_lib/mod_lock_cnt.o trans_lib/get_parallel_data.o trans_lib/block_get.o trans_lib/block_put.o trans_lib/put_parallel_data.o trans_lib/shared_memory.o trans_lib/history_big_file.o trans_lib/mod_big_file.o trans_lib/owner_dlt.o trans_lib/put_msg.o trans_lib/put_success_msg.o trans_lib/request.o trans_lib/reg.o trans_lib/read_global_params.o trans_lib/report_gen.o trans_lib/report_log.o trans_lib/rmv_dups.o trans_lib/rcv_file.o trans_lib/server.o trans_lib/ssl_server.o trans_lib/status_big_file.o trans_lib/search_email_file.o trans_lib/shut_down.o trans_lib/size_check_big_file.o trans_lib/ssl_rmt_lib.o trans_lib/ssl_init.o trans_lib/support.o trans_lib/send_secure_keyword.o trans_lib/set_trans_disk_usage.o trans_lib/trans_server_globals.o trans_lib/trans1step_upload.o trans_lib/trans1step_download.o trans_lib/trans_sql_lib.o trans_lib/time_calc.o trans_lib/transweb.o trans_lib/transweb_keyword.o trans_lib/transdirlist.o trans_lib/transweb_reg.o trans_lib/query_user.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+ar: creating ./shared_intd_lib.a
+ranlib ./shared_intd_lib.a
+make[1]: Leaving directory `/home/nxf84310/orig/transcend'
+make -f ssl64transftpmake_server.mk    SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1
+libraries.def [almost done] variable = RH7 SERVER=1 USE_OS_SSL= 
+libraries.def final OS variable = RH7 SERVER=1 USE_OS_SSL=1 USE_OS_LDAP=1 USE_OS_MYSQL=1
+libopenldap.def LDAP_INCLUDE= LDAP_LIBS=-lldap -llber
+libopenssl.def BUILD_MODULE=build-transftp-server OS=RH7 USE_OS_SSL=1
+libopenssl.def 01 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 10  LINK_SHARED=0 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=
+libopenssl.def 30 SSL_INCLUDE= SSL_LIBS=-lssl -lcrypto
+libcurl 00 USE_OS_CURL=
+libcurl 01 using local build LOCAL_CUSTOM_CURL = /home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0
+libcurl 02 Creating custom CURL Library, it may take a while ...
+
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+
+gzip: stdin: not in gzip format
+tar: Child returned status 1
+tar: Error is not recoverable: exiting now
+CURL_INCLUDE=-I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl CURL_LIB=/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/lib/libcurl.a /home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-libssh2-/1.9.0/lib/libssh2.a -lgcrypt -lpthread -lrt
+BEGIN
+intercom/check_reg.o intercom/reg_query.o intercom/customer_set.o intercom/dlt_time_calc.o intercom/entry.o intercom/email.o intercom/external_transweb.o intercom/ftp.o intercom/ftp_parallel.o intercom/ftp_transweb.o intercom/find_email.o intercom/find_reg_request.o intercom/fss.o intercom/init_trans_socket.o intercom/mask_filelist_check.o intercom/get_big_file.o intercom/info_big_file.o intercom/lookup_release_keyword.o intercom/keyword.o intercom/open_big_file.o intercom/owner_dlt.o intercom/process_request.o intercom/put_big_file.o intercom/rtv_user_email.o intercom/send2foundry.o intercom/sql_lib.o intercom/send_secure_keyword.o intercom/send_rtv_email.o intercom/send_file.o intercom/time_stamp.o ./global_code/global_debug.o ./src/ldapfsl.o src/ldapfsl_trans.o
+END
+make[1]: Entering directory `/home/nxf84310/orig/transcend'
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/check_reg.o intercom/check_reg.c
+intercom/check_reg.c: In function 'login_decrypt':
+intercom/check_reg.c:63:10: warning: implicit declaration of function 'core_id_crypt' [-Wimplicit-function-declaration]
+          ret = core_id_crypt(user.login, DECRYPT) ;
+          ^
+intercom/check_reg.c: In function 'x500authenticate':
+intercom/check_reg.c:84:5: warning: implicit declaration of function 'decrypt_ascii_pwd' [-Wimplicit-function-declaration]
+     decrypt_ascii_pwd(user_pwd, decrypt_pwd);
+     ^
+intercom/check_reg.c:85:5: warning: implicit declaration of function 'ldapfsl_user_authenticate_and_copy_global_structures' [-Wimplicit-function-declaration]
+     ret = ldapfsl_user_authenticate_and_copy_global_structures(user_id, decrypt_pwd);
+     ^
+intercom/check_reg.c:117:5: warning: implicit declaration of function 'ldapfsl_exists_account_by_coreid' [-Wimplicit-function-declaration]
+     if (edc_type == EXTERNAL_CUSTOMER && ldapfsl_exists_account_by_coreid(user_id) == DBYES)
+     ^
+intercom/check_reg.c:142:13: warning: implicit declaration of function 'isdigit' [-Wimplicit-function-declaration]
+             if ( isdigit(*user_pwd) == 0 && *user_pwd != '.')
+             ^
+intercom/check_reg.c:149:13: warning: implicit declaration of function 'sql_external_reg_check' [-Wimplicit-function-declaration]
+             if (sql_external_reg_check(user_id) == APPROVED)
+             ^
+In file included from intercom/check_reg.c:19:0:
+intercom/check_reg.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/reg_query.o intercom/reg_query.c
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/customer_set.o intercom/customer_set.c
+intercom/customer_set.c: In function 'trans_ftp_set':
+intercom/customer_set.c:21:9: warning: implicit declaration of function 'name_build' [-Wimplicit-function-declaration]
+         name_build(remote_dir);
+         ^
+intercom/customer_set.c: In function 'customer_set':
+intercom/customer_set.c:40:11: warning: unused variable 'ptr' [-Wunused-variable]
+     char *ptr;
+           ^
+intercom/customer_set.c: In function 'customer_email_log':
+intercom/customer_set.c:127:5: warning: implicit declaration of function 'data_log' [-Wimplicit-function-declaration]
+     data_log(email_log_file, log_string);
+     ^
+In file included from intercom/customer_set.c:3:0:
+intercom/customer_set.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+intercom/customer_set.c:27:12: warning: 'isExtenalClient' defined but not used [-Wunused-function]
+ static int isExtenalClient()
+            ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/dlt_time_calc.o intercom/dlt_time_calc.c
+intercom/dlt_time_calc.c: In function 'day_dlt_time_calc':
+intercom/dlt_time_calc.c:12:11: warning: variable 'time_ptr' set but not used [-Wunused-but-set-variable]
+     char *time_ptr;
+           ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/entry.o intercom/entry.c
+intercom/entry.c: In function 'entry_add':
+intercom/entry.c:102:5: warning: implicit declaration of function 'file_rename' [-Wimplicit-function-declaration]
+     if (file_rename(file2, file1) != SUCCESS)
+     ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/email.o intercom/email.c
+intercom/email.c: In function 'email_dir_rtv':
+intercom/email.c:70:2: warning: implicit declaration of function 'file_copy' [-Wimplicit-function-declaration]
+  file_copy(old_file_name, new_file_name);
+  ^
+In file included from intercom/email.c:31:0:
+intercom/email.c: At top level:
+./trans_include/keyword.h:6:12: warning: 'extension_array' defined but not used [-Wunused-variable]
+ static int extension_array[26] =
+            ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/external_transweb.o intercom/external_transweb.c
+intercom/external_transweb.c: In function 'mm_file_key_send':
+intercom/external_transweb.c:106:5: warning: implicit declaration of function 'sr_get' [-Wimplicit-function-declaration]
+     sr_get(sr, description);
+     ^
+In file included from intercom/external_transweb.c:21:0:
+intercom/external_transweb.c: At top level:
+./trans_include/customer_table.h:90:18: warning: 'customer_table' defined but not used [-Wunused-variable]
+     static short customer_table[1][8] =
+                  ^
+In file included from intercom/external_transweb.c:32:0:
+./trans_include/trans_server_arrays.h:4:13: warning: 'req_array' defined but not used [-Wunused-variable]
+ static char req_array[146][25] =
+             ^
+./trans_include/trans_server_arrays.h:150:13: warning: 'trans_filetype_array' defined but not used [-Wunused-variable]
+ static char trans_filetype_array[10][12] =
+             ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/ftp.o intercom/ftp.c
+In file included from intercom/ftp.c:14:0:
+./trans_include/ftp_info.h:79:73: warning: backslash and newline separated by space [enabled by default]
+         echo \"Date after calculating cksum: $end_date\" >>$email_file\n\      
+ ^
+intercom/ftp.c:61:8: warning: type defaults to 'int' in declaration of 'choose_SFTP_or_FTP' [-Wimplicit-int]
+ extern choose_SFTP_or_FTP(char*);  // defined in intercom/send2foundy.c
+        ^
+intercom/ftp.c: In function 'extra_data_build':
+intercom/ftp.c:97:2: warning: passing argument 2 of 'strcpy' from incompatible pointer type [enabled by default]
+  strcpy(to_dir, list+3);
+  ^
+In file included from intercom/ftp.c:17:0:
+/usr/include/string.h:125:14: note: expected 'const char * __restrict__' but argument is of type 'char **'
+ extern char *strcpy (char *__restrict __dest, const char *__restrict __src)
+              ^
+intercom/ftp.c: In function 'ftp_email_send':
+intercom/ftp.c:117:5: warning: implicit declaration of function 'data_log2' [-Wimplicit-function-declaration]
+     data_log2(tr.log_file, "Sent e-mail notification to ", gu.email1);
+     ^
+intercom/ftp.c: In function 'remote_file_name_bld':
+intercom/ftp.c:222:5: warning: implicit declaration of function 'strcasestr' [-Wimplicit-function-declaration]
+     if (fs.original_size != fs.compressed_size && strcasestr(remote_file, ".gz") == NULL)
+     ^
+intercom/ftp.c:222:82: warning: comparison between pointer and integer [enabled by default]
+     if (fs.original_size != fs.compressed_size && strcasestr(remote_file, ".gz") == NULL)
+                                                                                  ^
+intercom/ftp.c:227:84: warning: comparison between pointer and integer [enabled by default]
+     if (strcasecmp(cp.encrypt_key, "none") != 0 && strcasestr(remote_file, ".gpg") == NULL)
+                                                                                    ^
+intercom/ftp.c: In function 'encrypt_itar_data':
+intercom/ftp.c:317:10: warning: variable 'status' set but not used [-Wunused-but-set-variable]
+     int  status = 0;
+          ^
+intercom/ftp.c: In function 'ftp_send':
+intercom/ftp.c:404:5: warning: implicit declaration of function 'gdb_checkout' [-Wimplicit-function-declaration]
+     gdb_checkout(remote_dir, fs.key);
+     ^
+intercom/ftp.c:431:9: warning: implicit declaration of function 'ftp_put_transweb' [-Wimplicit-function-declaration]
+         ftp_put_transweb(ft.local_file, remote_file, ft.encrypt_size, send_email, email_string, local_description, log_string);
+         ^
+intercom/ftp.c:438:106: warning: comparison between pointer and integer [enabled by default]
+              || (strncmp(cp.company, "Global Foundries", 16) == 0 && strcasestr(cp.company, "NTAS flow") == NULL)))
+                                                                                                          ^
+intercom/ftp.c:449:5: warning: implicit declaration of function 'sql_dt_transaction_insert' [-Wimplicit-function-declaration]
+     sql_dt_transaction_insert (SUCCESS, rtn.msg);
+     ^
+intercom/ftp.c: In function 'ftp_put_serial':
+intercom/ftp.c:474:5: warning: implicit declaration of function 'process_encrypt' [-Wimplicit-function-declaration]
+     ft.encryption_done = process_encrypt(local_file, remote_dir, remote_file, history_file, extra_data, &encrypt_time);
+     ^
+intercom/ftp.c:484:5: warning: implicit declaration of function 'leading_slashes_remove' [-Wimplicit-function-declaration]
+     leading_slashes_remove(remote_dir);
+     ^
+intercom/ftp.c:504:5: warning: implicit declaration of function 'ftp_put_serial_blocks' [-Wimplicit-function-declaration]
+     ftp_put_serial_blocks(ft.encrypt_file, remote_file, remote_dir, status_file, JUST_ONE_SINGLE_BLOCK);
+     ^
+intercom/ftp.c:462:9: warning: variable 'total_blocks' set but not used [-Wunused-but-set-variable]
+     int total_blocks;
+         ^
+intercom/ftp.c:460:10: warning: unused variable 'time_stamp' [-Wunused-variable]
+     char time_stamp[32];
+          ^
+intercom/ftp.c: In function 'ftp_resend':
+intercom/ftp.c:528:10: warning: unused variable 'local_file' [-Wunused-variable]
+     char local_file[FILE_SIZE];
+          ^
+intercom/ftp.c: In function 'ftp_complete_update':
+intercom/ftp.c:596:47: warning: unused parameter 'encrypt_size' [-Wunused-parameter]
+ void ftp_complete_update(char *key, long long encrypt_size)
+                                               ^
+intercom/ftp.c: In function 'ftp_command_put':
+intercom/ftp.c:629:52: warning: unused parameter 'tmp_size' [-Wunused-parameter]
+ long long ftp_command_put(char *command, long long tmp_size)
+                                                    ^
+intercom/ftp.c: At top level:
+intercom/ftp.c:288:14: warning: 'percent' defined but not used [-Wunused-function]
+ static char *percent(long long size, long long total_size)
+              ^
+intercom/ftp.c:300:14: warning: 'num_bytes' defined but not used [-Wunused-function]
+ static char* num_bytes (long long bytes)
+              ^
+intercom/ftp.c: In function 'ftp_send':
+intercom/ftp.c:440:25: warning: 'encrypt_time' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         ftp_put_parallel(4, ft.local_file, remote_file, remote_dir,
+                         ^
+gcc -O3 -Wall -Wextra -fno-stack-protector  -DDMZ -DSSL_ENCRYPTION -DLINUX -DTRANS_FTP -DNXP -I./global_include -I./trans_include -I./reg_include -I./src/ -I/home/nxf84310/orig/transcend/lib/RH7/run/pkg/OSS-curl-/7.29.0/include/curl  -I/usr/include/mysql  -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"fab99eb\" -DBUILD_DATE=\"20220307\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o intercom/ftp_parallel.o intercom/ftp_parallel.c
+In file included from intercom/ftp_parallel.c:18:0:
+./trans_include/ftp_info.h:79:73: warning: backslash and newline separated by space [enabled by default]
+         echo \"Date after calculating cksum: $end_date\" >>$email_file\n\      
+ ^
+intercom/ftp_parallel.c:48:18: fatal error: curl.h: No such file or directory
+ #include <curl.h>
+                  ^
+compilation terminated.
+make[1]: *** [intercom/ftp_parallel.o] Error 1
+make[1]: Leaving directory `/home/nxf84310/orig/transcend'
+make: *** [build-transftp-server] Error 2
+make: Leaving directory `/home/nxf84310/orig/transcend'

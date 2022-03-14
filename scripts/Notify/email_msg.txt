@@ -1,0 +1,15 @@
+Subject: Intercom and TransWeb Interruption June 25th, 2016
+
+Dear Intercom and TransWeb customer,
+
+This is a message to let you know we are planning a server and
+infrastructure mantainance of the Intercom and TransWeb Servers in June 25th,
+2016. The service will be interrupted from 1pm to 7pm UTC.
+
+Please schedule your transfers so that you do not have your work interrupted
+by this. The outage will affect all the external transfers, including
+transfers to foundries and maskshops.
+
+Best regards!
+Transcend Team - transbug@nxp.com
+

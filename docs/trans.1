@@ -1,0 +1,559 @@
+
+.TH TRANSCEND 1 "Date: 2016/08/04 15:37:21 " NXP  "Internal Use Only"
+
+.SH NAME
+Transcend \- NXP's Managed File Transfer tool
+
+
+.SH SYNOPSIS
+.PD 0
+trans -a | -A | -v | -V | -x
+.LP
+trans -f | -F [-site] file... | directory
+.LP
+trans -p | -P | -t | -T [-site] file | directory [e-mail...]
+.LP
+trans -k | -K [-site] directory file...
+.LP
+trans -n | -N [-site] file [e-mail...]
+.LP
+trans -z | -Z [-site] directory file [e-mail...]
+.LP
+trans -b | -B | -D | -e | -E | -g | -G | -h | -l | -L | -U keyword
+.LP
+trans -c | -s [-site] all | keyword
+.LP
+trans -d | -i all | keyword
+.LP
+trans -m keyword e-mail...
+.LP
+trans -r [file]
+.LP
+trans -R WBI User ID [Active Directory Password]
+.LP
+trans -1 | -u [-site] WBI User ID
+.PD
+.LP
+
+.SH DESCRIPTION
+Transcend (Transfer/Send Data) is the NXP's Managed File Transfer solution. 
+It is widely used by R&D, Applications Engineering and Marketing teams 
+to exchange information. While primarily focused on the Linux environment, clients 
+are also available for Windows, Solaris and the Web. In production for many years, 
+users tend to find transcend more convenient than ftp, scp, or rsync solutions for
+data exchange and around 20,000 transfers per month are performed using the tool.
+Secure data repositories are distributed world-wide to optimize data posting and 
+retrieval. 
+.sp
+To handle the increasing number of Transcend transactions
+and to provide faster data transfer throughout the world,
+multiple Transcend repositories are present.
+Repositories are present in Austin, Munich, Noida, and DTMS.
+During data transfer, the default repository is set to the server nearest to
+the user's site. The user can specify an alternate repository in the .transrc file
+or with an option on the command line.
+.sp
+Two types of Transcend commands are provided - basic commands and advanced commands.
+The basic commands allow users to put, get, delete, and view information about specified files.
+The advanced commands provide additional features requested by users.
+.SH BASIC COMMAND OPTIONS
+.TP
+Calling with no arguments prints a help screen.
+.TP
+.B \-a
+Print a help screen for advanced commands.
+.TP
+.B \-A
+Display advanced put/get options.
+.TP
+.B \-d " keyword | all"
+Delete file or directory associated with the specified keyword.  This
+command is executed after all users have retrieved a copy of the data.
+If one of the users with the file keyword does not delete the data, it
+is automatically deleted three working days after it was transcended
+thus keeping the disk free for the transfer of other large files.
+If the customer types 'trans -d all', data for all keywords the user
+has transferred to the Transcend repository is deleted.
+.TP
+.B \-g " keyword"
+Retrieve the file or directory from Transcend
+associated with the specified keyword.
+Data retrieved is placed in the user's current working directory.
+If the data is already present, the user is asked if he wants to overwrite
+the existing data.
+.TP
+.B \-h " keyword"
+Retrieve history for file or directory associated with the specified
+keyword.  A summary of all commands performed on the data is shown.
+History can be retrieved for up to two weeks after the
+expiration date of a file or directory.
+.TP
+.B \-i " all | keyword"
+Retrieve information about a file or directory associated with the
+specified keyword.  Information retrieved includes file name, size,
+creator, date transcended, expiration date,
+data type, platform, and site.
+If the customer types 'trans -i all', a list of keywords for data the customer has
+transferred to the Transcend repository is shown.
+.TP
+.B \-p " [-site] file | directory [e-mail...]"
+Put a file or directory in the Transcend repository.
+Transcend repositories are present in Austin, Munich, Noida, and DTMS.
+During data transfer, the default site is set to the server nearest to the customer's site.
+To specify a specific Transcend site,
+use the abbreviations
+\-aus',  '-mun', '-idc', and '-dtms'
+for the Austin,  Munich, Noida, and DTMS  sites respectively.
+.sp
+Files, directories, and groups of files of any size may be transferred.
+Files   are   compressed   during   data  transfer  and
+uncompressed during data  retrieval.   Directories  are
+tarred   and   compressed   during  data  transfer  and
+uncompressed and untarred during data retrieval.
+.sp
+After data transfer,  the user is given a randomly generated
+9 character file keyword  he  can  give  to  any
+user[s]  wishing  to retrieve the data.  If one or more
+e-mail addresses are specified, a personal secure keyword is sent
+to  the specified e-mail addresses.  Personal secure keywords are
+valid only for the users who receive  them  via  e-mail.
+Both  file  and  secure  keywords  contain 4 lower case
+alphabetic characters (a-z), followed by  four  numeric
+characters  (0-9),  and  terminated  with an alphabetic
+character.
+The ninth character for file keywords is a lower case letter
+and an upper case letter for secure keywords.
+.sp
+During directory transfer,  gtar or gnutar is used  to
+bundle/unbundle the data if it is present on the user's
+machine.  Otherwise, tar is used.    Incompatibilities
+are sometimes present if the sender of the
+data has gtar installed on their machine,  and
+the receiver does not.
+The receiver can avoid incompatibilities by
+installing gtar
+on his machine.  Customers may also force the
+use of tar instead of gtar by using the '-pt' and '-gt'
+options when putting and getting data respectively.
+.SH ADVANCED COMMAND OPTIONS
+.TP
+.B \-1 [-site] WBI User ID
+Display information about
+NXP customers with an entry in the LDAP directory.
+Data displayed includes name, phone,  department,  etc.
+This command is identical to the 'User command' with
+the exception that registered Transcend sites are not
+displayed.   This command runs faster than the 'User
+command' because time to look up the user in the Transcend
+registry is eliminated.
+.TP
+.B \-b " keyword"
+Retrieve list of files in directory associated with specified keyword.
+.TP
+.B \-B " keyword"
+Display list of files in directory associated with specified keyword.
+.TP
+.B \-c " [-site] all | keyword"
+Cancel previously set e-mail notification.
+If a keyword is given, e-mail notification is cancelled only
+for the file or directory associated with the keyword.
+If the word 'all' is used,
+e-mail notification is cancelled for all files the user has placed in Transcend except
+those for which e-mail notification has been explicitly set using the file keyword.
+.TP
+.B \-C " WBI User ID"
+Display e-mail address and name for specified WBI User ID.
+.TP
+.B \-D " keyword"
+Set delete lock for file or directory associated with the specified keyword.
+Only the user who transcended the data, referred to as the owner,  can use this option.
+When the delete lock is set,
+no one except the owner
+can delete the data.
+This option is useful when a user is distributing data to more than one customer
+and wants to prevent the customers
+from deleting the data before all of the customers have
+retrieved the data.
+However, even with the delete lock set,
+the data is still deleted by the Transcend audits
+when the expiration date is reached.
+.TP
+.B \-e " keyword [days]"
+Extend the expiration date on a file or directory associated with the specified keyword  one to three
+additional working days.
+If the user does not enter a value for days on the command line,
+he is prompted for a value.
+.TP
+.B \-E " keyword"
+Cancel delete lock for the file or directory
+associated with the specified keyword.
+Only the user who transcended the data, referred to as the owner,  can cancel the delete lock.
+This option is used when the owner no longer needs to
+protect data from being deleted
+by other users.
+.TP
+.B \-f " [-site] file... | directory..."
+Put files or directories listed on the command line into the Transcend repository.
+The files and directories are tarred and compressed during data transfer and untarred and uncompressed during data retrieval.
+The data is put in the receiving user's current working directory
+as separate files
+and directories.
+Wild cards can be used to specify the  file and directory  names.
+.LP
+.TP
+.B \-F " [-site] file... | directory..."
+Put multiple files or directories in the Transcend repository and delete after the first successful retrieval.
+The files are tarred and compressed during data transfer and untarred and uncompressed during data retrieval.
+The files and directories are put in the receiving user's current working directory
+as separate files and directories.
+Wild cards can be used to specify the file and directory names.
+.TP
+.B \-G " keyword"
+Get the file or directory from Transcend
+associated with the specified keyword
+and delete from Transcend after the current retrieval.
+.TP
+.B \-H " -command"
+Display detailed help for specified command i.e. 'trans -H -p'
+.TP
+.B \-I
+Display defined iCAP classifications.
+.TP
+.B \-j " e-mail justification"
+Just request approval for an external customer. The customer's e-mail address and the justification for the approval are passed on the command line.
+The request is submitted to the EDC system and can be approved by the user's manager.
+.TP
+.B \-J " keyword"
+Retrieve file or directory name for the
+specified keyword.
+.TP
+.B \-k " [-site] directory file..."
+Package files listed on the command line into a directory and put the directory
+in the Transcend repository.
+This option is like the -f option except the files are bundled together in a directory
+during data transfer and are retrieved in the directory during data retrieval.
+The directory the files are placed in is a symbolic
+directory and does not need to be present on the user's disk.
+Wild cards can be used to specify the file names.
+Only files can be placed in the directory.
+Other directories cannot be included.
+.TP
+.B \-K " [-site] directory file..."
+Package files in specified directory, transcend the directory,
+and delete after the first successful retrieval.
+This option is like the -F option except the files are bundled together in a directory
+during data transfer and are retrieved in the directory during data retrieval.
+The directory the files are placed in is a symbolic
+directory and does not need to be present on the user's disk.
+Wild cards can be used to specify the file names.
+Only files can be placed in the directory.
+Other directories cannot be included.
+.TP
+.B \-l " keyword"
+Display original, compressed, and stored file length
+of file or directory associated with the keyword.
+This option provides a method for the user to verify
+data in the Transcend repository is the correct size.
+If the compressed and stored data size are 0,
+the data was not successfully transferred.
+.TP
+.B \-L " keyword"
+Lock data to prevent retrieval.
+This command is useful when the user has placed a file/directory in Transcend
+and wants to wait for a period of time before allowing other users to retrieve the data.
+.TP
+.B \-m " keyword e-mail..."
+Mail multiple users a 9 character personal secure keyword for the file or directory associated with the specified keyword.
+Each user is specified by his friendly NXP e-mail address i.e. transbug@nxp.com.
+The personal secure keywords sent to users may only be used by the user who receives the keyword.
+Secure keywords may be used to perform all transactions file keywords are used for.
+Secure keywords can be sent using the -N, -P, -T, -Z, -n, -p, -t, and -z options.
+.TP
+.B \-M
+Release shared memory blocks no longer being used.
+This command is executed to clean up shared memory not
+properly released when parallel data transfers are
+aborted or interrupted.
+.TP
+.B \-n " [-site] file [e-mail...]"
+Transcend files listed in the named file.
+This option is like the -f option except
+the file names are listed in a file rather than on the command line.
+Names within the file must be put on separate lines.
+Blank lines cannot be present in the file.
+Wild cards cannot be used within the file,
+and directory names cannot be included.
+Secure keywords may be sent to multiple users (see the -m option).
+.TP
+.B \-N " [-site] file [e-mail...]"
+Transfer files listed in the named file and delete after
+the first successful retrieval.
+This option is like the -F option except
+the file names are listed in a file rather than on the command line.
+Names within the file must be put on separate lines.
+Blank lines cannot be present in the file.
+Wild cards cannot be used within the file,
+and directory names cannot be included.
+Secure keywords may be sent to multiple users (see the -m option).
+.TP
+.B \-o " [-site] "
+Obtain user's registration status.
+This option is useful when the user wants to see if he is registered without performing registration.
+.TP
+.B \-O " [-company] file | directory [e-mail...]"
+Transfer duplicate files to the mask shop. Checks are in place to prevent duplicate files from being sent to the mask shop.
+Using this option overrides the checks in place and allows duplicate files to be transferred.
+.TP
+.B \-P " [-site] file | directory [e-mail...]"
+Put a file or directory in Transcend and delete after the first successful retrieval.
+This option is used when a file will be retrieved by only one user.
+.TP
+.B \-q | -ql " [-site] | [all]"
+Display list of file keywords for data user has uploaded to the
+Transcend repository.  If a site is not specified, keywords for
+the closest site are shown.
+If the site is set to 'all', keywords for all sites are displayed.
+The list of keywords is shown in
+reverse chronological order, and the symbol '+' or '-' indicates
+if the file data is still present in the repository.  If the -ql
+option is used, a long list of file keywords for data the user
+has uploaded is displayed.  This list includes a history of
+transactions performed for each keyword.
+If the user has write
+permission in his current working directory, the list of key-
+words is saved in a file called 'file_keywords'.
+.TP
+.B \-Q | -Ql " [-site] | [all]"
+display list of personal secure keywords received from other
+users.  If a site is not specified, keywords for the closest
+site are shown.
+If the site is set to 'all', keywords for all sites are displayed.
+The list of keywords is shown in reverse
+chronological order, and the symbol '+' or '-' indicates if the
+file data is still present in the repository.  If the -Ql option
+is used, the list of secure keywords includes a history of
+transactions performed for each keyword .  If the user has write
+permission in his current working directory, the list of keywords
+is saved in a file called 'secure_keywords'.  Only secure
+keywords for the user's registered e-mail address are shown.
+Secure keywords sent to other users are not displayed.  This
+feature is useful when the user has lost or has not received e-
+mail messages with secure keywords from other users.
+.TP
+.B \-r " [[release] | [documentation]]"
+Display list of commands used to retrieve Transcend releases
+and documents.
+Transcend is available on the following platforms:
+Solaris, Linux, MacOS X, and Windows.
+.TP
+.B \-R " [-site] WBI User ID [Directory Password]"
+Perform Transcend registration.
+This option is useful when a user wants to register
+without executing another Transcend command.
+If the user does not enter his Active directory Password on the command line,
+he is prompted for the password, and the password is not echoed to the screen.
+.TP
+.B \-s " [-site] all | keyword"
+Set e-mail notification for one or more files.
+When e-mail notification is set,
+the user receives e-mail each time one  of his files is retrieved from Transcend.
+If a keyword is used, e-mail notification is set only for the associated data.
+If the word 'all' is used,
+e-mail notification is set for all of the user's data.
+The user may set Email notification only for data he has transcended.
+.TP
+.B \-S
+View status of Transcend/InterCom servers.  This command is used by the GUI to verify supported servers are active.
+.TP
+.B \-t " [-site] file | directory [e-mail]"
+Tar a directory tree following symbolic links and
+transfer to the Transcend repository.
+This option is different from the '-p' option because symbolic links are not
+followed with the '-P' option.
+.TP
+.B \-T " [-site] directory [e-mail...]"
+Tar a directory tree following symbolic links, transfer to the Transcend repository,
+and delete after the first successful retrieval.
+This option is different from the -P option because symbolic links are not
+followed with the -P option.
+.TP
+.B \-u " [-site] WBI User ID"
+Display information about user retrieved from LDAP directory.
+The user's name, e-mail address, telephone number, department, location code, and mail drop are displayed.
+Registered Transcend sites are also shown.
+If the user is not present in the LDAP directory,
+no information is returned
+even if the user is a registered Transcend user.
+.TP
+.B \-U " keyword"
+Unlock data to allow data retrieval.
+This option is used to unlock data previously locked
+for retrieval with the '-L' option.
+.TP
+.B \-v " [-site]"
+Display program version, default server machine, local machine, Transcend log directory, etc.
+If a site is specified, information about the site is shown.
+.TP
+.B \-V " [site]"
+View list of personal secure keywords received.
+If a site is specified, keywords are shown for that site.
+Otherwise, keywords are displayed for the site closest to the user.
+If the user  has write  permission in his current working directory, the
+list  of  keywords  is   saved   in   a   file   called 'secure_keywords'.   Only  secure  keywords  associated
+with the user's registered  e-mail  address  are  shown.
+Secure  keywords  sent  to  other  users are not shown.
+This feature is useful when the user has  lost  or  has
+not  received  e-mail messages with secure keywords from
+other users.
+This option is identical to the -Q option.
+.TP
+.B \-w " [-site]"
+Ping dropbox machine to verify it is alive.
+.TP
+.B \-W " [-site]"
+Silent ping to dropbox machine.
+Historically, this option was used to keep VPN tunnels alive.
+Since VPN tunnels are no longer used, this command is rarely used.
+.TP
+.B \-x
+Display Transcend sites and external companies.
+The company name and site abbreviation are shown.
+.TP
+.B \-X
+Display defined  Transcend/InterCom server repositories.
+Currently defined server repositories include Austin, Munich, Noida, DTMS, External TransWeb Customer, Send2foundry, and ITAR.
+.TP
+.BI \-x "
+Display defined Transcend sites"
+.br
+The site name and site abbreviation are shown.
+Currently defined sites include:  Austin, Munich, Noida, DTMS, External TransWeb Customer, Send2Foundry, and ITAR.
+.TP
+.B \-y " customer-e-mail "
+Approve external customer to retrieve data from NXP.
+.TP
+.B \-z " [-site] directory file [e-mail...]"
+Zip/package files listed in the named file into a directory
+and transfer to the Transcend repository.
+This option is like the -k option except the file names are listed
+in a file instead of on the command line.
+Names within the file must be put on separate lines.
+Blank lines cannot be present in the file.
+Wild cards cannot be used within the file,
+and directory names cannot be included.
+Like the -k option,
+the files are bundled together in a directory
+during data transfer and retrieved in the directory
+during data retrieval.
+Secure keywords may be sent to multiple users (see the -m option).
+.TP
+.B \-Z " [-site] directory file [e-mail...]"
+Zip/package listed files into the specified directory, transcend the directory,
+and delete after the first successful retrieval.
+This option is like the -K option except
+the file names are listed in a file rather than on the command line.
+Names within the file must be put on separate lines.
+Blank lines cannot be present in the file.
+Wild cards cannot be used within the file,
+and directory names cannot be included.
+Secure keywords can be sent to multiple users (see the -m option).
+.SH PARALLEL DATA TRANSFER
+.sp
+Parallel upload/download of zipped files
+was added in version 7.0 of Transcend.
+Parallel transfer is automaticly done for files greater than 100 Mb in size.
+Parallel transfer provides a 1-6X increase in transfer speeds.
+The increase in transfer speed is dependent on the machine the Transcend client is running on, the repository data is being transferred to,
+the band width of the data line,
+and the network load.
+.sp
+Customers can force uploads of files and directories   to be done with parallel or serial transfer using the -pl and -ps options respectively.
+Parallel upload is not done for files less than 5 Mb in size even if specified on the command line.
+The size for performing parallel upload can also be set in the .transrc file.
+A sample .transrc file which sets the size to 10 Mb can be retrieved with Transcend by typing 'trans -r .transrc'.
+.sp
+During parallel upload,
+10 client processes simultaneously read from the file being transferred and send the data to the server.
+On the server 10 processes simultaneously read the data and write it to the file being uploaded.
+The reverse process is performed when data is retrieved.
+To verify data integrity,
+byte checksums are calculated by the client and server as the data is transferred.
+If the checksum or file size is not correct,
+the file transferred is deleted,
+and an error message is displayed to the user.
+.sp
+Shared memory is used when parallel transfers are performed.
+The shared memory is released when transfer completes.
+Sometimes shared memory is not properly released for some error conditions.
+To view the shared memory in use,
+type 'ipcs'.
+To release any shared memory in use, type 'trans -M'.
+.LP
+.SH DATA ENCRYPTION
+.sp
+Data encryption with SSL was added in version 8.0 of Transcend.
+All data transferred using version 8.0 or later versions  of Transcend is automaticly
+encrypted as it travels across the network.
+Data stored in the Transcend data repositories is not encrypted,
+and the data is not encrypted
+after it is retrieved and written to the user's disk.
+Data encryption was added
+to provide increased security and meet Export control regulations.
+The Austin and DTMS Transcend servers are Export Control compliant.
+.LP
+.SH REGISTRATION
+.sp
+In order to use Transcend,
+the user must be a registered Transcend user.
+The first time a user  runs Transcend,
+auto registration is attempted.
+The user is prompted for his user ID  (WBI User ID)
+and his Active Directory Password (web password).
+If the user enters a correct User  ID
+and Active directory Password
+in the NXP LDAP directory,
+the user is registered.
+If registration is not successful,
+the user must obtain a WBI User ID and Central Directory Password.
+.sp
+To prevent users from entering identification each time they
+use Transcend,
+users are registered by their site -
+their login name and the first three octets of their IP node address.
+The user's site uniquely identifies him,
+and the Transcend client knows the user's site without
+user input.
+If a user runs Transcend on a different network
+or using a different login,
+he must register to use Transcend at the new site.
+.SH TRANSCEND CONFIGURATION FILE
+.sp
+Users can configure
+some Transcend options using a configuration file stored in their home directory
+The configuration file is optional,
+and default settings are used if it is not present.
+named .transrc.
+Options which can be configured include:
+.IP -
+Default Transcend site.
+.IP -
+Directory the trans.log file is placed in.
+.IP -
+Type of feedback to the user during data transfer, via size or time.
+.SH INSTALLATION
+.sp
+The Transcend client (trans) resides on the user's disk or computer ring.
+For Unix platforms, the software is present in /usr/fsl/bin and in the MTR.
+The current package name is fs-transcend-/9.1.
+Releases can also be retrieved from our web site - http://transcend.freescale.net
+For the Windows GUI, the executable is simply placed on the user's machine.
+No other installation is needed.
+For the Windows command line three DLL files  are needed with the Transcend executable file.
+These files should be placed in a system directory
+or in a directory in the user's path.
+.SH CONTACTS
+To obtain a copy of Transcend,
+obtain help with Transcend registration,
+or for technical questions, please contact Transcend team (transbug@nxp.com).
+You can also retrieve copies of Transcend
+and Transcend documentation at web site http://transcend.freescale.net

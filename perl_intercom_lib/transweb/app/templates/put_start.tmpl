@@ -1,0 +1,165 @@
+<!-- put_start.tmpl -->
+[% WRAPPER main_template.tt2 %]
+
+<script language="JavaScript" type="text/javascript">
+function verify_put_page(form) 
+{
+	good = true;
+	error_message = "";
+
+	/* we need a file name */
+	if (!form.FILE_NAME.value) {
+		error_message += "Please provide a file name.\n";
+		good = false;
+        }
+
+	/* we need a file description */
+	if (!form.FILE_DESCRIPTION.value) {
+	        error_message += "Please provide a file description.\n";
+                good = false;
+	}
+
+	[% IF TRANSWEB_ENVIRONMENT == 'external' %]
+	/* we need an e-mail address */
+	if (!form.ALTERNATE_EMAIL_ADDRESSES.value ||
+	    form.ALTERNATE_EMAIL_ADDRESSES.value == '') {
+	    error_message += "Please provide at least one Freescale e-mail address.\n";
+	    good = false;
+	}
+	
+	[% END %]
+	
+
+	if (!good) {
+	        alert("Problems encountered, please correct.\n" +
+		      error_message);
+		return false;
+	}
+	open_progress_window();
+	return true;
+
+}
+
+[% IF TRANSWEB_ENVIRONMENT == 'internal' %]	
+
+function open_directory_window()
+{
+    window.open('[% URL %]?rm=user_look_up',"",
+        'toolbar=no,location=no,directories=no,' +
+        'menubar=no,resizable=yes,scrollbars=yes,height=450,width=400,' +
+	'alwaysRaised=yes,dependent=yes,screenX=20,screenY=20,' +
+        'status=no'); 
+    return false;
+}
+[% END %]
+
+function open_progress_window()
+{
+    window.open('[% URL %]?rm=upload_status&init=yes',"",
+        'toolbar=no,location=no,directories=no,' +
+        'menubar=no,resizable=yes,height=250,width=400,' +
+	'alwaysRaised=yes,dependent=yes,screenX=20,screenY=20,' +
+        'status=no'); 
+    return false;
+}
+
+</script>
+
+<h1>Put a file</h1>
+
+<p>
+You may upload a new file to the TransWeb repository using this form. 
+Provide the file to upload using the &#8216;Browse&#8230&#8217; button. The file 
+description will be sent to the files recipient to identify the file.
+</p>
+<p>
+You may optionally request that the file be deleted after the first retrieval. By default
+files will be deleted after 3 working days.
+</p>
+
+[% IF ERROR_MSG %]
+<p>
+<strong>Some required fields were missing, please correct the 
+indicated fields and resubmit.</strong>
+</p>
+[% END %]
+
+<div id="put_file">
+<form name="FORM" enctype="multipart/form-data" 
+        method="post" action="[% URL %]"
+	onSubmit="return verify_put_page(this)">
+<table border="0" >
+
+
+	<tr><td><label for="FILE_NAME">File</label></td></tr>
+	<tr> <td> <input type="file" size="80" name="FILE_NAME" 
+                                         id="FILE_NAME" /></td></tr>
+
+	<tr><td><label for="FILE_DESCRIPTION">Description</label></td></tr>
+        <tr><td>
+                <input type="text" size="80" maxlength="160"
+	         name="FILE_DESCRIPTION" id="FILE_DESCRIPTION" /></td></tr>
+
+	<tr><td><label for="DELETE_AFTER_RETRIEVAL_FLAG">Delete this 
+                                          file after the first retrieval?</label>&nbsp;
+            <input type="radio" name="DELETE_AFTER_RETRIEVAL_FLAG" id="DELETE_AFTER_RETRIEVAL_FLAG"
+                 value="NO" />No
+	    <input type="radio" name="DELETE_AFTER_RETRIEVAL_FLAG"
+		 value="YES" CHECKED />Yes
+	</td></tr>
+
+	<tr><td><label for="COMPANY">Receiving Repository</label>&nbsp;
+                [% PROCESS menus/companies.tmpl %]</td></tr>
+
+
+	<tr><td><p><label for="ALTERNATE_EMAIL_ADDRESSES">E-mail notification</label></p>
+
+	[% IF TRANSWEB_ENVIRONMENT == 'internal' %]
+	<p>Put the e-mail addresses of the people you want to send the file to in the text area below. 
+           Separate e-mail addresses with a space, comma, or new line. 
+           After the data transfer completes, a unique secure keyword will be sent to each e-mail 
+           address listed. Only the person who receives the keyword can use it to access 
+           the associated data. Each secure keyword is <b>unique to an e-mail address</b></p>
+        <p>In addition to the secure keywords, a file keyword is generated each time data is 
+           transferred. File keywords can be used by any Freescale customer.</p>
+	[% ELSE %]
+	<p>Use the text area below to enter the Freescale e-mail address
+           for the file recipient. The e-mail address should end with 
+           <code>freescale.com</code>. Separate e-mail addresses with a space, comma, or
+           new line. After the data transfer completes a unique <b>secure keyword</b> will be
+           sent to each e-mail address listed and to the data owner. 
+	   Only the person who receives the <b>secure keyword</b>
+           can use it to access the associated data. Each secure keyword is 
+           <b>unique to an e-mail address</b></p>
+	<p>The data owner can use the <b>file keyword</b> and <b>secure keywords</b>
+	to modify the file attributes.</p>
+	[% END %]	
+
+
+	</td></tr>
+	<tr><td>
+
+	[% IF TRANSWEB_ENVIRONMENT == 'internal' # Only show directory to internal users %]
+		<a href="javascript:;"
+		onClick="open_directory_window()">
+		Use the directory to lookup e-mail address</a><br />
+        [% END %]
+		<textarea rows="6" cols="80" name="ALTERNATE_EMAIL_ADDRESSES"
+		 id="ALTERNATE_EMAIL_ADDRESSES"></textarea><br/>
+
+	</td></tr>
+	<tr><td colspan="2"><input type="submit" value="Put File"
+				   name="Put File">
+			    <input type="button" name="Cancel" value="Cancel"
+                             onClick="javascript:window.location='[% URL %]'">
+	<input type="hidden" name="rm" value="put_end">
+	<input type="hidden" name="process_id" value='[% PID %]'">
+		</td></tr>
+
+
+</table>
+</form>
+</div>
+
+[% END %]
+<!-- end put_start.tmpl -->

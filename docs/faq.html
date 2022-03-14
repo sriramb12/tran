@@ -1,0 +1,82 @@
+<br>
+<H1> FREQUENTLY ASKED QUESTIONS </H1>
+
+
+<h2>Where are the Transcend repositories?</h2>
+<P> 
+    Transcend supports seven Transcend repositories - WROC, Tempe, Austin, Munich, India,
+    External Transweb Customer and DTMS.
+</p>
+
+<h2>Are there any transfer Sizes and/or Limitations?</h2>
+<p>
+    Transcend supports the transfer of files, directories, 
+    and groups of files greater than 2 GB in size.
+</p>
+
+<p>The following limitation is present:
+<UL TYPE="DISC">
+    <li>
+        During directory transfer, Transcend uses gtar or gnutar to bundle/unbundle the data
+        if it is present on the customer's machine. Otherwise, tar is used.
+     </li>
+     <li>
+        Incompatibilities are sometimes present if the sender of the data has gtar installed
+        on their machine, and the receiver does not have gtar installed on their machine.
+    </li>
+    <li>
+        Customers can avoid this problem by using version 6.3 of Transcend. If the receiver
+        has a previous release, he can avoid this problem by installing gtar on his machine.
+    </li>
+    <li>
+	  Customers may also force the use of tar instead of gtar by using the
+	  '-pt' and '-gt' options when putting and getting data respectively.
+	</LI>
+</UL>
+</p>
+
+<h2>Is there anything in the 9 character keywords Transcend generates to indicate  where the data is stored?</h2>
+<P>
+    The ninth character of the keyword specifies where Transcend data is stored.
+    The letters 'w', 'a', 't', 'n', 'm', 'z', 'd', and 'e' indicate data is stored at the
+    WROC, Austin, Tempe, Israel, India, Munich, Brazil, DTMS, and External TransWeb sites respectively.
+</P>
+
+<h2>Is there a configuration file that can be used to configure Transcend options? </h2>
+<P>
+    Some options can be configured using the .transrc file. When this file is present in your home directory,
+    Transcend uses this file to change default options. You can retrieve a copy of the .transrc file by typing 'trans -r .transrc'.
+<P>
+
+<h2>Can I configure Transcend so that data is always transferred to a specific repository?</h2>
+<P>
+    The default site data is transferred to can be set in the .transrc file. The keywords 'Site1', 'Site2', 'Site3', and 'Site4',
+    are used for the primary, secondary, tertiary, and fourth sites respectively. The easiest way to change the default site is to simply
+    change the number in the site keyword to a different value.
+</p>
+<P>
+    For example, to change the default site from Tempe to WROC, change 'Site1' to 'Site2', and 'Site2' to 'Site1'.
+    If two lines are set to 'Site1', the last line encountered in the file will be used for the primary site.
+    A 'trans.log' file is created when data is transcended to the data repository.
+</P>
+
+<h2>What can I do to prevent Transcend from creating this file?</h2>
+<P>
+    You can change the location for the 'trans.log' file in the .transrc file. the keyword 'Log Directory' specifies where the 'trans.log' file is placed.
+    Use the values '~', '.', and 'None' to set the log directory to your home directory, your current directory, or no directory respectively.
+</P>
+<P>
+    When transferring data, Transcend prints a status message to the screen each time 4 Mb of data is transferred.
+</P>
+
+<h2>How can I keep Transcend from printing so many status messages to the screen?</h2>
+<p>
+    By default, Transcend prints the status of data transferred when 4 Mb of data are transferred
+    or when 30 seconds have elapsed, which ever comes first. However, the increment for when 
+    the status is printed to the screen can be altered by changing the value for the Print by time keyword.
+</P>
+<p>
+    You can change the default from 4 to any other number. For example, if you change the number from 4 to 33, Transcend will print the status
+    each time 33 Mb of data is transferred. You can also change the amount of time that must elapse before a status message is printed to the screen
+    by altering the value for the 'PrintByTime' keyword. For example, you can change the value from 30 seconds to 120 seconds.
+</P>

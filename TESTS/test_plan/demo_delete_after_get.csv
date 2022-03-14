@@ -1,0 +1,8 @@
+Status;Comment;ssh user@host;Operation;Server;Client;Build: dev/prod;Command Line;Main Test;Extra Test
+;;;;;;;;;
+******;delete after GET;***********;;;;;;;
+ ;;;; ; ;;;;
+ ;normal Put;;Put;ssl.icomd;icom.int;dev;echo m00n | <client> -p <company>  <file>;;
+;keyword exists;;Other;ssl.icomd;icom.int;dev;<client> -i <file_keyword>;RET_CODE_ZERO;KEYWORD_EXISTS_IN_SERVER
+ ;GET and DELETE;;Get;ssl.icomd;icom.int;dev;<client> -G <keyword>;;
+ ;check if was deleted;;Other;ssl.icomd;icom.int;dev;<client> -i <file_keyword>;RET_CODE_NOT_ZERO;KEYWORD_DONT_EXIST_IN_SERVER

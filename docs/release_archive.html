@@ -1,0 +1,192 @@
+<br>
+<p><b>version 9.1.3 of Transcend (Released in May 30, 2014</b></p>
+<ul>
+    <li>Transfer to data to external customers using abbreviations already defined for InterCom i.e. -etc, -cdc, -mtr, etc.</li>
+    <li>Central registry with consistent registration for all Transcend customers.</li>
+    <li>Separate acknowledgement to prevent time outs for large transfers.</li>
+    <li>All command line options present in InterCom.</li>
+    <li>Static compile for RH5.</li>
+    <li>Fix for problems for transfer of large directories with multiple subdirectories.</li>
+    <li>Support for an API for release in the near future.</li>
+</ul>
+
+
+<p><b> Version 8.4 of Transcend (Released on May 15, 2013) </b></p>
+
+<p> We are pleased to announce the production release of version
+8.4 of Transcend.  The purpose for this release is  to  move
+the  primary  Transcend server from Phoenix to Austin and to
+shut down the Phoenix servers.  This is being done  as  part
+of the EC consolidation to Austin.  The Phoenix aliases have
+been modified to point to the Austin Transcend server.  How-
+ever,  the  alias  changes  may  not  migrate  to all of the
+machines on the network.   Customers  who  do  not  see  the
+updated aliases must migrate to the new release.</p>
+
+<p>The  release  has been uploaded to the MTR with package name
+fs-transcend-/8.4.  The software can also be downloaded from
+our  web  site: http://transcend.freescale.net or with Tran-
+scend  using  the  -r  option.   It  is  also   present   in
+/usr/fsl/bin.</p>
+
+<p><b> Version 8.3 of Transcend (Released on March 31, 2012) </b></p>
+
+<p> We are pleased to announce the production release of version 8.3 of Transcend. The main purpose 
+for the release is to provide a GUI for Windows 7. The new GUI runs on both Windows 7 and Windows XP 
+and supports file and directory transfers. A command line version which runs on both platforms is 
+also present. In addition, new Linux and Solaris versions are present. The Unix releases have a few 
+user requested enhancements.</p>
+
+<p> Customers can obtain the new release from the MTR, from our web site, or with Transcend using 
+the <kbd>-r</kbd> option. The package name for Transcend is fs-transcend-/8.3, and the URL for our 
+web site is http://transcend.freescale.net.</p>
+
+
+<p> Customers can download version 8.3 of Transcend from this web site. Customers can also retrieve
+the new release using Transcend with the <kbd>-r</kbd> option. To see a list of commands for 
+downloading the release for different platforms, type <kbd>trans -r</kbd>.</p>
+
+<p> Package <em>fs-transcend-/8.2</em> is present in the MTR. Use the following command to access 
+the production release:</p>
+<pre><code>w.pkg fs-transcend-/8.3 trans</code></pre>
+
+<p> You can obtain Transcend for a UNIX type of a system, by following one of
+the links below. After the file has been saved on your system, you will
+need to untar the archive using the command:</p>
+
+<pre><code>tar xvf filename.tar</code></pre>
+
+
+<H2> Previous Releases </H2>
+<H2> Version 8.2 of Transcend (Released on November 25, 2011) </H2>
+</P>
+<P>
+New features include:
+</P>
+<LI>
+Faster parallel upload/download of zipped files.
+<LI>
+Automatic parallel transfer for zipped files greater than 50 Mb in size.
+<LI>
+Parallel upload of other files when the -pl option is specified.  
+Parallel transfer is not support for directories or groups of files.
+<LI>
+Support for the transfer of directories and groups of files on Solaris machines where gtar is not installed.
+<LI>
+Fixes for other customer reported problems.
+</LI>
+</P>
+<P>
+<H1> Version 8.1 of Transcend (Released on July 31, 2011) </H2>
+<P>
+New features include:
+<LI>
+Optional command line parameter to assign an iCAP classification.
+If not specified, the classification is set to Freescale Confidential Proprietary.
+To view details about iCAP classifications,
+type 'trans -I'.
+</LI>
+<LI>
+A new banner requested by the Corporate Audit.
+</LI>
+<LI>
+Support for the transfer of directories and groups of files on Solaris machines where gtar is not installed.
+</LI>
+<LI>
+Automatic use of an alternate data repository during upload when the repository being used is full.
+</LI>
+<LI>
+Static linking of libraries eliminating local library dependencies.
+</LI>
+<LI>
+Automatic parallel upload and download  of zipped files to the DTMS data repository.
+</LI>
+<LI>
+Database logging of the history for data transfers to the DTMS repository
+to support tapeout traceability.
+</LI>
+<LI>
+Creation of temporary files in the /tmp directory
+to prevent problems for uploads from directories without write permission.
+</LI>
+<LI>
+A new .transrc file
+with support for 
+modified Transcend configurations.
+</LI>
+<LI>
+<H3> Version 8.0 of Transcend (Released on October 30, 2010) </H2>
+<P>
+Version 8.0 of Transcend supports data encryption using SSL.  All data transferred using version 8.0 of Transcend is automatically encrypted as it travels across the network.  Data stored in the Transcend data repositories is not encrypted, and the data is not encrypted after it is retrieved and written to the user's disk.  Data uploaded with version 8.0 of Transcend can be accessed using prior versions of Transcend.  
+Data encryption was added to provide increased security and meet Export Control regulations.  The WROC, Tempe, Austin, and DTMS Transcend servers are Export Control compliant.  
+</P>
+<H3> Version 7.3 of Transcend (Released on September 30, 2010) </H3>
+<P>
+the main purpose for the release is to provide additional security.  Enhancements include: 
+</P>
+<LI>
+ Software which requires customers to re-register if their registry entry contains an invalid Core ID.  
+<LI>
+ The lock user feature which allows the administrator to lock users out of Transcend.  
+<LI>
+ Logging of additional data to the SQL tables to provide easier methods for auditing Transcend transactions.  
+<LI>
+ Estimated completion time displayed for Put and Get transactions.  
+<LI>
+ Enhancements to support DTMS regression testing.  
+</P>
+<P>
+<br>
+<H3> Version 7.2 of Transcend (Released on April 27, 2010) </H3>
+</P>
+Enhancements include:
+<LI>
+Fully qualified aliases for all Transcend server sites.
+This supports future seamless move of existing
+Transcend servers
+and is needed to move Transcend to TX32.
+<LI>
+Creation of a file list for all files/directories transferred.
+The file list can be retrieved with the -b option.
+<LI>
+Check to prevent a customer from specifying deletion after the first retrieval
+when secure keywords are sent to more than one recipient.
+This prevents the sender from accidentally allowing data sent to multiple recipients from being deleted
+after the first retrieval.
+<LI>
+Rename of the Ed Bluestein
+server to Austin.
+The keywords for the Austin server will end with 'a' or 'A'.
+<LI>
+Status message to indicate 100% of the data has been transferred.
+Previously,
+the status message displayed the last amount transferred before 100% of the data was transferred.
+<LI>
+Modification of error and status messages to make them more user friendly.
+<LI>
+Output to customers to
+specify no encryption during data transfer.
+</LI>
+<p>
+The new release can be retrieved from this web site.
+The package name
+The release can also be retrieved with Transcend using the
+-r option. 
+</P>
+<H3> Production Release of Transcend GUI for Windows </H3>
+<P>
+We are pleased to announce the production release of The Transcend GUI for Windows.  The new release supports fast reliable  transfer of large files.  We recommend using the GUI in place of TransWeb for files over 100 Mb in size.  The GUI is written in TCL and provides the flexibility and ease of use needed for Windows.  
+<P>
+The software supports the following: 
+<LI>
+Upload and download of files to any of the eight supported Transcend data repositories.  
+<LI>
+Upload and download of files to External TransWeb and Intercom customers.  
+<LI>
+Display of history and basic information for data present in Transcend, TransWeb, and InterCom.  
+<LI>
+Deletion of data from the data repository.  
+<LI>
+Extension of file time out for an additional three working days.  
+</P>
+

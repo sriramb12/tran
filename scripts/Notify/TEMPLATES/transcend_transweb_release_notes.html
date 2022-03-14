@@ -1,0 +1,73 @@
+
+<html>
+    <head>
+        <style type="text/css">
+            /**This is to overwrite Outlook.com’s Embedded CSS************/
+            table {border-collapse:separate;}
+            a, a:link, a:visited {text-decoration: none; color: #00788a} 
+            a:hover {text-decoration: underline;}
+            h2,h2 a,h2 a:visited,h3,h3 a,h3 a:visited,h4,h5,h6,.t_cht {color:#000 !important}
+            .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%}
+            /**This is to center your email in Outlook.com************/
+            .ExternalClass {width: 100%;}
+            code {background:#F8F8FF; padding: 5px 5px 5px 5px; font-family: "Courier New", Courier, monospace;}
+            span.draft {background: #FFFFCC; color: black; padding: 5px 5px 5px 5px;}
+        </style>
+    </head>
+    <body>
+        <p>
+            We are pleased to announce the production release of Transcend 
+            version <code>9.3.1</code> and TransWeb version <code>3.5.3</code>.
+        </p>
+
+        <p>
+            The purpose of this maintenance release is enable Transcend and
+            TransWeb to officially support the New NXP. Specific changes
+            for this release include:
+        </p>
+
+        <ul>
+            <li>Adoption of the New NXP Active Directory for transcend authentication</li>
+            <li>Addition of two new repositories:</li>
+            <ul>
+                <li> Eindhoven: <code>trans -p -eind <file></file></code></li>
+                <li> Bangalore: <code>trans -p -blr <file></file></code></li>
+            </ul>
+            <li>Overall TransWeb UI face-lift</li>
+            <li>
+                TransWeb login works with FSL CoreID (OneIT), NXP WBI ID or NXP e-mail.
+                The login/authentication is using the NXP Active Directory with
+                fall-back to the FSL LDAP in case of unsynchronized passwords
+            </li>
+            <li>New Person Lookup from TransWeb also using the NXP Central Directory</li>
+            <li>Transfer as customer@freescale.com was deprecated.</li>
+        </ul>
+
+        <p>
+            The Transcend release has been uploaded to the Tools Repository with 
+            package <code>fs-transcend-/9.3.1</code>. The Transcend software can
+            also be downloaded from the <a href="http://transcend.freescale.net">web site</a>
+            where packages for RHEL 4, 5, 6, Solaris, Ubuntu, Fedora and Windows are available. 
+            It is also available on xFSL datacenter as <code>/usr/fsl/bin/trans</code> and on 
+            oNXP datacenters as <code>/nxdi_env/bin/trans</code>.
+        </p>
+
+        <p>
+            <span class="draft"><b>IMPORTANT NOTE</b></span> direct data transfers between
+            Noida and Bangalore are currently blocked for legal reasons. Data transfers must 
+            be relayed through a repository outside of India.
+        </p>
+
+        <p>
+            For assistance, please report your issue at <a href='http://servicedesk.freescale.com'>servicedesk.freescale.com</a> using:<br>
+            Group: <b>APPS_DATA_TRANSPORT/ARCHIVE</b><br>
+            Category: <b>APPS_MFG_DMO</b><br>
+            Sub-Category: <b>DAR_DATA_DELIVERY/TRANSCEND</b>.
+        </p>
+
+        <p>
+        Transcend Team<br>
+        <a href="mailto:transbug@nxp.com">transbug@nxp.com</a>
+        </p>
+    </body>
+</html>
