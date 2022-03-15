@@ -66,17 +66,17 @@ zlib/zlib.h:
 
 ########### RENEE ZLIB ############
 build-zlib: zlib/zlib.h
-	cd ./zlib; $(MAKE) -f Makefile; cd ..
+	cd ./zlib; 
 
 
 ############ TRANSCEND ############
-build-transcend-server: build-zlib 
+build-transcend-server: 
 	$(MAKE) -f ssl64transmake_translib.mk  SERVER=1
 	$(MAKE) -f ssl64transmake_serverlib.mk SERVER=1
 	$(MAKE) -f ssl64transmake_reglib.mk    SERVER=1
 	$(MAKE) -f ssl64transmake_server.mk    SERVER=1
 
-build-transcend-client: build-zlib ## Build Transcend Client
+build-transcend-client: ## Build Transcend Client
 	$(MAKE) -f ssl64transmake_client.mk
 
 build-transcend-full: build-transcend-server clean build-transcend-client ## Build Transcend Client and Server in one shot
@@ -88,7 +88,7 @@ build-transweb-client-icom-lib: .clean-build .clean-archive ## Build Intercom.so
 
 
 ############ TRANSFTP ############  libopenssl.def will set USE_OS_SSL=1 for all builds BUT RH6
-build-transftp-server: build-zlib
+build-transftp-server: 
 	$(MAKE) -f ssl64transftpmake_reglib.mk    SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1 
 	$(MAKE) -f ssl64transftpmake_serverlib.mk SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1
 	$(MAKE) -f ssl64transftpmake_translib.mk  SERVER=1  USE_OS_LDAP=1 USE_OS_MYSQL=1 
@@ -97,25 +97,25 @@ build-transftp-server: build-zlib
 
 ############ INTERCOM ############
 # External
-build-intercom-external-server: build-zlib 
-	$(MAKE) -f ssl64icommake_reglib.mk     SERVER=1
-	$(MAKE) -f ssl64icommake_serverlib.mk  SERVER=1
-	$(MAKE) -f ssl64icommake_translib.mk   SERVER=1
-	$(MAKE) -f ssl64icommake_server.mk     SERVER=1
+build-intercom-external-server: 
+	$(MAKE) -f mk/serv/ext/ssl64icommake_reglib.mk     SERVER=1
+	$(MAKE) -f mk/serv/ext/ssl64icommake_serverlib.mk  SERVER=1
+	$(MAKE) -f mk/serv/ext/ssl64icommake_translib.mk   SERVER=1
+	$(MAKE) -f mk/serv/ext/ssl64icommake_server.mk     SERVER=1
 
-build-intercom-external-client: build-zlib ## Build Intercom External Client
+build-intercom-external-client: ## Build Intercom External Client
 	$(MAKE) -f ssl64icommake_client.mk
 
 build-intercom-external-full: build-intercom-external-server clean build-intercom-external-client ## Build Intercom External Client and Server in one shot
 
 # Internal
-build-intercom-internal-server: build-zlib
-	$(MAKE) -f ssl64make_serverlib.mk SERVER=1
-	$(MAKE) -f ssl64make_reglib.mk    SERVER=1
-	$(MAKE) -f ssl64make_translib.mk  SERVER=1
-	$(MAKE) -f ssl64make_server.mk    SERVER=1
+build-intercom-internal-server:
+	$(MAKE) -f mk/serv/int/ssl64make_serverlib.mk SERVER=1
+	$(MAKE) -f mk/serv/int/ssl64make_reglib.mk    SERVER=1
+	$(MAKE) -f mk/serv/int/ssl64make_translib.mk  SERVER=1
+	$(MAKE) -f mk/serv/int/ssl64make_server.mk    SERVER=1
 
-build-intercom-internal-client: build-zlib ## Build Intercom Internal Client
+build-intercom-internal-client: ## Build Intercom Internal Client
 	$(MAKE) -f ssl64make_client.mk
 
 build-intercom-internal-full: build-intercom-internal-server clean build-intercom-internal-client ## Build Intercom Internal Client and Server in one shot
