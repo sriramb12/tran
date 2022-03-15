@@ -285,12 +285,7 @@ then
     fi
     /bin/mv $generated_binaries RELEASE_DIR
 else
-    /bin/ls -rtl $generated_binaries
-fi
-
-if [ -d "RELEASE_DIR" ]
-then
-  /bin/ls -Rrtl RELEASE_DIR
+    /bin/ls -rtl bin
 fi
 
 /bin/rm -f $BUILD_CONTROL_FILE

@@ -11,7 +11,7 @@ COMPANY 		= EXTERNAL
 
 include libraries.def
 
-Z_LIB 		= 	./zlib/
+Z_LIB 		= 	./lib/zlib
 
 
 # Include Headers
