@@ -116,7 +116,7 @@ build-intercom-internal-server:
 	$(MAKE) -f mk/serv/int/ssl64make_server.mk    SERVER=1
 
 build-intercom-internal-client: ## Build Intercom Internal Client
-	$(MAKE) -f ssl64make_client.mk
+	$(MAKE) -f mk/client/int/ssl64make_client.mk
 
 build-intercom-internal-full: build-intercom-internal-server clean build-intercom-internal-client ## Build Intercom Internal Client and Server in one shot
 
