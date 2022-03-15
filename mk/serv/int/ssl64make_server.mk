@@ -44,7 +44,7 @@ include generic.def
 # Mazieri's LDAP
 OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
 
-OUTPUT = ssl.icomd
+OUTPUT = bin/icom.int
 # include(s) below will set the OUTPUT according to some variables
 include output_debug.def
 
