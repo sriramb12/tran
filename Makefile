@@ -11,7 +11,8 @@ RMDIR 	 = rm -rf --verbose
 FIND 	 = find . -type f -name
 CTAGS	 = /run/pkg/TWW-ctags-/5.7/bin/ctags
 GROFF	 = /usr/bin/nroff
-
+mkserver    = mk/serv
+mkclient    = mk/client
 
 ########### HELP ##################
 .PHONY: list
@@ -38,6 +39,8 @@ clean: .clean-build
 
 clean-all: .clean-build .clean-executable .clean-archive
 
+bin:
+	mkdir -p bin
 
 ########### CTAGS GEN #############
 build-tags: ## Build CTags locally
@@ -71,13 +74,13 @@ build-zlib: zlib/zlib.h
 
 ############ TRANSCEND ############
 build-transcend-server: 
-	$(MAKE) -f ssl64transmake_translib.mk  SERVER=1
-	$(MAKE) -f ssl64transmake_serverlib.mk SERVER=1
-	$(MAKE) -f ssl64transmake_reglib.mk    SERVER=1
-	$(MAKE) -f ssl64transmake_server.mk    SERVER=1
+	$(MAKE) -f $(mktrans)/translib.mk  SERVER=1
+	$(MAKE) -f $(mktrans)/serverlib.mk SERVER=1
+	$(MAKE) -f $(mktrans)/reglib.mk    SERVER=1
+	$(MAKE) -f $(mktrans)/server.mk    SERVER=1
 
 build-transcend-client: ## Build Transcend Client
-	$(MAKE) -f ssl64transmake_client.mk
+	$(MAKE) -f client.mk
 
 build-transcend-full: build-transcend-server clean build-transcend-client ## Build Transcend Client and Server in one shot
 
@@ -97,26 +100,26 @@ build-transftp-server:
 
 ############ INTERCOM ############
 # External
-build-intercom-external-server: 
-	$(MAKE) -f mk/serv/ext/ssl64icommake_reglib.mk     SERVER=1
-	$(MAKE) -f mk/serv/ext/ssl64icommake_serverlib.mk  SERVER=1
-	$(MAKE) -f mk/serv/ext/ssl64icommake_translib.mk   SERVER=1
-	$(MAKE) -f mk/serv/ext/ssl64icommake_server.mk     SERVER=1
+build-intercom-external-server: bin
+	$(MAKE) -f $(mkserver)/ext/reglib.mk     SERVER=1
+	$(MAKE) -f $(mkserver)/ext/serverlib.mk  SERVER=1
+	$(MAKE) -f $(mkserver)/ext/translib.mk   SERVER=1
+	$(MAKE) -f $(mkserver)/ext/server.mk     SERVER=1
 
-build-intercom-external-client: ## Build Intercom External Client
-	$(MAKE) -f ssl64icommake_client.mk
+build-intercom-external-client: bin ## Build Intercom External Client
+	$(MAKE) -f $(mkclient)/ext/client.mk
 
 build-intercom-external-full: build-intercom-external-server clean build-intercom-external-client ## Build Intercom External Client and Server in one shot
 
 # Internal
-build-intercom-internal-server:
-	$(MAKE) -f mk/serv/int/ssl64make_serverlib.mk SERVER=1
-	$(MAKE) -f mk/serv/int/ssl64make_reglib.mk    SERVER=1
-	$(MAKE) -f mk/serv/int/ssl64make_translib.mk  SERVER=1
-	$(MAKE) -f mk/serv/int/ssl64make_server.mk    SERVER=1
+build-intercom-internal-server: bin
+	$(MAKE) -f $(mkserver)/int/serverlib.mk SERVER=1
+	$(MAKE) -f $(mkserver)/int/reglib.mk    SERVER=1
+	$(MAKE) -f $(mkserver)/int/translib.mk  SERVER=1
+	$(MAKE) -f $(mkserver)/int/server.mk    SERVER=1
 
-build-intercom-internal-client: ## Build Intercom Internal Client
-	$(MAKE) -f mk/client/int/ssl64make_client.mk
+build-intercom-internal-client: bin ## Build Intercom Internal Client
+	$(MAKE) -f $(mkclient)/int/client.mk
 
 build-intercom-internal-full: build-intercom-internal-server clean build-intercom-internal-client ## Build Intercom Internal Client and Server in one shot
 
