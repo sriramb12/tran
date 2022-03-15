@@ -48,7 +48,7 @@ $(info BEGIN)
 $(info $(OBJECT))
 $(info END)
 
-OUTPUT = bin/icom.es
+OUTPUT = bin/ext.client
 ## generates icom.ext, to release it must be renamed to "icom"
 USAGE_SCOPE = ext
 

@@ -51,7 +51,7 @@ OBJECT := $(addprefix $(DIR), $(OBJECT))
 include generic.def
 
 
-OUTPUT = bin/icom.int
+OUTPUT = bin/int.client
 
 ## generates icom.int, to release it must be renamed to "icom"
 

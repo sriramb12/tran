@@ -28,7 +28,7 @@ LDFLAGS=libz.a
 LDSHARED=$(CC)
 CPP=$(CC) -E
 
-LIBS=libz.a
+LIBS=../lib/libz.a
 SHAREDLIB=libz.so
 SHAREDLIBV=libz.so.1.2.3
 SHAREDLIBM=libz.so.1
@@ -38,7 +38,7 @@ RANLIB=ranlib
 TAR=tar
 EXE=
 
-prefix = /usr/local
+prefix = ..
 exec_prefix = ${prefix}
 libdir = ${exec_prefix}/lib
 includedir = ${prefix}/include
@@ -97,7 +97,7 @@ install: $(LIBS)
 	-@if [ ! -d $(man3dir)     ]; then mkdir -p $(man3dir); fi
 	cp zlib.h zconf.h $(includedir)
 	chmod 644 $(includedir)/zlib.h $(includedir)/zconf.h
-	cp $(LIBS) $(libdir)
+	cp libz.a $(libdir)
 	cd $(libdir); chmod 755 $(LIBS)
 	-@(cd $(libdir); $(RANLIB) libz.a || true) >/dev/null 2>&1
 	cd $(libdir); if test -f $(SHAREDLIBV); then \
