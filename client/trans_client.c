@@ -1989,12 +1989,5 @@ break;
 	exit(ret);
 } /* end main */
 
-#ifdef FEDORA
 char z_errmsg[80];
-#endif 
-#ifdef SOLARIS
-char z_errmsg[80];
-mask_log_append() { }
-#endif /* for SOLARIS */
-
-#endif /* for TRANSAPI */
+#endif  // TRANSAPI
