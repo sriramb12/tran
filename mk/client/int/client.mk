@@ -72,8 +72,7 @@ ssl64icom: libtrans.a ./client/trans_client.o
 	@echo
 	@echo ":: ssl64make.mk --target='ssl64icom' --output='$(OUTPUT)' (Internal Intercom Client)"
 	@echo
-	$(CC) ./client/trans_client.o ./libtrans.a $(SSL_LIBS) ./zlib/libz.a  \
-           -lm -ldl -lpthread -o ./$(OUTPUT)
+	$(CC) ./client/trans_client.o ./libtrans.a $(SSL_LIBS) -lz -lm -ldl -lpthread -o ./$(OUTPUT)
 
 
 libtrans.a: $(OBJECT)

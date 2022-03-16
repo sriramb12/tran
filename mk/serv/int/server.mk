@@ -68,7 +68,6 @@ ssl64icomd:  $(OBJECT)
 	$(SQL_LIB) \
     $(LDAP_LIBS) \
     $(SSL_LIBS) \
-    zlib/libz.a \
-    -lm -ldl -o $(OUTPUT)
+    -lz -lm -ldl -o $(OUTPUT)
 
 .DEFAULT: ssl64icomd
