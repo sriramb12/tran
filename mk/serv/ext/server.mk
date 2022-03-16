@@ -57,16 +57,15 @@ ssl64icomd:  $(OBJECT)
 	@echo ":: ssl64icommake_server.mk --target='ssl64icomd' --output='$(OUTPUT)' (External Intercom Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
+	/usr/lib/x86_64-linux-gnu/libssl3.so \
 	./shared_intd_lib.a \
-	./free_server_lib.a \
+	./lib/free_server_lib.a \
 	./shared_intd_lib.a \
-	./free_reg_lib.a \
-	./free_server_lib.a \
+	./lib/free_reg_lib.a \
 	./shared_intd_lib.a \
 	$(LDAP_LIBS) \
 	$(SQL_LIB) \
-	$(SSL_LIBS) \
-	-lz -lm -ldl -o $(OUTPUT)
+	-lcrypto -lssl -lz -lm -ldl -o $(OUTPUT)
 
 
 .DEFAULT: ssl64icomd

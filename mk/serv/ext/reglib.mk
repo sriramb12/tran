@@ -47,12 +47,12 @@ $(info $(OBJECT))
 $(info END)
 
 
-free_reg_lib.a: $(OBJECT)
+lib/free_reg_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64icommake_reglib.mk --target='free_reg_lib.a' --output='free_reg_lib.a' (External Intercom)"
+	@echo ":: ssl64icommake_reglib.mk --target='lib/free_reg_lib.a' --output='lib/free_reg_lib.a' (External Intercom)"
 	@echo
-	ar r ./free_reg_lib.a $(OBJECT)
-	ranlib ./free_reg_lib.a
+	ar r ./lib/free_reg_lib.a $(OBJECT)
+	ranlib ./lib/free_reg_lib.a
 
 
-.DEFAULT: free_reg_lib.a
+.DEFAULT: lib/free_reg_lib.a
