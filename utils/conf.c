@@ -1,17 +1,9 @@
-typedef enum { EXT_SERVER, INT_SERVER, EXT_CLIENT, INT_CLIENT} Role;
-struct param
-{
-  Role role;
-  char key[20];
-  char value[20];
-};
+#include "conf.h"
 struct param confParams [] = {
  {EXT_SERVER, "RUNDIR", "./run"},
  {EXT_SERVER, "DATADIR", "data"},
  {EXT_SERVER, "LOGDIR", "log"},
 };
-
-
 char* getValue(char* key)
 {
    int i; 
