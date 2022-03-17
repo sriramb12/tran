@@ -2,7 +2,6 @@ Data Transport Tools
 
 This repo was migrated from the the trancend SVN repository:
 
-http://cad.freescale.net/svn/transcend/
 
 This Git repository uses Git LFS to store large files, 
 please make sure the following requirements are met:
