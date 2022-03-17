@@ -57,7 +57,6 @@ ssl64icomd:  $(OBJECT)
 	@echo ":: ssl64icommake_server.mk --target='ssl64icomd' --output='$(OUTPUT)' (External Intercom Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
-	/usr/lib/x86_64-linux-gnu/libssl3.so \
 	./shared_intd_lib.a \
 	./lib/free_server_lib.a \
 	./shared_intd_lib.a \
