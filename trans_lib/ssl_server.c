@@ -1,4 +1,3 @@
-
 #include <openssl/ssl.h>
 #include <stdlib.h>
 #include <sys/types.h>
@@ -24,6 +23,7 @@ void database_initializations()
 {
     extern MYSQL dt_sql;
     MYSQL * sql  = & dt_sql;  // later a connection will happen on sql_result_get()
+    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     if (sql)
     {
         mysql_init(sql);
@@ -41,6 +41,8 @@ int is_it_time_to_reload_database()
     static time_t last_time_checked = 0;
     int ret = 0;
     time_t now = time(NULL);
+    printf("is it tim\n");
+    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     if ((now - last_time_checked) >= TIME_TO_RELOAD_DATABASE)
     {
         ret = 1;
@@ -66,6 +68,7 @@ int main(int argc, char **argv)
     /* Initialize parameters common to all of the servers */
     server_options_init(argc, argv, &db_socket, file_name);
 
+    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     if (db_socket == 443)
         strcpy(key_file, "db_admin/crts/combined.pem");
     else

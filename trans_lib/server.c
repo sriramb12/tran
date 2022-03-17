@@ -56,6 +56,7 @@ void server_options_init(int argc, char **argv, int *db_socket, char *file_name)
     db_socket_init(option, db_socket);
 
     strcpy(file_name, "db_admin/global_params");
+    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__); 
 
     read_global_params(file_name);
     
@@ -74,7 +75,7 @@ void server_dir_make(void)
     int cnt;
 
     DBG();
-
+    return;
     dir_make("db_admin");
     dir_make("db_admin/tmp_files");
     system("touch db_admin/ssl.rmt_servers");
@@ -215,6 +216,7 @@ int main(int argc, char **argv)
     server_options_init(argc, argv, &db_socket, file_name);
     /* Connect to the local socket */
     listening_socket = init_socket(db_socket);
+    printf("%s %s %d\n", __FILE__, __FUNCTION__, __LINE__);
     PRINTF("Finished bind ready to listen\n");
     /* Accept connections. When we accept one, connected_socket will be
        connected to the client and new_client will contain the address of the
