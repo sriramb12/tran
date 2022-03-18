@@ -8,6 +8,7 @@
 
 
 SSH=/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
+SSH=openssl
 #SSH=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
 
 TMPFILES="server.pass.key server.key server.csr server.crt  nopassword.key"
