@@ -2,8 +2,8 @@
 
 ## Edit varaiables as your needs
 ###
+#OPENSSL=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
 OPENSSL=openssl
-OPENSSL=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl
 SUBJ="/C=US/ST=Arizona/L=Chandler/O=NXP Semiconductors/OU=DE/CN=intercom.freescale.com/emailAddress=transbug@nxp.com"
 
 RSA_BITS=4096

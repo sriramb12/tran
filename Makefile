@@ -13,6 +13,7 @@ CTAGS	 = /run/pkg/TWW-ctags-/5.7/bin/ctags
 GROFF	 = /usr/bin/nroff
 mkserver    = mk/serv
 mkclient    = mk/client
+mktrans    = mk/trans
 
 ########### HELP ##################
 .PHONY: list
@@ -80,7 +81,7 @@ build-transcend-server:
 	$(MAKE) -f $(mktrans)/server.mk    SERVER=1
 
 build-transcend-client: ## Build Transcend Client
-	$(MAKE) -f client.mk
+	$(MAKE) -f $(mktrans)/client.mk
 
 build-transcend-full: build-transcend-server clean build-transcend-client ## Build Transcend Client and Server in one shot
 

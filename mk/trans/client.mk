@@ -61,7 +61,7 @@ OBJECT := $(addprefix $(DIR), $(OBJECT))
 include generic.def
 
 
-OUTPUT = trans
+OUTPUT = bin/tran.client
 # include(s) below will set the OUTPUT according to some variables
 include output_client_localhost.def
 include output_debug.def
@@ -81,8 +81,7 @@ ssl64trans: libtrans.a ./client/trans_client.o
 	@echo
 	$(LINK) ./client/trans_client.o ./libtrans.a \
 	$(SSL_LIBS) \
-	./zlib/libz.a \
-	-lm -ldl -o ./$(OUTPUT)
+	-lz -lm -ldl -o ./$(OUTPUT)
 
 
 libtrans.a: $(OBJECT)

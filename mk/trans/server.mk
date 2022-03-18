@@ -43,7 +43,7 @@ include generic.def
 # Mazieri's LDAP
 OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
 
-OUTPUT = ssl.transcend
+OUTPUT = bin/tran.srv
 # include(s) below will set the OUTPUT according to some variables
 include output_debug.def
 
@@ -67,8 +67,7 @@ ssl64transcend:  $(OBJECT)
 	./trans_server_lib.a \
 	./shared_trans_lib.a \
 	$(SQL_LIB) $(LDAP_LIBS) $(SSL_LIBS) \
-	./zlib/libz.a \
-	 -lm -ldl -o ./$(OUTPUT)
+	 -lz -lm -ldl -o ./$(OUTPUT)
 
 
 .DEFAULT: ssl64transcend
