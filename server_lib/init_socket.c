@@ -25,59 +25,6 @@
 #include <unistd.h>
 #include "global_debug.h" // Mazieri's debug facilities
 
-int init_socket(int db_socket)
-{
-    DBG("db_socket='%d'", db_socket);
-
-    int one = 1;
-    int tcp_buf_size = 1024*256;
-    struct sockaddr_in server;
-    int listening_socket;
-
-    /* Make a socket */
-    if ((listening_socket = socket(AF_INET, SOCK_STREAM, 0)) < 0) 
-    {
-	    data_log( tr.log_file, "Unable to create socket");
-	    exit(1);
-    }
-  
-    /* Set the send and receive buffer size to 256K */
-    setsockopt(listening_socket, SOL_SOCKET, SO_RCVBUF,	(char *)&tcp_buf_size, sizeof(tcp_buf_size));
-    setsockopt(listening_socket, SOL_SOCKET, SO_SNDBUF,	(char *)&tcp_buf_size, sizeof(tcp_buf_size));
-    setsockopt(listening_socket, SOL_SOCKET, SO_REUSEADDR, (char *)&one, sizeof(one));
-
-    /* Clients from anywhere should be able to connect with the server */
-    /* Null out the structure before assigning values */
-    memset(&server, 0, sizeof(server));
-    
-    /* Assign the address family */
-    server.sin_family = AF_INET;
-
-    /* Allow connection to any socket */
-    server.sin_addr.s_addr = htonl(INADDR_ANY);
-
-    /* Assign the port */
-    server.sin_port = htons(db_socket);
-
-    /* Bind the address to the socket */
-    if (bind(listening_socket, (struct sockaddr *)&server, sizeof(server)) < 0) 
-    {
-	    printf("Unable to bind\n");
-	    data_log("log/startup_errs", "server: bind");
-	    exit(1);
-    }
-
-    /* Listen on the socket */
-    if (listen(listening_socket, 5) < 0) 
-    {
-	    data_log("log/startup_errs", "server: listen");
-	    exit(1);
-    }
-
-    return(listening_socket);
-} /* end init_socket */
-
-
 /* Retrieves the exit status from the dying chilren */
 void sig_child()
 {
