@@ -32,9 +32,6 @@ int find_email(
     char *email_addr,	/* Email address returned to calling function */
     char address_type);	/* Indicates official or unofficial Email address */
 
-int find_reg_request(char *user_site);
-
-
 void get_big_file(
     char *key);		/* Key for big file to retrieve */
 
@@ -147,9 +144,6 @@ void value_assign(char *keyword, char *value);
     /* Assign default values */
 void default_values_assign(void);
 
-void reg_query(void);
-
-int rtv_user_email(char *user_email);
 
 /* Send one file to the client */
 int send_file(TRANS_FILE_STAT *fs, char *key, int dtms);

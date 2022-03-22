@@ -30,8 +30,6 @@ void sql_status_map_str(APPROVE_STATUS st, char *status);
 /* Look up user's site in the subnet table */
 int site_subnet_lookup(char *site);
 
-void reg_query(void);
-
 int check_reg(void);
 
 void dlt_big_file(char *key);	/* key for data being deleted */
@@ -89,8 +87,6 @@ int find_email(
     char *user_site,	/* site of user looking for */
     char *email_addr,	/* Email address returned to calling function */
     char address_type);	/* Indicates official or unofficial Email address */
-
-int find_reg_request(char *user_site);
 
 void mod_email_big_file(char *key);
 
@@ -171,7 +167,6 @@ void put_msg(char *key, char *log_string);
 
 void read_icom_params(char *file_name);
 
-int rtv_user_email(char *user_email);
 
 void send_secure_keyword(
     char *file_keyword,	/* File keyword to be encrypted */
