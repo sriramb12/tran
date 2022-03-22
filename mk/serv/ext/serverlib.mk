@@ -26,10 +26,10 @@ CFLAGS = $(DEVEL) $(DEBUG_OPTION) -D$(SSL_OPTION) -D$(MACHINE) -D$(SWAP_OPTION) 
 
 # Files at server_lib/ dir
 OBJECT = check_owner.o global_sql_lib.o ssl_common.o file_append.o file_copy.o files_dlt.o  \
-		 names_build.o  file_rename.o ssl_utils.o get_random.o files_get.o ip_addr.o add_line.o \
+		 names_build.o  file_rename.o ssl_utils.o get_random.o files_get.o add_line.o \
 		 close_down.o send_files.o files_put.o dbsend_files.o mask_msg_server_send.o files_rcv.o file.o \
 		 password_encrypt.o lock_file.o sort.o password_crypt.o email_send.o files_list.o server_lib.o \
-		 disk_usage.o big_disk_usage.o ssl_server_lib.o files_copy.o files.o time_stamp.o strcpy.o \
+		 disk_usage.o big_disk_usage.o ssl_server_lib.o files_copy.o files.o strcpy.o \
 		 get_site.o init_socket.o report_gen.o line_get.o entry.o list.o dir.o log.o file_rcv.o \
 		 dbsend_file.o remote_email_send.o sql_keyword_mapping.o sql_destinations_mapping.o create_secure_keyword.o
 
