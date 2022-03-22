@@ -99,7 +99,8 @@ make_module() #1 = module  $2 = group (optional)
     fi
     BUILD_MODULE=$module
     export BUILD_MODULE
-    LOG="logBuild_${module}.txt"
+    LOG="build_log/${module}.txt"
+    mkdir -p build_log/
     /bin/rm -f $LOG
     $MAKE clean > /dev/null
     /bin/rm -f *.a
@@ -263,14 +264,8 @@ fi
 
 
 
-generated_logs=`/usr/bin/find .  $MAXDEPTH $NEWER $BUILD_CONTROL_FILE -name "logBuild_*.txt"`
-echo
-echo "Build logs:"
-if [ "$generated_logs" != "" ]
-then
-  /bin/ls -rtl $generated_logs
-fi
-
+echo "build logs"
+ls -lrt $LOG
 get_binaries
 
 echo ""

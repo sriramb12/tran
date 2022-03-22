@@ -1,7 +1,7 @@
 # This makefile builds a library called 'libtrans.a' and used by
 # the Intercom External client, target called 'ssl64icom'
 
-DIR		=	client/
+DIR		=	src/client/
 
 EXTRA_OPTION 	 = TRANSAPI
 SWAP_OPTION 	 = BYTESWAP
@@ -15,12 +15,13 @@ SSL_OPTION		 = SSL_ENCRYPTION
 
 # Include Headers
 
-TRANS_HDR 	= ./trans_include
-GLOBAL_HDR 	= ./global_include
-MASK_HDR 	= ./m2include
-ZLIB_HDR 	= ./zlib
+INC_PREFIX      = inc
+TRANS_HDR 	= $(INC_PREFIX)/trans_include
+GLOBAL_HDR 	= $(INC_PREFIX)/global_include
+MASK_HDR 	= $(INC_PREFIX)/m2include
+ZLIB_HDR 	= $(INC_PREFIX)/zlib
 
-include libraries.def
+include mk/cfg/libraries.def
 
 # Compiler Flags
 CFLAGS =  $(DEBUG_OPTION) -D$(EXTRA_OPTION) -D$(SWAP_OPTION) -D$(SERVER_OPTION) -D$(MISC) -D$(COMPANY) -D$(PROGRAM) -D$(TAR_OPTION) \
@@ -42,7 +43,7 @@ OBJECT = close_down.o chk_password_name.o core_id_crypt.o dir.o trans_disk_usage
 
 OBJECT := $(addprefix $(DIR), $(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 $(info BEGIN)
 $(info $(OBJECT))
@@ -52,13 +53,13 @@ OUTPUT = bin/ext.client
 ## generates icom.ext, to release it must be renamed to "icom"
 
 # include(s) below will set the OUTPUT according to some variables
-include output_client_localhost.def
-include output_debug.def
+include mk/cfg/output_client_localhost.def
+include mk/cfg/output_debug.def
 
 
 .DEFAULT: ssl64icom
 
-ssl64icom: libtrans.a ./client/trans_client.o
+ssl64icom: lib/libtrans.a ./client/trans_client.o
 	@echo
 	@echo ":: ssl64icommake.mk --target='ssl64icom' --output='$(OUTPUT)' (External Intercom Client)"
 	@echo
@@ -67,9 +68,10 @@ ssl64icom: libtrans.a ./client/trans_client.o
 	$(SSL_LIBS) \
 	-lz -lm -ldl -lpthread -o $(OUTPUT)
 
-libtrans.a: $(OBJECT)
+lib/libtrans.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64icommake.mk --target='libtrans.a' --output='libtrans.a' (External Intercom)"
+	@echo ":: ssl64icommake.mk --target='lib/libtrans.a' --output='lib/libtrans.a' (External Intercom)"
 	@echo
-	ar r ./libtrans.a $(OBJECT)
-	ranlib ./libtrans.a
+	mkdir -p lib
+	ar r ./lib/libtrans.a $(OBJECT)
+	ranlib ./lib/libtrans.a

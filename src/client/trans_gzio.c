@@ -470,8 +470,7 @@ int ZEXPORT tfile_gzread (gzFile file, voidp buf, unsigned len)
       Reads one byte from the compressed file. gzgetc returns this byte
    or -1 in case of end of file or error.
 */
-int ZEXPORT gzgetc(file)
-    gzFile file;
+int ZEXPORT gzgetc(gzFile file)
 {
     unsigned char c;
 

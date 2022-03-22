@@ -2,7 +2,7 @@
 # the Intercom Internal client, target called 'ssl64icom'
 # producing icom CLI
 
-DIR		=	client/
+DIR		=	src/client/
 
 
 EXTRA_OPTION		= TRANSAPI
@@ -17,13 +17,13 @@ SSL_OPTION		 	= SSL_ENCRYPTION
 
 # Include Headers
 
-TRANS_HDR 		= ./trans_include
-GLOBAL_HDR 		= ./global_include
-MASK_HDR 		= ./m2include
-ZLIB_HDR 		= ./zlib
+TRANS_HDR 		= inc/trans_include
+GLOBAL_HDR 		= inc/global_include
+MASK_HDR 		= inc/m2include
+ZLIB_HDR 		= inc/zlib
 
 
-include libraries.def
+include mk/cfg/libraries.def
 
 # Compiler Flags
 CFLAGS =  $(DEVEL) $(DEBUG_OPTION) -D$(EXTRA_OPTION) -D$(SWAP_OPTION) -D$(SERVER_OPTION) -D$(MISC)  -D$(COMPANY) -D$(PROGRAM) -D$(TAR_OPTION) \
@@ -48,7 +48,7 @@ OBJECT = close_down.o chk_password_name.o core_id_crypt.o ssl_client_lib.o ssl_c
 OBJECT := $(addprefix $(DIR), $(OBJECT))
 
 
-include generic.def
+include mk/cfg/generic.def
 
 
 OUTPUT = bin/int.client
@@ -56,8 +56,8 @@ OUTPUT = bin/int.client
 ## generates icom.int, to release it must be renamed to "icom"
 
 # include(s) below will set the OUTPUT according to some variables
-include output_client_localhost.def
-include output_debug.def
+include mk/cfg/output_client_localhost.def
+include mk/cfg/output_debug.def
 
 $(info BEGIN)
 $(info $(OBJECT))
