@@ -50,10 +50,11 @@ $(info END)
 # SSL Transcend server lib
 trans_server_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64transmake_serverlib.mk --target='trans_server_lib.a' --output='trans_server_lib.a' (Transcend)"
+	@echo ":: serverlib.mk --target='trans_server_lib.a' --output='lib/trans_server_lib.a' (Transcend)"
 	@echo
-	ar r ./trans_server_lib.a $(OBJECT)
-	ranlib ./trans_server_lib.a
+	mkdir -p lib
+	ar r ./lib/trans_server_lib.a $(OBJECT)
+	ranlib ./lib/trans_server_lib.a
 
 
-.DEFAULT: trans_server_lib.a
+.DEFAULT: lib/trans_server_lib.a

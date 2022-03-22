@@ -58,14 +58,14 @@ ssl64transcend:  $(OBJECT)
 	@echo ":: ssl64transmake_server.mk --target='ssl64transcend' --output='$(OUTPUT)' (Transcend Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
-	./shared_trans_lib.a \
-	./trans_server_lib.a \
-	./trans_reg_lib.a \
-	./trans_server_lib.a \
-	./shared_trans_lib.a \
-	./trans_reg_lib.a \
-	./trans_server_lib.a \
-	./shared_trans_lib.a \
+	./lib/shared_trans_lib.a \
+	./lib/trans_server_lib.a \
+	./lib/trans_reg_lib.a \
+	./lib/trans_server_lib.a \
+	./lib/shared_trans_lib.a \
+	./lib/trans_reg_lib.a \
+	./lib/trans_server_lib.a \
+	./lib/shared_trans_lib.a \
 	$(SQL_LIB) $(LDAP_LIBS) $(SSL_LIBS) \
 	 -lz -lm -ldl -o ./$(OUTPUT)
 

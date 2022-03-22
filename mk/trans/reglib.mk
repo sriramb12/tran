@@ -46,12 +46,12 @@ $(info BEGIN)
 $(info $(OBJECT))
 $(info END)
 
-trans_reg_lib.a: $(OBJECT)
+lib/trans_reg_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64transmake_reglib.mk --target='trans_reg_lib.a' --output='trans_reg_lib.a' (Transcend)"
+	@echo ":: ssl64transmake_reglib.mk --target='lib/trans_reg_lib.a' --output='lib/trans_reg_lib.a' (Transcend)"
 	@echo
-	ar r ./trans_reg_lib.a $(OBJECT)
-	ranlib ./trans_reg_lib.a
+	ar r ./lib/trans_reg_lib.a $(OBJECT)
+	ranlib ./lib/trans_reg_lib.a
 
 
-.DEFAULT: trans_reg_lib.a
+.DEFAULT: lib/trans_reg_lib.a

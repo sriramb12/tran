@@ -47,8 +47,9 @@ $(info END)
 
 lib/free_server_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64icommake_serverlib.mk --target='lib/free_server_lib.a' --output='lib/free_server_lib.a' (External Intercom)"
+	@echo ":: serverlib.mk --target='lib/free_server_lib.a' --output='lib/free_server_lib.a' (External Intercom)"
 	@echo
+	mkdir -p lib
 	ar r ./lib/free_server_lib.a $(OBJECT)
 	ranlib ./lib/free_server_lib.a
 

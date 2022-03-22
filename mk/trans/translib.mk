@@ -54,12 +54,13 @@ $(info END)
 
 
 # Transcend library
-shared_trans_lib.a: $(OBJECT)
+lib/shared_trans_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64transmake_translib.mk --target='shared_trans_lib.a' --output='shared_trans_lib.a' (Transcend)"
+	@echo ":: ssl64transmake_translib.mk --target='lib/shared_trans_lib.a' --output='lib/shared_trans_lib.a' (Transcend)"
 	@echo
-	ar r ./shared_trans_lib.a $(OBJECT)
-	ranlib ./shared_trans_lib.a
+	mkdir -p lib
+	ar r ./lib/shared_trans_lib.a $(OBJECT)
+	ranlib ./lib/shared_trans_lib.a
 
 
-.DEFAULT: shared_trans_lib.a
+.DEFAULT: lib/shared_trans_lib.a
