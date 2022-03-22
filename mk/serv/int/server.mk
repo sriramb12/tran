@@ -34,7 +34,7 @@ CFLAGS =  $(DEVEL) $(DEBUG_OPTION) -D$(CUSTOMER_OPTION) -D$(SSL_OPTION) -D$(MACH
 OBJECT = check_reg.o reg_query.o customer_set.o dlt_time_calc.o entry.o email.o external_transweb.o \
 		 find_email.o find_reg_request.o fss.o init_trans_socket.o mask_filelist_check.o \
 		 get_big_file.o info_big_file.o lookup_release_keyword.o keyword.o open_big_file.o owner_dlt.o process_request.o put_big_file.o \
-		 rtv_user_email.o  sql_lib.o send_secure_keyword.o send_rtv_email.o send_file.o time_stamp.o
+		 sql_lib.o send_secure_keyword.o send_rtv_email.o send_file.o time_stamp.o
 
 OBJECT	:= 	$(addprefix $(DIR), $(OBJECT))
 

@@ -49,7 +49,6 @@ Edit the script with your host information
 
 Goto  <repository>/db_admin/crts 
 
-Run the generate_certificates.sh from this directory 
 b.
      Server (external)
     ./bin/ext.srv

@@ -34,7 +34,7 @@ include generic.def
 OBJECT = reg.o reg_query.o block_retrieve.o files.o list_dtms_test_files.o ctype.o \
 		 get_big_file.o info_big_file.o gzio.o hash.o lookup_release_keyword.o \
 		 login_decrypt.o open_big_file.o owner_dlt.o process_request.o put_big_file.o \
-		 rtv_user_email.o send_rtv_email.o send_file.o sql_lib.o
+		 send_rtv_email.o send_file.o sql_lib.o
 
 OBJECT	:= 	$(addprefix $(DIR), $(OBJECT))
 
