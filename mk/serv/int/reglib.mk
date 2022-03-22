@@ -2,12 +2,13 @@
 # the Intercom Internal server called
 # 'free_reg_lib.a'
 
-DIR		=	reg_lib/
+DIR		=	src/reg_lib/
 
 # Include Headers
-GLOBAL_HDR 		= 	./global_include
-TRANS_HDR 		= 	./trans_include
-REG_HDR 		= 	./reg_include
+INC_PREFIX      =       inc
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
 SRC_HDR			= 	./src/
 
 include mk/cfg/libraries.def
@@ -40,7 +41,7 @@ include mk/cfg/generic.def
 
 
 # New LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 $(info BEGIN)
 $(info $(OBJECT))

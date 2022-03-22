@@ -1,7 +1,7 @@
 # This makefile builds a library server_lib/ used by Intercom External
 # 'trans_server_lib.a'
 
-DIR		=	server_lib/
+DIR		=	src/server_lib/
 
 
 # Flags
@@ -11,9 +11,10 @@ PROGRAM			= TRANSCEND
 COMPANY 		= NXP
 
 # Include headers
-TRANS_HDR 	= ./trans_include
-REG_HDR 	= ./reg_include
-GLOBAL_HDR 	= ./global_include
+INC_PREFIX      =       inc/
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
 SRC_HDR		= ./src/
 
 include mk/cfg/libraries.def
@@ -40,7 +41,7 @@ include mk/cfg/generic.def
 
 
 # Mazieri's LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 $(info BEGIN)
 $(info $(OBJECT))

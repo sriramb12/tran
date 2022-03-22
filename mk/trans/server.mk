@@ -2,7 +2,7 @@
 # This makefile builds the SSL Transcend server for RHEL5 64bits.
 #
 
-DIR		=	transcend/
+DIR		=	src/transcend/
 
 
 
@@ -13,9 +13,10 @@ COMPANY      = NXP
 EDC_OPTION 	 = NO_DMZ
 
 # Headers
-GLOBAL_HDR  	= ./global_include/
-TRANS_HDR   	= ./trans_include/
-REG_HDR 		= ./reg_include/
+INC_PREFIX      =       inc/
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
 Z_HDR 			= ./zlib/
 SRC_HDR			= ./src/
 
@@ -41,7 +42,7 @@ OBJECT	:= 	$(addprefix $(DIR), $(OBJECT))
 include mk/cfg/generic.def
 
 # Mazieri's LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 OUTPUT = bin/tran.srv
 # include(s) below will set the OUTPUT according to some variables
@@ -62,10 +63,8 @@ ssl64transcend:  $(OBJECT)
 	./lib/trans_server_lib.a \
 	./lib/trans_reg_lib.a \
 	./lib/trans_server_lib.a \
-	./lib/shared_trans_lib.a \
 	./lib/trans_reg_lib.a \
 	./lib/trans_server_lib.a \
-	./lib/shared_trans_lib.a \
 	$(SQL_LIB) $(LDAP_LIBS) $(SSL_LIBS) \
 	 -lz -lm -ldl -o ./$(OUTPUT)
 

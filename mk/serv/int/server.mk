@@ -1,7 +1,7 @@
 # This makefile ssl64mmake.mk is called to produce target ssl64icomd
 # of the Intercom Internal server
 
-DIR		=	intercom/
+DIR		=	src/intercom/
 
 CUSTOMER_OPTION 	= DMZ
 SSL_OPTION 			= SSL_ENCRYPTION
@@ -14,9 +14,10 @@ Z_LIB 		= 	./zlib
 LDAP_LIB	= 	/usr/lib64
 
 # Include Headers
-GLOBAL_HDR 	= 	./global_include
-TRANS_HDR       = 	./trans_include
-REG_HDR 	= 	./reg_include
+INC_PREFIX      =       inc
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
 Z_HDR 		= 	./zlib
 SRC_HDR		= 	./src/
 
@@ -42,7 +43,7 @@ include mk/cfg/generic.def
 
 
 # Mazieri's LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 OUTPUT = bin/int.srv
 # include(s) below will set the OUTPUT according to some variables
@@ -59,12 +60,9 @@ ssl64icomd:  $(OBJECT)
 	@echo ":: ssl64make_server.mk --target='ssl64icomd' --output='$(OUTPUT)' (Internal Intercom Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
-	./shared_intd_lib.a \
-	./free_server_lib.a \
-	./shared_intd_lib.a \
-	./free_reg_lib.a \
-	./free_server_lib.a \
-	./shared_intd_lib.a \
+	./lib/shared_intd_lib.a \
+	./lib/free_server_lib.a \
+	./lib/free_reg_lib.a \
 	$(SQL_LIB) \
     $(LDAP_LIBS) \
     $(SSL_LIBS) \

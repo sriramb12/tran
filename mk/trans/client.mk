@@ -2,7 +2,7 @@
 # This makefile builds the SSL Transcend client for RHEL6 64bits.
 #
 
-DIR		=	client/
+DIR		=	src/client/
 
 
 EXTRA_OPTION	=	TRANSAPI

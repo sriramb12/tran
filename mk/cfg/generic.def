@@ -40,7 +40,7 @@ CFLAGS := $(CFLAGS) -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN
 
 
 # Mazieri's global debug
-OBJECT += ./global_code/global_debug.o
+OBJECT += ./src/global_code/global_debug.o
 
 
 

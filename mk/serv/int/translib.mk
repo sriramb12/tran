@@ -1,13 +1,15 @@
 # This makefile builds a library trans_lib/ used by Intercom Internal
 # 'shared_intd_lib.a'
 
-DIR		=	trans_lib/
+DIR		=	src/trans_lib/
 
 # Include headers
-GLOBAL_HDR 	= 	./global_include
-TRANS_HDR 	= 	./trans_include
-REG_HDR 	= 	./reg_include
-SRC_HDR		= 	./src/
+INC_PREFIX      =       inc
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
+SRC_HDR                =       ./src/
+
 
 include mk/cfg/libraries.def
 
@@ -42,18 +44,19 @@ include mk/cfg/generic.def
 
 
 # New LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 $(info BEGIN)
 $(info $(OBJECT))
 $(info END)
 
-shared_intd_lib.a: $(OBJECT)
+lib/shared_intd_lib.a: $(OBJECT)
 	@echo
 	@echo ":: ssl64make_translib.mk --target='shared_intd_lib.a' --output='shared_int_lib.a' (Internal Intercom)"
 	@echo
-	ar r ./shared_intd_lib.a $(OBJECT)
-	ranlib ./shared_intd_lib.a
+	mkdir -p lib
+	ar r lib//shared_intd_lib.a $(OBJECT)
+	ranlib ./lib/shared_intd_lib.a
 
 
-.DEFAULT: shared_intd_lib.a
+.DEFAULT: lib/shared_intd_lib.a

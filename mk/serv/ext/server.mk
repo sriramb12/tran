@@ -1,7 +1,7 @@
 # This makefile ssl64icommake.mk is called to produce target ssl64icomd
 # of the Intercom External server called './intercom/free.icomd'
 
-DIR		=	intercom/
+DIR		=	src/intercom/
 
 
 CUSTOMER_OPTION = DMZ
@@ -15,16 +15,17 @@ Z_LIB 		= 	./lib/zlib
 
 
 # Include Headers
-GLOBAL_HDR 	= 	./global_include
-DB_HDR 		= 	./trans_include
+INC_PREFIX      =       inc/
+GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
+TRANS_HDR       = 	$(INC_PREFIX)/trans_include
+REG_HDR 	= 	$(INC_PREFIX)/reg_include
 Z_HDR 		= 	./zlib
-REG_HDR 	= 	./reg_include
 SRC_HDR		= 	./src/
 
 
 # Compiler Flags
 CFLAGS	=   $(DEVEL) $(DEBUG_OPTION) -D$(CUSTOMER_OPTION) -D$(MACHINE) -D$(PROGRAM) -D$(COMPANY) \
-			-L$(Z_LIB) -I$(GLOBAL_HDR) -I$(DB_HDR) -I$(REG_HDR) $(SQL_INCLUDE) -I$(Z_HDR) -I$(SRC_HDR) \
+			-L$(Z_LIB) -I$(GLOBAL_HDR) -I$(TRANS_HDR) -I$(REG_HDR) $(SQL_INCLUDE) -I$(Z_HDR) -I$(SRC_HDR) \
 			$(DAP_INCLUDE) $(SSL_INCLUDE) \
 			-D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 $(EXTERNAL_TRANSCEND_ENV_CFLAGS)
 
@@ -42,7 +43,7 @@ include mk/cfg/generic.def
 
 
 # Mazieri's LDAP
-OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
+OBJECT += ./src/ldap/ldapfsl.o src/ldap/ldapfsl_trans.o
 
 OUTPUT = bin/ext.srv
 # include(s) below will set the OUTPUT according to some variables
@@ -57,11 +58,9 @@ ssl64icomd:  $(OBJECT)
 	@echo ":: ssl64icommake_server.mk --target='ssl64icomd' --output='$(OUTPUT)' (External Intercom Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
-	./shared_intd_lib.a \
+	./lib/shared_intd_lib.a \
 	./lib/free_server_lib.a \
-	./shared_intd_lib.a \
 	./lib/free_reg_lib.a \
-	./shared_intd_lib.a \
 	$(LDAP_LIBS) \
 	$(SQL_LIB) \
 	-lcrypto -lssl -lz -lm -ldl -o $(OUTPUT)
