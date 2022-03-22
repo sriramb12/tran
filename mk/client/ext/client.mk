@@ -59,12 +59,12 @@ include mk/cfg/output_debug.def
 
 .DEFAULT: ssl64icom
 
-ssl64icom: lib/libtrans.a ./client/trans_client.o
+ssl64icom: lib/libtrans.a src/client/trans_client.o
 	@echo
 	@echo ":: ssl64icommake.mk --target='ssl64icom' --output='$(OUTPUT)' (External Intercom Client)"
 	@echo
-	$(CC) ./client/trans_client.o \
-	./libtrans.a \
+	$(CC) ./src/client/trans_client.o \
+	./lib/libtrans.a \
 	$(SSL_LIBS) \
 	-lz -lm -ldl -lpthread -o $(OUTPUT)
 

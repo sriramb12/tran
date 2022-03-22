@@ -29,9 +29,9 @@ SSL_OPTION		=	SSL_ENCRYPTION
 
 
 # Headers
-TRANS_HDR 	= ./trans_include
-GLOBAL_HDR 	= ./global_include
-MASK_HDR 	= ./m2include
+TRANS_HDR 	= ./inc/trans_include
+GLOBAL_HDR 	= ./inc/global_include
+MASK_HDR 	= ./inc/m2include
 ZLIB_HDR 	= ./zlib
 
 include mk/cfg/libraries.def
