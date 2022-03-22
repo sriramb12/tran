@@ -19,7 +19,7 @@ REG_HDR 		= ./reg_include/
 Z_HDR 			= ./zlib/
 SRC_HDR			= ./src/
 
-include libraries.def
+include mk/cfg/libraries.def
 
 
 # Compiler and Flags
@@ -28,7 +28,7 @@ CFLAGS = $(DEVEL) $(DEBUG_OPTION) -D$(EDC_OPTION) -D$(MACHINE) -D$(COMPANY) -D$(
 		 $(LDAP_LIB) $(SQL_LIB) -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 $(EXTERNAL_TRANSCEND_ENV_CFLAGS)
 
 
-include generic.def
+include mk/cfg/generic.def
 
 # OBJECTs
 OBJECT = reg.o reg_query.o block_retrieve.o files.o list_dtms_test_files.o ctype.o \
@@ -38,14 +38,14 @@ OBJECT = reg.o reg_query.o block_retrieve.o files.o list_dtms_test_files.o ctype
 
 OBJECT	:= 	$(addprefix $(DIR), $(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 # Mazieri's LDAP
 OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
 
 OUTPUT = bin/tran.srv
 # include(s) below will set the OUTPUT according to some variables
-include output_debug.def
+include mk/cfg/output_debug.def
 
 $(info BEGIN)
 $(info $(OBJECT))

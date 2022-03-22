@@ -108,6 +108,6 @@ endif
 
 $(info libraries.def final OS variable = $(OS) SERVER=$(SERVER) USE_OS_SSL=$(USE_OS_SSL) USE_OS_LDAP=$(USE_OS_LDAP) USE_OS_MYSQL=$(USE_OS_MYSQL))
 
-include libmysql.def
-include libopenldap.def
-include libopenssl.def
+include mk/cfg/libmysql.def
+include mk/cfg/libopenldap.def
+include mk/cfg/libopenssl.def

@@ -17,7 +17,7 @@ REG_HDR 	= ./reg_include
 GLOBAL_HDR 	= ./global_include
 SRC_HDR		= ./src/
 
-include libraries.def
+include mk/cfg/libraries.def
 
 
 # Compiler Flags
@@ -42,7 +42,7 @@ OBJECT = get_random_index.o check_disk_space.o company.o cron_dlt_files.o dlt_em
 
 OBJECT := $(addprefix $(DIR),$(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # Mazieri's LDAP

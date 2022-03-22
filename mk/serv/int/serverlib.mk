@@ -9,7 +9,7 @@ REG_HDR 	= 	./reg_include
 GLOBAL_HDR 	= 	./global_include
 SRC_HDR		= 	./src/
 
-include libraries.def
+include mk/cfg/libraries.def
 
 SSL_OPTION		= SSL_ENCRYPTION
 SWAP_OPTION		= BYTESWAP
@@ -33,7 +33,7 @@ OBJECT = entry.o add_line.o close_down.o check_owner.o big_disk_usage.o file.o f
 
 OBJECT  := $(addprefix $(DIR),$(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # New LDAP

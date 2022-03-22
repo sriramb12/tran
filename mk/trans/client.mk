@@ -34,7 +34,7 @@ GLOBAL_HDR 	= ./global_include
 MASK_HDR 	= ./m2include
 ZLIB_HDR 	= ./zlib
 
-include libraries.def
+include mk/cfg/libraries.def
 
 
 
@@ -58,13 +58,13 @@ OBJECT = close_down.o chk_password_name.o core_id_crypt.o dir.o trans_disk_usage
 OBJECT := $(addprefix $(DIR), $(OBJECT))
 
 
-include generic.def
+include mk/cfg/generic.def
 
 
 OUTPUT = bin/tran.client
 # include(s) below will set the OUTPUT according to some variables
-include output_client_localhost.def
-include output_debug.def
+include mk/cfg/output_client_localhost.def
+include mk/cfg/output_debug.def
 
 $(info BEGIN)
 $(info $(OBJECT))

@@ -10,7 +10,7 @@ TRANS_HDR 		= 	./trans_include
 REG_HDR 		= 	./reg_include
 SRC_HDR			= 	./src/
 
-include libraries.def
+include mk/cfg/libraries.def
 
 # Configuration directives
 EDC_OPTION 		= DMZ
@@ -36,7 +36,7 @@ OBJECT = search_registry.o add_email_entry.o add_file_entry.o add_file_line.o ad
 
 OBJECT  := $(addprefix $(DIR), $(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # New LDAP

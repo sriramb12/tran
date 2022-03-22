@@ -9,7 +9,7 @@ GLOBAL_HDR		= ./global_include
 TRANS_HDR		= ./trans_include
 REG_HDR			= ./reg_include
 
-include libraries.def
+include mk/cfg/libraries.def
 
 SWAP_OPTION 	= BYTESWAP
 SSL_OPTION 		= SSL_ENCRYPTION
@@ -36,7 +36,7 @@ OBJECT = search_registry.o add_email_entry.o add_file_entry.o add_file_line.o ad
 
 OBJECT  := $(addprefix $(DIR), $(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # Mazieri's LDAP

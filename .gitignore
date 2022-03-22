@@ -5,3 +5,6 @@ bin/*
 logB*
 *.b
 *.pem
+icom.int
+
+

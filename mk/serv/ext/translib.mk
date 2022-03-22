@@ -9,7 +9,7 @@ REG_HDR 	= 	./reg_include
 GLOBAL_HDR 	= 	./global_include
 SRC_HDR		= 	./src/
 
-include libraries.def
+include mk/cfg/libraries.def
 
 
 SWAP_OPTION		= BYTESWAP
@@ -42,7 +42,7 @@ OBJECT = transweb_reg.o block_put.o trans_sql_lib.o get_release_file.o dlt_histo
 OBJECT := $(addprefix $(DIR),$(OBJECT))
 
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # New LDAP

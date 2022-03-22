@@ -9,7 +9,7 @@ SSL_OPTION 		= SSL_ENCRYPTION
 PROGRAM 		= INTERCOM
 COMPANY 		= EXTERNAL
 
-include libraries.def
+include mk/cfg/libraries.def
 
 Z_LIB 		= 	./lib/zlib
 
@@ -38,7 +38,7 @@ OBJECT = check_reg.o reg_query.o customer_set.o dlt_time_calc.o entry.o email.o 
 
 OBJECT	:= 	$(addprefix $(DIR), $(OBJECT))
 
-include generic.def
+include mk/cfg/generic.def
 
 
 # Mazieri's LDAP
@@ -46,7 +46,7 @@ OBJECT += ./src/ldapfsl.o src/ldapfsl_trans.o
 
 OUTPUT = bin/ext.srv
 # include(s) below will set the OUTPUT according to some variables
-include output_debug.def
+include mk/cfg/output_debug.def
 
 $(info BEGIN)
 $(info $(OBJECT))

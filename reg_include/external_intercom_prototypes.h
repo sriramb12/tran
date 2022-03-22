@@ -66,8 +66,6 @@ int find_email(
     char *email_addr,	/* Email address returned to calling function */
     char address_type);	/* Indicates official or unofficial Email address */
 
-int find_reg_request(char *user_site);
-
 void mod_email_big_file(char *key);
 
 void lock_big_file(char *key);

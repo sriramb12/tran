@@ -1,0 +1,549 @@
+[1mdiff --git a/icom.ext b/icom.ext[m
+[1mindex 2af0c4d..999f525 100755[m
+Binary files a/icom.ext and b/icom.ext differ
+[1mdiff --git a/logBuild_build-intercom-external-client.txt b/logBuild_build-intercom-external-client.txt[m
+[1mindex c70c890..c532132 100644[m
+[1m--- a/logBuild_build-intercom-external-client.txt[m
+[1m+++ b/logBuild_build-intercom-external-client.txt[m
+[36m@@ -1,5 +1,5 @@[m
+ cd ./zlib; make -f Makefile; cd ..[m
+[31m-make[1]: Entering directory `/home/nxf84310/orig/transcend/zlib'[m
+[32m+[m[32mmake[1]: Entering directory `/home/nxf84310/tran/zlib'[m
+ gcc -O   -c -o adler32.o adler32.c[m
+ gcc -O   -c -o compress.o compress.c[m
+ gcc -O   -c -o crc32.o crc32.c[m
+[36m@@ -13,12 +13,12 @@[m [mgcc -O   -c -o infback.o infback.c[m
+ gcc -O   -c -o inftrees.o inftrees.c[m
+ gcc -O   -c -o inffast.o inffast.c[m
+ ar rc libz.a adler32.o compress.o crc32.o gzio.o uncompr.o deflate.o trees.o zutil.o inflate.o infback.o inftrees.o inffast.o [m
+[31m-make[1]: Leaving directory `/home/nxf84310/orig/transcend/zlib'[m
+[31m-make: Entering directory `/home/nxf84310/orig/transcend'[m
+[32m+[m[32mmake[1]: Leaving directory `/home/nxf84310/tran/zlib'[m
+[32m+[m[32mmake: Entering directory `/home/nxf84310/tran'[m
+ cd ./zlib; make -f Makefile; cd ..[m
+[31m-make[1]: Entering directory `/home/nxf84310/orig/transcend/zlib'[m
+[32m+[m[32mmake[1]: Entering directory `/home/nxf84310/tran/zlib'[m
+ make[1]: Nothing to be done for `lib'.[m
+[31m-make[1]: Leaving directory `/home/nxf84310/orig/transcend/zlib'[m
+[32m+[m[32mmake[1]: Leaving directory `/home/nxf84310/tran/zlib'[m
+ make -f ssl64icommake_client.mk[m
+ libraries.def [almost done] variable = RH7 SERVER= USE_OS_SSL= [m
+ libraries.def final OS variable = RH7 SERVER= USE_OS_SSL= USE_OS_LDAP= USE_OS_MYSQL=[m
+[36m@@ -27,11 +27,18 @@[m [mlibopenssl.def BUILD_MODULE=build-intercom-external-client OS=RH7 USE_OS_SSL=[m
+ libopenssl.def 01 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=[m
+ libopenssl.def 10  LINK_SHARED=0 SSL_MINIMAL_VERSION=1.0.2 SSL_BASE=/run/pkg/OSS-openssl-/1.0.2u[m
+ libopenssl.def 30 SSL_INCLUDE=-I/run/pkg/OSS-openssl-/1.0.2u/include SSL_LIBS=/run/pkg/OSS-openssl-/1.0.2u/lib/libssl.a /run/pkg/OSS-openssl-/1.0.2u/lib/libcrypto.a[m
+[32m+[m[32merror: Malformed value for push.default: simple[m
+[32m+[m[32merror: Must be one of nothing, matching, tracking or current.[m
+[32m+[m[32mfatal: bad config file line 3 in /home/nxf84310/.gitconfig[m
+[32m+[m[32merror: Malformed value for push.default: simple[m
+[32m+[m[32merror: Must be one of nothing, matching, tracking or current.[m
+[32m+[m[32mfatal: bad config file line 3 in /home/nxf84310/.gitconfig[m
+[32m+[m[32mcat: .git_sha: No such file or directory[m
+ BEGIN[m
+ client/close_down.o client/chk_password_name.o client/core_id_crypt.o client/dir.o client/trans_disk_usage.o client/free_help_print.o client/files.o client/get_file.o client/get_log_string.o client/trans_intercom_send.o client/is_keyword.o client/single_help_print.o client/shared_memory_as_mapped_file.o client/mapped_file.o client/shared_status.o client/trans_block_retrieve.o client/trans_gzio.o client/trans_repository.o client/trans_file_get.o client/trans_release_get.o client/ssl_client_lib.o client/ssl_common.o client/ssl_init.o client/trans_custom.o client/trans_get.o client/trans_files.o client/transapi.o client/transapi_client_globals.o client/transapi_help_print.o client/trans_block_get.o client/trans_block_put.o client/parallel_get.o client/parallel_put.o client/trans_edc_request.o client/trans_dirlist.o client/trans_maskshop.o client/trans_put.o client/trans_simple.o client/trans_support.o client/trans_rcread.o client/version_display.o client/whereis.o client/client_lib.o client/echo_stars.o client/email_send.o client/get_ret_code.o client/getwd.o client/trans_hash.o client/init_socket.o client/ip_addr.o client/line_get.o client/list.o client/password_crypt.o client/password.o client/scan.o client/strcpy.o client/time_calc.o ./global_code/global_debug.o[m
+ END[m
+[31m-make[1]: Entering directory `/home/nxf84310/orig/transcend'[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/close_down.o client/close_down.c[m
+[32m+[m[32mmake[1]: Entering directory `/home/nxf84310/tran'[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/close_down.o client/close_down.c[m
+ In file included from client/close_down.c:18:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -44,14 +51,14 @@[m [mIn file included from client/close_down.c:18:0:[m
+ ./global_include/global_defines.h:182:0: note: this is the location of the previous definition[m
+  #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\[m
+  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/chk_password_name.o client/chk_password_name.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/chk_password_name.o client/chk_password_name.c[m
+ In file included from ./trans_include/trans_defines.h:5:0,[m
+                  from client/chk_password_name.c:13:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/core_id_crypt.o client/core_id_crypt.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/core_id_crypt.o client/core_id_crypt.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from ./trans_include/trans_prototypes.h:6,[m
+                  from client/core_id_crypt.c:19:[m
+[36m@@ -83,7 +90,7 @@[m [mIn file included from client/core_id_crypt.c:17:0:[m
+ /usr/include/string.h:125:14: note: expected 'const char * __restrict__' but argument is of type 'unsigned char *'[m
+  extern char *strcpy (char *__restrict __dest, const char *__restrict __src)[m
+               ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/dir.o client/dir.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/dir.o client/dir.c[m
+ In file included from client/dir.c:26:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -101,7 +108,7 @@[m [mIn file included from client/dir.c:26:0:[m
+ ./global_include/global_defines.h:182:0: note: this is the location of the previous definition[m
+  #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\[m
+  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_disk_usage.o client/trans_disk_usage.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_disk_usage.o client/trans_disk_usage.c[m
+ In file included from client/trans_disk_usage.c:18:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -113,10 +120,10 @@[m [mIn file included from ./trans_include/transapi_hidden_prototypes.h:8:0,[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/free_help_print.o client/free_help_print.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/files.o client/files.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_file.o client/get_file.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_log_string.o client/get_log_string.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/free_help_print.o client/free_help_print.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/files.o client/files.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_file.o client/get_file.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_log_string.o client/get_log_string.c[m
+ In file included from client/get_log_string.c:15:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -127,7 +134,7 @@[m [mIn file included from client/get_log_string.c:23:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_intercom_send.o client/trans_intercom_send.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_intercom_send.o client/trans_intercom_send.c[m
+ In file included from ./global_include/rtn.h:4:0,[m
+                  from client/trans_intercom_send.c:23:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -139,7 +146,7 @@[m [mIn file included from client/trans_intercom_send.c:27:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/is_keyword.o client/is_keyword.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/is_keyword.o client/is_keyword.c[m
+ In file included from ./global_include/rtn.h:4:0,[m
+                  from client/is_keyword.c:14:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -151,7 +158,7 @@[m [mIn file included from client/is_keyword.c:17:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/single_help_print.o client/single_help_print.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/single_help_print.o client/single_help_print.c[m
+ In file included from client/single_help_print.c:16:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -161,7 +168,7 @@[m [mclient/single_help_print.c: In function 'trans_help_print':[m
+ client/single_help_print.c:21:52: warning: unused parameter 'help_option' [-Wunused-parameter][m
+  int trans_help_print(char *ptr, char command, char help_option)[m
+                                                     ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/shared_memory_as_mapped_file.o client/shared_memory_as_mapped_file.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/shared_memory_as_mapped_file.o client/shared_memory_as_mapped_file.c[m
+ In file included from client/shared_memory_as_mapped_file.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -187,7 +194,7 @@[m [mclient/shared_memory_as_mapped_file.c: In function 'shared_memory_cleanup':[m
+ client/shared_memory_as_mapped_file.c:183:33: warning: unused parameter 'user' [-Wunused-parameter][m
+  int shared_memory_cleanup(char *user)[m
+                                  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/mapped_file.o client/mapped_file.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/mapped_file.o client/mapped_file.c[m
+ In file included from client/mapped_file.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -209,7 +216,7 @@[m [mclient/mapped_file.c: In function 'mapped_file_write':[m
+ client/mapped_file.c:142:13: warning: variable 'bytes' set but not used [-Wunused-but-set-variable][m
+      ssize_t bytes = 0;[m
+              ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/shared_status.o client/shared_status.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/shared_status.o client/shared_status.c[m
+ In file included from client/shared_status.c:22:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -229,7 +236,7 @@[m [mclient/shared_status.c: In function 'shared_status_allocate':[m
+ client/shared_status.c:85:70: warning: ordered comparison of pointer with integer zero [-Wextra][m
+      if ((mem_ptr = (struct transfer_status *)shmat(shm2id, NULL, 0)) < 0)[m
+                                                                       ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_retrieve.o client/trans_block_retrieve.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_retrieve.o client/trans_block_retrieve.c[m
+ In file included from client/trans_block_retrieve.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -248,7 +255,7 @@[m [mIn file included from client/trans_block_retrieve.c:20:0:[m
+ ./global_include/global_defines.h:182:0: note: this is the location of the previous definition[m
+  #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\[m
+  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_gzio.o client/trans_gzio.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_gzio.o client/trans_gzio.c[m
+ In file included from ./trans_include/trans_defines.h:5:0,[m
+                  from ./trans_include/trans_hash.h:5,[m
+                  from client/trans_gzio.c:41:[m
+[36m@@ -260,7 +267,7 @@[m [mclient/trans_gzio.c: In function 'tfile_gzread':[m
+ client/trans_gzio.c:420:57: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast][m
+   return tfile_hash(BLOCK_SIZE - s->stream.avail_out, 0, (int)index);[m
+                                                          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_repository.o client/trans_repository.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_repository.o client/trans_repository.c[m
+ In file included from ./global_include/global_params.h:4:0,[m
+                  from client/trans_repository.c:28:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -276,7 +283,7 @@[m [mclient/trans_repository.c: In function 'icom_site_print':[m
+ client/trans_repository.c:486:25: warning: unused parameter 'index' [-Wunused-parameter][m
+  int icom_site_print(int index)[m
+                          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_file_get.o client/trans_file_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_file_get.o client/trans_file_get.c[m
+ In file included from client/trans_file_get.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -302,7 +309,7 @@[m [mclient/trans_file_get.c: In function 'custom_file_get':[m
+ client/trans_file_get.c:274:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare][m
+   if (fwrite(buffer, 1, ret, fp) != ret)[m
+                                  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_release_get.o client/trans_release_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_release_get.o client/trans_release_get.c[m
+ In file included from client/trans_release_get.c:17:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -313,7 +320,7 @@[m [mIn file included from client/trans_release_get.c:23:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_client_lib.o client/ssl_client_lib.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_client_lib.o client/ssl_client_lib.c[m
+ In file included from client/ssl_client_lib.c:27:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -338,7 +345,7 @@[m [mclient/ssl_client_lib.c: In function 'get_ssl_longlong':[m
+ client/ssl_client_lib.c:439:5: warning: dereferencing type-punned pointer will break strict-aliasing rules [-Wstrict-aliasing][m
+      return(*(long long *)buffer);[m
+      ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_common.o client/ssl_common.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_common.o client/ssl_common.c[m
+ In file included from client/ssl_common.c:4:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -363,7 +370,7 @@[m [mclient/ssl_common.c:48:31: warning: unused parameter 'not_used_parameter' [-Wunu[m
+ client/ssl_common.c:48:84: warning: unused parameter 'password' [-Wunused-parameter][m
+  SSL_CTX *initialize_ctx(char *not_used_parameter /* it used to be keyfile*/, char *password)[m
+                                                                                     ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_init.o client/ssl_init.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ssl_init.o client/ssl_init.c[m
+ In file included from ./global_include/rtn.h:4:0,[m
+                  from client/ssl_init.c:11:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -431,7 +438,7 @@[m [mIn file included from ./global_include/rtn.h:4:0,[m
+ ./global_include/global_defines.h:182:0: note: this is the location of the previous definition[m
+  #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\[m
+  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_custom.o client/trans_custom.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_custom.o client/trans_custom.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/trans_custom.c:19:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -455,7 +462,7 @@[m [mclient/trans_custom.c: In function 'trans_custom_request':[m
+ client/trans_custom.c:528:9: warning: 'ret' may be used uninitialized in this function [-Wmaybe-uninitialized][m
+      int ret;[m
+          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_get.o client/trans_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_get.o client/trans_get.c[m
+ In file included from client/trans_get.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -493,7 +500,7 @@[m [mclient/trans_get.c:373:13: warning: 'ret' may be used uninitialized in this func[m
+ client/trans_get.c:345:9: note: 'ret' was declared here[m
+      int ret;[m
+          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_files.o client/trans_files.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_files.o client/trans_files.c[m
+ In file included from client/trans_files.c:27:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -515,7 +522,7 @@[m [mclient/trans_files.c: In function 'command_get':[m
+ client/trans_files.c:392:33: warning: comparison between signed and unsigned integer expressions [-Wsign-compare][m
+   if (fwrite(buffer, 1, ret, po) != ret)[m
+                                  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi.o client/transapi.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi.o client/transapi.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/transapi.c:26:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -585,7 +592,7 @@[m [mclient/transapi.c:1036:60: warning: unused parameter 'secondary_key' [-Wunused-p[m
+ client/transapi.c:1036:82: warning: unused parameter 'list' [-Wunused-parameter][m
+  int dblist_request(char req_type, char *primary_key, char *secondary_key, char **list[]) {[m
+                                                                                   ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi_client_globals.o client/transapi_client_globals.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi_client_globals.o client/transapi_client_globals.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/transapi_client_globals.c:12:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -683,8 +690,8 @@[m [mIn file included from client/transapi_client_globals.c:12:0:[m
+ ./trans_include/company.h:61:10: note: 'extension' declared here[m
+      char extension[2];         // file keyword last letter[m
+           ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi_help_print.o client/transapi_help_print.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_get.o client/trans_block_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/transapi_help_print.o client/transapi_help_print.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_get.o client/trans_block_get.c[m
+ In file included from client/trans_block_get.c:21:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -710,7 +717,7 @@[m [mclient/trans_block_get.c: In function 'trans_random_block_get':[m
+ client/trans_block_get.c:179:60: warning: unused parameter 'block_size' [-Wunused-parameter][m
+       int trans_random_block_get(int fi,     int index, int block_size)[m
+                                                             ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_put.o client/trans_block_put.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_block_put.o client/trans_block_put.c[m
+ In file included from client/trans_block_put.c:21:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -733,7 +740,7 @@[m [mclient/trans_block_put.c: In function 'trans_random_block_put':[m
+ client/trans_block_put.c:204:9: warning: variable 'ret' set but not used [-Wunused-but-set-variable][m
+      int ret;[m
+          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/parallel_get.o client/parallel_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/parallel_get.o client/parallel_get.c[m
+ In file included from client/parallel_get.c:24:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -759,7 +766,7 @@[m [mclient/parallel_get.c: In function 'trans_get_parallel_compressed':[m
+ client/parallel_get.c:122:9: warning: 'server_mem_key' may be used uninitialized in this function [-Wmaybe-uninitialized][m
+   sprintf(trans[index]->par1, "%d", server_mem_key);[m
+          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/parallel_put.o client/parallel_put.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/parallel_put.o client/parallel_put.c[m
+ In file included from client/parallel_put.c:21:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -778,7 +785,7 @@[m [mclient/parallel_put.c: In function 'trans_put_separate_compressed_data':[m
+ client/parallel_put.c:391:9: warning: variable 'mem_key' set but not used [-Wunused-but-set-variable][m
+      int mem_key;[m
+          ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_edc_request.o client/trans_edc_request.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_edc_request.o client/trans_edc_request.c[m
+ In file included from client/trans_edc_request.c:20:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -789,7 +796,7 @@[m [mIn file included from client/trans_edc_request.c:25:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_dirlist.o client/trans_dirlist.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_dirlist.o client/trans_dirlist.c[m
+ In file included from client/trans_dirlist.c:22:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -800,7 +807,7 @@[m [mIn file included from client/trans_dirlist.c:29:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_maskshop.o client/trans_maskshop.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_maskshop.o client/trans_maskshop.c[m
+ In file included from ./global_include/global_params.h:4:0,[m
+                  from client/trans_maskshop.c:30:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -821,7 +828,7 @@[m [mclient/trans_maskshop.c: In function 'trans_maskshop_header_build':[m
+ client/trans_maskshop.c:223:98: warning: unused parameter 'file_cnt' [-Wunused-parameter][m
+  int trans_maskshop_header_build(int index, char *buffer, int plate_cnt, int processstep_cnt, int file_cnt)[m
+                                                                                                   ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_put.o client/trans_put.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_put.o client/trans_put.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/trans_put.c:26:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -857,7 +864,7 @@[m [mclient/trans_put.c: In function 'trans_put_request':[m
+ client/trans_put.c:1300:20: warning: 'tar_ptr' may be used uninitialized in this function [-Wmaybe-uninitialized][m
+                  fp = popen(tar_ptr, "r");[m
+                     ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_simple.o client/trans_simple.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_simple.o client/trans_simple.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/trans_simple.c:21:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -873,7 +880,7 @@[m [mclient/trans_simple.c: In function 'trans_simple_basic_request_set':[m
+ client/trans_simple.c:73:5: warning: implicit declaration of function 'isdigit' [-Wimplicit-function-declaration][m
+      if (lenkey > 2 && isdigit(key[0]) && key[lenkey-1] == '.' && isdigit(key[lenkey-2]))[m
+      ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_support.o client/trans_support.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_support.o client/trans_support.c[m
+ In file included from client/trans_support.c:22:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -905,7 +912,7 @@[m [mclient/trans_support.c:59:43: warning: unused parameter 'argc' [-Wunused-paramet[m
+ client/trans_support.c:59:86: warning: unused parameter 'admin_list' [-Wunused-parameter][m
+  int  trans_support_request(int index, int argc, char **argv, char *email_list, char *admin_list)[m
+                                                                                       ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_rcread.o client/trans_rcread.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_rcread.o client/trans_rcread.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/trans_rcread.c:29:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -917,7 +924,7 @@[m [mIn file included from client/trans_rcread.c:35:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/version_display.o client/version_display.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/version_display.o client/version_display.c[m
+ In file included from client/version_display.c:19:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -928,14 +935,14 @@[m [mIn file included from client/version_display.c:25:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/whereis.o client/whereis.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/whereis.o client/whereis.c[m
+ In file included from client/whereis.c:16:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/client_lib.o client/client_lib.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/echo_stars.o client/echo_stars.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/client_lib.o client/client_lib.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/echo_stars.o client/echo_stars.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from ./trans_include/trans_prototypes.h:6,[m
+                  from client/echo_stars.c:15:[m
+[36m@@ -943,16 +950,16 @@[m [mIn file included from ./trans_include/company.h:6:0,[m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/email_send.o client/email_send.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/email_send.o client/email_send.c[m
+ In file included from ./global_include/global_params.h:4:0,[m
+                  from client/email_send.c:25:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_ret_code.o client/get_ret_code.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/getwd.o client/getwd.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_hash.o client/trans_hash.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/get_ret_code.o client/get_ret_code.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/getwd.o client/getwd.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_hash.o client/trans_hash.c[m
+ In file included from client/trans_hash.c:12:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -996,7 +1003,7 @@[m [mclient/trans_hash.c:190:27: warning: 'current_time' may be used uninitialized in[m
+ client/trans_hash.c:118:8: note: 'current_time' was declared here[m
+    long current_time;[m
+         ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/init_socket.o client/init_socket.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/init_socket.o client/init_socket.c[m
+ In file included from client/init_socket.c:26:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -1019,7 +1026,7 @@[m [mclient/init_socket.c: In function 'header_bld':[m
+ client/init_socket.c:167:11: warning: unused parameter 'user_login' [-Wunused-parameter][m
+      char *user_login)[m
+            ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ip_addr.o client/ip_addr.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/ip_addr.o client/ip_addr.c[m
+ In file included from client/ip_addr.c:28:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -1032,21 +1039,21 @@[m [mIn file included from client/ip_addr.c:28:0:[m
+ ./global_include/global_defines.h:182:0: note: this is the location of the previous definition[m
+  #define HELP_MSG "For assistance, contact InterCom administrator:\n\n\[m
+  ^[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/line_get.o client/line_get.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/line_get.o client/line_get.c[m
+ In file included from client/line_get.c:14:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/list.o client/list.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/list.o client/list.c[m
+ In file included from client/list.c:27:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/password_crypt.o client/password_crypt.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/password.o client/password.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/scan.o client/scan.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/password_crypt.o client/password_crypt.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/password.o client/password.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/scan.o client/scan.c[m
+ In file included from client/scan.c:15:0:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+  #define NONE "0"[m
+[36m@@ -1057,9 +1064,9 @@[m [mIn file included from client/scan.c:18:0:[m
+  #define TRANSAPI_VERSION CURRENT_ICOM_VERSION[m
+  ^[m
+ <command-line>:0:0: note: this is the location of the previous definition[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/strcpy.o client/strcpy.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/time_calc.o client/time_calc.c[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o global_code/global_debug.o global_code/global_debug.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/strcpy.o client/strcpy.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/time_calc.o client/time_calc.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o global_code/global_debug.o global_code/global_debug.c[m
+ In file included from ./trans_include/trans_server_defines.h:7:0,[m
+                  from global_code/global_debug.c:15:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -1083,7 +1090,7 @@[m [mglobal_code/global_debug.c:173:46: warning: unused parameter 'argv' [-Wunused-pa[m
+ ar r ./libtrans.a client/close_down.o client/chk_password_name.o client/core_id_crypt.o client/dir.o client/trans_disk_usage.o client/free_help_print.o client/files.o client/get_file.o client/get_log_string.o client/trans_intercom_send.o client/is_keyword.o client/single_help_print.o client/shared_memory_as_mapped_file.o client/mapped_file.o client/shared_status.o client/trans_block_retrieve.o client/trans_gzio.o client/trans_repository.o client/trans_file_get.o client/trans_release_get.o client/ssl_client_lib.o client/ssl_common.o client/ssl_init.o client/trans_custom.o client/trans_get.o client/trans_files.o client/transapi.o client/transapi_client_globals.o client/transapi_help_print.o client/trans_block_get.o client/trans_block_put.o client/parallel_get.o client/parallel_put.o client/trans_edc_request.o client/trans_dirlist.o client/trans_maskshop.o client/trans_put.o client/trans_simple.o client/trans_support.o client/trans_rcread.o client/version_display.o client/whereis.o client/client_lib.o client/echo_stars.o client/email_send.o client/get_ret_code.o client/getwd.o client/trans_hash.o client/init_socket.o client/ip_addr.o client/line_get.o client/list.o client/password_crypt.o client/password.o client/scan.o client/strcpy.o client/time_calc.o ./global_code/global_debug.o[m
+ ar: creating ./libtrans.a[m
+ ranlib ./libtrans.a[m
+[31m-gcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"dev:fab99eb\" -DBUILD_DATE=\"20220314\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_client.o client/trans_client.c[m
+[32m+[m[32mgcc -O3 -Wall -Wextra -fno-stack-protector  -DTRANSAPI -DBYTESWAP -DSINGLE_CONNECT -DSINGLE_CONNECT -DEXTERNAL -DINTERCOM -Ddo_tar -DNONE -DLINUX    -I./trans_include -I./global_include -I./m2include -I./zlib  -c -I/run/pkg/OSS-openssl-/1.0.2u/include -DSSL_ENCRYPTION -D_LARGEFILE_SOURCE -U_OFF_T -D_FILE_OFFSET_BITS=64 -DLDAP_DEPRECATED=1  -DTRANSAPI_VERSION=\"9.3.7\" -DCURRENT_TRANS_VERSION=\"9.3.7\" -DCURRENT_ICOM_VERSION=\"7.8\" -DGIT_SHA=\"\" -DBUILD_DATE=\"20220322\" -DLDAP_UID_EQUAL_SEARCH_OR_LOGIN   -c -o client/trans_client.o client/trans_client.c[m
+ In file included from ./trans_include/company.h:6:0,[m
+                  from client/trans_client.c:23:[m
+ ./global_include/global_defines.h:227:0: warning: "NONE" redefined [enabled by default][m
+[36m@@ -1178,5 +1185,5 @@[m [mgcc -O3 -Wall -Wextra -fno-stack-protector ./client/trans_client.o \[m
+ /run/pkg/OSS-openssl-/1.0.2u/lib/libssl.a /run/pkg/OSS-openssl-/1.0.2u/lib/libcrypto.a \[m
+ ./zlib/libz.a \[m
+ -lm -ldl -lpthread -o icom.ext[m
+[31m-make[1]: Leaving directory `/home/nxf84310/orig/transcend'[m
+[31m-make: Leaving directory `/home/nxf84310/orig/transcend'[m
+[32m+[m[32mmake[1]: Leaving directory `/home/nxf84310/tran'[m
+[32m+[m[32mmake: Leaving directory `/home/nxf84310/tran'[m
+[1mdiff --git a/reg_include/intercom_company.h b/reg_include/intercom_company.h[m
+[1mindex e697a41..e8e5895 100755[m
+[1m--- a/reg_include/intercom_company.h[m
+[1m+++ b/reg_include/intercom_company.h[m
+[36m@@ -1,6 +1,7 @@[m
+ #ifndef intercom_company_h[m
+ #define intercom_company_h[m
+ [m
+[32m+[m[32mdddd[m
+ #include "global_defines.h"[m
+ #include "trans_defines.h"[m
+ [m
+[36m@@ -16,6 +17,7 @@[m [mtypedef struct[m
+ } SECNET;[m
+ [m
+ #ifdef NXP [m
+[32m+[m[32mddd[m
+ #ifdef SSL_ENCRYPTION[m
+ static SECNET sn[5] = [m
+ {[m
+[36m@@ -24,8 +26,10 @@[m [mstatic SECNET sn[5] =[m
+     {  "FTPgate", "cde-az34-019va", "10.65.24.19", 6922, },[m
+     {  "ITAR", "medusa", "10.80.21.106", 6922, },[m
+     {  "Local", "angel", "172.16.7.179", 6924, },[m
+[32m+[m[32mddd[m
+ };[m
+ #else[m
+[32m+[m[32mddd[m
+ static SECNET sn[5] = [m
+ {[m
+     { "External", "dropbox8", "192.88.157.190", 6923, },[m
+[1mdiff --git a/ssl_and_certificates/generate_certificates.sh b/ssl_and_certificates/generate_certificates.sh[m
+[1mindex 62117a3..7aa5cf4 100644[m
+[1m--- a/ssl_and_certificates/generate_certificates.sh[m
+[1m+++ b/ssl_and_certificates/generate_certificates.sh[m
+[36m@@ -1,10 +1,13 @@[m
+ #!/bin/sh[m
+[31m-[m
+[32m+[m[32m#edit the server name here[m[41m [m
+[32m+[m[32mSERVER=awv343389.nxdi.nl-cdc01.nxp.com[m
+ ## Edit varaiables as your needs[m
+ ###[m
+[31m-OPENSSL=openssl[m
+ OPENSSL=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl[m
+[31m-SUBJ="/C=US/ST=Arizona/L=Chandler/O=NXP Semiconductors/OU=DE/CN=intercom.freescale.com/emailAddress=transbug@nxp.com"[m
+[32m+[m[32mOPENSSL=openssl[m
+[32m+[m[32m#SUBJ="/C=US/ST=Arizona/L=Chandler/O=NXP Semiconductors/OU=DE/CN=intercom.freescale.com/emailAddress=transbug@nxp.com"[m
+[32m+[m[32mSUBJ="/C=US/ST=Arizona/L=Chandler/O=NXP Semiconductors/OU=DE/CN=$SERVER/emailAddress=transbug@nxp.com"[m
+[32m+[m[32mecho $SUBJ[m
+ [m
+ RSA_BITS=4096[m
+ SHA_OPTION=-sha512[m

@@ -83,7 +83,7 @@ make_module() #1 = module  $2 = group (optional)
     group=$2
     if [ "$GIT_SHA" = "" ]
     then
-      GIT_SHA=$(./git_build_info.sh)
+      GIT_SHA=$(./mk/cfg/git_build_info.sh)
       export GIT_SHA
       ## save this to tell the build has started at this time
       date > $BUILD_CONTROL_FILE

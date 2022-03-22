@@ -106,8 +106,6 @@ void read_global_params(char *file_name);
 void company_file_read();
 #endif
 
-void reg_query();
-
 /* Send one file to the client */
 void send_file();
 
