@@ -30,7 +30,7 @@ OBJECT = entry.o add_line.o close_down.o check_owner.o big_disk_usage.o file.o f
 		 dbsend_file.o dbsend_files.o disk_usage.o files_get.o files_put.o dir.o email_send.o \
 		 list.o lock_file.o file_append.o file_copy.o file_rename.o files_copy.o files_dlt.o \
 		 file_rcv.o files_list.o files_rcv.o  get_random.o get_site.o ssl_common.o \
-		 ssl_server_lib.o ssl_utils.o line_get.o mask_msg_server_send.o init_socket.o ip_addr.o server_lib.o \
+		 ssl_server_lib.o ssl_utils.o line_get.o mask_msg_server_send.o init_socket.o server_lib.o \
 		 log.o names_build.o password_crypt.o password_encrypt.o report_gen.o remote_email_send.o \
 		  send_files.o sort.o global_sql_lib.o strcpy.o time_stamp.o sql_keyword_mapping.o sql_destinations_mapping.o create_secure_keyword.o
 

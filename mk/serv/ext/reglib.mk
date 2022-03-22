@@ -49,8 +49,9 @@ $(info END)
 
 lib/free_reg_lib.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64icommake_reglib.mk --target='lib/free_reg_lib.a' --output='lib/free_reg_lib.a' (External Intercom)"
+	@echo ":: reglib.mk --target='lib/free_reg_lib.a' --output='lib/free_reg_lib.a' (External Intercom)"
 	@echo
+	mkdir -p lib
 	ar r ./lib/free_reg_lib.a $(OBJECT)
 	ranlib ./lib/free_reg_lib.a
 
