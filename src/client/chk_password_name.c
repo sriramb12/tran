@@ -77,3 +77,6 @@ void alternate_file_name_bld(char *full_file_name, char *file_name, char *file_d
     else strcpy(full_file_name, file_name);
 } /* end alternate_file_name_bld */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

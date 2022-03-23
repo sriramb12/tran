@@ -188,3 +188,6 @@ void header_bld(
     user.from_company, server.site,
     par1, par2, par3, par4, par5, par6, user.name, icap_class);
 } /* end header_build */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

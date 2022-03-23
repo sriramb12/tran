@@ -716,3 +716,6 @@ int str_numchar(char *string, char c)
 	if (string[cnt] == c) ++num;
     return(num);
 } /* end str_numchar */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

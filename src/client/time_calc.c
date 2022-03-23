@@ -83,3 +83,6 @@ time_left =  (total_size-transferred_size)*(elapsed_time)/transferred_size;
     /* Return time calculated */
     return(time_string);
 } /* End time_left_calc */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

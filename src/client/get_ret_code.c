@@ -50,3 +50,6 @@ short get_big_ret_code(void)
 } /* End get_ret_code */
 #endif
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

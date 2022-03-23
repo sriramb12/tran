@@ -58,3 +58,6 @@ avail *= 1024;
     return(DBNO);
     else return(DBYES);
 } /* End check_disk_space */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

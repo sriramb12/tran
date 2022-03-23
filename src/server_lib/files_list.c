@@ -46,3 +46,6 @@ int files_list(DB_FILES *file)
     /* Return the number of files found */
     return(file->num);
 } /* end files_list */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

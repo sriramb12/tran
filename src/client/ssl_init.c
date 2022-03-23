@@ -363,3 +363,6 @@ short user_autoreg(void)
 } /* End user_autoreg */
 
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

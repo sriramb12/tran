@@ -1021,3 +1021,6 @@ TRANS_FILE_TYPE data_type_get(char *file_name)
 } /* end data_type_get */
 
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -115,3 +115,6 @@ int core_id_crypt(char * core_id, int mode)
         return(j+1);
     }
 } /* end core_id_crypt */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

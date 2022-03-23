@@ -78,3 +78,6 @@ int rmt_server_find(char *site)
     return(FAILURE);
 } /* End rmt_server_find */
 #endif /* for not TRANS_FTP */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

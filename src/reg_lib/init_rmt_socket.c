@@ -115,3 +115,6 @@ short init_rmt_socket(char *header_buffer, RMT_SERVERS *rmt, int indx)
     return(action);
 } /* End init_rmt_socket */
 #endif
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

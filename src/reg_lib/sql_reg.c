@@ -375,3 +375,6 @@ void sql_registry_extract(void)
     sprintf(rtn.msg, "Extracted %d records from dt_registry.", num_rows);
     return_success(rtn.msg, DBNO);
 } /* end registry_extract */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

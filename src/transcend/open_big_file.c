@@ -147,3 +147,4 @@ void write_big_file(FILE *fp, char line[TRANS_LINE_NUM][TRANS_LINE_LEN], TRANS_F
     fclose(fp);
     DBG("living write_big_file()");
 } /* End write_big_file */
+/*ts.files.fileuse*/

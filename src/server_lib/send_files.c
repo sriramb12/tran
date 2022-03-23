@@ -69,3 +69,6 @@ void send_files(dir, file_array, num)
 	    close(fd);
     } /* end for statement */
 } /* end send_files */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

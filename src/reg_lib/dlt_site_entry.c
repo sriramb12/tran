@@ -126,3 +126,6 @@ int dlt_site_entry(char *new_site)
 
     return(DBNO);
 } /* End dlt_site_entry */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

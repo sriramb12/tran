@@ -52,3 +52,6 @@ int is_keyword (REQ_TYPE  req_type, char *key)
     } /* End if */
     else return(SUCCESS);
 } /* End is_keyword */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

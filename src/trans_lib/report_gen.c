@@ -169,3 +169,6 @@ int maskshop_input_scan(char *line, char rep[REPORT_ARRAY_SIZE][256])
      rep[COMPRESSEDSIZE], rep[STARTTIME], rep[COMPLETETIME], rep[TRANSFERTIME], rep[ORDER_STATUS]);
     return(ret);
 } /* End input_scan */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

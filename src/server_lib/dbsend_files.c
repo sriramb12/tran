@@ -67,3 +67,6 @@ void dbsend_files(char *dir, char *file_array[], register short num)
 	    close(fd);
     } /* end for statement */
 } /* end dbsend_files */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

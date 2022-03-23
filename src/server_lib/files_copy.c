@@ -66,3 +66,6 @@ void files_copy(DB_FILES *file, char *old_dir)
 
     closedir(dp);
 } /* end files_copy */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

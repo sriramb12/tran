@@ -185,3 +185,6 @@ int echo__stars(char *buffer)
   return (cnt);
 } /* End echo__stars */
 #endif /* For turning off echo on Windows */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

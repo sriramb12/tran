@@ -66,3 +66,6 @@ void decrypt_ascii_pwd(char *user_pwd, char *decrypt_pwd)
     /* Now decrypt the password */
     password_encrypt(decrypt_pwd, ascii_pwd, ret);
 } /* end decrypt_ascii_pwd */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

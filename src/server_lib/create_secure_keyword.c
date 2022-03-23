@@ -85,3 +85,6 @@ int create_secure_keyword(char *file_keyword,        /* IN */
     return status;
 }
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

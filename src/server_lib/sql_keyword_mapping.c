@@ -86,3 +86,6 @@ int sql_keyword_mapping_update(void)
     }
     return(SUCCESS);
 } /* end sql_keyword_mapping_update */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

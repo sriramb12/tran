@@ -126,3 +126,6 @@ int add_file_entry(char *path, char *file_name, char *entry)
         return(SUCCESS);
     }
 } /* End add_file_entry */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

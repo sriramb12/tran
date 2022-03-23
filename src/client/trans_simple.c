@@ -287,3 +287,6 @@ int trans_keyword_request_set(int index, REQ_TYPE req_type, char *keyword)
     return(ret);
 } /* end trans_keyword_request_set */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -267,3 +267,5 @@ FILE *read4info_big_file(char *key,  TRANS_FILE_STAT *fs, int close_flag)
     else
         return(fp);
 } /* end read4info_big_file */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

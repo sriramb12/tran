@@ -131,3 +131,6 @@ stop_server_quietly()
     stop_mysql();
     rtn.msg[0] = '\0';
 }
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

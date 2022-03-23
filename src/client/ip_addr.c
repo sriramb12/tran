@@ -133,3 +133,6 @@ void ip_find(char *addr, char *name)
     DBG("function write to addr = '%s'", addr);
 
 } /* End ip_find */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

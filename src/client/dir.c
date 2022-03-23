@@ -205,3 +205,6 @@ void cwd_set(char *directory)
     DBG();
     strcpy(user.cwd, directory);
 } /* End cwd_set */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -24,3 +24,6 @@ int get_random_index(void)
 	return(index);
     
 } /* End get_random_index */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

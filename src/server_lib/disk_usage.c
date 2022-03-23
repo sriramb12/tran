@@ -68,3 +68,6 @@ unsigned long disk_usage(char *directory)
     closedir(dp);
     return(file_size);
 } /* end disk_usage */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

@@ -46,3 +46,5 @@ long day_dlt_time_calc(int days, char *current_gmt_time, char *dlt_time_string, 
     strcpy2(tr.log_date+24, " ", time_zone);
     return(dlt_time);
 } /* End day_dlt_time_calc */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

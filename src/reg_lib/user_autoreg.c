@@ -61,3 +61,6 @@ void user_autoreg(void)
 
     exit(0);
 } /* end user_autoreg */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

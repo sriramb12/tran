@@ -372,3 +372,5 @@ void reg_check()
     closedir(dp);
 } /* End reg_check */
 #endif
+/*es.files.fileuse*/
+/*is.files.fileuse*/

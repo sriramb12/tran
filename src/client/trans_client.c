@@ -1991,3 +1991,5 @@ break;
 
 char z_errmsg[80];
 #endif  // TRANSAPI
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

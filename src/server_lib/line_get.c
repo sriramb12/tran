@@ -119,3 +119,6 @@ int line_get_fp(FILE *fp, char *line, int len)
     if (eof_fnd == DBYES) return(EOF);
     else return(cnt);
 } /* End line_get */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

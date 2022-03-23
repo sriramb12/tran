@@ -42,3 +42,6 @@ int password_crypt(char *new_pwd, char *old_pwd)
     return(SUCCESS);
 } /* End password_crypt */
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

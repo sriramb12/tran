@@ -264,3 +264,6 @@ void shared_memory_cleanup(void)
     put_short(SUCCESS);
     return_success(rtn.msg, DBNO);
 } /* end shared_memory_cleanup */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

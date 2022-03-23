@@ -72,3 +72,6 @@ long long big_disk_usage(char *directory)
 
     return(file_size);
 } /* end big_disk_usage */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

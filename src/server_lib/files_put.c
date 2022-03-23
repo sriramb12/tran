@@ -78,3 +78,6 @@ int files_put(char *files[], char *dir)
     /* Get ack from the remote server or client */
     return(get_short());
 } /* end files_put */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

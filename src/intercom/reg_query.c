@@ -80,3 +80,5 @@ void reg_query()
     put_short(SUCCESS);
     put_success_msg("");
 } /* end reg_query */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

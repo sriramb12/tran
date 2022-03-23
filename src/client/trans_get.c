@@ -426,3 +426,6 @@ int trans_get_request(int index)
     return(ret);
 } /* end trans_get_request */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -136,3 +136,6 @@ int date_calc(FILE_DATE *d, char *date)
 
     return(SUCCESS);
 } /* end date_calc */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

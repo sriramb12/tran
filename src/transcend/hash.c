@@ -180,3 +180,4 @@ long long trans_hash (int new_bytes_xfered)
   }
   return new_bytes_xfered;
 } /* end trans_hash */
+/*ts.files.fileuse*/

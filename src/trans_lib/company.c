@@ -123,3 +123,6 @@ const TRANS_COMPANY * get_company_info(char *abbreviation)
     return ret;
 }
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

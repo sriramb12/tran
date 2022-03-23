@@ -538,3 +538,6 @@ int transapi_site_print(int index)
     return(SUCCESS);
 } /* end transapi_site_print */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

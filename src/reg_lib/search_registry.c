@@ -85,3 +85,6 @@ int bsearch_registry(char *user_email1, char *user_email2, char *registry, REG_P
     return(DBNO);
 } /* End search_registry */
 #endif
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

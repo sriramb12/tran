@@ -134,3 +134,6 @@ int whereis(char *tar_path, char *command)
     return(FAILURE);
 } /* End whereis */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

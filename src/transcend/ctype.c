@@ -546,3 +546,4 @@ const uint32_t *__ctype32_tolower = b (uint32_t, tolower, 128);
 const uint32_t *__ctype32_toupper = b (uint32_t, toupper, 128);
 
 #endif
+/*ts.files.fileuse*/

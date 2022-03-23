@@ -78,3 +78,6 @@ int files_dlt_transient(char *directory)
     return(file_cnt);
 } /* End files_dlt_transient */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

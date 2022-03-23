@@ -477,3 +477,6 @@ default:
 #endif
 #endif /* for INTERCOM */
 #endif /* for TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

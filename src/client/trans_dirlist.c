@@ -260,3 +260,6 @@ int trans_dirlist_lines_count(char *file_name)
     return(cnt);
 } /* end trans_dirlist_lines_count */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

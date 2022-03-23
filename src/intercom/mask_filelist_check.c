@@ -633,3 +633,5 @@ int is_mask(char *mask)
     else if ((mask[3] < 'a') || (mask[3] > 'z')) return(DBNO);
     else return(DBYES);
 } /* end is_mask */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

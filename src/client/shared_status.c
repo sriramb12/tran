@@ -135,3 +135,6 @@ void shared_status_release(void)
 #endif
 
 #endif /* For TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

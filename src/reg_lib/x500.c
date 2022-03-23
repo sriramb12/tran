@@ -63,3 +63,6 @@ void x500lookup(char *user_id)
     /* If return not successful, give failure */
     else shut_down(authen_err, AUTHEN_ERR);
 } /* End x500lookup */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

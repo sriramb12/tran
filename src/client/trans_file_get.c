@@ -294,3 +294,6 @@ int custom_file_get(int index)
 } /* end custom_file_get */
 
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

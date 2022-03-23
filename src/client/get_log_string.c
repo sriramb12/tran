@@ -150,3 +150,6 @@ short get_log_string(void)
     return(ret);
 } /* End get_log_string */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -309,3 +309,6 @@ void send_secure_keyword(
     DBG("End send_secure_keyword()");
 } /* End send_secure_keyword */
 #endif /* for not  TRANS_FTP */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

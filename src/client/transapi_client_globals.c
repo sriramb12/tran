@@ -140,3 +140,6 @@ DB_SOFTWARE so;
 /* List of pointers for TRANS structures */
 TRANS_PARAMS *trans[100];
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

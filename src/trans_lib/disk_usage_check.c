@@ -62,3 +62,6 @@ int disk_usage_check(char *msg)
 
     return(percent);
 } /* End disk_usage_check */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

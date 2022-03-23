@@ -39,3 +39,6 @@ int mod_lock_cnt(int increment)
     return(0);
 }
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

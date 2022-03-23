@@ -56,3 +56,6 @@ int long_line_get(FILE *fp, char *line)
     if (eof_fnd == DBYES) return(EOF);
     else return(cnt);
 } /* End long_line_get */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

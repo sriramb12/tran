@@ -130,3 +130,6 @@ int get_file(
 } /* end get_file */
 #endif
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

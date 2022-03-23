@@ -48,3 +48,6 @@ int check_owner(char *own_id, char *own_mach, char *own_addr, char *err_msg)
 
     return(SUCCESS);
 } /* End check_owner */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

@@ -36,3 +36,6 @@ void tmp_files_dlt(DB_FILES *file)
 	    unlink(file_name);
     } /* end for */
 } /* end files_dlt */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

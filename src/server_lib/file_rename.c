@@ -35,3 +35,6 @@ int file_rename(char *old_file, char *new_file)
 
     return(SUCCESS);
 } /* End file_rename */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

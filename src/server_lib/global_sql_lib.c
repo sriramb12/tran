@@ -410,3 +410,6 @@ void sql_time_convert(char *time_string, long time_value, char *time_ptr)
     /* Terminate date field */
     time_string[17] = '\0';
 }
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

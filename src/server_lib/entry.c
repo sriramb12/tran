@@ -263,3 +263,6 @@ int entry_return(char *file_name, char *entry, char *line)
 
     return(FAILURE);
 } /* End entry_lookup */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

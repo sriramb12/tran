@@ -79,3 +79,6 @@ int reg_lookup(void)
 
     return(fnd);
 } /* end reg_lookup */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

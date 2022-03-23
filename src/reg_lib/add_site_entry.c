@@ -301,3 +301,6 @@ int add_server_site_entry(char *new_site, char *new_email1, char *new_email2)
     else close_down2m(rename_err, bf.tmp_file, file_name, RENAME_ERR);
 } /* End add_server_site_entry */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

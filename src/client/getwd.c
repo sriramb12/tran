@@ -61,3 +61,6 @@ char * name;
     } /* End else */
 } /* End getwd */
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

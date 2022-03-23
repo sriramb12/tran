@@ -443,3 +443,6 @@ default:
 #endif /* for not NXP */
 #endif /* for INTERCOM */
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -409,3 +409,6 @@ trans[index]->req_type = DBMASK_HISTORY;
     return(ret);
 } /* End maskshop_history */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

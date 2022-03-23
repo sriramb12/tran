@@ -882,3 +882,6 @@ const char*  ZEXPORT tfile_gzerror (gzFile file, int *errnum)
     return (const char*)s->msg;
 }
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

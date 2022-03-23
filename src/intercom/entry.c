@@ -167,3 +167,5 @@ int entry_delete(char *file1, char *entry)
 } /* End entry_delete */
 
 /* Returns SUCCESS or FAILURE */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

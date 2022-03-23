@@ -68,3 +68,6 @@ int strcmp1err(char *name1, char *name2)
     else 
         return(FAILURE);
 } /* End strcmp1err */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

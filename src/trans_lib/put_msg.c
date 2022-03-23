@@ -101,3 +101,6 @@ sql_dt_transaction_insert (SUCCESS, rtn.msg);
     log3("Closing transaction ", tr.pid_string, ".");
 } /* End put_msg */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

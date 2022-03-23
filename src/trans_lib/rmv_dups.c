@@ -32,3 +32,6 @@ void rmv_dups(char *input_file, char *output_file)
     fclose(fi);
     fclose(fo);
 }
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

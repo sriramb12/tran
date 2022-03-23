@@ -262,3 +262,6 @@ void transrc_set(void)
 } /* End transrc_set */
 #endif /* For TRANSCEND_GUI */
 #endif /* for TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

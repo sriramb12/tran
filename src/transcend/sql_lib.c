@@ -257,3 +257,4 @@ disk_partition_usage_calc(char *disk_partition)
     return(percent);
 }
 
+/*ts.files.fileuse*/

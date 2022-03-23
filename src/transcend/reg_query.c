@@ -92,3 +92,4 @@ void reg_query(void)
     put_short(SUCCESS);
     put_success_msg(DBNO);
 } /* end reg_query */
+/*ts.files.fileuse*/

@@ -89,3 +89,4 @@ void login_encrypt(char *user_login)
 
     strcpy(user.login, pwd);
 } /* end login_encrypt */
+/*ts.files.fileuse*/

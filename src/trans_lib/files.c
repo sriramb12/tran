@@ -72,3 +72,6 @@ void file_get(char *dir, char *file_name)
     /* Close the file just sent */
     close(fd);
 } /* End file_get */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

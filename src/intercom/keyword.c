@@ -79,3 +79,5 @@ int dlt_keyword_entries(void)
     /* Return the number of enntries deleted */
     return(dlt_cnt);
 } /* End dlt_keyword_entries */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

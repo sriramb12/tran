@@ -195,3 +195,6 @@ int lock_file_mod(char *lock_file)
 
     return(SUCCESS);
 } /* End lock_file_mod */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

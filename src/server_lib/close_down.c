@@ -294,3 +294,6 @@ void close_down2m(char *err_msg, char *file1, char *file2, register short err_no
     email_send( "", admin.err_email, subject, bf.msg);
     shut_down(bf.msg, err_no);
 } /* end close_down2m */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

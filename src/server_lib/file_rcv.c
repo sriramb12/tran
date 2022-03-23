@@ -65,3 +65,6 @@ int file_rcv(
     file_ptr[0] = 0;
     return(SUCCESS);
 } /* end file_rcv */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

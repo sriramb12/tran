@@ -178,3 +178,6 @@ void hms_calc(long seconds, char *string)
     }
     if (len == 0) strcpy(string, " 1 sec.");
 } /* end hms_calc */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

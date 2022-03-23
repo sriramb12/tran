@@ -95,3 +95,6 @@ unsigned long long trans_disk_usage(char *directory, int follow_links, int offse
 } /* end trans_disk_usage */
 
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

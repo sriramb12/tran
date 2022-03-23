@@ -606,3 +606,5 @@ int edc_trust_sender() { return(0); }
 int is_trusted_sender() { return(0); }
 #endif
 void ftp_get(char *file_name, char *remote_dir) { }
+/*es.files.fileuse*/
+/*is.files.fileuse*/

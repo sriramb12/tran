@@ -90,3 +90,6 @@ void return_non_err(char *key)
 	    sprintf(rtn.msg, trans_non_err, key);
     shut_down(rtn.msg, TRANS_NON_ERR);
 } /* end return_non_err */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

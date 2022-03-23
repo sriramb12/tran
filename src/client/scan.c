@@ -68,3 +68,6 @@ int string_scan(char *line)
     if (cnt > 0)  line[cnt] = '\0';
     return(cnt);
 } /* end string_scan */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

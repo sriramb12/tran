@@ -393,3 +393,6 @@ long long get_longlong(void)
 } /* End get_longlong */
 #endif
 #endif /* For not TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

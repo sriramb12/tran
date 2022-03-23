@@ -209,3 +209,6 @@ short trans_block_get(int index, int block_num)
 #endif
 #endif
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

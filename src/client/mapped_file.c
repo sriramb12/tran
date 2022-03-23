@@ -179,3 +179,6 @@ void mapped_file_release(MAPPED_FILE * mapped_filename)
 } /* End mapped_file_release */
 
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

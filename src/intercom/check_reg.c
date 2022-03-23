@@ -168,3 +168,5 @@ void x500authenticate(char *user_id, char *user_pwd, int edc_type)
 	    shut_down(msg, AUTHEN_ERR);
 	} /* End else */
 } /* End x500authenticate */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

@@ -66,3 +66,6 @@ int reg_check_required(void)
     else return(DBYES);
 } /* end reg_check_needed */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

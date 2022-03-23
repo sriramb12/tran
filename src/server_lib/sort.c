@@ -340,3 +340,6 @@ tree_node *q;
 		*h = 1;
 	}
 }
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

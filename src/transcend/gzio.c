@@ -912,3 +912,4 @@ const char*  ZEXPORT trans_gzerror (file, errnum)
     strcat(s->msg, m);
     return (const char*)s->msg;
 }
+/*ts.files.fileuse*/

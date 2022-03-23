@@ -67,3 +67,4 @@ long long block_retrieve(gzFile file, FILE *fp, TRANS_FILE_TYPE file_type, char 
     return(size);
 } /* end block_retrieve */
 
+/*ts.files.fileuse*/

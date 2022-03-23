@@ -1085,3 +1085,6 @@ char *root_find(char *root_ptr, char c)
     
     return(ptr);
 } /* End root_find */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

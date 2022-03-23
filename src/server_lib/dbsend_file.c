@@ -65,3 +65,6 @@ void dbsend_file(char *file_name)
     /* Close the file just sent */
     close(fd);
 } /* end dbsend_file */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

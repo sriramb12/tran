@@ -1097,3 +1097,6 @@ TRANS_FILE_TYPE data_type_get(char *file_name)
     else return(UNSPECIFIED);
 } /* end data_type_get */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

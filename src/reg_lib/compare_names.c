@@ -158,3 +158,6 @@ int compare_names(char *servername1, char *servername2, char *username1, char *u
 
 	return(DBYES);
 } /* End compare_names */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

@@ -94,3 +94,6 @@ int files_get(char *files[], char *dir)
 
     return(num);
 } /* end files_get */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

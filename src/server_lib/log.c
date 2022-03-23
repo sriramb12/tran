@@ -306,3 +306,6 @@ void month_convert(char *log_date, char *time_stamp)
     	break;
         } /* end switch statement */
 } /* End month_convert */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

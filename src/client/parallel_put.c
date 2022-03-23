@@ -543,3 +543,6 @@ long long trans[index]->original_size, int num_processes, TRANS_FILE_TYPE trans[
 #endif /* for new */
 #endif
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

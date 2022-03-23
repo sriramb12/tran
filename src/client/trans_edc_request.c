@@ -109,3 +109,6 @@ int trans_commandline_approve(int index, REQ_TYPE req_type, int argc, char **arg
     return(ret);
 } /* end edc_approve */
 #endif /* for TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

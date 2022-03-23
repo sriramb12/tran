@@ -155,3 +155,5 @@ int is_fss_customer(void)
     return(0);
     else return(-1);
 } /* end is _fss_company */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

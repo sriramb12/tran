@@ -334,3 +334,6 @@ long get_ssl_long(void)
     return(ntohl(*(long *)buffer));
 } /* End get_ssl_long */
 #endif
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

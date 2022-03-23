@@ -177,3 +177,6 @@ void resend_reg()
 	    ret = unlink(tmp_resend_file);
     } /* End big for */
 } /* End process_resend_reg */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

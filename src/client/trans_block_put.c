@@ -243,3 +243,6 @@ unsigned long long trans_block_put(int index, int num_blocks)
 #endif
 #endif
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

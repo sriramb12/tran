@@ -501,3 +501,6 @@ void put_ack(char *file_keyword, int mem_key)
 
 } /* end put_ack */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

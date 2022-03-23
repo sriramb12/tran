@@ -426,3 +426,6 @@ int trans_get_separate_compressed_data(int index)
 } /* End get_separate_compressed_data */
 #endif /* for not Windows */
 #endif /* For TRANSAPI */
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

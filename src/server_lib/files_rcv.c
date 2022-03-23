@@ -89,3 +89,6 @@ int old_files_rcv(DB_FILES *file)
 
     return(file->num);
 } /* end files_rcv */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

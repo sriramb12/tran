@@ -589,3 +589,6 @@ void keyword_mod(void)
     lock_file_clear(index);
 } /* End keyword_mod */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

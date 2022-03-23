@@ -94,3 +94,6 @@ int dlt_file_entry(char *file_path,	char *entry)
 
     return(SUCCESS);
 } /* End dlt_file_entry */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

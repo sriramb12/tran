@@ -96,3 +96,5 @@ void send_disk_email(char *msg_body, int percent)
     /* Indicate email was sent */
     rtn.len += strcpy2(rtn.msg+rtn.len, "\nSentemail notification to ", admin.err_email);
 } /* End send_disk_email */
+/*es.files.fileuse*/
+/*is.files.fileuse*/

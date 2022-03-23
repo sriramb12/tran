@@ -83,3 +83,6 @@ char file_type_get(char *file_name)
     return(UNSPECIFIED);
 } /* End file_type_get */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

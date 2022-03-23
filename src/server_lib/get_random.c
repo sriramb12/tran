@@ -75,3 +75,6 @@ float get_random(int *ix)
 
     return(rand);
 }
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

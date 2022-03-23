@@ -76,3 +76,6 @@ int trans_block_retrieve(gzFile file, FILE *fp,
 } /* end trans_block_retrieve */
 
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

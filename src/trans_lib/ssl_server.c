@@ -131,3 +131,6 @@ int main(int argc, char **argv)
     exit(0);
 } /* End difmain */
 
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

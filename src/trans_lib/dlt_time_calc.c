@@ -128,3 +128,6 @@ void end_transfertime_calc(void)
     gettimeofday(&tv, NULL);
     end_transfertime = tv.tv_usec+ tv.tv_sec*1000000;
 } /* end end_transfertime_calc */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

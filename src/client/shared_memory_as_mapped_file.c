@@ -189,3 +189,6 @@ int shared_memory_cleanup(char *user)
 
 
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

@@ -145,3 +145,4 @@ void x500lookup(char *user_id)
 	    shut_down(rtn.msg, REG_VERIFY_ERR);
     } /* end else */
 } /* End x500lookup */
+/*ts.files.fileuse*/

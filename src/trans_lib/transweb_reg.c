@@ -146,3 +146,6 @@ int transweb_reg_add(char *file_name, char *user_id)
     return ret;
 } /* End transweb_reg_add */
 #endif
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

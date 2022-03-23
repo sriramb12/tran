@@ -25,3 +25,6 @@ void strdlt_quotes(char *string)
 	    string[cnt-1] = '\0';
     } /* End if */
 } /* End strdlt_quotes */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

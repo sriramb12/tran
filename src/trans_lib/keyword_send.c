@@ -86,3 +86,6 @@ void keyword_send(void)
 
     DBG("Living keyword_send()");
 } /* End keyword_send */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

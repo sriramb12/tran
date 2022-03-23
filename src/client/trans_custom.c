@@ -568,3 +568,6 @@ int trans_custom_request(int index)
     return(ret);
 } /* end trans_custom_request */
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

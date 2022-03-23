@@ -284,3 +284,6 @@ int history_lookup(char *key)
 	    shut_down(rtn.msg, NON_ERR);
 	} /* End if for history file present */
 } /* end history_lookup */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

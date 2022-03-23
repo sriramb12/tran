@@ -1076,3 +1076,6 @@ short trans_big_ret_code_get(void)
     return(ret);
 } /* End trans_ret_code_get */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

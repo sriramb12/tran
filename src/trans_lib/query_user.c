@@ -187,3 +187,6 @@ void trans_site_read(char *user_id)
     if (site_cnt <= 0)
         rtn.len += strcpy1(rtn.msg+rtn.len, "\nSite:   Not found in the server registry\n");
 } /* End trans_site_read */
+/*es.files.fileuse*/
+/*is.files.fileuse*/
+/*ts.files.fileuse*/

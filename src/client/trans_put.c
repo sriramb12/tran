@@ -1349,3 +1349,6 @@ int trans_put_request(int index)
     return(ret);
 } /* end trans_put_request */
 
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/

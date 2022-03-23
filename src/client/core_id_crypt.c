@@ -197,3 +197,6 @@ int core_id_crypt( char * core_id,  int mode )
 { }
 #endif
 #endif
+/*ec.files.fileuse*/
+/*ic.files.fileuse*/
+/*tc.files.fileuse*/
