@@ -17,7 +17,7 @@ INC_PREFIX      =       inc/
 GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
 TRANS_HDR       = 	$(INC_PREFIX)/trans_include
 REG_HDR 	= 	$(INC_PREFIX)/reg_include
-Z_HDR 			= ./zlib/
+Z_HDR 			= $(INC_PREFIX)/zlib/
 SRC_HDR			= ./src/
 
 include mk/cfg/libraries.def
