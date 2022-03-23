@@ -43,7 +43,7 @@ There is a script to generate a good certificate for the servers,  <root>/ssl_an
 
 Steps: 
 
-Transfer <root>/ssl_and_certificates/generate_certificates.sh to the host where the certificate will be generated; 
+Transfer <root>/scripts/ssl_and_certificates/generate_certificates.sh to the host where the certificate will be generated; 
 
 Edit the script with your host information 
 
