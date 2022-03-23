@@ -23,6 +23,7 @@ Z_HDR 		= 	./zlib
 SRC_HDR		= 	./src/
 
 
+DEBUG_OPTION=-g
 # Compiler Flags
 CFLAGS	=   $(DEVEL) $(DEBUG_OPTION) -D$(CUSTOMER_OPTION) -D$(MACHINE) -D$(PROGRAM) -D$(COMPANY) \
 			-L$(Z_LIB) -I$(GLOBAL_HDR) -I$(TRANS_HDR) -I$(REG_HDR) $(SQL_INCLUDE) -I$(Z_HDR) -I$(SRC_HDR) \

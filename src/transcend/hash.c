@@ -8,7 +8,7 @@
 #include "server_params.h"
 #include "trans_prototypes.h"
 #include "client_lib.h"
-#include "zlib.h"
+#include <zlib.h>
 #include "global_debug.h"
 
 typedef struct {

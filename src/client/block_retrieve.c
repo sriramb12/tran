@@ -27,7 +27,7 @@
 #include "strcpy.h"
 #include "trans_prototypes.h"
 #include "client_lib.h"
-#include "zlib.h"
+#include <zlib.h>
 
 
 int block_retrieve(gzFile file, FILE *fp,

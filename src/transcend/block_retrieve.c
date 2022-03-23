@@ -25,7 +25,7 @@
 #include "strcpy.h"
 #include "trans_defines.h"
 #include "server_lib.h"
-#include "zlib.h"
+#include <zlib.h>
 #include "global_debug.h"
 
 

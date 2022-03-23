@@ -26,7 +26,7 @@
 #include "strcpy.h"
 #include "trans_prototypes.h"
 #include "client_lib.h"
-#include "zlib.h"
+#include <zlib.h>
 
 
 unsigned long long separate_block_put(

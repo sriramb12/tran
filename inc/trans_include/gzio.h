@@ -2,7 +2,7 @@
 #define gzio_h
 
 #include <zlib.h>
-#include <zutil.h>
+#include "zutil.h"
 /* ===========================================================================
       Writes c, converted to an unsigned char, into the compressed file.
    gzputc returns the value that was written, or -1 in case of error.
