@@ -1,5 +1,5 @@
 # This makefile builds a library called 'libtrans.a' and used by
-# the Intercom External client, target called 'ssl64icom'
+# the Intercom External client, target called ''
 
 DIR		=	src/client/
 
@@ -57,11 +57,11 @@ include mk/cfg/output_client_localhost.def
 include mk/cfg/output_debug.def
 
 
-.DEFAULT: ssl64icom
+.DEFAULT: 
 
-ssl64icom: lib/libtrans.a src/client/trans_client.o
+: lib/libtrans.a src/client/trans_client.o
 	@echo
-	@echo ":: ssl64icommake.mk --target='ssl64icom' --output='$(OUTPUT)' (External Intercom Client)"
+	@echo ":: make.mk --target='$(OUTPUT)' --output='$(OUTPUT)' (External Intercom Client)"
 	@echo
 	$(CC) ./src/client/trans_client.o \
 	./lib/libtrans.a \
@@ -70,7 +70,7 @@ ssl64icom: lib/libtrans.a src/client/trans_client.o
 
 lib/libtrans.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64icommake.mk --target='lib/libtrans.a' --output='lib/libtrans.a' (External Intercom)"
+	@echo ":: make.mk --target='lib/libtrans.a' --output='lib/libtrans.a' (External Intercom)"
 	@echo
 	mkdir -p lib
 	ar r ./lib/libtrans.a $(OBJECT)

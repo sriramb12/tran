@@ -32,6 +32,7 @@ ALL_MODULES=0
 GROUP_MODULES=""
 
 
+echo options $2
 EXTERNAL_TRANSCEND_ENV_CFLAGS=""
 export EXTERNAL_TRANSCEND_ENV_CFLAGS
 
@@ -79,8 +80,10 @@ get_binaries()
 
 make_module() #1 = module  $2 = group (optional)
 {
+    echo make mod $1 $2
     module=$1
     group=$2
+    echo $2
     if [ "$GIT_SHA" = "" ]
     then
       GIT_SHA=$(./mk/cfg/git_build_info.sh)
@@ -247,14 +250,16 @@ if [ "$SPECIF_MODULES" != "" ]
 then
     for module in $SPECIF_MODULES
     do
-        make_module $module
+	echo specific
+        make_module $module -g 
     done
 else
     if [ $ALL_MODULES -eq 1  -o "$GROUP_MODULES" != "" ]
     then
         for module in $MODULES
         do
-            make_module $module $GROUP_MODULES
+            echo all 
+            make_module $module $GROUP_MODULES $2
         done
     else
         help

@@ -71,13 +71,13 @@ $(info $(OBJECT))
 $(info END)
 
 
-.DEFAULT: ssl64trans
+.DEFAULT: lib/libtrans.a
 
 
 # BUILD
-ssl64trans: lib/libtrans.a ./src/client/trans_client.o
+lib/libtrans.a: lib/libtrans.a ./src/client/trans_client.o
 	@echo
-	@echo ":: ssl64transmake_client.mk --target='ssl64trans' --output='$(OUTPUT)' (Transcend Client)"
+	@echo ":: client.mk --target='lib/libtrans.a' --output='$(OUTPUT)' (Transcend Client)"
 	@echo
 	$(LINK) ./src/client/trans_client.o ./lib/libtrans.a \
 	$(SSL_LIBS) \
@@ -86,7 +86,7 @@ ssl64trans: lib/libtrans.a ./src/client/trans_client.o
 
 lib/libtrans.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64transmake_client.mk --target='lib/libtrans.a' --output='libtrans.a' (Transcend)"
+	@echo ":: client.mk --target='lib/libtrans.a' --output='libtrans.a' (Transcend)"
 	@echo
 	ar r ./lib/libtrans.a $(OBJECT)
 	ranlib ./lib/libtrans.a
