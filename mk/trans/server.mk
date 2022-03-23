@@ -54,19 +54,17 @@ $(info END)
 
 
 # SSL Linux Transcend
-ssl64transcend:  $(OBJECT)
+$(OUTPUT):  $(OBJECT)
+	mkdir -p bin
 	@echo
-	@echo ":: ssl64transmake_server.mk --target='ssl64transcend' --output='$(OUTPUT)' (Transcend Server)"
+	@echo ":: server.mk --target='trans.srv' --output='$(OUTPUT)' (Transcend Server)"
 	@echo
 	$(CC) $(CFLAGS) $(OBJECT) \
 	./lib/shared_trans_lib.a \
 	./lib/trans_server_lib.a \
 	./lib/trans_reg_lib.a \
-	./lib/trans_server_lib.a \
-	./lib/trans_reg_lib.a \
-	./lib/trans_server_lib.a \
 	$(SQL_LIB) $(LDAP_LIBS) $(SSL_LIBS) \
 	 -lz -lm -ldl -o ./$(OUTPUT)
 
 
-.DEFAULT: ssl64transcend
+.DEFAULT: $(OUTPUT)
