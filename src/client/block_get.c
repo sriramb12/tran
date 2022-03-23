@@ -25,8 +25,7 @@
 #include "strcpy.h"
 #include "trans_prototypes.h"
 #include "client_lib.h"
-#include "zlib.h"
-
+#include <zlib.h>
 
 unsigned long long separate_block_get(char *file_name, char *keyword,  unsigned long long offset, int num_blocks, int block_num, int server_mem_key, unsigned long long *total_checksum)
 {

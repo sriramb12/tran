@@ -1,7 +1,7 @@
 #ifndef trans_hash_h
 #define trans_hash_h
 
-#include "zlib.h"
+#include <zlib.h>
 #include "trans_defines.h"
 
 /* Set the iCAP classification */

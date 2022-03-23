@@ -30,7 +30,7 @@
 #include "strcpy.h"
 #include "ssl_client_lib.h"
 #include "gzio.h"
-#include "zlib.h"
+#include <zlib.h>
 
 #include "global_debug.h"
 

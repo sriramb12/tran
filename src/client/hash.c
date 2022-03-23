@@ -21,7 +21,7 @@
 #include "server_params.h"
 #include "trans_prototypes.h"
 #include "client_lib.h"
-#include "zlib.h"
+#include <zlib.h>
 
 typedef struct {
   int  enable;

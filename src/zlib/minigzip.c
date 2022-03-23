@@ -16,7 +16,7 @@
 /* @(#) $Id: minigzip.c,v 1.1 2006/05/23 20:14:32 db_admin Exp db_admin $ */
 
 #include <stdio.h>
-#include "zlib.h"
+#include <zlib.h>
 
 #ifdef STDC
 #  include <string.h>

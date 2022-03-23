@@ -6,7 +6,7 @@
 /* @(#) $Id: compress.c,v 1.1 2006/05/23 20:14:30 db_admin Exp db_admin $ */
 
 #define ZLIB_INTERNAL
-#include "zlib.h"
+#include <zlib.h>
 
 /* ===========================================================================
      Compresses the source buffer into the destination buffer. The level

@@ -50,7 +50,7 @@
 #include "transapi_defines.h"
 #include "transapi_prototypes.h"
 #include "gzio.h"
-#include "zlib.h"
+#include <zlib.h>
 
 #include "global_debug.h" // Mazieri's debug facilities
 

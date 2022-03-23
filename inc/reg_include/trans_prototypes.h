@@ -6,7 +6,7 @@
 #include "company.h"
 #include "trans_defines.h"
 #include "disk_usage.h"
-#include "zlib.h"
+#include <zlib.h>
 
 
 /* check_disk_space.c */

@@ -6,7 +6,7 @@
 /* @(#) $Id: example.c,v 1.1 2006/05/23 20:14:31 db_admin Exp db_admin $ */
 
 #include <stdio.h>
-#include "zlib.h"
+#include <zlib.h>
 
 #ifdef STDC
 #  include <string.h>

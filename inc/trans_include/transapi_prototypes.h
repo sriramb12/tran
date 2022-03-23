@@ -2,7 +2,7 @@
 #define transapi_prototypes_h
 
 #include <time.h>
-#include "zlib.h"
+#include <zlib.h>
 #include "global_defines.h"
 #include "rtn.h"
 #include "trans_defines.h"

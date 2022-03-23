@@ -68,16 +68,16 @@ $(info END)
 .DEFAULT: ssl64icom
 
 
-ssl64icom: libtrans.a ./client/trans_client.o
+ssl64icom: lib/libtrans.a ./src/client/trans_client.o
 	@echo
 	@echo ":: ssl64make.mk --target='ssl64icom' --output='$(OUTPUT)' (Internal Intercom Client)"
 	@echo
-	$(CC) ./client/trans_client.o ./libtrans.a $(SSL_LIBS) -lz -lm -ldl -lpthread -o ./$(OUTPUT)
+	$(CC) ./src/client/trans_client.o ./lib/libtrans.a $(SSL_LIBS) -lz -lm -ldl -lpthread -o ./$(OUTPUT)
 
 
-libtrans.a: $(OBJECT)
+lib/libtrans.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64make.mk --target='libtrans.a' --output='libtrans.a' (Internal Intercom)"
+	@echo ":: ssl64make.mk --target='lib/libtrans.a' --output='lib/libtrans.a' (Internal Intercom)"
 	@echo
-	ar r ./libtrans.a $(OBJECT)
-	ranlib ./libtrans.a
+	ar r ./lib/libtrans.a $(OBJECT)
+	ranlib ./lib/libtrans.a

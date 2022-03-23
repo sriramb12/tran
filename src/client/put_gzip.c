@@ -31,7 +31,7 @@
 #include "trans_prototypes.h"
 #include "client_lib.h"
 #include "zconf.h"
-#include "zlib.h"
+#include <zlib.h>
 
 int print_open_file_err(char *full_file_name)
 {

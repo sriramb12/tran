@@ -26,7 +26,7 @@
 #include "strcpy.h"
 #include "client_lib.h"
 #include "transapi_defines.h"
-#include "zlib.h"
+#include <zlib.h>
 
 /* Allows passing in a directory name and alternate file name */
 void alternate_file_name_bld(char *full_file_name, char *file_name, char *file_dir, char *alternate_file)

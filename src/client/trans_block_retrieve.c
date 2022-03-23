@@ -28,7 +28,7 @@
 #include "trans_prototypes.h"
 #include "client_lib.h"
 #include "transapi_prototypes.h"
-#include "zlib.h"
+#include <zlib.h>
 
 #include "global_debug.h"
 

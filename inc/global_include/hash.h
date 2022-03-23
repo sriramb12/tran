@@ -1,7 +1,7 @@
 #ifndef hash_h
 #define hash_h
 
-#include "zlib.h"
+#include <zlib.h>
 #include "trans_defines.h"
 
 gzFile trans_open ( char *mode, long long hash_size, int hash_enable, TRANS_FILE_TYPE file_type); 

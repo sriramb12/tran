@@ -32,7 +32,7 @@ SSL_OPTION		=	SSL_ENCRYPTION
 TRANS_HDR 	= ./inc/trans_include
 GLOBAL_HDR 	= ./inc/global_include
 MASK_HDR 	= ./inc/m2include
-ZLIB_HDR 	= ./zlib
+ZLIB_HDR 	= ./inc/zlib
 
 include mk/cfg/libraries.def
 
@@ -75,18 +75,18 @@ $(info END)
 
 
 # BUILD
-ssl64trans: libtrans.a ./client/trans_client.o
+ssl64trans: lib/libtrans.a ./src/client/trans_client.o
 	@echo
 	@echo ":: ssl64transmake_client.mk --target='ssl64trans' --output='$(OUTPUT)' (Transcend Client)"
 	@echo
-	$(LINK) ./client/trans_client.o ./libtrans.a \
+	$(LINK) ./src/client/trans_client.o ./lib/libtrans.a \
 	$(SSL_LIBS) \
 	-lz -lm -ldl -o ./$(OUTPUT)
 
 
-libtrans.a: $(OBJECT)
+lib/libtrans.a: $(OBJECT)
 	@echo
-	@echo ":: ssl64transmake_client.mk --target='libtrans.a' --output='libtrans.a' (Transcend)"
+	@echo ":: ssl64transmake_client.mk --target='lib/libtrans.a' --output='libtrans.a' (Transcend)"
 	@echo
-	ar r ./libtrans.a $(OBJECT)
-	ranlib ./libtrans.a
+	ar r ./lib/libtrans.a $(OBJECT)
+	ranlib ./lib/libtrans.a
