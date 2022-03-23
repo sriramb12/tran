@@ -1,6 +1,7 @@
 #!/bin/sh
 ## add the hostname
-SERV=awv343389.nxdi.nl-cdc01.nxp.com
+SERV=`hostname`
+echo server :$SERV
 ## Edit varaiables as your needs
 ###
 #OPENSSL=/proj/dmisw/mdsdev/work/b35201/MDS_repository/trans_br_nxp/lib/RH6/run/pkg/OSS-openssl-/1.0.2u/bin/openssl

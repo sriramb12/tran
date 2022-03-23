@@ -65,10 +65,10 @@ $(info END)
 
 
 # Targets
-.DEFAULT: ssl64icom
+.DEFAULT: $(OUTPUT)
 
 
-ssl64icom: lib/libtrans.a ./src/client/trans_client.o
+$(OUTPUT): lib/libtrans.a ./src/client/trans_client.o
 	@echo
 	@echo ":: ssl64make.mk --target='ssl64icom' --output='$(OUTPUT)' (Internal Intercom Client)"
 	@echo
