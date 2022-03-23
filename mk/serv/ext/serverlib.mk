@@ -3,6 +3,7 @@
 
 DIR		=	src/server_lib/
 
+DEBUG_OPTION = -g
 # Include headers
 INC_PREFIX      =       inc/
 GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include

@@ -15,7 +15,6 @@
 #endif
 
 #ifdef INTERCOM
-#include "intercom_single_msg.h"
 #ifdef TRANSNET
 #include "transnet_client_msg.h"
 #endif
@@ -26,7 +25,6 @@
 #include "intercom_free_msg.h"
 #endif
 #ifdef LOCAL
-#include "intercom_single_msg.h"
 #endif
 #endif
 

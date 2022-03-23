@@ -4,6 +4,7 @@
 
 DIR		=	src/reg_lib/
 
+DEBUG_OPTION = -g
 # Include Headers
 INC_PREFIX      =       inc/
 GLOBAL_HDR 	= 	$(INC_PREFIX)/global_include
