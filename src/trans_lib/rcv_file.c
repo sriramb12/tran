@@ -26,7 +26,7 @@
 #include "server_lib.h"
 #include "strcpy.h"
 #include "user_params.h"
-#include "zlib.h"
+#include <zlib.h>
 #include "trans_lib_prototypes.h"
 #include "trans_server_prototypes.h"
 #include "global_debug.h"

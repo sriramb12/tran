@@ -17,7 +17,6 @@
 #include "global_client_errs.h"
 #include "global_defines.h"
 #include "global_params.h"
-#include "intercom_single_msg.h"
 #include "rtn.h"
 #include "strcpy.h"
 #include "trans_prototypes.h"
