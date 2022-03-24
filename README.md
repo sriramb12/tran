@@ -22,10 +22,10 @@ b. Build a specific target using any of the following :
 
 command --    Target 
 ------------------------
- es     -- External Server
- ec     -- External Client
- is     -- Internal Server
- ic     -- Internal Client
+- es     -- External Server
+- ec     -- External Client
+- is     -- Internal Server
+- ic     -- Internal Client
 
 Note: The bin/ folder will have the binaries after successful completion of a target
 
@@ -33,7 +33,7 @@ Ex:
 ~/tran$ ls bin
 ext.client  ext.srv  int.client  int.srv  tran.client  tran.srv
 
-2 Run:
+2. Run:
 
 a. generate ssl certs
 
@@ -50,8 +50,11 @@ Edit the script with your host information
 Goto  <repository>/db_admin/crts 
 
 b.
-     Server (external)
-    ./bin/ext.srv
-     Client (external)
-    ./bin/int.srv
+   -  Server (external) run as sudo 
+    
+   sudo ./bin/ext.srv -s
+
+   - Client (external)
+   
+   ./bin/ext.client
 
