@@ -22,10 +22,10 @@ b. Build a specific target using any of the following :
 
 command --    Target 
 ------------------------
- es     -- External Server
- ec     -- External Client
- is     -- Internal Server
- ic     -- Internal Client
+- es     -- External Server
+- ec     -- External Client
+- is     -- Internal Server
+- ic     -- Internal Client
 
 Note: The bin/ folder will have the binaries after successful completion of a target
 
