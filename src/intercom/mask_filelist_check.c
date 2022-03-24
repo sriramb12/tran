@@ -36,7 +36,7 @@
 #include "server_lib.h"
 #include "strcpy.h"
 #include "user_params.h"
-#include "zlib.h"
+#include <zlib.h>
 #include "global_debug.h"
 
 extern char global_mask[];

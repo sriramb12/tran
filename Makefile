@@ -29,14 +29,14 @@ list:
 	$(RM) -R ./docs/BUILD
 
 .clean-archive:
-	$(RM) *.a
+	$(RM) lib/*.a
 
 .clean-executable:
 	$(FIND) "*.debug" -exec $(RM) {} \;
 	$(RM) icom free.icomd ssl.icomd obsolete.ssl.intd ssl.tftpd ssl.transcend trans obsolete.transweb.bin obsolete.transweb.server ldap_info ldap_login obsolete.foundry_send
 	$(RM) *.a
 
-clean: .clean-build
+clean: .clean-build .clean-archive
 
 clean-all: .clean-build .clean-executable .clean-archive
 
