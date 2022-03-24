@@ -51,7 +51,8 @@ Goto  <repository>/db_admin/crts
 
 b.
    -  Server (external) run as sudo 
-    sudo ./bin/ext.srv -s
+    
+   sudo ./bin/ext.srv -s
 
    - Client (external)
    
